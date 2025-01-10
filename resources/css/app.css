@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'Neon Retro';
+    src: 
+        url('../fonts/Neonblitz.ttf') format('truetype'),
+        url('https://fonts.googleapis.com/css?family=Poppins:wght@200;400;700&display=swap') format('woff2');
+    font-display: swap;
+}
+
+/* Define custom CSS here that will be extended by Tailwind */
+/* Examples below */
+@layer utilities {
+    .logo {
+        font-family: 'Neon Retro', sans-serif;
+        @apply text-3xl;
+        @apply tracking-widest;
+    }
+}
