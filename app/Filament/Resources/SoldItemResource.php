@@ -114,21 +114,12 @@ class SoldItemResource extends Resource
                             ->options(PaymentMethods::class)
                             ->required(),
                         TextInput::make('pay_method_location')
-                            ->datalist(function () {
-                                $locations = PayMethod::where('method', PaymentMethods::CASH_ON_HAND)->pluck('remittance_location')
-                                    ->reduce(function (?string $carry, string $item): string {
-                                        $carry .= $item. ',';
-
-                                        return $carry;
-                                    });
-
-                                $concatenated_locations = Str::of($locations)->explode(',')
+                            ->datalist(fn (): Collection =>
+                                PayMethod::where('method', PaymentMethods::CASH_ON_HAND)->pluck('remittance_location')
                                     ->unique()
                                     ->sort()
-                                    ->values();
-
-                                return $concatenated_locations;
-                            })
+                                    ->values()
+                            )
                             ->label('Location')
                             ->maxLength(128)
                             ->minLength(2)
@@ -152,21 +143,12 @@ class SoldItemResource extends Resource
                             ->options(SellMethods::class)
                             ->required(),
                         TextInput::make('sell_method_location')
-                            ->datalist(function () {
-                                $locations = SellMethod::where('method', SellMethods::MEETUP)->pluck('location')
-                                    ->reduce(function (?string $carry, string $item): string {
-                                        $carry .= $item. ',';
-
-                                        return $carry;
-                                    });
-
-                                $concatenated_locations = Str::of($locations)->explode(',')
+                            ->datalist(fn (): Collection =>
+                                SellMethod::where('method', SellMethods::MEETUP)->pluck('location')
                                     ->unique()
                                     ->sort()
-                                    ->values();
-
-                                return $concatenated_locations;
-                            })
+                                    ->values()
+                            )
                             ->maxLength(128)
                             ->minLength(2)
                             ->required()
