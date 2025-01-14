@@ -211,6 +211,28 @@ class SoldItemResource extends Resource
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
+                SelectFilter::make('brand')
+                    ->options(fn (): Collection =>
+                        SoldItem::all()->pluck('brand', 'brand')
+                            ->unique()
+                            ->sort()
+                    )
+                    ->query(function (Builder $query, array $data) {
+                        if (!empty($data['value'])) {
+                            $query->where('brand', $data['value']);
+                        }
+                    }),
+                SelectFilter::make('type')
+                    ->options(fn (): Collection =>
+                        SoldItem::all()->pluck('type', 'type')
+                            ->unique()
+                            ->sort()
+                    )
+                    ->query(function (Builder $query, array $data) {
+                        if (!empty($data['value'])) {
+                            $query->where('type', $data['value']);
+                        }
+                    }),
                 SelectFilter::make('condition')
                     ->options(Conditions::class),
                 SelectFilter::make('pay_method')
