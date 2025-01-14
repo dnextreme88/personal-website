@@ -86,8 +86,10 @@ class SoldItemResource extends Resource
                             ->splitKeys([','])
                             ->suggestions(function () {
                                 $tags = SoldItem::all()->pluck('tags')
-                                    ->reduce(function (?string $carry, string $item): string {
-                                        $carry .= $item. ',';
+                                    ->reduce(function (?string $carry, ?string $item): ?string {
+                                        if ($item) {
+                                            $carry .= $item. ',';
+                                        }
 
                                         return $carry;
                                     });
