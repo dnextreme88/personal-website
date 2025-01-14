@@ -21,7 +21,8 @@ return new class extends Migration
             $table->foreign('sell_method_id')
                 ->references('id')
                 ->on('sell_methods');
-            $table->string('name', 128);
+            $table->string('name', 128)
+                ->nullable();
             $table->float('price');
             $table->string('condition', 32);
             $table->string('size', 32);
