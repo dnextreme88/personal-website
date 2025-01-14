@@ -11,7 +11,9 @@ class SoldItem extends Model
     protected $fillable = [
         'pay_method_id',
         'sell_method_id',
+        'brand',
         'name',
+        'type',
         'price',
         'condition',
         'size',
@@ -21,6 +23,7 @@ class SoldItem extends Model
         'image_location',
     ];
     protected $appends = [
+        'item_name',
         'pay_method_name',
         'pay_method_location',
         'sell_method_name',
@@ -48,6 +51,11 @@ class SoldItem extends Model
         return $this->sell_method->location;
     }
     /* ----- */
+
+    protected function getItemNameAttribute(): string
+    {
+        return $this->brand. ' ' .($this->name ?? ''). ' ' .$this->type;
+    }
 
     protected function size(): Attribute
     {

@@ -27,6 +27,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 
 class SoldItemResource extends Resource
@@ -41,9 +42,21 @@ class SoldItemResource extends Resource
             ->schema([
                 Section::make('Item Details')
                     ->schema([
-                        TextInput::make('name')
-                            ->columnSpanFull()
+                        TextInput::make('brand')
+                            ->datalist(fn (): Collection =>
+                                SoldItem::all()->pluck('brand')
+                                    ->unique()
+                                    ->sort()
+                                    ->values()
+                            )
                             ->maxLength(128)
+                            ->minLength(2)
+                            ->required(),
+                        TextInput::make('name')
+                            ->maxLength(128)
+                            ->minLength(2),
+                        TextInput::make('type')
+                            ->maxLength(64)
                             ->minLength(2)
                             ->required(),
                         TextInput::make('price')
