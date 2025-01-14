@@ -185,7 +185,7 @@ class SoldItemResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('name')
+                TextColumn::make('itemName')
                     ->searchable()
                     ->words(5),
                 TextColumn::make('price')
