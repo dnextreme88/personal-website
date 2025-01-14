@@ -49,13 +49,21 @@ class SoldItemResource extends Resource
                                     ->sort()
                                     ->values()
                             )
-                            ->maxLength(128)
+                            ->helperText('If an item does not have any brand, simply put "Generic" and give it a tag of "unbranded"')
+                            ->maxLength(64)
                             ->minLength(2)
                             ->required(),
                         TextInput::make('name')
+                            ->helperText('This can be a model number or additional name on top of the brand and type fields eg. computer peripherals, phones etc.')
                             ->maxLength(128)
                             ->minLength(2),
                         TextInput::make('type')
+                            ->datalist(fn (): Collection =>
+                                SoldItem::all()->pluck('type')
+                                    ->unique()
+                                    ->sort()
+                                    ->values()
+                            )
                             ->maxLength(64)
                             ->minLength(2)
                             ->required(),
@@ -68,6 +76,8 @@ class SoldItemResource extends Resource
                             ->required(),
                         TextInput::make('size')
                             ->datalist(array_column(Sizes::cases(), 'value'))
+                            ->default(Sizes::NOT_APPLICABLE->value)
+                            ->helperText('Sizes usually apply to anything that have scales, size tags, or some form of measurement eg. shirts, toy cars etc.')
                             ->maxLength(32)
                             ->required(),
                         DatePicker::make('date_sold')
