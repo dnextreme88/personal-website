@@ -13,7 +13,9 @@ use App\Filament\Resources\SoldItemResource\Pages;
 use App\Models\PayMethod;
 use App\Models\SellMethod;
 use App\Models\SoldItem;
+use Carbon\Carbon;
 use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TagsInput;
@@ -29,6 +31,7 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
+use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 
 class SoldItemResource extends Resource
 {
@@ -86,7 +89,6 @@ class SoldItemResource extends Resource
                             ->required()
                             ->rules(['date', 'date_format:Y-m-d']),
                         TagsInput::make('tags')
-                            ->columnSpanFull()
                             ->extraAttributes(['class' => 'lowercase'])
                             ->helperText('To add the tag, press the Enter, Tab, or comma (,) keys')
                             ->nestedRecursiveRules(['max:128', 'min:2'])
@@ -116,6 +118,14 @@ class SoldItemResource extends Resource
                             ->columnSpanFull()
                             ->maxLength(255)
                             ->nullable(),
+                        FileUpload::make('image_location')
+                            ->avatar()
+                            ->columnSpanFull()
+                            // Sold items will be organized in folders by the year they were sold
+                            ->directory(fn (Get $get) => 'sold-items/' .Carbon::parse($get('date_sold'))->format('Y'))
+                            ->disk('sold_items')
+                            ->getUploadedFileNameForStorageUsing(fn (TemporaryUploadedFile $file): string => str($file->getClientOriginalName()))
+                            ->label('Thumbnail image'),
                     ])
                     ->columns(['sm' => 1, 'md' => 2]),
                 Section::make('Payment Method')
