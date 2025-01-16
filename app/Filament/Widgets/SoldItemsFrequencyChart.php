@@ -70,21 +70,30 @@ class SoldItemsFrequencyChart extends ChartWidget
 
             $period_iterator = 'month';
             $this->extra_description = 'per month for ' .$this->start_value->format('Y'). '.';
-        } else if ($this->filter == 'yearly') {
+        } else if (in_array($this->filter, ['monthly', 'yearly'])) {
             $this->start_value = SoldItem::first('date_sold')->first()
                 ->date_sold;
             $this->end_value = SoldItem::latest('date_sold')->first()
                 ->date_sold;
 
-            $data = $data->between(start: Carbon::parse($this->start_value), end: Carbon::parse($this->end_value))->perYear();
+            $data = $data->between(start: Carbon::parse($this->start_value), end: Carbon::parse($this->end_value));
 
-            $this->extra_description = 'yearly since ' .Carbon::parse($this->start_value)->format('Y'). '.';
+            if ($this->filter == 'monthly') {
+                $data = $data->perMonth();
+
+                $this->extra_description = 'by month.';
+            } else if ($this->filter == 'yearly') {
+                $data = $data->perYear();
+
+                $this->extra_description = 'by year.';
+            }
         }
 
         $data = $data->count();
+
         $labels = [];
 
-        if ($this->filter != 'yearly') {
+        if (!in_array($this->filter, ['monthly', 'yearly'])) {
             $period = CarbonPeriod::create($this->start_value, '1 ' .$period_iterator, $this->end_value);
 
             foreach ($period as $date) {
@@ -96,9 +105,31 @@ class SoldItemsFrequencyChart extends ChartWidget
                     $labels[] = $date->format('M Y');
                 }
             }
-        } else {
-            foreach (range(2014, date('Y')) as $year) {
-                $labels[] = $year;
+        } else if (in_array($this->filter, ['monthly', 'yearly'])) {
+            if ($this->filter == 'monthly') {
+                foreach (range(1, 12) as $month_number) {
+                    $labels[] = Carbon::create()->month($month_number)->format('F');
+                }
+
+                $months = collect([]);
+
+                foreach (range(1, 12) as $month_number) {
+                    $month_index = $month_number < 10 ? '0' .$month_number : $month_number;
+
+                    $months->push($data->filter(fn ($value) => str_contains($value->date, '-' .$month_index))
+                        ->reduce(function (?int $sum_for_month, ?TrendValue $item): ?int {
+                            $sum_for_month += $item->aggregate;
+
+                            return $sum_for_month;
+                        })
+                    );
+                }
+
+                $data = $months;
+            } else if ($this->filter == 'yearly') {
+                foreach (range(2014, date('Y')) as $year) {
+                    $labels[] = $year;
+                }
             }
         }
 
@@ -106,7 +137,7 @@ class SoldItemsFrequencyChart extends ChartWidget
             'datasets' => [
                 [
                     'label' => 'Number of sold items',
-                    'data' => $data->map(fn (TrendValue $value) => $value->aggregate),
+                    'data' => $this->filter == 'monthly' ? $data->map(fn (int $value) => $value) : $data->map(fn (TrendValue $value) => $value->aggregate),
                     'borderColor' => '#4ade80', // success-400
                     'backgroundColor' => '#f0fdf4', // success-50
                 ],
@@ -128,6 +159,7 @@ class SoldItemsFrequencyChart extends ChartWidget
     protected function getFilters(): ?array
     {
         return [
+            'monthly' => 'By month',
             'yearly' => 'By year',
             'last_year' => 'Last year',
             'this_year' => 'This year',
