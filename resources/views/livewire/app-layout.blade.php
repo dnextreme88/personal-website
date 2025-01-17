@@ -29,14 +29,14 @@
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
             {{-- Page Navigation --}}
             @if (isset($nav_menu))
-                <div class="h-8 bg-white dark:bg-gray-600">&nbsp;</div>
+                <div class="h-8 bg-gray-100 dark:bg-gray-600">&nbsp;</div>
 
-                <nav class="bg-white dark:bg-gray-600 top-0 sticky z-[1]">{{ $nav_menu }}</nav>
+                <nav class="bg-gray-100 dark:bg-gray-600 top-0 sticky z-[1]">{{ $nav_menu }}</nav>
             @endif
 
             {{-- Page Heading --}}
             @if (isset($header))
-                <header class="bg-white shadow dark:bg-gray-600">
+                <header class="bg-gray-300 shadow dark:bg-gray-500">
                     <div class="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">{{ $header }}</div>
                 </header>
             @endif
