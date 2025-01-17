@@ -5,6 +5,7 @@ namespace App\Livewire;
 use App\Models\SoldItem;
 use Carbon\Carbon;
 use Illuminate\Contracts\Database\Query\Builder;
+use Illuminate\Support\Str;
 use Livewire\Attributes\On;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -17,6 +18,7 @@ class Archives extends Component
     public $types = [];
     public $months = [];
     public $years = [];
+    public $tags = [];
 
     public $is_filtered = false;
     public $search_query = '';
@@ -26,6 +28,7 @@ class Archives extends Component
     public $archive_years_choice;
     public $archive_pay_methods_choice;
     public $archive_sell_methods_choice;
+    public $archive_tags_choice = [];
 
     public function search_archives()
     {
@@ -55,6 +58,21 @@ class Archives extends Component
         }
 
         $this->years = range(2014, date('Y'));
+
+        $collected_tags = SoldItem::all()->pluck('tags')
+            ->reduce(function (?string $carry, ?string $item): ?string {
+                if ($item) {
+                    $carry .= $item. ',';
+                }
+
+                return $carry;
+            });
+
+        $this->tags = Str::of($collected_tags)->explode(',')
+            ->filter()
+            ->unique()
+            ->sort()
+            ->values();
     }
 
     #[On('filtered-sold-items')]
@@ -89,6 +107,14 @@ class Archives extends Component
 
             if ($this->archive_sell_methods_choice) {
                 $search = $search->whereHas('sell_method', fn (Builder $query) => $query->where('method', $this->archive_sell_methods_choice));
+            }
+
+            if ($this->archive_tags_choice) {
+                $search = $search->where(function (Builder $query) {
+                    foreach ($this->archive_tags_choice as $selected_tag) {
+                        $query->whereLike('tags', '%' .$selected_tag. '%');
+                    }
+                });
             }
 
             $sold_items = $search->paginate(18);

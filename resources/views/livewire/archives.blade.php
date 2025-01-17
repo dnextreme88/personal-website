@@ -8,7 +8,6 @@
     {{-- TODO:
         1. Filtering of the ff:
             - Toggle whether the sold items have notes or not
-            - By tags
         2. Display a way to switch between table and compact versions
     --}}
 
@@ -23,7 +22,7 @@
 
                 <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
                     <div class="grid items-center grid-cols-2">
-                        <label class="text-gray-500 dark:text-gray-200 me-2">Brand</label>
+                        <label class="text-gray-600 dark:text-gray-200 me-2">Brand</label>
 
                         <input wire:model="archive_brands_choice" class="col-span-3 sm:col-span-2" list="archive-brands" placeholder="Select brand" />
                         <datalist id="archive-brands">
@@ -36,7 +35,7 @@
                     </div>
 
                     <div class="grid items-center grid-cols-2">
-                        <label class="text-gray-500 dark:text-gray-200 me-2">Type</label>
+                        <label class="text-gray-600 dark:text-gray-200 me-2">Type</label>
 
                         <input wire:model="archive_types_choice" class="col-span-3 sm:col-span-2" list="archive-types" placeholder="Select type" />
                         <datalist id="archive-types">
@@ -49,7 +48,7 @@
                     </div>
 
                     <div class="grid items-center grid-cols-2">
-                        <label class="text-gray-500 dark:text-gray-200 me-2">Month</label>
+                        <label class="text-gray-600 dark:text-gray-200 me-2">Month</label>
 
                         <select wire:model="archive_months_choice" class="col-span-3 sm:col-span-2">
                             <option value="">SHOW ALL</option>
@@ -61,7 +60,7 @@
                     </div>
 
                     <div class="grid items-center grid-cols-2">
-                        <label class="text-gray-500 dark:text-gray-200 me-2">Year</label>
+                        <label class="text-gray-600 dark:text-gray-200 me-2">Year</label>
 
                         <select wire:model="archive_years_choice" class="col-span-3 sm:col-span-2">
                             <option value="">SHOW ALL</option>
@@ -73,7 +72,7 @@
                     </div>
 
                     <div class="grid items-center grid-cols-2">
-                        <label class="text-gray-500 dark:text-gray-200 me-2">Payment Method</label>
+                        <label class="text-gray-600 dark:text-gray-200 me-2">Payment Method</label>
 
                         <select wire:model="archive_pay_methods_choice" class="col-span-3 sm:col-span-2">
                             <option value="">SHOW ALL</option>
@@ -85,7 +84,7 @@
                     </div>
 
                     <div class="grid items-center grid-cols-2">
-                        <label class="text-gray-500 dark:text-gray-200 me-2">Sell Method</label>
+                        <label class="text-gray-600 dark:text-gray-200 me-2">Sell Method</label>
 
                         <select wire:model="archive_sell_methods_choice" class="col-span-3 sm:col-span-2">
                             <option value="">SHOW ALL</option>
@@ -94,6 +93,41 @@
                                 <option value="{{ $sell_method->value }}">{{ $sell_method->value }}</option>
                             @endforeach
                         </select>
+                    </div>
+
+                    <div x-data="{
+                        selectedTags: $wire.entangle('archive_tags_choice'),
+                        addToTags(tag) {
+                            if (this.selectedTags.includes(tag)) {
+                                const tagIndex = this.selectedTags.indexOf(tag);
+                                this.selectedTags.splice(tagIndex, 1);
+                            } else {
+                                this.selectedTags.push(tag);
+                            }
+                        },
+                        clearTags() {
+                            this.selectedTags = [];
+                        }
+                    }"
+                        class="grid grid-cols-1 sm:col-span-2 lg:col-span-3">
+                        <label class="text-gray-600 dark:text-gray-200 me-2">Filter by tags</label>
+                        <span x-on:click="clearTags"
+                            class="flex gap-2 mt-2 text-sm text-blue-500 dark:text-blue-300 hover:cursor-pointer hover:underline"
+                            title="Clear selected tags">
+                                Clear tags
+                        </span>
+
+                        <ul class="flex flex-wrap gap-2 mt-4 list-none">
+                            @foreach ($tags as $tag)
+                                <li
+                                    x-bind:class="{'bg-gray-300 dark:bg-gray-500 text-gray-800 dark:text-gray-200': selectedTags.includes('{{ $tag }}'), 'text-gray-800 dark:text-gray-200': !selectedTags.includes('{{ $tag }}')}"
+                                    x-on:click="addToTags('{{ $tag }}')"
+                                    class="px-2 py-1 transition-colors duration-200 border-2 border-gray-800 rounded-xl hover:cursor-pointer dark:border-gray-200"
+                                >
+                                    {{ $tag }}
+                                </li>
+                            @endforeach
+                        </ul>
                     </div>
                 </div>
 
