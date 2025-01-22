@@ -293,6 +293,7 @@ class SoldItemSeeder extends Seeder
             ['method' => PaymentMethods::REMITTANCE->value, 'remittance_location' => Remittances::GCASH->value],
             ['method' => PaymentMethods::REMITTANCE->value, 'remittance_location' => Remittances::GCASH->value],
             ['method' => PaymentMethods::REMITTANCE->value, 'remittance_location' => Remittances::GCASH->value],
+            ['method' => PaymentMethods::REMITTANCE->value, 'remittance_location' => Remittances::GCASH->value],
         ]);
 
         SellMethod::insert([
@@ -567,6 +568,7 @@ class SoldItemSeeder extends Seeder
             ['method' => SellMethods::SHIPMENT->value, 'location' => ShipmentLocations::J_AND_T_EXPRESS->value],
             ['method' => SellMethods::DROPPING->value, 'location' => DroppingAreas::MABINI_SHOPPING_CENTER_ROOM_209->value],
             ['method' => SellMethods::DROPPING->value, 'location' => DroppingAreas::MABINI_SHOPPING_CENTER_ROOM_209->value],
+            ['method' => SellMethods::SHIPMENT->value, 'location' => ShipmentLocations::J_AND_T_EXPRESS->value],
         ]);
 
         SoldItem::insert([
@@ -4905,7 +4907,23 @@ class SoldItemSeeder extends Seeder
                 'image_location' => 'sold-items/2025/maisto1-1.jpg',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
-            ]
+            ],
+            [
+                'pay_method_id' => 272,
+                'sell_method_id' => 272,
+                'brand' => 'Silverlit',
+                'name' => '2012 Ford Fiesta RS WRC',
+                'type' => 'Toy',
+                'price' => 300,
+                'condition' => 'used',
+                'size' => '1/24 scale',
+                'date_sold' => '2025-01-22',
+                'tags' => 'marketplace haul',
+                'notes' => 'Payment sent through GCash on 1/22. Received payment on 1/??.',
+                'image_location' => 'sold-items/2025/silverlit1-1.jpg',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
         ]);
     }
 }
