@@ -25,11 +25,7 @@
 
                 <a wire:navigate class="text-gray-900 transition duration-100 dark:text-gray-100 hover:text-blue-800 dark:hover:text-blue-200 hover:scale-105" href="{{ route('archives') }}">Archives</a>
 
-                {{--
-                <a class="text-gray-900 transition duration-150 dark:text-gray-100 hover:text-orange-800 dark:hover:text-orange-200 hover:scale-105" href="{{ route('login') }}">Login</a>
-
                 <x-button-contact-me />
-                --}}
             </div>
 
             {{-- Hamburger to open Responsive Navigation Menu --}}
@@ -66,14 +62,8 @@
             <x-responsive-nav-link :active="request()->routeIs('archives')" wire:navigate href="{{ route('archives') }}" aria-label="Archives link">Archives</x-responsive-nav-link>
         </div>
 
-        {{--
-        <div class="pt-2 pb-3 sm:hidden">
-            <x-responsive-nav-link :active="request()->routeIs('login')" wire:navigate href="{{ route('login') }}">Login</x-responsive-nav-link>
-        </div>
-
         <div class="pt-2 pb-3 ps-3 pe-4 sm:hidden">
             <x-button-contact-me />
         </div>
-        --}}
     </div>
 </div>
