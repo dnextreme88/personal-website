@@ -12,8 +12,7 @@ class ListCategory extends Component
 
     public function render()
     {
-        $this->categories = Category::select(['name', 'slug'])->withCount(['posts'])
-            ->orderBy('name', 'ASC')
+        $this->categories = Category::withCount(['posts'])->orderBy('name', 'ASC')
             ->get();
 
         return view('livewire.blog.list-category');

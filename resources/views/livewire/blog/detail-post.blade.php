@@ -8,7 +8,7 @@
     <div class="p-4">
         <h2 class="text-4xl font-semibold mb-3 text-gray-800 dark:text-gray-200">{{ $post->title }}</h2>
 
-        <span class="text-xs relative z-10 rounded-full bg-gray-200 border border-gray-300 dark:bg-gray-700 px-3 py-1 font-medium text-gray-800 dark:text-gray-200">{{ $post->category->name }}</span>
+        <span class="text-xs relative rounded-full bg-gray-200 border border-gray-300 dark:bg-gray-700 px-3 py-1 font-medium text-gray-800 dark:text-gray-200">{{ $post->category->name }}</span>
 
         <p class="mt-4 text-gray-600 dark:text-gray-400 text-xs sm:text-sm">Posted by {{ $post->user->name }} on <span class="font-semibold">{{ \Carbon\Carbon::parse($post->created_at)->format('D, M j, Y \a\t g:i A') }}</span></p>
 

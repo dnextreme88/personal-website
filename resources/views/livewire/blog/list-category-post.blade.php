@@ -11,9 +11,9 @@
         <p class="text-xl text-gray-500 dark:text-gray-400">{{ $category->description }}</p>
     @endif
 
-    <div class="my-8 grid grid-cols-1 md:grid-cols-3">
+    <div class="my-6 grid grid-cols-1 md:grid-cols-3 md:my-0">
         <div class="col-span-2 mb-6 md:mr-6">
-            <livewire:blog.list-post :posts="$posts" />
+            <livewire:blog.list-post :category="$category" />
         </div>
 
         <div>
