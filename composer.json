@@ -11,7 +11,8 @@
         "flowframe/laravel-trend": "^0.3.0",
         "laravel/framework": "^11.5",
         "laravel/tinker": "^2.9",
-        "livewire/livewire": "^3.5"
+        "livewire/livewire": "^3.5",
+        "njxqlus/filament-progressbar": "^1.1"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
