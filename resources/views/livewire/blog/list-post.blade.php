@@ -3,21 +3,24 @@
         <form wire:submit="search_posts" class="flex justify-between gap-6 py-4">
             <x-forms.input-text class="w-full" for="search_query" placeholder_text="Search the blog..." title_text="Search posts" />
 
-            <button type="submit" class="flex items-center gap-1 px-4 py-2 text-gray-800 transition duration-300 bg-green-300 cursor-pointer dark:bg-green-600 dark:text-gray-200 hover:bg-green-500 dark:hover:bg-green-700 hover:text-gray-100 dark:hover:text-gray-200">
+            <button
+                class="flex items-center gap-2 px-4 py-2 text-gray-800 transition duration-300 cursor-pointer min-w-[130px] bg-green-300 dark:bg-green-600 dark:text-gray-200 hover:bg-green-500 dark:hover:bg-green-700 hover:text-gray-100 dark:hover:text-gray-200"
+                type="submit"
+            >
                 <svg wire:loading.remove wire:target="search_posts" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4" aria-label="Search icon">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />\
                     <title>Search icon</title>
                 </svg>
-                    
-                <span wire:loading.flex wire:target="search_posts">
+
+                <span wire:loading.flex wire:target="search_posts" class="justify-self-center">
                     <x-loading-indicator
                         :loader_color_bg="'fill-gray-200'"
                         :loader_color_spin="'fill-gray-200'"
-                        :showText="false"
+                        :showText="true"
                         :size="4"
+                        :text="'Searching'"
+                        :text_color="'text-white'"
                     />
-
-                    <span class="ml-2">Searching</span>
                 </span>
 
                 <span wire:loading.remove wire:target="search_posts">Search</span>
