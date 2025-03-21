@@ -1,7 +1,7 @@
 <div class="grid grid-cols-1 gap-8">
     @if ($is_filtered || $posts->count() > 0)
         <form wire:submit="search_posts" class="flex justify-between gap-6 py-4">
-            <input wire:model="search_query" class="w-[90%]" type="text" placeholder="Search the blog..." title="Search the blog..." aria-placeholder="Search the blog..." />
+            <x-forms.input-text class="w-full" for="search_query" placeholder_text="Search the blog..." title_text="Search posts" />
 
             <button type="submit" class="flex items-center gap-1 px-4 py-2 text-gray-800 transition duration-300 bg-green-300 cursor-pointer dark:bg-green-600 dark:text-gray-200 hover:bg-green-500 dark:hover:bg-green-700 hover:text-gray-100 dark:hover:text-gray-200">
                 <svg wire:loading.remove wire:target="search_posts" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4" aria-label="Search icon">

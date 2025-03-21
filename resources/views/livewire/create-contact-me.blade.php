@@ -28,7 +28,7 @@
                                 <x-forms.input-label is_required="true" value="First name" for="first_name" />
 
                                 <div class="mt-3">
-                                    <x-forms.input-text for="first_name" placeholder_text="Juan" />
+                                    <x-forms.input-text class="w-full" for="first_name" placeholder_text="Juan" />
                                 </div>
 
                                 <x-forms.input-error class="mt-2" for="first_name" />
@@ -38,7 +38,7 @@
                                 <x-forms.input-label is_required="true" value="Last name" for="last_name" />
 
                                 <div class="mt-3">
-                                    <x-forms.input-text for="last_name" placeholder_text="Santos" />
+                                    <x-forms.input-text class="w-full" for="last_name" placeholder_text="Santos" />
                                 </div>
 
                                 <x-forms.input-error class="mt-2" for="last_name" />
@@ -48,7 +48,7 @@
                                 <x-forms.input-label is_required="true" value="Email" for="email" />
 
                                 <div class="mt-3">
-                                    <x-forms.input-text for="email" placeholder_text="username@domain.com" />
+                                    <x-forms.input-text class="w-full" for="email" placeholder_text="username@domain.com" />
                                 </div>
 
                                 <x-forms.input-error class="mt-2" for="email" />
@@ -58,7 +58,7 @@
                                 <x-forms.input-label value="Company" for="company" />
 
                                 <div class="mt-3">
-                                    <x-forms.input-text for="company" />
+                                    <x-forms.input-text class="w-full" for="company" />
                                 </div>
 
                                 <x-forms.input-error class="mt-2" for="company" />

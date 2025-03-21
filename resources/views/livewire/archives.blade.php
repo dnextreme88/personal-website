@@ -16,7 +16,7 @@
             <h2 class="px-2 py-4 text-xl text-gray-800 bg-gray-300 dark:bg-gray-700 dark:text-gray-200">Search Archives</h2>
 
             <form wire:submit="search_archives" class="flex flex-col justify-between gap-6 px-6 py-4 bg-gray-200 border-b-2 border-b-gray-400 dark:border-b-gray-200 md:gap-8 dark:bg-gray-800">
-                <input wire:model="search_query" class="md:mx-6 lg:mx-12" type="text" placeholder="Type a name of an item..." title="Type a name of an item..." aria-placeholder="Type a name of an item..." />
+                <x-forms.input-text class="md:mx-6 lg:mx-12" for="search_query" placeholder_text="Type a name of an item..." title_text="Search archives" />
 
                 <label class="py-2 text-2xl text-gray-800 dark:text-gray-200">Advanced Filters</label>
 
