@@ -18,10 +18,6 @@
 
                     <p class="mt-6 text-gray-600 dark:text-gray-400">All fields marked with <x-red-asterisk /> are required.</p>
 
-                    <x-action-message on="created-contact-me" type="success" class="mt-6">
-                        Your message has been sent. Thank you!
-                    </x-action-message>
-
                     <form wire:submit.prevent="create_contact_me" class="mt-12">
                         <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                             <div>
