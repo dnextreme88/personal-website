@@ -14,6 +14,7 @@ class Calendar extends Component
     public $days_in_month;
     public $first_day_of_month;
     public $previous_month_days;
+    public $selected_date;
 
     public function calculate_days()
     {
@@ -48,6 +49,13 @@ class Calendar extends Component
         }
 
         $this->calculate_days();
+    }
+
+    public function view_posts_on_date($date)
+    {
+        $this->selected_date = $date;
+
+        $this->dispatch('showed-posts-by-date', ['date_published' => $date]);
     }
 
     public function mount()

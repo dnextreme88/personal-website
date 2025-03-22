@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Blog;
 
+use App\Models\Blog\Category;
 use App\Models\Blog\Post;
 use Livewire\Attributes\On;
 use Livewire\Component;
@@ -11,9 +12,17 @@ class ListPost extends Component
 {
     use WithPagination;
 
-    public $category;
+    public ?Category $category = null;
+    public $date_published;
     public ?string $search_query = null;
     public bool $is_filtered = false;
+
+    protected $listeners = ['showed-posts-by-date' => 'dispatch_show_posts_by_date'];
+
+    public function dispatch_show_posts_by_date($data) // Dispatched from another component and to be shown on this component
+    {
+        $this->date_published = $data['date_published'];
+    }
 
     public function search_posts()
     {
@@ -24,9 +33,10 @@ class ListPost extends Component
         $this->dispatch('filtered-posts');
     }
 
-    public function mount($category = false)
+    public function mount($category = null, $date_published = null)
     {
         $this->category = $category;
+        $this->date_published = $date_published;
     }
 
     #[On('filtered-posts')]
@@ -35,6 +45,10 @@ class ListPost extends Component
         $this->search_query = trim($this->search_query);
 
         $posts = Post::query();
+
+        if ($this->date_published) {
+            $posts = $posts->where('date_published', $this->date_published);
+        }
 
         if ($this->category) {
             $posts = $posts->whereHas('category', fn ($query) => $query->where('name', $this->category->name));

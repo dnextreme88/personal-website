@@ -18,7 +18,26 @@
         @endfor
 
         @for ($day = 1; $day <= $days_in_month; $day++)
-            <div class="text-gray-800 dark:text-gray-200 p-2 border {{ $current_day == $day && $current_month == \Carbon\Carbon::now()->month ? 'font-bold bg-gray-300 dark:bg-gray-600 border-gray-600 dark:border-gray-300' : 'border-transparent' }}">{{ $day }}</div>
+            <div
+                wire:click="view_posts_on_date('{{ \Carbon\Carbon::parse($current_year. '-' .$current_month. '-' .$day)->format('Y-m-d') }}')"
+                class="text-gray-800 dark:text-gray-200 p-2 border cursor-pointer
+
+                @if ($current_day == $day && $current_month == \Carbon\Carbon::now()->month)
+                    font-bold bg-gray-300 dark:bg-gray-600
+
+                    @if ($selected_date && $selected_date != \Carbon\Carbon::parse($current_year. '-' .$current_month. '-' .$day)->format('Y-m-d'))
+                        border-transparent
+                    @else
+                        border-gray-600 dark:border-gray-300
+                    @endif
+                @elseif ($selected_date == \Carbon\Carbon::parse($current_year. '-' .$current_month. '-' .$day)->format('Y-m-d'))
+                    bg-gray-300 dark:bg-gray-600 border-gray-600 dark:border-gray-300
+                @else
+                    border-transparent
+                @endif
+            ">
+                {{ $day }}
+            </div>
         @endfor
     </div>
 </div>
