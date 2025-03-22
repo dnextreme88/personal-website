@@ -17,6 +17,8 @@
         </div>
 
         <div>
+            <livewire:calendar />
+
             <livewire:blog.list-category />
         </div>
     </div>
