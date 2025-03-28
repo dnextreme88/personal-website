@@ -14,30 +14,41 @@
 
         {{-- Show previous month's days --}}
         @for ($i = $first_day_of_month - 1; $i >= 0; $i--)
-            <div class="text-gray-800 dark:text-gray-200 p-2 opacity-50 dark:opacity-25">{{ $previous_month_days - $i }}</div>
+            <div class="text-gray-800 dark:text-gray-200 p-1 opacity-50 dark:opacity-25 md:p-0 lg:p-2">{{ $previous_month_days - $i }}</div>
         @endfor
 
-        @for ($day = 1; $day <= $days_in_month; $day++)
+        @foreach ($days_in_month as $carbon_instance)
             <div
-                wire:click="view_posts_on_date('{{ \Carbon\Carbon::parse($current_year. '-' .$current_month. '-' .$day)->format('Y-m-d') }}')"
-                class="text-gray-800 dark:text-gray-200 p-2 border cursor-pointer
+                wire:click="view_posts_on_date('{{ $carbon_instance->format('Y-m-d') }}')"
+                class="border cursor-pointer transition duration-200 p-1 hover:bg-gray-300 dark:hover:bg-gray-600 md:p-0 lg:p-2
+                    @if ($current_day == $carbon_instance->day && $current_month == \Carbon\Carbon::now()->month)
+                        font-bold text-gray-800 dark:text-gray-200 bg-gray-300 dark:bg-gray-600
 
-                @if ($current_day == $day && $current_month == \Carbon\Carbon::now()->month)
-                    font-bold bg-gray-300 dark:bg-gray-600
+                        @if ($selected_date && $selected_date != $carbon_instance->format('Y-m-d'))
+                            border-transparent
+                        @else
+                            border-gray-600 dark:border-gray-300
+                        @endif
+                    @elseif (in_array($carbon_instance->format('Y-m-d'), $unique_dates->toArray()))
+                        font-bold text-blue-800 dark:text-blue-200 underline
 
-                    @if ($selected_date && $selected_date != \Carbon\Carbon::parse($current_year. '-' .$current_month. '-' .$day)->format('Y-m-d'))
-                        border-transparent
+                        @if ($selected_date == $carbon_instance->format('Y-m-d'))
+                            bg-gray-300 dark:bg-gray-600 border-gray-600 dark:border-gray-300
+                        @else
+                            border-transparent
+                        @endif
                     @else
-                        border-gray-600 dark:border-gray-300
+                        text-gray-800 dark:text-gray-200 border-transparent
                     @endif
-                @elseif ($selected_date == \Carbon\Carbon::parse($current_year. '-' .$current_month. '-' .$day)->format('Y-m-d'))
-                    bg-gray-300 dark:bg-gray-600 border-gray-600 dark:border-gray-300
-                @else
-                    border-transparent
-                @endif
-            ">
-                {{ $day }}
+
+                    @if ($selected_date == $carbon_instance->format('Y-m-d'))
+                        bg-gray-300 dark:bg-gray-600 border-gray-800 dark:border-gray-200
+                    @endif
+                "
+                title="View posts for this date"
+            >
+                {{ $carbon_instance->day }}
             </div>
-        @endfor
+        @endforeach
     </div>
 </div>
