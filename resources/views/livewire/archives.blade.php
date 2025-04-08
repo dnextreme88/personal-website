@@ -113,7 +113,7 @@
                         <label class="text-gray-600 dark:text-gray-200 me-2">Filter by tags</label>
                         <span
                             x-on:click="clearTags"
-                            class="flex gap-2 mt-2 text-sm text-blue-500 dark:text-blue-300 hover:cursor-pointer hover:underline"
+                            class="w-fit mt-2 text-sm text-blue-500 dark:text-blue-300 hover:cursor-pointer hover:underline"
                             title="Clear selected tags"
                         >
                                 Clear tags

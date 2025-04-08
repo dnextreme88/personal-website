@@ -19,7 +19,7 @@
                         :showText="true"
                         :size="4"
                         :text="'Searching'"
-                        :text_color="'text-white'"
+                        :text_color="'text-gray-200'"
                     />
                 </span>
 
@@ -30,12 +30,12 @@
 
     <div wire:loading.flex>
         <x-loading-indicator
-            :loader_color_bg="'fill-gray-200'"
-            :loader_color_spin="'fill-gray-200'"
+            :loader_color_bg="'fill-gray-800 dark:fill-gray-200'"
+            :loader_color_spin="'fill-gray-800 dark:fill-gray-200'"
             :showText="true"
             :size="4"
             :text="'Loading posts'"
-            :text_color="'text-white'"
+            :text_color="'text-gray-800 dark:text-gray-200'"
         />
     </div>
 
