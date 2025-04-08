@@ -13,6 +13,46 @@
 /* Define custom CSS here that will be extended by Tailwind */
 /* Examples below */
 @layer utilities {
+    .h-25-vh {
+        height: 25vh;
+    }
+    .h-50-vh {
+        height: 50vh;
+    }
+    .h-75-vh {
+        height: 75vh;
+    }
+
+    .w-25-vw {
+        width: 25vw;
+    }
+    .w-50-vw {
+        width: 50vw;
+    }
+    .w-75-vw {
+        width: 75vw;
+    }
+
+    .max-h-25-vh {
+        max-height: 25vh;
+    }
+    .max-h-50-vh {
+        max-height: 50vh;
+    }
+    .max-h-75-vh {
+        max-height: 75vh;
+    }
+
+    .max-w-25-vw {
+        max-width: 25vw;
+    }
+    .max-w-50-vw {
+        max-width: 50vw;
+    }
+    .max-w-75-vw {
+        max-width: 75vw;
+    }
+
     .logo {
         font-family: 'Neon Retro', sans-serif;
         @apply text-3xl;

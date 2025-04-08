@@ -6,7 +6,14 @@
 
 <div x-on:keydown.window.tab="switchOn = false" {{ $attributes->merge(['class' => 'flex px-4 py-2 place-content-start']) }}>
     @if (isset($left_side))
-        <div>{{ $left_side }}</div>
+        <label
+            x-on:click="$refs.switchButton.click(); $refs.switchButton.focus()"
+            x-bind:class="{'text-slate-300': switchOn, 'text-slate-700': !switchOn}"
+            x-bind:id="$id('switch')"
+            class="ml-2 text-sm select-none"
+        >
+            {{ $left_side }}
+        </label>
     @endif
 
     <input x-bind:checked="switchOn" class="hidden" type="checkbox" name="switch" />

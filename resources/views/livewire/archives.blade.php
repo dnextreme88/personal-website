@@ -16,7 +16,7 @@
             <h2 class="px-2 py-4 text-xl text-gray-800 bg-gray-300 dark:bg-gray-700 dark:text-gray-200">Search Archives</h2>
 
             <form wire:submit="search_archives" class="flex flex-col justify-between gap-6 px-6 py-4 bg-gray-200 border-b-2 border-b-gray-400 dark:border-b-gray-200 md:gap-8 dark:bg-gray-800">
-                <input wire:model="search_query" class="md:mx-6 lg:mx-12" type="text" placeholder="Type a name of an item..." title="Type a name of an item..." aria-placeholder="Type a name of an item..." />
+                <x-forms.input-text class="md:mx-6 lg:mx-12" for="search_query" placeholder_text="Type a name of an item..." title_text="Search archives" />
 
                 <label class="py-2 text-2xl text-gray-800 dark:text-gray-200">Advanced Filters</label>
 
@@ -111,9 +111,11 @@
                     }"
                         class="grid grid-cols-1 sm:col-span-2 lg:col-span-3">
                         <label class="text-gray-600 dark:text-gray-200 me-2">Filter by tags</label>
-                        <span x-on:click="clearTags"
-                            class="flex gap-2 mt-2 text-sm text-blue-500 dark:text-blue-300 hover:cursor-pointer hover:underline"
-                            title="Clear selected tags">
+                        <span
+                            x-on:click="clearTags"
+                            class="w-fit mt-2 text-sm text-blue-500 dark:text-blue-300 hover:cursor-pointer hover:underline"
+                            title="Clear selected tags"
+                        >
                                 Clear tags
                         </span>
 
@@ -134,16 +136,19 @@
                 <div class="flex justify-center gap-3">
                     <input class="px-4 py-2 text-gray-800 transition duration-300 bg-red-300 cursor-pointer dark:bg-red-600 dark:text-gray-200 hover:bg-red-500 dark:hover:bg-red-700 hover:text-gray-100 dark:hover:text-gray-200" type="reset" value="Clear Form" />
 
-                    <button type="submit" class="px-4 py-2 text-gray-800 transition duration-300 bg-green-300 cursor-pointer dark:bg-green-600 dark:text-gray-200 hover:bg-green-500 dark:hover:bg-green-700 hover:text-gray-100 dark:hover:text-gray-200">
+                    <button
+                        class="px-4 py-2 text-gray-800 transition duration-300 bg-green-300 cursor-pointer min-w-[130px] dark:bg-green-600 dark:text-gray-200 hover:bg-green-500 dark:hover:bg-green-700 hover:text-gray-100 dark:hover:text-gray-200"
+                        type="submit"
+                    >
                         <span wire:loading.flex wire:target="search_archives">
                             <x-loading-indicator
                                 :loader_color_bg="'fill-gray-200'"
                                 :loader_color_spin="'fill-gray-200'"
-                                :showText="false"
+                                :showText="true"
                                 :size="4"
+                                :text="'Searching'"
+                                :text_color="'text-white'"
                             />
-
-                            <span class="ml-2">Searching</span>
                         </span>
 
                         <span wire:loading.remove wire:target="search_archives">Search</span>

@@ -6,6 +6,7 @@ use App\Mail\SendEmailToMe;
 use App\Models\ContactMe;
 use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
+use Masmerise\Toaster\Toaster;
 
 class CreateContactMe extends Component
 {
@@ -44,7 +45,7 @@ class CreateContactMe extends Component
 
         $this->reset();
 
-        $this->dispatch('created-contact-me');
+        Toaster::success('Your message has been sent. Thank you!');
     }
 
     public function render()

@@ -25,6 +25,8 @@
 
                 <a wire:navigate class="text-gray-900 transition duration-100 dark:text-gray-100 hover:text-blue-800 dark:hover:text-blue-200 hover:scale-105" href="{{ route('archives') }}">Archives</a>
 
+                <a wire:navigate class="text-gray-900 transition duration-100 dark:text-gray-100 hover:text-blue-800 dark:hover:text-blue-200 hover:scale-105" href="{{ route('blog.index') }}">Blog</a>
+
                 <x-button-contact-me />
             </div>
 
@@ -58,8 +60,12 @@
             </x-slot>
         </x-dark-mode-toggle>
 
-        <div class="pt-2 pb-3 sm:hidden">
+        <div class="pb-2 sm:hidden">
             <x-responsive-nav-link :active="request()->routeIs('archives')" wire:navigate href="{{ route('archives') }}" aria-label="Archives link">Archives</x-responsive-nav-link>
+        </div>
+
+        <div class="pb-2 sm:hidden">
+            <x-responsive-nav-link :active="request()->routeIs('blog.index')" wire:navigate href="{{ route('blog.index') }}" aria-label="Blog link">Blog</x-responsive-nav-link>
         </div>
 
         <div class="pt-2 pb-3 ps-3 pe-4 sm:hidden">

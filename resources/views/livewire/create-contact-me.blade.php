@@ -6,7 +6,7 @@
     <div class="relative bg-white dark:bg-gray-800">
         <div class="lg:absolute lg:inset-0 lg:left-1/2">
             {{-- TODO: TO REPLACE IMAGE WITH AN IMAGE OF ME PROBABLY IN FRONT OF A COMPUTER? --}}
-            <img class="object-cover h-64 w-full bg-gray-50 sm:h-80 lg:absolute lg:h-full" src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-x=.4&w=2560&h=3413&&q=80" alt="Contact Me background image" title="Contact Me background image" />
+            <img class="object-cover h-64 w-full bg-gray-50 sm:h-80 lg:absolute lg:h-full" src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-x=.4&w=2560&h=3413&&q=80" alt="Contact Me background image" title="Contact Me background image" loading="lazy" />
         </div>
 
         <div class="pt-16 pb-24 sm:pb-32 sm:pt-24 lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:pt-32">
@@ -18,17 +18,13 @@
 
                     <p class="mt-6 text-gray-600 dark:text-gray-400">All fields marked with <x-red-asterisk /> are required.</p>
 
-                    <x-action-message on="created-contact-me" type="success" class="mt-6">
-                        Your message has been sent. Thank you!
-                    </x-action-message>
-
                     <form wire:submit.prevent="create_contact_me" class="mt-12">
                         <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                             <div>
                                 <x-forms.input-label is_required="true" value="First name" for="first_name" />
 
                                 <div class="mt-3">
-                                    <x-forms.input-text for="first_name" placeholder_text="Juan" />
+                                    <x-forms.input-text class="w-full" for="first_name" placeholder_text="Juan" />
                                 </div>
 
                                 <x-forms.input-error class="mt-2" for="first_name" />
@@ -38,7 +34,7 @@
                                 <x-forms.input-label is_required="true" value="Last name" for="last_name" />
 
                                 <div class="mt-3">
-                                    <x-forms.input-text for="last_name" placeholder_text="Santos" />
+                                    <x-forms.input-text class="w-full" for="last_name" placeholder_text="Santos" />
                                 </div>
 
                                 <x-forms.input-error class="mt-2" for="last_name" />
@@ -48,7 +44,7 @@
                                 <x-forms.input-label is_required="true" value="Email" for="email" />
 
                                 <div class="mt-3">
-                                    <x-forms.input-text for="email" placeholder_text="username@domain.com" />
+                                    <x-forms.input-text class="w-full" for="email" placeholder_text="username@domain.com" />
                                 </div>
 
                                 <x-forms.input-error class="mt-2" for="email" />
@@ -58,7 +54,7 @@
                                 <x-forms.input-label value="Company" for="company" />
 
                                 <div class="mt-3">
-                                    <x-forms.input-text for="company" />
+                                    <x-forms.input-text class="w-full" for="company" />
                                 </div>
 
                                 <x-forms.input-error class="mt-2" for="company" />
@@ -72,7 +68,14 @@
                                 </div>
 
                                 <div class="mt-3">
-                                    <textarea wire:model="message" class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-blue-400 resize-none" placeholder="Please enter your message here" maxlength="255" rows="5" aria-describedby="message-description"></textarea>
+                                    <textarea
+                                        wire:model="message"
+                                        class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-blue-400 resize-none" placeholder="Please enter your message here"
+                                        maxlength="255"
+                                        rows="5"
+                                        aria-describedby="message-description"
+                                    >
+                                    </textarea>
                                 </div>
 
                                 <x-forms.input-error class="mt-2" for="message" />
@@ -80,16 +83,19 @@
                         </div>
 
                         <div class="flex justify-end mt-10 lg:mt-16">
-                            <button type="submit" class="rounded-md bg-green-600 dark:bg-green-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-green-500 dark:hover:bg-green-700 focus-visible:outline transition duration-300">
-                                <span wire:loading.flex wire:target="create_contact_me">
+                            <button
+                                class="rounded-md bg-green-600 dark:bg-green-500 min-w-[130px] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-green-500 dark:hover:bg-green-700 focus-visible:outline transition duration-300"
+                                type="submit"
+                            >
+                                <span wire:loading.flex wire:target="create_contact_me" class="justify-self-center">
                                     <x-loading-indicator
                                         :loader_color_bg="'fill-gray-200'"
                                         :loader_color_spin="'fill-gray-200'"
-                                        :showText="false"
+                                        :showText="true"
                                         :size="4"
+                                        :text="'Sending'"
+                                        :text_color="'text-white'"
                                     />
-
-                                    <span class="ml-2">Sending</span>
                                 </span>
 
                                 <span wire:loading.remove wire:target="create_contact_me">Send message</span>

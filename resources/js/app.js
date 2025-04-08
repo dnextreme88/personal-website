@@ -1,4 +1,5 @@
 import './bootstrap';
+import '../../vendor/masmerise/livewire-toaster/resources/js';
 
 window.darkModeSwitcher = function() {
     return {
