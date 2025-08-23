@@ -303,6 +303,7 @@ class SoldItemSeeder extends Seeder
             ['method' => PaymentMethods::DROPPING_AREA_CASHOUT, 'remittance_location' => DroppingAreas::MABINI_SHOPPING_CENTER_ROOM_209->value],
             ['method' => PaymentMethods::DROPPING_AREA_CASHOUT, 'remittance_location' => DroppingAreas::MABINI_SHOPPING_CENTER_ROOM_209->value],
             ['method' => PaymentMethods::DROPPING_AREA_CASHOUT, 'remittance_location' => DroppingAreas::MABINI_SHOPPING_CENTER_ROOM_209->value],
+            ['method' => PaymentMethods::DROPPING_AREA_CASHOUT, 'remittance_location' => DroppingAreas::MABINI_SHOPPING_CENTER_ROOM_209->value],
         ]);
 
         SellMethod::insert([
@@ -582,6 +583,7 @@ class SoldItemSeeder extends Seeder
             ['method' => SellMethods::DROPPING->value, 'location' => DroppingAreas::MABINI_SHOPPING_CENTER_ROOM_209->value],
             ['method' => SellMethods::DROPPING->value, 'location' => DroppingAreas::MABINI_SHOPPING_CENTER_ROOM_209->value],
             ['method' => SellMethods::MEETUP->value, 'location' => 'Skyworld'],
+            ['method' => SellMethods::DROPPING->value, 'location' => DroppingAreas::MABINI_SHOPPING_CENTER_ROOM_209->value],
             ['method' => SellMethods::DROPPING->value, 'location' => DroppingAreas::MABINI_SHOPPING_CENTER_ROOM_209->value],
             ['method' => SellMethods::DROPPING->value, 'location' => DroppingAreas::MABINI_SHOPPING_CENTER_ROOM_209->value],
             ['method' => SellMethods::DROPPING->value, 'location' => DroppingAreas::MABINI_SHOPPING_CENTER_ROOM_209->value],
@@ -5083,6 +5085,22 @@ class SoldItemSeeder extends Seeder
                 'tags' => 'australia,sold to friend',
                 'notes' => 'Sold to Abee.',
                 'image_location' => 'sold-items/2025/rubi1-1.jpg',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'pay_method_id' => 282,
+                'sell_method_id' => 282,
+                'brand' => 'Hello Kitty',
+                'name' => null,
+                'type' => 'Alarm Clock',
+                'price' => 350,
+                'condition' => 'new',
+                'size' => 'N/A',
+                'date_sold' => '2025-08-01',
+                'tags' => 'australia',
+                'notes' => 'Abee helped post the item. Buyer picked up on 8/1. Received payment on 8/16.',
+                'image_location' => 'sold-items/2025/hello-kitty1-1.jpg',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
