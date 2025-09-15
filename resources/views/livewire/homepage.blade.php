@@ -3,11 +3,171 @@
         <x-navigation-menu />
     </x-slot>
 
-    <section class="h-screen px-6 bg-gradient-to-r from-white to-blue-300 pt-36 pb-80 dark:from-slate-400 dark:bg-gradient-to-br dark:to-blue-600 sm:py-32 lg:px-8">
+    <section class="h-[125vh] px-6 bg-gradient-to-r from-white to-blue-300 pt-36 pb-80 dark:from-slate-400 dark:bg-gradient-to-br dark:to-blue-600 sm:py-32 lg:px-8">
         <div class="max-w-2xl mx-auto text-center">
             <h2 class="text-5xl font-semibold tracking-tight text-gray-800 dark:text-gray-100 sm:text-7xl" aria-label="Welcome header">Welcome!</h2>
 
+            {{--
             <p class="mt-8 text-lg font-medium text-gray-600 text-pretty dark:text-gray-100 sm:text-xl/8" aria-label="Welcome description">My name is Jeanne Kevin T. Decena and welcome to my personal website! Here you can find all the goodies I've been doing in my life - from my blog and to my portfolio. Feel free to look around! If you need some web development professional, look no further and contact me right away!</p>
+            --}}
+        </div>
+    </section>
+
+    <section class="bg-gray-200 dark:bg-gray-800">
+        <div class="isolate">
+            <!-- Hero section -->
+            <div class="relative isolate -z-10">
+                <svg aria-hidden="true" class="absolute inset-x-0 top-0 -z-10 h-256 w-full mask-[radial-gradient(28rem_36rem_at_center,white,transparent)] stroke-gray-200 dark:stroke-white/10">
+                    <defs>
+                        <pattern id="1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84" width="200" height="200" x="50%" y="-1" patternUnits="userSpaceOnUse">
+                            <path d="M.5 200V.5H200" fill="none" />
+                        </pattern>
+                    </defs>
+
+                    <svg x="50%" y="-1" class="overflow-visible fill-gray-300 dark:fill-gray-700">
+                        <path d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z" stroke-width="0" />
+                    </svg>
+
+                    <rect width="100%" height="100%" fill="url(#1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84)" stroke-width="0" />
+                </svg>
+
+                <div aria-hidden="true" class="absolute top-0 right-0 left-1/2 -z-10 -ml-24 transform-gpu overflow-hidden blur-2xl lg:ml-24 xl:ml-48">
+                    <div style="clip-path: polygon(63.1% 29.5%, 100% 17.1%, 76.6% 3%, 48.4% 0%, 44.6% 4.7%, 54.5% 25.3%, 59.8% 49%, 55.2% 57.8%, 44.4% 57.2%, 27.8% 47.9%, 35.1% 81.5%, 0% 97.7%, 39.2% 100%, 35.2% 81.4%, 97.2% 52.8%, 63.1% 29.5%)" class="aspect-801/1036 w-200.25 bg-linear-to-tr from-purple-400 to-blue-300 opacity-30"></div>
+                </div>
+
+                <div class="mx-auto max-w-7xl px-6 pt-36 pb-32 sm:pt-60 lg:px-8 lg:pt-32">
+                    <div class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
+                        <div class="relative w-full lg:max-w-lg lg:shrink-0 xl:max-w-xl">
+                            <h1 class="text-5xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-7xl dark:text-white transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100">Web Developer.</h1>
+                            <p class="mt-8 mb-6 text-lg font-medium text-pretty text-gray-500 sm:max-w-lg sm:text-xl/8 lg:max-w-none dark:text-gray-400 transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-[500ms]">My name is Jeanne Kevin T. Decena and welcome to my personal website! Here you can find all the goodies I've been doing in my life - from my blog and to my portfolio. Feel free to look around! If you need some web development professional, look no further and contact me right away!</p>
+                        </div>
+
+                        {{-- TODO: TO FIX RESPONSIVE DESIGN ON 1024px AND UP --}}
+                        <div class="mt-14 flex justify-end gap-8 sm:flex-row sm:-mt-10 sm:justify-start sm:pl-2 md:pl-16 lg:mt-0 lg:pl-0">
+                            <div class="mx-auto sm:ml-auto w-44 flex-none space-y-8 pt-32 sm:pt-80 lg:order-last lg:pt-66 xl:order-0">
+                                <div class="relative">
+                                    <img src="{{ asset('/images/homepage-1.webp') }}" class="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5 hover:scale-110 -translate-x-[8rem] opacity-0 intersect-once intersect:translate-x-0 intersect:opacity-100" style="transition: scale 0.25s, translate 2s, opacity 3s 200ms;" />
+                                    <div class="absolute inset-0"></div>
+                                </div>
+                            </div>
+
+                            <div class="mx-auto sm:mr-auto w-44 flex-none space-y-8 sm:pt-52 lg:pt-16">
+                                <div class="relative">
+                                    <img src="{{ asset('/images/homepage-2.webp') }}" class="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5 hover:scale-110 -translate-x-[8rem] opacity-0 intersect-once intersect:translate-x-0 intersect:opacity-100" style="transition: scale 0.25s, translate 2s, opacity 3s 400ms;" />
+                                    <div class="absolute inset-0"></div>
+                                </div>
+                                <div class="relative">
+                                    <img src="{{ asset('/images/homepage-3.webp') }}" class="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5 hover:scale-110 -translate-x-[8rem] opacity-0 intersect-once intersect:translate-x-0 intersect:opacity-100" style="transition: scale 0.25s, translate 2s, opacity 3s 600ms;" />
+                                    <div class="absolute inset-0"></div>
+                                </div>
+                            </div>
+
+                            <div class="mx-auto w-44 flex-none space-y-8 lg:pt-36 xl:pt-0">
+                                <div class="relative">
+                                    <img src="{{ asset('/images/homepage-4.webp') }}" class="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5 hover:scale-110 -translate-x-[8rem] opacity-0 intersect-once intersect:translate-x-0 intersect:opacity-100" style="transition: scale 0.25s, translate 2s, opacity 3s 800ms;" />
+                                    <div class="absolute inset-0"></div>
+                                </div>
+                                <div class="relative">
+                                    <img src="{{ asset('/images/homepage-5.webp') }}" class="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5 hover:scale-110 -translate-x-[8rem] opacity-0 intersect-once intersect:translate-x-0 intersect:opacity-100" style="transition: scale 0.25s, translate 2s, opacity 3s 1000ms;" />
+                                    <div class="absolute inset-0"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blocky background -->
+            <div class="relative isolate -z-10 -mt-20 md:mt-30 xl:mt-40">
+                <div class="absolute inset-x-0 top-1/2 -z-10 flex -translate-y-1/2 justify-center overflow-hidden mask-[radial-gradient(75%_60%_at_50%_60%,white,transparent)] mt-30 sm:mt-0">
+                    <svg aria-hidden="true" class="h-160 w-7xl flex-none stroke-gray-200 dark:stroke-white/10">
+                        <defs>
+                            <pattern id="e9033f3e-f665-41a6-84ef-756f6778e6fe" width="200" height="200" x="50%" y="25%" patternUnits="userSpaceOnUse" patternTransform="translate(-100 0)">
+                                <path d="M.5 200V.5H200" fill="none" />
+                            </pattern>
+                        </defs>
+
+                        <svg x="50%" y="25%" class="overflow-visible fill-gray-300 dark:fill-gray-700">
+                            <path d="M-300 0h201v201h-201Z M300 200h201v201h-201Z" stroke-width="0" />
+                        </svg>
+
+                        <rect width="100%" height="100%" fill="url(#e9033f3e-f665-41a6-84ef-756f6778e6fe)" stroke-width="0" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Latest posts from blog section -->
+            <div class="mx-auto max-w-7xl pb-16 pt-32 px-6 sm:mt-40 lg:px-8">
+                <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
+                    <h2 class="text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl dark:text-white transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100">From the Blog...</h2>
+                    <p class="mt-2 text-lg/8 text-gray-600 dark:text-gray-400 transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-[500ms]">Latest updates from me!</p>
+                </div>
+                <div class="mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+                    {{-- TODO: MAKE THIS DYNAMIC BY FETCHING THE LAST 3 LATEST POSTS FROM THE BLOG --}}
+                    <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pt-80 pb-8 sm:pt-48 lg:pt-80 lg:px-4 dark:bg-gray-800 hover:scale-110 translate-y-[8rem] opacity-0 intersect-once intersect:translate-y-0 intersect:opacity-100" style="transition: scale 0.25s, translate 2s, opacity 3s 200ms;">
+                        <img src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80" class="absolute inset-0 -z-10 size-full object-cover" />
+                        <div class="absolute inset-0 -z-10 bg-linear-to-t from-gray-900 via-gray-900/40 dark:from-black/80 dark:via-black/40"></div>
+                        <div class="absolute inset-0 -z-10 rounded-2xl inset-ring inset-ring-gray-900/10 dark:inset-ring-white/10"></div>
+
+                        <div class="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm/6 text-gray-300">
+                            <time datetime="2020-03-16" class="mr-8">Mar 16, 2020</time>
+                            <div class="-ml-4 flex items-center gap-x-3">
+                                <svg viewBox="0 0 2 2" class="-ml-0.5 size-0.5 flex-none fill-white/50 dark:fill-gray-300/50">
+                                    <circle r="1" cx="1" cy="1" />
+                                </svg>
+
+                                <div class="flex gap-x-2.5">Category 3</div>
+                            </div>
+                        </div>
+
+                        <h3 class="mt-3 text-lg/6 font-semibold text-white">
+                            <a href="#">Post title 3</a>
+                        </h3>
+                    </article>
+
+                    <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pt-80 pb-8 sm:pt-48 lg:pt-80 lg:px-4 dark:bg-gray-800 hover:scale-110 translate-y-[8rem] opacity-0 intersect-once intersect:translate-y-0 intersect:opacity-100" style="transition: scale 0.25s, translate 2s, opacity 3s 400ms;">
+                        <img src="https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3270&q=80" class="absolute inset-0 -z-10 size-full object-cover" />
+                        <div class="absolute inset-0 -z-10 bg-linear-to-t from-gray-900 via-gray-900/40 dark:from-black/80 dark:via-black/40"></div>
+                        <div class="absolute inset-0 -z-10 rounded-2xl inset-ring inset-ring-gray-900/10 dark:inset-ring-white/10"></div>
+
+                        <div class="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm/6 text-gray-300">
+                            <time datetime="2020-03-10" class="mr-8">Mar 10, 2020</time>
+                            <div class="-ml-4 flex items-center gap-x-3">
+                                <svg viewBox="0 0 2 2" class="-ml-0.5 size-0.5 flex-none fill-white/50 dark:fill-gray-300/50">
+                                    <circle r="1" cx="1" cy="1" />
+                                </svg>
+
+                                <div class="flex gap-x-2.5">Category 2</div>
+                            </div>
+                        </div>
+
+                        <h3 class="mt-3 text-lg/6 font-semibold text-white">
+                            <a href="#">Post title 2</a>
+                        </h3>
+                    </article>
+
+                    <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pt-80 pb-8 sm:pt-48 lg:pt-80 lg:px-4 dark:bg-gray-800 hover:scale-110 translate-y-[8rem] opacity-0 intersect-once intersect:translate-y-0 intersect:opacity-100" style="transition: scale 0.25s, translate 2s, opacity 3s 600ms;">
+                        <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3270&q=80" class="absolute inset-0 -z-10 size-full object-cover" />
+                        <div class="absolute inset-0 -z-10 bg-linear-to-t from-gray-900 via-gray-900/40 dark:from-black/80 dark:via-black/40"></div>
+                        <div class="absolute inset-0 -z-10 rounded-2xl inset-ring inset-ring-gray-900/10 dark:inset-ring-white/10"></div>
+
+                        <div class="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm/6 text-gray-300">
+                            <time datetime="2020-02-12" class="mr-8">Feb 12, 2020</time>
+                            <div class="-ml-4 flex items-center gap-x-3">
+                                <svg viewBox="0 0 2 2" class="-ml-0.5 size-0.5 flex-none fill-white/50 dark:fill-gray-300/50">
+                                    <circle r="1" cx="1" cy="1" />
+                                </svg>
+
+                                <div class="flex gap-x-2.5">Category 1</div>
+                            </div>
+                        </div>
+
+                        <h3 class="mt-3 text-lg/6 font-semibold text-white">
+                            <a href="#">Post title 1</a>
+                        </h3>
+                    </article>
+                </div>
+            </div>
         </div>
     </section>
 
