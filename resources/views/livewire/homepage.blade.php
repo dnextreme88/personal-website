@@ -10,4 +10,8 @@
             <p class="mt-8 text-lg font-medium text-gray-600 text-pretty dark:text-gray-100 sm:text-xl/8" aria-label="Welcome description">My name is Jeanne Kevin T. Decena and welcome to my personal website! Here you can find all the goodies I've been doing in my life - from my blog and to my portfolio. Feel free to look around! If you need some web development professional, look no further and contact me right away!</p>
         </div>
     </section>
+
+    <x-slot name="footer">
+        <x-social-links-and-copyright />
+    </x-slot>
 </div>
