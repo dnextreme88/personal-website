@@ -5406,7 +5406,7 @@ class SoldItemSeeder extends Seeder
                 'size' => 'N/A',
                 'date_sold' => '2025-08-29',
                 'tags' => 'marketplace haul',
-                'notes' => 'Buyer picked up on 9/?. Received payment on 9/?.', // TODO: Buyer did not claimed yet. Must follow-up
+                'notes' => 'Buyer picked up on 10/4. Received payment on 10/4.',
                 'image_location' => 'sold-items/2025/bandai1-1.jpg',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
