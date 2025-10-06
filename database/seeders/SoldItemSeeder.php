@@ -603,6 +603,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 1,
                 'sell_method_id' => 1,
+                'transaction_id' => '2014_01',
                 'brand' => 'Ecko',
                 'name' => null,
                 'type' => 'Pants',
@@ -619,6 +620,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 2,
                 'sell_method_id' => 2,
+                'transaction_id' => '2014_02',
                 'brand' => 'Quiksilver',
                 'name' => null,
                 'type' => 'Pants',
@@ -635,6 +637,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 3,
                 'sell_method_id' => 3,
+                'transaction_id' => '2015_01',
                 'brand' => 'Mossimo',
                 'name' => null,
                 'type' => 'Shirt',
@@ -651,6 +654,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 4,
                 'sell_method_id' => 4,
+                'transaction_id' => '2015_01',
                 'brand' => 'Dolce and Gabbana',
                 'name' => null,
                 'type' => 'Shirt',
@@ -667,6 +671,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 5,
                 'sell_method_id' => 5,
+                'transaction_id' => '2015_02',
                 'brand' => 'Purefoods',
                 'name' => null,
                 'type' => 'Freebies',
@@ -683,6 +688,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 6,
                 'sell_method_id' => 6,
+                'transaction_id' => '2015_03',
                 'brand' => 'Ecko',
                 'name' => null,
                 'type' => 'Polo',
@@ -699,6 +705,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 7,
                 'sell_method_id' => 7,
+                'transaction_id' => '2015_04',
                 'brand' => 'Ecko',
                 'name' => null,
                 'type' => 'Shirt',
@@ -715,6 +722,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 8,
                 'sell_method_id' => 8,
+                'transaction_id' => '2015_05',
                 'brand' => 'Phat Farm',
                 'name' => null,
                 'type' => 'Pants',
@@ -731,6 +739,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 9,
                 'sell_method_id' => 9,
+                'transaction_id' => '2015_06',
                 'brand' => 'Phat Farm',
                 'name' => null,
                 'type' => 'Polo',
@@ -747,6 +756,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 10,
                 'sell_method_id' => 10,
+                'transaction_id' => '2015_07',
                 'brand' => 'Panasonic',
                 'name' => 'RP-HS9 Stereo',
                 'type' => 'Earphones',
@@ -763,6 +773,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 11,
                 'sell_method_id' => 11,
+                'transaction_id' => '2015_08',
                 'brand' => 'Ecko',
                 'name' => null,
                 'type' => 'Hoodies',
@@ -779,6 +790,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 12,
                 'sell_method_id' => 12,
+                'transaction_id' => '2015_08',
                 'brand' => 'Tribal',
                 'name' => null,
                 'type' => 'Shirt',
@@ -795,6 +807,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 13,
                 'sell_method_id' => 13,
+                'transaction_id' => '2015_08',
                 'brand' => 'RRJ',
                 'name' => null,
                 'type' => 'Shirt',
@@ -811,6 +824,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 14,
                 'sell_method_id' => 14,
+                'transaction_id' => '2015_08',
                 'brand' => 'Pelle Pelle',
                 'name' => null,
                 'type' => 'Shirt',
@@ -827,6 +841,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 15,
                 'sell_method_id' => 15,
+                'transaction_id' => '2015_09',
                 'brand' => 'Uniqlo',
                 'name' => null,
                 'type' => 'Polo',
@@ -843,6 +858,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 16,
                 'sell_method_id' => 16,
+                'transaction_id' => '2015_09',
                 'brand' => 'FUBU',
                 'name' => null,
                 'type' => 'Sweatshirt',
@@ -859,6 +875,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 17,
                 'sell_method_id' => 17,
+                'transaction_id' => '2015_09',
                 'brand' => 'Giordano',
                 'name' => null,
                 'type' => 'Polo',
@@ -875,6 +892,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 18,
                 'sell_method_id' => 18,
+                'transaction_id' => '2015_10',
                 'brand' => 'Dragonplus',
                 'name' => 'PSP Analog Stick Armor Kit',
                 'type' => 'Accessories',
@@ -891,6 +909,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 19,
                 'sell_method_id' => 19,
+                'transaction_id' => '2016_01',
                 'brand' => 'College Algebra',
                 'name' => '4th Edition',
                 'type' => 'Book',
@@ -907,6 +926,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 20,
                 'sell_method_id' => 20,
+                'transaction_id' => '2016_02',
                 'brand' => 'Lee',
                 'name' => null,
                 'type' => 'Sweatshirt',
@@ -923,6 +943,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 21,
                 'sell_method_id' => 21,
+                'transaction_id' => '2016_02',
                 'brand' => 'Uniqlo',
                 'name' => null,
                 'type' => 'Shirt',
@@ -939,6 +960,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 22,
                 'sell_method_id' => 22,
+                'transaction_id' => '2016_02',
                 'brand' => 'Phat Farm',
                 'name' => null,
                 'type' => 'Shirt',
@@ -955,6 +977,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 23,
                 'sell_method_id' => 23,
+                'transaction_id' => '2016_03',
                 'brand' => 'FUBU',
                 'name' => null,
                 'type' => 'Hoodies',
@@ -971,6 +994,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 24,
                 'sell_method_id' => 24,
+                'transaction_id' => '2016_04',
                 'brand' => 'Plane and Spherical Trigonometry',
                 'name' => null,
                 'type' => 'Book',
@@ -987,6 +1011,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 25,
                 'sell_method_id' => 25,
+                'transaction_id' => '2016_05',
                 'brand' => 'FIFA',
                 'name' => '2002 World Cup',
                 'type' => 'Emblems',
@@ -1003,6 +1028,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 26,
                 'sell_method_id' => 26,
+                'transaction_id' => '2016_06',
                 'brand' => 'Nautica Jeans',
                 'name' => null,
                 'type' => 'Polo',
@@ -1019,6 +1045,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 27,
                 'sell_method_id' => 27,
+                'transaction_id' => '2016_07',
                 'brand' => 'Marks and Spencer',
                 'name' => null,
                 'type' => 'Polo',
@@ -1035,6 +1062,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 28,
                 'sell_method_id' => 28,
+                'transaction_id' => '2016_08',
                 'brand' => 'FUBU',
                 'name' => null,
                 'type' => 'Jacket',
@@ -1051,6 +1079,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 29,
                 'sell_method_id' => 29,
+                'transaction_id' => '2016_09',
                 'brand' => 'Phat Farm',
                 'name' => null,
                 'type' => 'Pants',
@@ -1067,6 +1096,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 30,
                 'sell_method_id' => 30,
+                'transaction_id' => '2016_10',
                 'brand' => 'Oreo',
                 'name' => null,
                 'type' => 'Freebies',
@@ -1083,6 +1113,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 31,
                 'sell_method_id' => 31,
+                'transaction_id' => '2016_11',
                 'brand' => 'Samsung',
                 'name' => 'S5 S View Cover',
                 'type' => 'Accessories',
@@ -1099,6 +1130,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 32,
                 'sell_method_id' => 32,
+                'transaction_id' => '2016_12',
                 'brand' => 'Crooks and Castles',
                 'name' => null,
                 'type' => 'Shirt',
@@ -1115,6 +1147,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 33,
                 'sell_method_id' => 33,
+                'transaction_id' => '2017_01',
                 'brand' => 'T Bar',
                 'name' => null,
                 'type' => 'Shirt',
@@ -1131,6 +1164,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 34,
                 'sell_method_id' => 34,
+                'transaction_id' => '2017_02',
                 'brand' => 'Youth Federation for World Peace',
                 'name' => 'Philippine Flag',
                 'type' => 'Keychain',
@@ -1147,6 +1181,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 35,
                 'sell_method_id' => 35,
+                'transaction_id' => '2017_03',
                 'brand' => 'Burberry',
                 'name' => null,
                 'type' => 'Polo',
@@ -1163,6 +1198,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 36,
                 'sell_method_id' => 36,
+                'transaction_id' => '2017_04',
                 'brand' => 'Burmese',
                 'name' => 'Black Female',
                 'type' => 'Cat',
@@ -1179,6 +1215,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 37,
                 'sell_method_id' => 37,
+                'transaction_id' => '2017_04',
                 'brand' => 'Omega',
                 'name' => 'Plastic Travel Glader',
                 'type' => 'Tumbler',
@@ -1195,6 +1232,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 38,
                 'sell_method_id' => 38,
+                'transaction_id' => '2017_05',
                 'brand' => 'Tribal',
                 'name' => null,
                 'type' => 'Pants',
@@ -1211,6 +1249,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 39,
                 'sell_method_id' => 39,
+                'transaction_id' => '2017_06',
                 'brand' => 'Lacoste',
                 'name' => null,
                 'type' => 'Polo',
@@ -1227,6 +1266,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 40,
                 'sell_method_id' => 40,
+                'transaction_id' => '2017_07',
                 'brand' => 'Delkin',
                 'name' => 'HS-300 Leather',
                 'type' => 'Headset',
@@ -1243,6 +1283,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 41,
                 'sell_method_id' => 41,
+                'transaction_id' => '2017_08',
                 'brand' => 'Ecko',
                 'name' => null,
                 'type' => 'Shirt',
@@ -1259,6 +1300,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 42,
                 'sell_method_id' => 42,
+                'transaction_id' => '2017_09',
                 'brand' => 'Lacoste',
                 'name' => null,
                 'type' => 'Sweatshirt',
@@ -1275,6 +1317,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 43,
                 'sell_method_id' => 43,
+                'transaction_id' => '2017_10',
                 'brand' => 'G-Star',
                 'name' => null,
                 'type' => 'Bomber Jacket',
@@ -1291,6 +1334,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 44,
                 'sell_method_id' => 44,
+                'transaction_id' => '2017_11',
                 'brand' => 'Phat Farm',
                 'name' => null,
                 'type' => 'Hoodies',
@@ -1307,6 +1351,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 45,
                 'sell_method_id' => 45,
+                'transaction_id' => '2017_12',
                 'brand' => 'Wrangler',
                 'name' => null,
                 'type' => 'Pants',
@@ -1323,6 +1368,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 46,
                 'sell_method_id' => 46,
+                'transaction_id' => '2017_13',
                 'brand' => 'Rotring',
                 'name' => null,
                 'type' => 'Drawing Tube',
@@ -1339,6 +1385,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 47,
                 'sell_method_id' => 47,
+                'transaction_id' => '2017_14',
                 'brand' => 'Adidas',
                 'name' => null,
                 'type' => 'Hoodies',
@@ -1355,6 +1402,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 48,
                 'sell_method_id' => 48,
+                'transaction_id' => '2017_15',
                 'brand' => 'Soft Blue',
                 'name' => null,
                 'type' => 'Polo',
@@ -1371,6 +1419,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 49,
                 'sell_method_id' => 49,
+                'transaction_id' => '2017_16',
                 'brand' => 'Adidas',
                 'name' => 'Drawstring',
                 'type' => 'Bag',
@@ -1387,6 +1436,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 50,
                 'sell_method_id' => 50,
+                'transaction_id' => '2017_17',
                 'brand' => 'Nintendo',
                 'name' => 'DS Lite',
                 'type' => 'Handheld',
@@ -1403,6 +1453,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 51,
                 'sell_method_id' => 51,
+                'transaction_id' => '2017_18',
                 'brand' => 'Calvin Klein',
                 'name' => 'Euphoria',
                 'type' => 'Perfume',
@@ -1419,6 +1470,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 52,
                 'sell_method_id' => 52,
+                'transaction_id' => '2017_19',
                 'brand' => 'Fujifilm',
                 'name' => 'Instax Mini 7',
                 'type' => 'Camera',
@@ -1435,6 +1487,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 53,
                 'sell_method_id' => 53,
+                'transaction_id' => '2017_20',
                 'brand' => 'Adidas',
                 'name' => 'Predito',
                 'type' => 'Shoes',
@@ -1451,6 +1504,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 54,
                 'sell_method_id' => 54,
+                'transaction_id' => '2017_21',
                 'brand' => 'South Pole',
                 'name' => null,
                 'type' => 'Hoodies',
@@ -1467,6 +1521,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 55,
                 'sell_method_id' => 55,
+                'transaction_id' => '2017_22',
                 'brand' => 'David Beckham',
                 'name' => 'The Essence',
                 'type' => 'Perfume',
@@ -1483,6 +1538,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 56,
                 'sell_method_id' => 56,
+                'transaction_id' => '2018_01',
                 'brand' => 'K-Zone',
                 'name' => 'May 2008 Issue',
                 'type' => 'Magazine',
@@ -1499,6 +1555,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 57,
                 'sell_method_id' => 57,
+                'transaction_id' => '2018_02',
                 'brand' => 'Nike',
                 'name' => null,
                 'type' => 'Shorts',
@@ -1515,6 +1572,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 58,
                 'sell_method_id' => 58,
+                'transaction_id' => '2018_03',
                 'brand' => 'Lee',
                 'name' => null,
                 'type' => 'Shorts',
@@ -1531,6 +1589,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 59,
                 'sell_method_id' => 59,
+                'transaction_id' => '2018_04',
                 'brand' => 'Ecko',
                 'name' => null,
                 'type' => 'Windbreaker',
@@ -1547,6 +1606,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 60,
                 'sell_method_id' => 60,
+                'transaction_id' => '2018_05',
                 'brand' => 'RMC',
                 'name' => null,
                 'type' => 'Pants',
@@ -1563,6 +1623,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 61,
                 'sell_method_id' => 61,
+                'transaction_id' => '2018_06',
                 'brand' => 'Corsair',
                 'name' => 'CMX512 2GB DDR2 400MHz',
                 'type' => 'RAM',
@@ -1579,6 +1640,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 62,
                 'sell_method_id' => 62,
+                'transaction_id' => '2018_07',
                 'brand' => 'A Wrinkle in Time',
                 'name' => null,
                 'type' => 'Book',
@@ -1595,6 +1657,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 63,
                 'sell_method_id' => 63,
+                'transaction_id' => '2018_08',
                 'brand' => 'Alstyle',
                 'name' => null,
                 'type' => 'Shirt',
@@ -1611,6 +1674,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 64,
                 'sell_method_id' => 64,
+                'transaction_id' => '2018_08',
                 'brand' => 'Ergophobia',
                 'name' => null,
                 'type' => 'Pants',
@@ -1627,6 +1691,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 65,
                 'sell_method_id' => 65,
+                'transaction_id' => '2018_09',
                 'brand' => 'Adidas',
                 'name' => null,
                 'type' => 'Hoodies',
@@ -1643,6 +1708,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 66,
                 'sell_method_id' => 66,
+                'transaction_id' => '2018_10',
                 'brand' => 'Universal Studios',
                 'name' => null,
                 'type' => 'Cap',
@@ -1659,6 +1725,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 67,
                 'sell_method_id' => 67,
+                'transaction_id' => '2018_11',
                 'brand' => 'Purefoods',
                 'name' => 'Pokemon Kyogre Drawstring',
                 'type' => 'Bag',
@@ -1675,6 +1742,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 68,
                 'sell_method_id' => 68,
+                'transaction_id' => '2018_12',
                 'brand' => 'Le Froge',
                 'name' => null,
                 'type' => 'Shirt',
@@ -1691,6 +1759,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 69,
                 'sell_method_id' => 69,
+                'transaction_id' => '2018_13',
                 'brand' => 'Converse',
                 'name' => null,
                 'type' => 'Shirt',
@@ -1707,6 +1776,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 70,
                 'sell_method_id' => 70,
+                'transaction_id' => '2018_14',
                 'brand' => 'Tribal',
                 'name' => null,
                 'type' => 'Pants',
@@ -1723,6 +1793,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 71,
                 'sell_method_id' => 71,
+                'transaction_id' => '2018_15',
                 'brand' => 'Ralph Lauren',
                 'name' => null,
                 'type' => 'Sweater',
@@ -1739,6 +1810,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 72,
                 'sell_method_id' => 72,
+                'transaction_id' => '2018_15',
                 'brand' => 'Adidas',
                 'name' => null,
                 'type' => 'Shirt',
@@ -1755,6 +1827,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 73,
                 'sell_method_id' => 73,
+                'transaction_id' => '2018_15',
                 'brand' => 'Mossimo',
                 'name' => null,
                 'type' => 'Shirt',
@@ -1771,6 +1844,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 74,
                 'sell_method_id' => 74,
+                'transaction_id' => '2019_01',
                 'brand' => 'A Tale of Two Cities',
                 'name' => null,
                 'type' => 'Book',
@@ -1787,6 +1861,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 75,
                 'sell_method_id' => 75,
+                'transaction_id' => '2019_02',
                 'brand' => 'Tapout',
                 'name' => null,
                 'type' => 'Shirt',
@@ -1803,6 +1878,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 76,
                 'sell_method_id' => 76,
+                'transaction_id' => '2019_03',
                 'brand' => 'Ecko',
                 'name' => null,
                 'type' => 'Hoodies',
@@ -1819,6 +1895,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 77,
                 'sell_method_id' => 77,
+                'transaction_id' => '2019_04',
                 'brand' => 'Samsung',
                 'name' => 'S5',
                 'type' => 'Phone',
@@ -1835,6 +1912,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 78,
                 'sell_method_id' => 78,
+                'transaction_id' => '2019_05',
                 'brand' => 'Ecko',
                 'name' => null,
                 'type' => 'Hoodies',
@@ -1851,6 +1929,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 79,
                 'sell_method_id' => 79,
+                'transaction_id' => '2019_06',
                 'brand' => 'Ecko',
                 'name' => null,
                 'type' => 'Shirt',
@@ -1867,6 +1946,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 80,
                 'sell_method_id' => 80,
+                'transaction_id' => '2019_07',
                 'brand' => 'ZOTAC',
                 'name' => 'GeForce GTX 750',
                 'type' => 'Video Card',
@@ -1883,6 +1963,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 81,
                 'sell_method_id' => 81,
+                'transaction_id' => '2019_08',
                 'brand' => 'Dockers',
                 'name' => null,
                 'type' => 'Shorts',
@@ -1899,6 +1980,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 82,
                 'sell_method_id' => 82,
+                'transaction_id' => '2019_09',
                 'brand' => 'Weatherproof',
                 'name' => null,
                 'type' => 'Jacket',
@@ -1915,6 +1997,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 83,
                 'sell_method_id' => 83,
+                'transaction_id' => '2019_10',
                 'brand' => 'Tapout',
                 'name' => null,
                 'type' => 'Shirt',
@@ -1931,6 +2014,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 84,
                 'sell_method_id' => 84,
+                'transaction_id' => '2019_11',
                 'brand' => 'The North Face',
                 'name' => null,
                 'type' => 'Bomber Jacket',
@@ -1947,6 +2031,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 85,
                 'sell_method_id' => 85,
+                'transaction_id' => '2019_12',
                 'brand' => 'Umbro',
                 'name' => null,
                 'type' => 'Jogging Pants',
@@ -1963,6 +2048,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 86,
                 'sell_method_id' => 86,
+                'transaction_id' => '2019_13',
                 'brand' => 'Folded and Hung',
                 'name' => null,
                 'type' => 'Pants',
@@ -1979,6 +2065,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 87,
                 'sell_method_id' => 87,
+                'transaction_id' => '2019_14',
                 'brand' => 'HyperX',
                 'name' => 'Cloud Alpha',
                 'type' => 'Headset',
@@ -1995,6 +2082,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 88,
                 'sell_method_id' => 88,
+                'transaction_id' => '2019_15',
                 'brand' => 'FUBU',
                 'name' => null,
                 'type' => 'Pants',
@@ -2011,6 +2099,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 89,
                 'sell_method_id' => 89,
+                'transaction_id' => '2019_16',
                 'brand' => 'Jerzees',
                 'name' => null,
                 'type' => 'Hoodies',
@@ -2027,6 +2116,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 90,
                 'sell_method_id' => 90,
+                'transaction_id' => '2019_17',
                 'brand' => 'PGA Tours',
                 'name' => null,
                 'type' => 'Polo',
@@ -2043,6 +2133,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 91,
                 'sell_method_id' => 91,
+                'transaction_id' => '2019_18',
                 'brand' => 'Pujiqing',
                 'name' => null,
                 'type' => 'Bomber Jacket',
@@ -2059,6 +2150,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 92,
                 'sell_method_id' => 92,
+                'transaction_id' => '2019_19',
                 'brand' => 'Jag',
                 'name' => null,
                 'type' => 'Shirt',
@@ -2075,6 +2167,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 93,
                 'sell_method_id' => 93,
+                'transaction_id' => '2019_20',
                 'brand' => 'Intex',
                 'name' => 'Supernova Mid-Gaming',
                 'type' => 'CPU',
@@ -2091,6 +2184,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 94,
                 'sell_method_id' => 94,
+                'transaction_id' => '2019_21',
                 'brand' => 'FUBU',
                 'name' => null,
                 'type' => 'Shirt',
@@ -2107,6 +2201,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 95,
                 'sell_method_id' => 95,
+                'transaction_id' => '2020_01',
                 'brand' => 'Everlast',
                 'name' => null,
                 'type' => 'Sweatshirt',
@@ -2123,6 +2218,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 96,
                 'sell_method_id' => 96,
+                'transaction_id' => '2020_02',
                 'brand' => 'HyperX',
                 'name' => '4GB DDR3',
                 'type' => 'RAM',
@@ -2139,6 +2235,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 97,
                 'sell_method_id' => 97,
+                'transaction_id' => '2020_03',
                 'brand' => 'The North Face',
                 'name' => null,
                 'type' => 'Bomber Jacket',
@@ -2155,6 +2252,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 98,
                 'sell_method_id' => 98,
+                'transaction_id' => '2020_04',
                 'brand' => 'Human Genes',
                 'name' => null,
                 'type' => 'Pants',
@@ -2171,6 +2269,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 99,
                 'sell_method_id' => 99,
+                'transaction_id' => '2020_05',
                 'brand' => 'Altec Lansing',
                 'name' => '120i',
                 'type' => 'Speakers',
@@ -2187,6 +2286,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 100,
                 'sell_method_id' => 100,
+                'transaction_id' => '2020_06',
                 'brand' => 'Genius',
                 'name' => 'MIC-01A Desktop',
                 'type' => 'Microphone',
@@ -2203,6 +2303,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 101,
                 'sell_method_id' => 101,
+                'transaction_id' => '2020_07',
                 'brand' => 'Carhartt',
                 'name' => null,
                 'type' => 'Shirt',
@@ -2219,6 +2320,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 102,
                 'sell_method_id' => 102,
+                'transaction_id' => '2020_08',
                 'brand' => 'LG',
                 'name' => '16M38A-B',
                 'type' => 'Monitor',
@@ -2235,6 +2337,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 103,
                 'sell_method_id' => 103,
+                'transaction_id' => '2020_09',
                 'brand' => 'A4Tech',
                 'name' => 'HS-5P Stereo',
                 'type' => 'Headset',
@@ -2251,6 +2354,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 104,
                 'sell_method_id' => 104,
+                'transaction_id' => '2020_10',
                 'brand' => 'Nike',
                 'name' => null,
                 'type' => 'Shirt',
@@ -2267,6 +2371,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 105,
                 'sell_method_id' => 105,
+                'transaction_id' => '2020_10',
                 'brand' => 'Old Navy',
                 'name' => null,
                 'type' => 'Pants',
@@ -2283,6 +2388,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 106,
                 'sell_method_id' => 106,
+                'transaction_id' => '2020_11',
                 'brand' => 'Jag',
                 'name' => null,
                 'type' => 'Shirt',
@@ -2299,6 +2405,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 107,
                 'sell_method_id' => 107,
+                'transaction_id' => '2020_12',
                 'brand' => 'Tribal',
                 'name' => null,
                 'type' => 'Shirt',
@@ -2315,6 +2422,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 108,
                 'sell_method_id' => 108,
+                'transaction_id' => '2020_12',
                 'brand' => 'Gildan',
                 'name' => 'Bill Murray',
                 'type' => 'Shirt',
@@ -2331,6 +2439,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 109,
                 'sell_method_id' => 109,
+                'transaction_id' => '2020_13',
                 'brand' => 'Softex',
                 'name' => 'Star Wars Darth Vader',
                 'type' => 'Shirt',
@@ -2347,6 +2456,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 110,
                 'sell_method_id' => 110,
+                'transaction_id' => '2020_14',
                 'brand' => 'Semir',
                 'name' => null,
                 'type' => 'Polo',
@@ -2363,6 +2473,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 111,
                 'sell_method_id' => 111,
+                'transaction_id' => '2020_15',
                 'brand' => 'Adidas',
                 'name' => null,
                 'type' => 'Shirt',
@@ -2379,6 +2490,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 112,
                 'sell_method_id' => 112,
+                'transaction_id' => '2020_15',
                 'brand' => 'Enyce',
                 'name' => null,
                 'type' => 'Shirt',
@@ -2395,6 +2507,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 113,
                 'sell_method_id' => 113,
+                'transaction_id' => '2020_15',
                 'brand' => 'Tribal',
                 'name' => null,
                 'type' => 'Shirt',
@@ -2411,6 +2524,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 114,
                 'sell_method_id' => 114,
+                'transaction_id' => '2020_16',
                 'brand' => 'Marks and Spencer',
                 'name' => null,
                 'type' => 'Polo',
@@ -2427,6 +2541,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 115,
                 'sell_method_id' => 115,
+                'transaction_id' => '2020_17',
                 'brand' => 'Adidas',
                 'name' => null,
                 'type' => 'V-Neck',
@@ -2443,6 +2558,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 116,
                 'sell_method_id' => 116,
+                'transaction_id' => '2020_18',
                 'brand' => 'FUBU',
                 'name' => null,
                 'type' => 'Polo',
@@ -2459,6 +2575,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 117,
                 'sell_method_id' => 117,
+                'transaction_id' => '2020_19',
                 'brand' => 'Ecko',
                 'name' => null,
                 'type' => 'Hoodies',
@@ -2475,6 +2592,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 118,
                 'sell_method_id' => 118,
+                'transaction_id' => '2020_20',
                 'brand' => 'Reebok',
                 'name' => null,
                 'type' => 'Hoodies',
@@ -2491,6 +2609,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 119,
                 'sell_method_id' => 119,
+                'transaction_id' => '2021_01',
                 'brand' => 'Cape Juby',
                 'name' => null,
                 'type' => 'Bomber Jacket',
@@ -2507,6 +2626,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 120,
                 'sell_method_id' => 120,
+                'transaction_id' => '2021_02',
                 'brand' => 'Jag',
                 'name' => null,
                 'type' => 'Jacket',
@@ -2523,6 +2643,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 121,
                 'sell_method_id' => 121,
+                'transaction_id' => '2021_03',
                 'brand' => 'Gap',
                 'name' => null,
                 'type' => 'Polo',
@@ -2539,6 +2660,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 122,
                 'sell_method_id' => 122,
+                'transaction_id' => '2021_04',
                 'brand' => 'Penshoppe',
                 'name' => null,
                 'type' => 'Jacket',
@@ -2555,6 +2677,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 123,
                 'sell_method_id' => 123,
+                'transaction_id' => '2021_05',
                 'brand' => 'Old Navy',
                 'name' => null,
                 'type' => 'Hoodies',
@@ -2571,6 +2694,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 124,
                 'sell_method_id' => 124,
+                'transaction_id' => '2021_06',
                 'brand' => 'H and M',
                 'name' => null,
                 'type' => 'Bomber Jacket',
@@ -2587,6 +2711,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 125,
                 'sell_method_id' => 125,
+                'transaction_id' => '2021_07',
                 'brand' => 'Nike',
                 'name' => null,
                 'type' => 'Cycling Shorts',
@@ -2603,6 +2728,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 126,
                 'sell_method_id' => 126,
+                'transaction_id' => '2021_08',
                 'brand' => 'Nike',
                 'name' => null,
                 'type' => 'Cycling Shorts',
@@ -2619,6 +2745,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 127,
                 'sell_method_id' => 127,
+                'transaction_id' => '2021_09',
                 'brand' => 'Philips',
                 'name' => 'SBC HC8545 Wireless',
                 'type' => 'Headset',
@@ -2635,6 +2762,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 128,
                 'sell_method_id' => 128,
+                'transaction_id' => '2021_10',
                 'brand' => 'Everlast',
                 'name' => null,
                 'type' => 'Shirt',
@@ -2651,6 +2779,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 129,
                 'sell_method_id' => 129,
+                'transaction_id' => '2021_11',
                 'brand' => 'Philips',
                 'name' => null,
                 'type' => 'Lampshade',
@@ -2667,6 +2796,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 130,
                 'sell_method_id' => 130,
+                'transaction_id' => '2021_12',
                 'brand' => 'Looney Tunes',
                 'name' => 'Yosemite Sam',
                 'type' => 'Cap',
@@ -2683,6 +2813,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 131,
                 'sell_method_id' => 131,
+                'transaction_id' => '2021_13',
                 'brand' => 'LP Support',
                 'name' => null,
                 'type' => 'Gloves',
@@ -2699,6 +2830,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 132,
                 'sell_method_id' => 132,
+                'transaction_id' => '2021_14',
                 'brand' => 'BNY Jeans',
                 'name' => null,
                 'type' => 'Shirt',
@@ -2715,6 +2847,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 133,
                 'sell_method_id' => 133,
+                'transaction_id' => '2021_15',
                 'brand' => 'Tribal',
                 'name' => null,
                 'type' => 'Shirt',
@@ -2731,6 +2864,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 134,
                 'sell_method_id' => 134,
+                'transaction_id' => '2021_16',
                 'brand' => 'Greendog',
                 'name' => null,
                 'type' => 'Shorts',
@@ -2747,6 +2881,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 135,
                 'sell_method_id' => 135,
+                'transaction_id' => '2021_17',
                 'brand' => 'Nike',
                 'name' => null,
                 'type' => 'Jogging Pants',
@@ -2763,6 +2898,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 136,
                 'sell_method_id' => 136,
+                'transaction_id' => '2021_17',
                 'brand' => 'Pour Homme',
                 'name' => null,
                 'type' => 'Pants',
@@ -2779,6 +2915,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 137,
                 'sell_method_id' => 137,
+                'transaction_id' => '2021_17',
                 'brand' => 'Pour Homme',
                 'name' => null,
                 'type' => 'Pants',
@@ -2795,6 +2932,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 138,
                 'sell_method_id' => 138,
+                'transaction_id' => '2021_18',
                 'brand' => 'Generic',
                 'name' => 'HDMI to HDMI VGA Adapter',
                 'type' => 'Cable',
@@ -2811,6 +2949,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 139,
                 'sell_method_id' => 139,
+                'transaction_id' => '2021_19',
                 'brand' => 'Nike',
                 'name' => null,
                 'type' => 'Jogging Pants',
@@ -2827,6 +2966,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 140,
                 'sell_method_id' => 140,
+                'transaction_id' => '2021_20',
                 'brand' => 'Adidas',
                 'name' => null,
                 'type' => 'Shorts',
@@ -2843,6 +2983,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 141,
                 'sell_method_id' => 141,
+                'transaction_id' => '2022_01',
                 'brand' => 'Ecko',
                 'name' => null,
                 'type' => 'Shorts',
@@ -2859,6 +3000,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 142,
                 'sell_method_id' => 142,
+                'transaction_id' => '2022_02',
                 'brand' => 'Bauhn',
                 'name' => 'Auricle Noise Cancellation',
                 'type' => 'Headset',
@@ -2875,6 +3017,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 143,
                 'sell_method_id' => 143,
+                'transaction_id' => '2022_03',
                 'brand' => 'Penshoppe',
                 'name' => null,
                 'type' => 'Polo',
@@ -2891,6 +3034,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 144,
                 'sell_method_id' => 144,
+                'transaction_id' => '2022_03',
                 'brand' => 'U2',
                 'name' => null,
                 'type' => 'Polo',
@@ -2907,6 +3051,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 145,
                 'sell_method_id' => 145,
+                'transaction_id' => '2022_04',
                 'brand' => 'Apple',
                 'name' => 'iPad Mini 1st Generation',
                 'type' => 'Tablet',
@@ -2923,6 +3068,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 146,
                 'sell_method_id' => 146,
+                'transaction_id' => '2022_05',
                 'brand' => 'Samsung',
                 'name' => 'Galaxy Tab 3 Lite',
                 'type' => 'Tablet',
@@ -2939,6 +3085,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 147,
                 'sell_method_id' => 147,
+                'transaction_id' => '2022_06',
                 'brand' => 'Mishka NYC',
                 'name' => 'Death Adders',
                 'type' => 'Cap',
@@ -2955,6 +3102,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 148,
                 'sell_method_id' => 148,
+                'transaction_id' => '2022_07',
                 'brand' => 'Riot Games',
                 'name' => 'League of Legends',
                 'type' => 'Lanyard',
@@ -2971,6 +3119,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 149,
                 'sell_method_id' => 149,
+                'transaction_id' => '2022_07',
                 'brand' => 'Dragonfly',
                 'name' => 'Special Force',
                 'type' => 'Lanyard',
@@ -2987,6 +3136,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 150,
                 'sell_method_id' => 150,
+                'transaction_id' => '2022_08',
                 'brand' => 'LG',
                 'name' => 'E2041',
                 'type' => 'Monitor',
@@ -3003,6 +3153,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 151,
                 'sell_method_id' => 151,
+                'transaction_id' => '2022_09',
                 'brand' => 'Banana Republic',
                 'name' => null,
                 'type' => 'Polo',
@@ -3019,6 +3170,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 152,
                 'sell_method_id' => 152,
+                'transaction_id' => '2022_10',
                 'brand' => 'IZOD',
                 'name' => null,
                 'type' => 'Polo',
@@ -3035,6 +3187,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 153,
                 'sell_method_id' => 153,
+                'transaction_id' => '2022_11',
                 'brand' => 'Cukui',
                 'name' => null,
                 'type' => 'Shirt',
@@ -3051,6 +3204,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 154,
                 'sell_method_id' => 154,
+                'transaction_id' => '2022_12',
                 'brand' => 'LG',
                 'name' => 'E1941',
                 'type' => 'Monitor',
@@ -3067,6 +3221,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 155,
                 'sell_method_id' => 155,
+                'transaction_id' => '2022_13',
                 'brand' => 'Descente',
                 'name' => null,
                 'type' => 'Jacket',
@@ -3083,6 +3238,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 156,
                 'sell_method_id' => 156,
+                'transaction_id' => '2022_14',
                 'brand' => 'Crooks and Castles',
                 'name' => null,
                 'type' => 'Shirt',
@@ -3099,6 +3255,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 157,
                 'sell_method_id' => 157,
+                'transaction_id' => '2022_15',
                 'brand' => 'Habit Outdoors',
                 'name' => null,
                 'type' => 'Jacket',
@@ -3115,6 +3272,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 158,
                 'sell_method_id' => 158,
+                'transaction_id' => '2022_16',
                 'brand' => 'ASUS',
                 'name' => 'Zenfone Max 4',
                 'type' => 'Phone',
@@ -3131,6 +3289,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 159,
                 'sell_method_id' => 159,
+                'transaction_id' => '2022_17',
                 'brand' => 'American Apparel',
                 'name' => null,
                 'type' => 'Shirt',
@@ -3147,6 +3306,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 160,
                 'sell_method_id' => 160,
+                'transaction_id' => '2023_01',
                 'brand' => 'TEAMGROUP',
                 'name' => 'T-Force 8GB DDR4 3000Mhz',
                 'type' => 'RAM',
@@ -3163,6 +3323,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 161,
                 'sell_method_id' => 161,
+                'transaction_id' => '2023_02',
                 'brand' => 'Lynx',
                 'name' => null,
                 'type' => 'Jacket',
@@ -3179,6 +3340,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 162,
                 'sell_method_id' => 162,
+                'transaction_id' => '2023_03',
                 'brand' => 'Crooks and Castles',
                 'name' => null,
                 'type' => 'Shirt',
@@ -3195,6 +3357,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 163,
                 'sell_method_id' => 163,
+                'transaction_id' => '2023_03',
                 'brand' => 'Crooks and Castles',
                 'name' => null,
                 'type' => 'Shirt',
@@ -3211,6 +3374,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 164,
                 'sell_method_id' => 164,
+                'transaction_id' => '2023_04',
                 'brand' => 'Anvil',
                 'name' => 'Blink One Eighty Two',
                 'type' => 'Shirt',
@@ -3227,6 +3391,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 165,
                 'sell_method_id' => 165,
+                'transaction_id' => '2023_05',
                 'brand' => 'Miniso',
                 'name' => 'Open Ear Sports Wireless Q11',
                 'type' => 'Earphones',
@@ -3243,6 +3408,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 166,
                 'sell_method_id' => 166,
+                'transaction_id' => '2023_06',
                 'brand' => 'Riot Games',
                 'name' => 'League of Legends 2014 World Championship',
                 'type' => 'Jacket',
@@ -3259,6 +3425,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 167,
                 'sell_method_id' => 167,
+                'transaction_id' => '2023_07',
                 'brand' => 'Tapout',
                 'name' => null,
                 'type' => 'Shirt',
@@ -3275,6 +3442,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 168,
                 'sell_method_id' => 168,
+                'transaction_id' => '2023_08',
                 'brand' => 'American Eagle Outfitters',
                 'name' => null,
                 'type' => 'Polo',
@@ -3291,6 +3459,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 169,
                 'sell_method_id' => 169,
+                'transaction_id' => '2023_08',
                 'brand' => 'American Eagle Outfitters',
                 'name' => null,
                 'type' => 'Shirt',
@@ -3307,6 +3476,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 170,
                 'sell_method_id' => 170,
+                'transaction_id' => '2023_09',
                 'brand' => 'Florsheim',
                 'name' => 'Bristol Leather',
                 'type' => 'Shoes',
@@ -3323,6 +3493,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 171,
                 'sell_method_id' => 171,
+                'transaction_id' => '2023_10',
                 'brand' => 'ROMOSS',
                 'name' => '20,000 MAh',
                 'type' => 'Powerbank',
@@ -3339,6 +3510,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 172,
                 'sell_method_id' => 172,
+                'transaction_id' => '2023_11',
                 'brand' => 'SKMEI',
                 'name' => null,
                 'type' => 'Watch',
@@ -3355,6 +3527,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 173,
                 'sell_method_id' => 173,
+                'transaction_id' => '2023_12',
                 'brand' => 'Generic',
                 'name' => 'Motor Visor',
                 'type' => 'Helmet',
@@ -3371,6 +3544,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 174,
                 'sell_method_id' => 174,
+                'transaction_id' => '2023_13',
                 'brand' => 'NYC',
                 'name' => null,
                 'type' => 'Shirt',
@@ -3387,6 +3561,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 175,
                 'sell_method_id' => 175,
+                'transaction_id' => '2023_13',
                 'brand' => 'Reebok',
                 'name' => null,
                 'type' => 'Jogging Pants',
@@ -3403,6 +3578,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 176,
                 'sell_method_id' => 176,
+                'transaction_id' => '2023_14',
                 'brand' => 'Jag',
                 'name' => null,
                 'type' => 'Pants',
@@ -3419,6 +3595,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 177,
                 'sell_method_id' => 177,
+                'transaction_id' => '2023_15',
                 'brand' => 'PUBG',
                 'name' => null,
                 'type' => 'Bag',
@@ -3435,6 +3612,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 178,
                 'sell_method_id' => 178,
+                'transaction_id' => '2023_16',
                 'brand' => 'Microsoft',
                 'name' => 'Call of Duty Ghosts',
                 'type' => 'Shirt',
@@ -3451,6 +3629,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 179,
                 'sell_method_id' => 179,
+                'transaction_id' => '2023_17',
                 'brand' => 'UGG Tasman',
                 'name' => '4115',
                 'type' => 'Boat Shoes',
@@ -3467,6 +3646,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 180,
                 'sell_method_id' => 180,
+                'transaction_id' => '2023_18',
                 'brand' => 'Bronson',
                 'name' => null,
                 'type' => 'Polo',
@@ -3483,6 +3663,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 181,
                 'sell_method_id' => 181,
+                'transaction_id' => '2023_19',
                 'brand' => 'Gildan',
                 'name' => null,
                 'type' => 'Shirt',
@@ -3499,6 +3680,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 182,
                 'sell_method_id' => 182,
+                'transaction_id' => '2023_20',
                 'brand' => 'WWE',
                 'name' => 'D-X',
                 'type' => 'Shirt',
@@ -3515,6 +3697,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 183,
                 'sell_method_id' => 183,
+                'transaction_id' => '2023_21',
                 'brand' => 'Ecko',
                 'name' => null,
                 'type' => 'Shirt',
@@ -3531,6 +3714,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 184,
                 'sell_method_id' => 184,
+                'transaction_id' => '2023_22',
                 'brand' => 'Samsung',
                 'name' => 'Galaxy Express GT-i8730T',
                 'type' => 'Phone',
@@ -3547,6 +3731,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 185,
                 'sell_method_id' => 185,
+                'transaction_id' => '2023_23',
                 'brand' => 'Levi\'s',
                 'name' => null,
                 'type' => 'Jogging Pants',
@@ -3563,6 +3748,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 186,
                 'sell_method_id' => 186,
+                'transaction_id' => '2023_24',
                 'brand' => 'Stanfield\'s',
                 'name' => null,
                 'type' => 'Shirt',
@@ -3579,6 +3765,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 187,
                 'sell_method_id' => 187,
+                'transaction_id' => '2023_25',
                 'brand' => 'Fruit of the Loom',
                 'name' => null,
                 'type' => 'Shirt',
@@ -3595,6 +3782,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 188,
                 'sell_method_id' => 188,
+                'transaction_id' => '2023_25',
                 'brand' => 'Fruit of the Loom',
                 'name' => null,
                 'type' => 'Shirt',
@@ -3611,6 +3799,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 189,
                 'sell_method_id' => 189,
+                'transaction_id' => '2023_26',
                 'brand' => 'Jag',
                 'name' => null,
                 'type' => 'Shirt',
@@ -3627,6 +3816,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 190,
                 'sell_method_id' => 190,
+                'transaction_id' => '2023_26',
                 'brand' => 'No Fear',
                 'name' => null,
                 'type' => 'Shirt',
@@ -3643,6 +3833,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 191,
                 'sell_method_id' => 191,
+                'transaction_id' => '2023_26',
                 'brand' => 'Robert Barakett',
                 'name' => null,
                 'type' => 'Shirt',
@@ -3659,6 +3850,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 192,
                 'sell_method_id' => 192,
+                'transaction_id' => '2023_26',
                 'brand' => 'Superdry',
                 'name' => null,
                 'type' => 'Shirt',
@@ -3675,6 +3867,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 193,
                 'sell_method_id' => 193,
+                'transaction_id' => '2023_26',
                 'brand' => 'Under Armour',
                 'name' => null,
                 'type' => 'Shirt',
@@ -3691,6 +3884,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 194,
                 'sell_method_id' => 194,
+                'transaction_id' => '2023_27',
                 'brand' => 'Uniqlo',
                 'name' => null,
                 'type' => 'Polo',
@@ -3707,6 +3901,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 195,
                 'sell_method_id' => 195,
+                'transaction_id' => '2023_28',
                 'brand' => 'Champion',
                 'name' => '2011 Walt Disney World Marathon',
                 'type' => 'Shirt',
@@ -3723,6 +3918,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 196,
                 'sell_method_id' => 196,
+                'transaction_id' => '2023_29',
                 'brand' => 'Culture',
                 'name' => null,
                 'type' => 'Shirt',
@@ -3739,6 +3935,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 197,
                 'sell_method_id' => 197,
+                'transaction_id' => '2023_29',
                 'brand' => 'H and M',
                 'name' => null,
                 'type' => 'Shirt',
@@ -3755,6 +3952,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 198,
                 'sell_method_id' => 198,
+                'transaction_id' => '2023_30',
                 'brand' => 'Crooks and Castles',
                 'name' => null,
                 'type' => 'Shirt',
@@ -3771,6 +3969,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 199,
                 'sell_method_id' => 199,
+                'transaction_id' => '2023_30',
                 'brand' => 'Mantaray',
                 'name' => null,
                 'type' => 'Sweatshirt',
@@ -3787,6 +3986,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 200,
                 'sell_method_id' => 200,
+                'transaction_id' => '2023_31',
                 'brand' => 'HTC',
                 'name' => 'Sensation Z710A',
                 'type' => 'Phone',
@@ -3803,6 +4003,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 201,
                 'sell_method_id' => 201,
+                'transaction_id' => '2023_32',
                 'brand' => 'Billabong',
                 'name' => null,
                 'type' => 'Shorts',
@@ -3819,6 +4020,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 202,
                 'sell_method_id' => 202,
+                'transaction_id' => '2023_32',
                 'brand' => 'Billabong',
                 'name' => null,
                 'type' => 'Shorts',
@@ -3835,6 +4037,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 203,
                 'sell_method_id' => 203,
+                'transaction_id' => '2023_32',
                 'brand' => 'O\'Neill',
                 'name' => null,
                 'type' => 'Shorts',
@@ -3851,6 +4054,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 204,
                 'sell_method_id' => 204,
+                'transaction_id' => '2023_33',
                 'brand' => 'Alpha',
                 'name' => null,
                 'type' => 'Shirt',
@@ -3867,6 +4071,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 205,
                 'sell_method_id' => 205,
+                'transaction_id' => '2023_33',
                 'brand' => 'Ecko',
                 'name' => null,
                 'type' => 'Shirt',
@@ -3883,6 +4088,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 206,
                 'sell_method_id' => 206,
+                'transaction_id' => '2023_34',
                 'brand' => 'Merona',
                 'name' => null,
                 'type' => 'Shirt',
@@ -3899,6 +4105,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 207,
                 'sell_method_id' => 207,
+                'transaction_id' => '2023_34',
                 'brand' => 'The North Face',
                 'name' => null,
                 'type' => 'Polo',
@@ -3915,6 +4122,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 208,
                 'sell_method_id' => 208,
+                'transaction_id' => '2023_35',
                 'brand' => 'Sony',
                 'name' => 'MDR-NC8 Noise Cancellation',
                 'type' => 'Headset',
@@ -3931,6 +4139,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 209,
                 'sell_method_id' => 209,
+                'transaction_id' => '2023_36',
                 'brand' => 'Beats by Dre',
                 'name' => 'Solo HD',
                 'type' => 'Headset',
@@ -3947,6 +4156,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 210,
                 'sell_method_id' => 210,
+                'transaction_id' => '2023_37',
                 'brand' => 'Capcom',
                 'name' => 'Resident Evil 2 Remake Pre-order',
                 'type' => 'Shirt',
@@ -3963,6 +4173,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 211,
                 'sell_method_id' => 211,
+                'transaction_id' => '2023_37',
                 'brand' => 'Capcom',
                 'name' => 'Resident Evil 6 Pre-order',
                 'type' => 'Shirt',
@@ -3979,6 +4190,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 212,
                 'sell_method_id' => 212,
+                'transaction_id' => '2023_38',
                 'brand' => 'Adidas',
                 'name' => null,
                 'type' => 'Shirt',
@@ -3995,6 +4207,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 213,
                 'sell_method_id' => 213,
+                'transaction_id' => '2023_39',
                 'brand' => 'Microsoft',
                 'name' => 'Sculpt Ergonomic',
                 'type' => 'Keyboard',
@@ -4011,6 +4224,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 214,
                 'sell_method_id' => 214,
+                'transaction_id' => '2023_40',
                 'brand' => 'SteelSeries',
                 'name' => 'Sensei Ten M-00029',
                 'type' => 'Mouse',
@@ -4027,6 +4241,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 215,
                 'sell_method_id' => 215,
+                'transaction_id' => '2023_41',
                 'brand' => 'Porsche',
                 'name' => 'Martini Racing',
                 'type' => 'Cap',
@@ -4043,6 +4258,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 216,
                 'sell_method_id' => 216,
+                'transaction_id' => '2023_42',
                 'brand' => 'Generic',
                 'name' => 'DVI',
                 'type' => 'Cable',
@@ -4059,6 +4275,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 217,
                 'sell_method_id' => 217,
+                'transaction_id' => '2023_43',
                 'brand' => 'Auscam',
                 'name' => 'DPCU',
                 'type' => 'Hat',
@@ -4075,6 +4292,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 218,
                 'sell_method_id' => 218,
+                'transaction_id' => '2023_44',
                 'brand' => 'Vans',
                 'name' => 'Old School Bearcat',
                 'type' => 'Shoes',
@@ -4091,6 +4309,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 219,
                 'sell_method_id' => 219,
+                'transaction_id' => '2023_45',
                 'brand' => 'Colorado',
                 'name' => 'Craig DGrey',
                 'type' => 'Boots',
@@ -4107,6 +4326,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 220,
                 'sell_method_id' => 220,
+                'transaction_id' => '2023_46',
                 'brand' => 'Puma',
                 'name' => 'Ignite Dual',
                 'type' => 'Shoes',
@@ -4123,6 +4343,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 221,
                 'sell_method_id' => 221,
+                'transaction_id' => '2023_47',
                 'brand' => 'Palit',
                 'name' => 'GeForce GT 240',
                 'type' => 'Video Card',
@@ -4139,6 +4360,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 222,
                 'sell_method_id' => 222,
+                'transaction_id' => '2023_48',
                 'brand' => 'Razer',
                 'name' => 'Deathstalker RZ03-00800100-R3U1',
                 'type' => 'Keyboard',
@@ -4155,6 +4377,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 223,
                 'sell_method_id' => 223,
+                'transaction_id' => '2023_49',
                 'brand' => 'Nike',
                 'name' => null,
                 'type' => 'Cap',
@@ -4171,6 +4394,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 224,
                 'sell_method_id' => 224,
+                'transaction_id' => '2024_01',
                 'brand' => 'Sony',
                 'name' => 'Playstation 5',
                 'type' => 'Controller',
@@ -4187,6 +4411,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 225,
                 'sell_method_id' => 225,
+                'transaction_id' => '2024_02',
                 'brand' => 'Nokia',
                 'name' => '6288',
                 'type' => 'Phone',
@@ -4203,6 +4428,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 226,
                 'sell_method_id' => 226,
+                'transaction_id' => '2024_03',
                 'brand' => 'Apple',
                 'name' => 'iPhone 4',
                 'type' => 'Phone',
@@ -4219,6 +4445,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 227,
                 'sell_method_id' => 227,
+                'transaction_id' => '2024_04',
                 'brand' => 'Apple',
                 'name' => 'iPhone 4S',
                 'type' => 'Phone',
@@ -4235,6 +4462,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 228,
                 'sell_method_id' => 228,
+                'transaction_id' => '2024_05',
                 'brand' => 'Apple',
                 'name' => 'iPhone 5',
                 'type' => 'Phone',
@@ -4251,6 +4479,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 229,
                 'sell_method_id' => 229,
+                'transaction_id' => '2024_06',
                 'brand' => 'Nokia',
                 'name' => '1650',
                 'type' => 'Phone',
@@ -4267,6 +4496,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 230,
                 'sell_method_id' => 230,
+                'transaction_id' => '2024_07',
                 'brand' => 'Telstra',
                 'name' => 'Lite ZTE F327S',
                 'type' => 'Phone',
@@ -4283,6 +4513,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 231,
                 'sell_method_id' => 231,
+                'transaction_id' => '2024_08',
                 'brand' => 'Jedel',
                 'name' => 'S-506',
                 'type' => 'Speakers',
@@ -4299,6 +4530,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 232,
                 'sell_method_id' => 232,
+                'transaction_id' => '2024_09',
                 'brand' => 'Casio',
                 'name' => 'fx-991MS Scientific',
                 'type' => 'Calculator',
@@ -4315,6 +4547,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 233,
                 'sell_method_id' => 233,
+                'transaction_id' => '2024_10',
                 'brand' => 'Customized',
                 'name' => 'Good Vibes Only',
                 'type' => 'Signage',
@@ -4331,6 +4564,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 234,
                 'sell_method_id' => 234,
+                'transaction_id' => '2024_11',
                 'brand' => 'Lileng-301',
                 'name' => 'SY-555 Dancing Water',
                 'type' => 'Speakers',
@@ -4347,6 +4581,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 235,
                 'sell_method_id' => 235,
+                'transaction_id' => '2024_12',
                 'brand' => 'AMD',
                 'name' => 'AM4 Stock Cooler',
                 'type' => 'Fan',
@@ -4363,6 +4598,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 236,
                 'sell_method_id' => 236,
+                'transaction_id' => '2024_13',
                 'brand' => 'Oreo',
                 'name' => 'Pokemon',
                 'type' => 'Photocards',
@@ -4379,6 +4615,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 237,
                 'sell_method_id' => 237,
+                'transaction_id' => '2024_14',
                 'brand' => 'Billabong',
                 'name' => null,
                 'type' => 'Shorts',
@@ -4395,6 +4632,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 238,
                 'sell_method_id' => 238,
+                'transaction_id' => '2024_14',
                 'brand' => 'Quiksilver',
                 'name' => null,
                 'type' => 'Shorts',
@@ -4411,6 +4649,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 239,
                 'sell_method_id' => 239,
+                'transaction_id' => '2024_14',
                 'brand' => 'Quiksilver',
                 'name' => null,
                 'type' => 'Shorts',
@@ -4427,6 +4666,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 240,
                 'sell_method_id' => 240,
+                'transaction_id' => '2024_15',
                 'brand' => 'Caterpillar',
                 'name' => 'Connect',
                 'type' => 'Beanie',
@@ -4443,6 +4683,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 241,
                 'sell_method_id' => 241,
+                'transaction_id' => '2024_16',
                 'brand' => 'RAKK',
                 'name' => 'Alti BVR Illuminated',
                 'type' => 'Mouse',
@@ -4459,6 +4700,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 242,
                 'sell_method_id' => 242,
+                'transaction_id' => '2024_17',
                 'brand' => 'Fantech',
                 'name' => 'GS301 Trifecta RGB',
                 'type' => 'Speakers',
@@ -4475,6 +4717,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 243,
                 'sell_method_id' => 243,
+                'transaction_id' => '2024_18',
                 'brand' => 'Surplus',
                 'name' => null,
                 'type' => 'Jacket',
@@ -4491,6 +4734,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 244,
                 'sell_method_id' => 244,
+                'transaction_id' => '2024_19',
                 'brand' => 'Zara',
                 'name' => null,
                 'type' => 'Shirt',
@@ -4507,6 +4751,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 245,
                 'sell_method_id' => 245,
+                'transaction_id' => '2024_20',
                 'brand' => 'NZXT',
                 'name' => 'F120 Non-RGB Stock',
                 'type' => 'Fan',
@@ -4523,6 +4768,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 246,
                 'sell_method_id' => 246,
+                'transaction_id' => '2024_21',
                 'brand' => 'Resong',
                 'name' => 'RJ45 Ethernet',
                 'type' => 'Cable',
@@ -4539,6 +4785,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 247,
                 'sell_method_id' => 247,
+                'transaction_id' => '2024_22',
                 'brand' => 'Under Armour',
                 'name' => null,
                 'type' => 'Shirt',
@@ -4555,6 +4802,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 248,
                 'sell_method_id' => 248,
+                'transaction_id' => '2024_23',
                 'brand' => 'Under Armour',
                 'name' => null,
                 'type' => 'Shirt',
@@ -4571,6 +4819,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 249,
                 'sell_method_id' => 249,
+                'transaction_id' => '2024_24',
                 'brand' => 'Under Armour',
                 'name' => null,
                 'type' => 'Shirt',
@@ -4587,6 +4836,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 250,
                 'sell_method_id' => 250,
+                'transaction_id' => '2024_25',
                 'brand' => 'Cadbury',
                 'name' => null,
                 'type' => 'Mug',
@@ -4603,6 +4853,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 251,
                 'sell_method_id' => 251,
+                'transaction_id' => '2024_26',
                 'brand' => 'Quiksilver',
                 'name' => null,
                 'type' => 'Shirt',
@@ -4619,6 +4870,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 252,
                 'sell_method_id' => 252,
+                'transaction_id' => '2024_26',
                 'brand' => 'Uniqlo',
                 'name' => null,
                 'type' => 'V-Neck',
@@ -4635,6 +4887,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 253,
                 'sell_method_id' => 253,
+                'transaction_id' => '2024_27',
                 'brand' => 'AquaFlask',
                 'name' => null,
                 'type' => 'Tumbler',
@@ -4651,6 +4904,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 254,
                 'sell_method_id' => 254,
+                'transaction_id' => '2024_28',
                 'brand' => 'Adidas',
                 'name' => 'Fluidflow 2.0',
                 'type' => 'Shoes',
@@ -4667,6 +4921,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 255,
                 'sell_method_id' => 255,
+                'transaction_id' => '2024_29',
                 'brand' => 'RAKK',
                 'name' => 'Ilis Outemu Blue',
                 'type' => 'Keyboard',
@@ -4683,6 +4938,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 256,
                 'sell_method_id' => 256,
+                'transaction_id' => '2024_30',
                 'brand' => 'Tylex',
                 'name' => 'Wide RGB',
                 'type' => 'Mousepad',
@@ -4699,6 +4955,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 257,
                 'sell_method_id' => 257,
+                'transaction_id' => '2024_31',
                 'brand' => 'Standard',
                 'name' => 'Terminator STF-9',
                 'type' => 'Fan',
@@ -4715,6 +4972,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 258,
                 'sell_method_id' => 258,
+                'transaction_id' => '2024_32',
                 'brand' => 'Rayban',
                 'name' => null,
                 'type' => 'Sunglasses',
@@ -4731,6 +4989,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 259,
                 'sell_method_id' => 259,
+                'transaction_id' => '2024_33',
                 'brand' => 'Body Specs',
                 'name' => null,
                 'type' => 'Sunglasses',
@@ -4747,6 +5006,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 260,
                 'sell_method_id' => 260,
+                'transaction_id' => '2024_33',
                 'brand' => 'Kathmandu',
                 'name' => null,
                 'type' => 'Headlamp',
@@ -4763,6 +5023,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 261,
                 'sell_method_id' => 261,
+                'transaction_id' => '2024_34',
                 'brand' => 'Sorel',
                 'name' => 'Caribou Winter',
                 'type' => 'Boots',
@@ -4779,6 +5040,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 262,
                 'sell_method_id' => 262,
+                'transaction_id' => '2024_35',
                 'brand' => 'Rudy Project',
                 'name' => null,
                 'type' => 'Sunglasses',
@@ -4795,6 +5057,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 263,
                 'sell_method_id' => 263,
+                'transaction_id' => '2024_36',
                 'brand' => 'PwC',
                 'name' => 'Mini Bluetooth and USB',
                 'type' => 'Speakers',
@@ -4811,6 +5074,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 264,
                 'sell_method_id' => 264,
+                'transaction_id' => '2024_37',
                 'brand' => 'Pleno',
                 'name' => null,
                 'type' => 'Massage Gun',
@@ -4827,6 +5091,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 265,
                 'sell_method_id' => 265,
+                'transaction_id' => '2024_38',
                 'brand' => 'HyperX',
                 'name' => 'Cloud II',
                 'type' => 'Headset',
@@ -4843,6 +5108,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 266,
                 'sell_method_id' => 266,
+                'transaction_id' => '2024_39',
                 'brand' => 'Cotton On',
                 'name' => null,
                 'type' => 'Pants',
@@ -4859,6 +5125,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 267,
                 'sell_method_id' => 267,
+                'transaction_id' => '2024_40',
                 'brand' => 'Cordillera History and Festivals',
                 'name' => null,
                 'type' => 'Book',
@@ -4875,6 +5142,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 268,
                 'sell_method_id' => 268,
+                'transaction_id' => '2024_41',
                 'brand' => 'Programs and Services for MSMEs',
                 'name' => null,
                 'type' => 'Book',
@@ -4891,6 +5159,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 269,
                 'sell_method_id' => 269,
+                'transaction_id' => '2025_01',
                 'brand' => 'Umbro',
                 'name' => null,
                 'type' => 'Shorts',
@@ -4907,6 +5176,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 270,
                 'sell_method_id' => 270,
+                'transaction_id' => '2025_02',
                 'brand' => 'Rastar',
                 'name' => '2009 Lamborghini Murcielago LP670-4 SV',
                 'type' => 'Toy',
@@ -4923,6 +5193,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 271,
                 'sell_method_id' => 271,
+                'transaction_id' => '2025_03',
                 'brand' => 'Maisto',
                 'name' => '1994 Ferrari F355 Berlinetta',
                 'type' => 'Toy',
@@ -4939,6 +5210,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 272,
                 'sell_method_id' => 272,
+                'transaction_id' => '2025_04',
                 'brand' => 'Silverlit',
                 'name' => '2012 Ford Fiesta RS WRC',
                 'type' => 'Toy',
@@ -4955,6 +5227,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 273,
                 'sell_method_id' => 273,
+                'transaction_id' => '2025_05',
                 'brand' => 'Ralph Lauren',
                 'name' => null,
                 'type' => 'Polo',
@@ -4971,6 +5244,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 274,
                 'sell_method_id' => 274,
+                'transaction_id' => '2025_05',
                 'brand' => 'Superdry',
                 'name' => null,
                 'type' => 'Shirt',
@@ -4987,6 +5261,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 275,
                 'sell_method_id' => 275,
+                'transaction_id' => '2025_05',
                 'brand' => 'Tommy Hilfiger',
                 'name' => null,
                 'type' => 'Polo',
@@ -5003,6 +5278,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 276,
                 'sell_method_id' => 276,
+                'transaction_id' => '2025_06',
                 'brand' => 'Benewi',
                 'name' => 'PC-W1 USB Wireless',
                 'type' => 'Webcam',
@@ -5019,6 +5295,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 277,
                 'sell_method_id' => 277,
+                'transaction_id' => '2025_07',
                 'brand' => 'Lacoste',
                 'name' => null,
                 'type' => 'Cap',
@@ -5035,6 +5312,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 278,
                 'sell_method_id' => 278,
+                'transaction_id' => '2025_08',
                 'brand' => 'Vans',
                 'name' => null,
                 'type' => 'Polo',
@@ -5051,6 +5329,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 279,
                 'sell_method_id' => 279,
+                'transaction_id' => '2025_09',
                 'brand' => 'Vans',
                 'name' => null,
                 'type' => 'Shirt',
@@ -5067,6 +5346,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 280,
                 'sell_method_id' => 280,
+                'transaction_id' => '2025_10',
                 'brand' => 'NRL',
                 'name' => '2022 Grand Final Telstra Premiership',
                 'type' => 'Cap',
@@ -5083,6 +5363,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 281,
                 'sell_method_id' => 281,
+                'transaction_id' => '2025_11',
                 'brand' => 'Rubi',
                 'name' => '4590296 Wireless Bluetooth',
                 'type' => 'Speakers',
@@ -5099,6 +5380,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 282,
                 'sell_method_id' => 282,
+                'transaction_id' => '2025_12',
                 'brand' => 'Hello Kitty',
                 'name' => 'KT2055 Tea Cup',
                 'type' => 'Alarm Clock',
@@ -5115,6 +5397,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 283,
                 'sell_method_id' => 283,
+                'transaction_id' => '2025_13',
                 'brand' => 'Bandai',
                 'name' => 'Ultraman Eleking',
                 'type' => 'Toy',
@@ -5131,6 +5414,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 284,
                 'sell_method_id' => 284,
+                'transaction_id' => '2025_14',
                 'brand' => 'Redragon',
                 'name' => 'GS580 Calliope RGB',
                 'type' => 'Speakers',
@@ -5147,6 +5431,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 285,
                 'sell_method_id' => 285,
+                'transaction_id' => '2025_15',
                 'brand' => 'Viewplus',
                 'name' => 'ML-24HI',
                 'type' => 'Monitor',
@@ -5163,6 +5448,7 @@ class SoldItemSeeder extends Seeder
             [
                 'pay_method_id' => 286,
                 'sell_method_id' => 286,
+                'transaction_id' => '2025_16',
                 'brand' => 'Rockstar Games',
                 'name' => 'Grand Theft Auto',
                 'type' => 'Keychain',
