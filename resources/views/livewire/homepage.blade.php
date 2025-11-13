@@ -168,6 +168,82 @@
                     </article>
                 </div>
             </div>
+
+            <!-- Current computer specs section -->
+            <div class="relative isolate -z-10">
+                <svg aria-hidden="true" class="absolute inset-x-0 top-0 -z-10 h-256 w-full mask-[radial-gradient(28rem_36rem_at_center,white,transparent)] stroke-gray-200 dark:stroke-white/10">
+                    <defs>
+                        <pattern id="1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84" width="200" height="200" x="50%" y="-1" patternUnits="userSpaceOnUse">
+                            <path d="M.5 200V.5H200" fill="none" />
+                        </pattern>
+                    </defs>
+
+                    <svg x="50%" y="-1" class="overflow-visible fill-gray-300 dark:fill-gray-700">
+                        <path d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z" stroke-width="0" />
+                    </svg>
+
+                    <rect width="100%" height="100%" fill="url(#1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84)" stroke-width="0" />
+                </svg>
+
+                <div aria-hidden="true" class="absolute top-0 right-0 left-1/2 -z-10 -ml-24 transform-gpu overflow-hidden blur-2xl lg:ml-24 xl:ml-48">
+                    <div style="clip-path: polygon(63.1% 29.5%, 100% 17.1%, 76.6% 3%, 48.4% 0%, 44.6% 4.7%, 54.5% 25.3%, 59.8% 49%, 55.2% 57.8%, 44.4% 57.2%, 27.8% 47.9%, 35.1% 81.5%, 0% 97.7%, 39.2% 100%, 35.2% 81.4%, 97.2% 52.8%, 63.1% 29.5%)" class="aspect-801/1036 w-200.25 bg-linear-to-tr from-purple-400 to-blue-300 opacity-30"></div>
+                </div>
+
+                <div class="mx-auto max-w-7xl px-6 pt-36 pb-32 sm:pt-60 lg:px-8 lg:pt-32">
+                    <div class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-start">
+                        <div class="relative w-full lg:max-w-lg lg:shrink-0 xl:max-w-xl">
+                            <h1 class="text-5xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-7xl dark:text-white transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100">Current Specs!</h1>
+                            <p class="mt-8 mb-6 text-lg font-medium text-pretty text-gray-500 sm:max-w-lg sm:text-xl/8 lg:max-w-none dark:text-gray-400 transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-[500ms]">Last update: November 13, 2025</p>
+
+                            <div class="flex flex-wrap gap-2 flex-col space-y-1">
+                                <div class="even:font-bold even:ml-2">Internet Service Provider (ISP)</div>
+                                <div class="even:font-bold even:ml-2 transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-[500ms]">PLDT 200Mbp/s</div>
+                                <div class="even:font-bold even:ml-2">Memory</div>
+                                <div class="even:font-bold even:ml-2 transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-[500ms]">TEAMGROUP T-Force Delta RGB White 16GB (2x8GB) DDR4 3600MHz</div>
+                                <div class="even:font-bold even:ml-2">Webcam</div>
+                                <div class="even:font-bold even:ml-2 transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-[500ms]">GSou T16s 1080p</div>
+                                <div class="even:font-bold even:ml-2">Monitor 1</div>
+                                <div class="even:font-bold even:ml-2 transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-[500ms]">ASUS ROG XG27ACS-W 27" 180Hz</div>
+                                <div class="even:font-bold even:ml-2">Monitor 2</div>
+                                <div class="even:font-bold even:ml-2 transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-[500ms]">Viewplus ML-24HI 23.8" IPS FLAT 165Hz</div>
+                                <div class="even:font-bold even:ml-2">CPU</div>
+                                <div class="even:font-bold even:ml-2 transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-[500ms]">AMD Ryzen 7 5700X AM4</div>
+                                <div class="even:font-bold even:ml-2">GPU</div>
+                                <div class="even:font-bold even:ml-2 transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-[500ms]">MSi RTX 4060 Ventus 2X White OC 8GB GDDR6</div>
+                                <div class="even:font-bold even:ml-2">PSU</div>
+                                <div class="even:font-bold even:ml-2 transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-[500ms]">Corsair RM850 850W White</div>
+                                <div class="even:font-bold even:ml-2">CPU AIO Cooler</div>
+                                <div class="even:font-bold even:ml-2 transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-[500ms]">NZXT Kraken X53 RGB White</div>
+                                <div class="even:font-bold even:ml-2">Motherboard</div>
+                                <div class="even:font-bold even:ml-2 transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-[500ms]">MSi B550M PRO-VDH Wifi AM4</div>
+                                <div class="even:font-bold even:ml-2">Fans</div>
+                                <div class="even:font-bold even:ml-2 transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-[500ms]">NZXT F120 RGB Core Fans x5</div>
+                                <div class="even:font-bold even:ml-2">SSD 1</div>
+                                <div class="even:font-bold even:ml-2 transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-[500ms]">Kingston NV2 NVMe M.2 500GB</div>
+                                <div class="even:font-bold even:ml-2">SSD 2</div>
+                                <div class="even:font-bold even:ml-2 transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-[500ms]">ADATA NVMe 1TB</div>
+                                <div class="even:font-bold even:ml-2">Computer Case</div>
+                                <div class="even:font-bold even:ml-2 transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-[500ms]">NZXT H7 Flow White</div>
+                                <div class="even:font-bold even:ml-2">Speakers</div>
+                                <div class="even:font-bold even:ml-2 transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-[500ms]">Redragon GS520 Anvil RGB White</div>
+                                <div class="even:font-bold even:ml-2">Keyboard</div>
+                                <div class="even:font-bold even:ml-2 transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-[500ms]">AULA F87 TKL Wireless Mechanical Keyboard</div>
+                                <div class="even:font-bold even:ml-2">Mouse</div>
+                                <div class="even:font-bold even:ml-2 transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-[500ms]">Redragon Woki Supperlight Wireless Mouse</div>
+                            </div>
+                        </div>
+
+                        <div class="mt-14 hidden lg:flex justify-end gap-8 sm:flex-row sm:-mt-10 sm:justify-start sm:pl-2 md:pl-16 lg:mt-0 lg:pl-0">
+                            <div class="space-y-8 pt-32 sm:pt-48 lg:pt-32">
+                                <div class="relative">
+                                    <img src="{{ asset('/images/homepage-6.webp') }}" class="aspect-square w-full rounded-xl bg-gray-900/5 shadow-lg dark:bg-gray-700/5 hover:scale-110 -translate-x-[8rem] opacity-0 intersect-once intersect:translate-x-0 intersect:opacity-100" style="transition: scale 0.25s, translate 2s, opacity 3s 200ms;" />
+                                    <div class="absolute inset-0"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
