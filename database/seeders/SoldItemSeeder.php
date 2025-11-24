@@ -308,6 +308,8 @@ class SoldItemSeeder extends Seeder
             ['method' => PaymentMethods::CASH_ON_HAND->value, 'remittance_location' => 'Cha Tuk Chak (La Trinidad branch)'],
             ['method' => PaymentMethods::CASH_ON_HAND->value, 'remittance_location' => 'Camp 8'],
             ['method' => PaymentMethods::REMITTANCE->value, 'remittance_location' => Remittances::BUYERS_DROPPING_AREA->value],
+            ['method' => PaymentMethods::REMITTANCE->value, 'remittance_location' => Remittances::GCASH->value],
+            ['method' => PaymentMethods::REMITTANCE->value, 'remittance_location' => Remittances::GCASH->value],
         ]);
 
         SellMethod::insert([
@@ -597,6 +599,8 @@ class SoldItemSeeder extends Seeder
             ['method' => SellMethods::MEETUP->value, 'location' => 'Cha Tuk Chak (La Trinidad branch)'],
             ['method' => SellMethods::MEETUP->value, 'location' => 'Camp 8'],
             ['method' => SellMethods::DROPPING->value, 'location' => 'Buyer\'s dropping area'],
+            ['method' => SellMethods::MEETUP->value, 'location' => 'Camp 8'],
+            ['method' => SellMethods::MEETUP->value, 'location' => 'Camp 8'],
         ]);
 
         SoldItem::insert([
@@ -5459,6 +5463,40 @@ class SoldItemSeeder extends Seeder
                 'tags' => 'gaming related,sold to friend',
                 'notes' => 'Sold to Paul Datuin (Patrick\'s batchmate). Dropped in Buyer\'s Om Shan Tea branch in Mabini Shopping Center. Payment picked up on Buyer\'s Om Shan Tea branch',
                 'image_location' => 'sold-items/2025/rockstar-games1-1.jpg',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'pay_method_id' => 287,
+                'sell_method_id' => 287,
+                'transaction_id' => '2025_17',
+                'brand' => 'Bonds',
+                'name' => null,
+                'type' => 'Underwear',
+                'price' => 100,
+                'condition' => 'new',
+                'size' => 'N/A',
+                'date_sold' => '2025-11-15',
+                'tags' => 'australia,female buyer,sold as set,sold to friend',
+                'notes' => 'Sold to Abee. Payment sent through GCash on 11/15. Received payment on ?/?.',
+                'image_location' => 'sold-items/2025/bonds1-1.jpg',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'pay_method_id' => 288,
+                'sell_method_id' => 288,
+                'transaction_id' => '2025_17',
+                'brand' => 'Tradie',
+                'name' => null,
+                'type' => 'Underwear',
+                'price' => 100,
+                'condition' => 'new',
+                'size' => 'N/A',
+                'date_sold' => '2025-11-15',
+                'tags' => 'australia,female buyer,sold to friend',
+                'notes' => 'Sold to Abee. Payment sent through GCash on 7/27. Received payment on ?/?.',
+                'image_location' => 'sold-items/2025/tradie1-1.jpg',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
