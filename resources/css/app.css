@@ -97,3 +97,19 @@
         }
     }
 }
+
+/* Shimmer Animation Effect */
+.skeleton-loader {
+  background: linear-gradient(to right, #7489b6 0%, #ddd 50%, #7489b6 25%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
