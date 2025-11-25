@@ -1,37 +1,41 @@
-// Function to replace the skeleton with actual content
-const showContent = containerId => {
-    const container = document.getElementById(containerId);
+// Alpine.js component for skeleton loading
+document.addEventListener('alpine:init', () => {
+  Alpine.data('skeletonLoader', () => ({
+    isLoaded: false,
+    intersectionObserver: null,
 
-    if (container) {
-        console.log('if container', container);
-        const skeleton = container.querySelector('.skeleton-loader');
-        const actual = container.querySelector('.actual-content');
+    init() {
+      this.setupIntersectionObserver();
+    },
 
-        if (skeleton) skeleton.classList.add('hidden');
-        if (actual) actual.classList.remove('hidden');
-    }
-}
+    setupIntersectionObserver() {
+      const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
 
-// Example of how you might use an Intersection Observer to trigger this
-// (For simplicity, this assumes the content is loaded/ready when triggered)
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const containerId = entry.target.id;
-
-            console.log('containerId:', containerId)
-            // In a real app, you'd fetch data here and call showContent after data fetch is complete
-            // For this example, we'll simulate an immediate switch
+      this.intersectionObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !this.isLoaded) {
+            // Trigger loading after a slight delay (simulating data fetch)
             setTimeout(() => {
-                showContent(containerId)
-                observer.unobserve(entry.target); // Stop observing once loaded
-                console.log('i am intersecting!')
-            }, 750);
-        }
-    });
-});
+              this.isLoaded = true;
+              this.intersectionObserver.unobserve(entry.target);
+              console.log('I am intersecting!', entry.target.id);
+            }, 500);
+          }
+        });
+      }, options);
 
-// Observe all lazy-card elements
-document.querySelectorAll('.lazy-card').forEach(card => {
-    observer.observe(card);
+      // Observe the element
+      this.intersectionObserver.observe(this.$el);
+    },
+
+    destroy() {
+      if (this.intersectionObserver) {
+        this.intersectionObserver.disconnect();
+      }
+    }
+  }));
 });
