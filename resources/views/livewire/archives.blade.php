@@ -171,7 +171,7 @@
                     {{-- id is used to identify the element being lazy loaded --}}
                     <div 
                         x-data="skeletonLoader()"
-                        @destroy="destroy()"
+                        @destroyed="destroy()"
                         class="relative" 
                         id="sold-item-{{ $sold_item->id }}"
                     >
