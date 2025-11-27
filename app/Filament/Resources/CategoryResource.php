@@ -2,29 +2,33 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\CategoryResource\Pages;
+use BackedEnum;
+use UnitEnum;
+use Filament\Schemas\Schema;
+use Filament\Schemas\Components\Section;
+use Filament\Actions\EditAction;
+use Filament\Actions\DeleteAction;
+use App\Filament\Resources\CategoryResource\Pages\ListCategories;
+use App\Filament\Resources\CategoryResource\Pages\CreateCategory;
+use App\Filament\Resources\CategoryResource\Pages\EditCategory;
 use App\Models\Blog\Category;
 use Filament\Forms\Components\Placeholder;
-use Filament\Forms\Components\Section;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Tables\Actions\DeleteAction;
-use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
 class CategoryResource extends Resource
 {
     protected static ?string $model = Category::class;
-    protected static ?string $activeNavigationIcon = 'heroicon-s-rectangle-stack';
-    protected static ?string $navigationGroup = 'Blog';
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static BackedEnum|string|null $activeNavigationIcon = 'heroicon-s-rectangle-stack';
+    protected static UnitEnum|string|null $navigationGroup = 'Blog';
+    protected static BackedEnum|string|null $navigationIcon = 'heroicon-o-rectangle-stack';
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form
-            ->schema([
+        return $schema
+            ->components([
                 TextInput::make('name')
                     ->maxLength(64)
                     ->minLength(3)
@@ -67,12 +71,12 @@ class CategoryResource extends Resource
                     ->sortable(),
             ])
             ->filters([])
-            ->actions([
+            ->recordActions([
                 EditAction::make(),
                 DeleteAction::make()
                     ->visible(fn (Category $category): bool => $category->postsCount == 0),
             ])
-            ->bulkActions([]);
+            ->toolbarActions([]);
     }
 
     public static function getRelations(): array
@@ -85,9 +89,9 @@ class CategoryResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListCategories::route('/'),
-            'create' => Pages\CreateCategory::route('/create'),
-            'edit' => Pages\EditCategory::route('/{record}/edit'),
+            'index' => ListCategories::route('/'),
+            'create' => CreateCategory::route('/create'),
+            'edit' => EditCategory::route('/{record}/edit'),
         ];
     }
 }

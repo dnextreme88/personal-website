@@ -1,9 +1,7 @@
-import preset from './vendor/filament/support/tailwind.config.preset'
 import defaultTheme from 'tailwindcss/defaultTheme';
 
 /** @type {import('tailwindcss').Config} */
 export default {
-    presets: [preset],
     darkMode: 'class',
     content: [
         './app/Filament/**/*.php',

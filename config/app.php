@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Mail\Markdown;
 use Illuminate\Support\Facades\Facade;
 
 return [
@@ -137,6 +138,6 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
-        'Markdown' => Illuminate\Mail\Markdown::class
+        'Markdown' => Markdown::class
     ])->toArray(),
 ];

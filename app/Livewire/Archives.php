@@ -119,7 +119,7 @@ class Archives extends Component
 
             $sold_items = $search->paginate(18);
         } else {
-            $sold_items = SoldItem::with(['pay_method', 'sell_method'])->paginate(18);
+            $sold_items = SoldItem::with(['pay_method', 'sell_method'])->paginate(300);
         }
 
         return view('livewire.archives', ['sold_items' => $sold_items]);

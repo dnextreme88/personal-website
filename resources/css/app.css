@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 
-@config '../../tailwind.config.js';
+@source '../../app/Filament/';
+@source '../../resources/views/filament';
 
 /*
   The default border color has changed to `currentcolor` in Tailwind CSS v4,
