@@ -43,6 +43,10 @@
 
             {{-- Page Content --}}
             <main>{{ $slot }}</main>
+
+            @if (isset($footer))
+                <footer class="mt-8 sm:mt-16">{{ $footer }}</footer>
+            @endif
         </div>
 
         {{-- Scripts --}}

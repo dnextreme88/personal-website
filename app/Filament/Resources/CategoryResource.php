@@ -8,13 +8,11 @@ use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
-use Filament\Forms\Set;
 use Filament\Resources\Resource;
 use Filament\Tables\Actions\DeleteAction;
 use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Illuminate\Support\Str;
 
 class CategoryResource extends Resource
 {
@@ -28,15 +26,10 @@ class CategoryResource extends Resource
         return $form
             ->schema([
                 TextInput::make('name')
-                    ->afterStateUpdated(fn (Set $set, ?string $state) => $set('slug', Str::slug($state)))
-                    ->live(onBlur: true)
                     ->maxLength(64)
                     ->minLength(3)
                     ->required()
                     ->unique(ignoreRecord: true),
-                TextInput::make('slug')
-                    ->helperText('This field automatically updates based on the value of the name field')
-                    ->readOnly(),
                 TextInput::make('description')
                     ->columnSpanFull(),
                 Section::make('Category Details')

@@ -166,10 +166,41 @@
 
             {{ $sold_items->withQueryString()->links(data: ['scrollTo' => false]) }}
 
-            <div class="grid grid-cols-1 mt-6 gap-x-6 gap-y-10 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-8">
+            <div class="grid grid-cols-1 mt-6 gap-x-6 gap-y-10 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-8 min-h-[200px] content-container">
                 @forelse ($sold_items as $sold_item)
-                    <div class="relative">
-                        <img src="{{ $sold_item->image_location ? asset('/storage/' .$sold_item->image_location) : 'https://tailwindui.com/plus/img/ecommerce-images/product-page-01-related-product-01.jpg' }}" class="object-cover w-full transition duration-300 bg-gray-200 rounded-md aspect-square group-hover:opacity-75 lg:aspect-auto lg:h-80 hover:scale-105" alt="Sold item image" title="Sold item image" loading="lazy" />
+                    {{-- id is used to identify the element being lazy loaded --}}
+                    <div 
+                        x-data="skeletonLoader()"
+                        @destroyed="destroy()"
+                        class="relative" 
+                        id="sold-item-{{ $sold_item->id }}"
+                    >
+                        <!-- Skeleton Loader -->
+                        <div 
+                            x-show="!isLoaded" 
+                            class="rounded-md h-25-vh *:bg-transparent min-h-[300px] min-w-[300px] skeleton-loader"
+                        >
+                            <div class="mb-4 h-full w-full text-center text-3xl content-center">
+                                <x-loading-indicator
+                                    :loader_color_bg="'fill-gray-200'"
+                                    :loader_color_spin="'fill-gray-200'"
+                                    :showText="true"
+                                    :size="4"
+                                    :text="'Loading...'"
+                                    :text_color="'text-white'"
+                                />
+                            </div>
+                        </div>
+
+                        <!-- Actual Content -->
+                        <img 
+                            x-show="isLoaded"
+                            src="{{ $sold_item->image_location ? asset('/storage/' .$sold_item->image_location) : 'https://tailwindui.com/plus/img/ecommerce-images/product-page-01-related-product-01.jpg' }}" 
+                            class="object-cover w-full transition duration-300 bg-transparent rounded-md aspect-square group-hover:opacity-75 lg:aspect-auto lg:h-80 hover:scale-105 actual-content" 
+                            alt="Sold item image" 
+                            title="Sold item image" 
+                            loading="lazy" 
+                        />
 
                         <div class="flex flex-col mt-4">
                             <div class="flex justify-between gap-2">
@@ -207,3 +238,8 @@
         </div>
     </div>
 </div>
+
+{{-- Custom scripts --}}
+@push('scripts')
+    @vite('resources/js/skeleton-loading.js')
+@endpush

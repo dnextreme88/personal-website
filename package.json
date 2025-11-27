@@ -17,6 +17,7 @@
     },
     "dependencies": {
         "@tailwindcss/forms": "^0.5.10",
-        "@tailwindcss/typography": "^0.5.16"
+        "@tailwindcss/typography": "^0.5.16",
+        "@tailwindplus/elements": "^1.0.13"
     }
 }

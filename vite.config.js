@@ -8,6 +8,7 @@ export default defineConfig({
                 'resources/css/app.css',
                 'resources/css/filament/admin/tailwind-theme.css',
                 'resources/js/app.js',
+                'resources/js/skeleton-loading.js',
             ],
             refresh: true,
         }),

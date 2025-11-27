@@ -13,7 +13,6 @@ use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
-use Filament\Forms\Set;
 use Filament\Resources\Resource;
 use Filament\Tables\Actions\BulkActionGroup;
 use Filament\Tables\Actions\DeleteAction;
@@ -24,7 +23,6 @@ use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Str;
 
 class PostResource extends Resource
 {
@@ -45,15 +43,10 @@ class PostResource extends Resource
                     ->native(false)
                     ->required(),
                 TextInput::make('title')
-                    ->afterStateUpdated(fn (Set $set, ?string $state) => $set('slug', Str::slug($state)))
-                    ->live(onBlur: true)
                     ->maxLength(64)
                     ->minLength(3)
                     ->required()
                     ->unique(ignoreRecord: true),
-                TextInput::make('slug')
-                    ->helperText('This field automatically updates based on the value of the title field')
-                    ->readOnly(),
                 MarkdownEditor::make('description')
                     ->columnSpanFull()
                     ->disableToolbarButtons(['attachFiles', 'table'])
