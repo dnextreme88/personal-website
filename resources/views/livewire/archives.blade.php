@@ -178,7 +178,7 @@
                         <!-- Skeleton Loader -->
                         <div 
                             x-show="!isLoaded" 
-                            class="h-25-vh *:bg-transparent min-h-[300px] min-w-[300px] skeleton-loader"
+                            class="rounded-md h-25-vh *:bg-transparent min-h-[300px] min-w-[300px] skeleton-loader"
                         >
                             <div class="mb-4 h-full w-full text-center text-3xl content-center">
                                 <x-loading-indicator
