@@ -50,7 +50,7 @@ class PostResource extends Resource
                     ->maxLength(64)
                     ->minLength(3)
                     ->required()
-                    ->unique(ignoreRecord: true),
+                    ->unique(),
                 MarkdownEditor::make('description')
                     ->columnSpanFull()
                     ->disableToolbarButtons(['attachFiles', 'table'])

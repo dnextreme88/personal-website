@@ -33,7 +33,7 @@ class CategoryResource extends Resource
                     ->maxLength(64)
                     ->minLength(3)
                     ->required()
-                    ->unique(ignoreRecord: true),
+                    ->unique(),
                 TextInput::make('description')
                     ->columnSpanFull(),
                 Section::make('Category Details')
