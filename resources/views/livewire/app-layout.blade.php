@@ -31,7 +31,7 @@
             @if (isset($nav_menu))
                 <div class="h-8 bg-gray-100 dark:bg-gray-600">&nbsp;</div>
 
-                <nav class="bg-gray-100 dark:bg-gray-600 top-0 sticky z-[1]">{{ $nav_menu }}</nav>
+                <nav class="bg-gray-100 dark:bg-gray-600 top-0 sticky z-1">{{ $nav_menu }}</nav>
             @endif
 
             {{-- Page Heading --}}
