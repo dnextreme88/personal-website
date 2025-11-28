@@ -2,6 +2,14 @@
 
 namespace App\Filament\Resources;
 
+use BackedEnum;
+use Filament\Schemas\Schema;
+use Filament\Schemas\Components\Section;
+use Filament\Schemas\Components\Utilities\Get;
+use Filament\Actions\EditAction;
+use App\Filament\Resources\SoldItemResource\Pages\ListSoldItems;
+use App\Filament\Resources\SoldItemResource\Pages\CreateSoldItem;
+use App\Filament\Resources\SoldItemResource\Pages\EditSoldItem;
 use App\Enums\Conditions;
 use App\Enums\DroppingAreas;
 use App\Enums\PaymentMethods;
@@ -9,22 +17,17 @@ use App\Enums\Remittances;
 use App\Enums\SellMethods;
 use App\Enums\ShipmentLocations;
 use App\Enums\Sizes;
-use App\Filament\Resources\SoldItemResource\Pages;
 use App\Models\PayMethod;
 use App\Models\SellMethod;
 use App\Models\SoldItem;
 use Carbon\Carbon;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Form;
-use Filament\Forms\Get;
 use Filament\Resources\Resource;
-use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
@@ -36,13 +39,13 @@ use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 class SoldItemResource extends Resource
 {
     protected static ?string $model = SoldItem::class;
-    protected static ?string $activeNavigationIcon = 'heroicon-s-currency-dollar';
-    protected static ?string $navigationIcon = 'heroicon-o-currency-dollar';
+    protected static string|BackedEnum|null $activeNavigationIcon = 'heroicon-s-currency-dollar';
+    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-currency-dollar';
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form
-            ->schema([
+        return $schema
+            ->components([
                 Section::make('Item Details')
                     ->schema([
                         TextInput::make('brand')
@@ -262,10 +265,10 @@ class SoldItemResource extends Resource
                         }
                     }),
             ])
-            ->actions([
+            ->recordActions([
                 EditAction::make(),
             ])
-            ->bulkActions([
+            ->toolbarActions([
                 //
             ]);
     }
@@ -280,9 +283,9 @@ class SoldItemResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListSoldItems::route('/'),
-            'create' => Pages\CreateSoldItem::route('/create'),
-            'edit' => Pages\EditSoldItem::route('/{record}/edit'),
+            'index' => ListSoldItems::route('/'),
+            'create' => CreateSoldItem::route('/create'),
+            'edit' => EditSoldItem::route('/{record}/edit'),
         ];
     }
 }

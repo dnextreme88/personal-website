@@ -2,22 +2,26 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\PostResource\Pages;
+use BackedEnum;
+use UnitEnum;
+use Filament\Schemas\Schema;
+use Filament\Schemas\Components\Section;
+use Filament\Actions\EditAction;
+use Filament\Actions\DeleteAction;
+use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteBulkAction;
+use App\Filament\Resources\PostResource\Pages\ListPosts;
+use App\Filament\Resources\PostResource\Pages\CreatePost;
+use App\Filament\Resources\PostResource\Pages\EditPost;
 use App\Models\Blog\Category;
 use App\Models\Blog\Post;
 use Carbon\Carbon;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\Placeholder;
-use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Tables\Actions\BulkActionGroup;
-use Filament\Tables\Actions\DeleteAction;
-use Filament\Tables\Actions\DeleteBulkAction;
-use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
@@ -27,14 +31,14 @@ use Illuminate\Support\Collection;
 class PostResource extends Resource
 {
     protected static ?string $model = Post::class;
-    protected static ?string $activeNavigationIcon = 'heroicon-s-chat-bubble-oval-left';
-    protected static ?string $navigationGroup = 'Blog';
-    protected static ?string $navigationIcon = 'heroicon-o-chat-bubble-oval-left';
+    protected static string|BackedEnum|null $activeNavigationIcon = 'heroicon-s-chat-bubble-oval-left';
+    protected static string|UnitEnum|null $navigationGroup = 'Blog';
+    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-chat-bubble-oval-left';
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form
-            ->schema([
+        return $schema
+            ->components([
                 Select::make('category_id')
                     ->relationship('category', 'name')
                     ->required(),
@@ -46,7 +50,7 @@ class PostResource extends Resource
                     ->maxLength(64)
                     ->minLength(3)
                     ->required()
-                    ->unique(ignoreRecord: true),
+                    ->unique(),
                 MarkdownEditor::make('description')
                     ->columnSpanFull()
                     ->disableToolbarButtons(['attachFiles', 'table'])
@@ -106,11 +110,11 @@ class PostResource extends Resource
                         }
                     }),
             ])
-            ->actions([
+            ->recordActions([
                 EditAction::make(),
                 DeleteAction::make(),
             ])
-            ->bulkActions([
+            ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
                 ]),
@@ -127,9 +131,9 @@ class PostResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListPosts::route('/'),
-            'create' => Pages\CreatePost::route('/create'),
-            'edit' => Pages\EditPost::route('/{record}/edit'),
+            'index' => ListPosts::route('/'),
+            'create' => CreatePost::route('/create'),
+            'edit' => EditPost::route('/{record}/edit'),
         ];
     }
 }

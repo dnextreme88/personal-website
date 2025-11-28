@@ -3,7 +3,7 @@
         <x-navigation-menu />
     </x-slot>
 
-    <section class="h-[125vh] px-6 bg-gradient-to-r from-white to-blue-300 pt-36 pb-80 dark:from-slate-400 dark:bg-gradient-to-br dark:to-blue-600 sm:py-32 lg:px-8">
+    <section class="h-[125vh] px-6 bg-linear-to-r from-white to-blue-300 pt-36 pb-80 dark:from-slate-400 dark:bg-linear-to-br dark:to-blue-600 sm:py-32 lg:px-8">
         <div class="max-w-2xl mx-auto text-center">
             <h2 class="text-5xl font-semibold tracking-tight text-gray-800 dark:text-gray-100 sm:text-7xl" aria-label="Welcome header">Welcome!</h2>
 
@@ -38,37 +38,37 @@
                 <div class="mx-auto max-w-7xl px-6 pt-36 pb-32 sm:pt-60 lg:px-8 lg:pt-32">
                     <div class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                         <div class="relative w-full lg:max-w-lg lg:shrink-0 xl:max-w-xl">
-                            <h1 class="text-5xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-7xl dark:text-white transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100">Web Developer.</h1>
-                            <p class="mt-8 mb-6 text-lg font-medium text-pretty text-gray-500 sm:max-w-lg sm:text-xl/8 lg:max-w-none dark:text-gray-400 transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-[500ms]">My name is Jeanne Kevin T. Decena and welcome to my personal website! Here you can find all the goodies I've been doing in my life - from my blog and to my portfolio. Feel free to look around! If you need some web development professional, look no further and contact me right away!</p>
+                            <h1 class="text-5xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-7xl dark:text-white transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100">Web Developer.</h1>
+                            <p class="mt-8 mb-6 text-lg font-medium text-pretty text-gray-500 sm:max-w-lg sm:text-xl/8 lg:max-w-none dark:text-gray-400 transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-500">My name is Jeanne Kevin T. Decena and welcome to my personal website! Here you can find all the goodies I've been doing in my life - from my blog and to my portfolio. Feel free to look around! If you need some web development professional, look no further and contact me right away!</p>
                         </div>
 
                         {{-- TODO: TO FIX RESPONSIVE DESIGN ON 1024px AND UP --}}
                         <div class="mt-14 flex justify-end gap-8 sm:flex-row sm:-mt-10 sm:justify-start sm:pl-2 md:pl-16 lg:mt-0 lg:pl-0">
                             <div class="mx-auto sm:ml-auto w-44 flex-none space-y-8 pt-32 sm:pt-80 lg:order-last lg:pt-66 xl:order-0">
                                 <div class="relative">
-                                    <img src="{{ asset('/images/homepage-1.webp') }}" class="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5 hover:scale-110 -translate-x-[8rem] opacity-0 intersect-once intersect:translate-x-0 intersect:opacity-100" style="transition: scale 0.25s, translate 2s, opacity 3s 200ms;" />
+                                    <img src="{{ asset('/images/homepage-1.webp') }}" class="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5 hover:scale-110 -translate-x-32 opacity-0 intersect-once intersect:translate-x-0 intersect:opacity-100" style="transition: scale 0.25s, translate 2s, opacity 3s 200ms;" />
                                     <div class="absolute inset-0"></div>
                                 </div>
                             </div>
 
                             <div class="mx-auto sm:mr-auto w-44 flex-none space-y-8 sm:pt-52 lg:pt-16">
                                 <div class="relative">
-                                    <img src="{{ asset('/images/homepage-2.webp') }}" class="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5 hover:scale-110 -translate-x-[8rem] opacity-0 intersect-once intersect:translate-x-0 intersect:opacity-100" style="transition: scale 0.25s, translate 2s, opacity 3s 400ms;" />
+                                    <img src="{{ asset('/images/homepage-2.webp') }}" class="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5 hover:scale-110 -translate-x-32 opacity-0 intersect-once intersect:translate-x-0 intersect:opacity-100" style="transition: scale 0.25s, translate 2s, opacity 3s 400ms;" />
                                     <div class="absolute inset-0"></div>
                                 </div>
                                 <div class="relative">
-                                    <img src="{{ asset('/images/homepage-3.webp') }}" class="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5 hover:scale-110 -translate-x-[8rem] opacity-0 intersect-once intersect:translate-x-0 intersect:opacity-100" style="transition: scale 0.25s, translate 2s, opacity 3s 600ms;" />
+                                    <img src="{{ asset('/images/homepage-3.webp') }}" class="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5 hover:scale-110 -translate-x-32 opacity-0 intersect-once intersect:translate-x-0 intersect:opacity-100" style="transition: scale 0.25s, translate 2s, opacity 3s 600ms;" />
                                     <div class="absolute inset-0"></div>
                                 </div>
                             </div>
 
                             <div class="mx-auto w-44 flex-none space-y-8 lg:pt-36 xl:pt-0">
                                 <div class="relative">
-                                    <img src="{{ asset('/images/homepage-4.webp') }}" class="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5 hover:scale-110 -translate-x-[8rem] opacity-0 intersect-once intersect:translate-x-0 intersect:opacity-100" style="transition: scale 0.25s, translate 2s, opacity 3s 800ms;" />
+                                    <img src="{{ asset('/images/homepage-4.webp') }}" class="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5 hover:scale-110 -translate-x-32 opacity-0 intersect-once intersect:translate-x-0 intersect:opacity-100" style="transition: scale 0.25s, translate 2s, opacity 3s 800ms;" />
                                     <div class="absolute inset-0"></div>
                                 </div>
                                 <div class="relative">
-                                    <img src="{{ asset('/images/homepage-5.webp') }}" class="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5 hover:scale-110 -translate-x-[8rem] opacity-0 intersect-once intersect:translate-x-0 intersect:opacity-100" style="transition: scale 0.25s, translate 2s, opacity 3s 1000ms;" />
+                                    <img src="{{ asset('/images/homepage-5.webp') }}" class="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5 hover:scale-110 -translate-x-32 opacity-0 intersect-once intersect:translate-x-0 intersect:opacity-100" style="transition: scale 0.25s, translate 2s, opacity 3s 1000ms;" />
                                     <div class="absolute inset-0"></div>
                                 </div>
                             </div>
@@ -99,12 +99,12 @@
             <!-- Latest posts from blog section -->
             <div class="mx-auto max-w-7xl pb-16 pt-32 px-6 sm:mt-40 lg:px-8">
                 <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-                    <h2 class="text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl dark:text-white transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100">From the Blog...</h2>
-                    <p class="mt-2 text-lg/8 text-gray-600 dark:text-gray-400 transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-[500ms]">Latest updates from me!</p>
+                    <h2 class="text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl dark:text-white transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100">From the Blog...</h2>
+                    <p class="mt-2 text-lg/8 text-gray-600 dark:text-gray-400 transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-500">Latest updates from me!</p>
                 </div>
                 <div class="mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
                     {{-- TODO: MAKE THIS DYNAMIC BY FETCHING THE LAST 3 LATEST POSTS FROM THE BLOG --}}
-                    <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pt-80 pb-8 sm:pt-48 lg:pt-80 lg:px-4 dark:bg-gray-800 hover:scale-110 translate-y-[8rem] opacity-0 intersect-once intersect:translate-y-0 intersect:opacity-100" style="transition: scale 0.25s, translate 2s, opacity 3s 200ms;">
+                    <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pt-80 pb-8 sm:pt-48 lg:pt-80 lg:px-4 dark:bg-gray-800 hover:scale-110 translate-y-32 opacity-0 intersect-once intersect:translate-y-0 intersect:opacity-100" style="transition: scale 0.25s, translate 2s, opacity 3s 200ms;">
                         <img src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80" class="absolute inset-0 -z-10 size-full object-cover" />
                         <div class="absolute inset-0 -z-10 bg-linear-to-t from-gray-900 via-gray-900/40 dark:from-black/80 dark:via-black/40"></div>
                         <div class="absolute inset-0 -z-10 rounded-2xl inset-ring inset-ring-gray-900/10 dark:inset-ring-white/10"></div>
@@ -125,7 +125,7 @@
                         </h3>
                     </article>
 
-                    <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pt-80 pb-8 sm:pt-48 lg:pt-80 lg:px-4 dark:bg-gray-800 hover:scale-110 translate-y-[8rem] opacity-0 intersect-once intersect:translate-y-0 intersect:opacity-100" style="transition: scale 0.25s, translate 2s, opacity 3s 400ms;">
+                    <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pt-80 pb-8 sm:pt-48 lg:pt-80 lg:px-4 dark:bg-gray-800 hover:scale-110 translate-y-32 opacity-0 intersect-once intersect:translate-y-0 intersect:opacity-100" style="transition: scale 0.25s, translate 2s, opacity 3s 400ms;">
                         <img src="https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3270&q=80" class="absolute inset-0 -z-10 size-full object-cover" />
                         <div class="absolute inset-0 -z-10 bg-linear-to-t from-gray-900 via-gray-900/40 dark:from-black/80 dark:via-black/40"></div>
                         <div class="absolute inset-0 -z-10 rounded-2xl inset-ring inset-ring-gray-900/10 dark:inset-ring-white/10"></div>
@@ -146,7 +146,7 @@
                         </h3>
                     </article>
 
-                    <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pt-80 pb-8 sm:pt-48 lg:pt-80 lg:px-4 dark:bg-gray-800 hover:scale-110 translate-y-[8rem] opacity-0 intersect-once intersect:translate-y-0 intersect:opacity-100" style="transition: scale 0.25s, translate 2s, opacity 3s 600ms;">
+                    <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pt-80 pb-8 sm:pt-48 lg:pt-80 lg:px-4 dark:bg-gray-800 hover:scale-110 translate-y-32 opacity-0 intersect-once intersect:translate-y-0 intersect:opacity-100" style="transition: scale 0.25s, translate 2s, opacity 3s 600ms;">
                         <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3270&q=80" class="absolute inset-0 -z-10 size-full object-cover" />
                         <div class="absolute inset-0 -z-10 bg-linear-to-t from-gray-900 via-gray-900/40 dark:from-black/80 dark:via-black/40"></div>
                         <div class="absolute inset-0 -z-10 rounded-2xl inset-ring inset-ring-gray-900/10 dark:inset-ring-white/10"></div>
@@ -192,51 +192,51 @@
                 <div class="mx-auto max-w-7xl px-6 pt-36 pb-32 sm:pt-60 lg:px-8 lg:pt-32">
                     <div class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-start">
                         <div class="relative w-full lg:max-w-lg lg:shrink-0 xl:max-w-xl">
-                            <h1 class="text-5xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-7xl dark:text-white transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100">Current Specs!</h1>
-                            <p class="mt-8 mb-6 text-lg font-medium text-pretty text-gray-500 sm:max-w-lg sm:text-xl/8 lg:max-w-none dark:text-gray-400 transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-[500ms]">Last update: November 13, 2025</p>
+                            <h1 class="text-5xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-7xl dark:text-white transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100">Current Specs!</h1>
+                            <p class="mt-8 mb-6 text-lg font-medium text-pretty text-gray-500 sm:max-w-lg sm:text-xl/8 lg:max-w-none dark:text-gray-400 transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-500">Last update: November 13, 2025</p>
 
                             <div class="flex flex-wrap gap-2 flex-col space-y-1">
                                 <div class="dark:text-gray-400 even:font-bold even:ml-2">Internet Service Provider (ISP)</div>
-                                <div class="dark:text-gray-200 even:font-bold even:ml-2 transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-[500ms]">PLDT 200Mbp/s</div>
+                                <div class="dark:text-gray-200 even:font-bold even:ml-2 transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-500">PLDT 200Mbp/s</div>
                                 <div class="dark:text-gray-400 even:font-bold even:ml-2">Memory</div>
-                                <div class="dark:text-gray-200 even:font-bold even:ml-2 transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-[500ms]">TEAMGROUP T-Force Delta RGB White 16GB (2x8GB) DDR4 3600MHz</div>
+                                <div class="dark:text-gray-200 even:font-bold even:ml-2 transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-500">TEAMGROUP T-Force Delta RGB White 16GB (2x8GB) DDR4 3600MHz</div>
                                 <div class="dark:text-gray-400 even:font-bold even:ml-2">Webcam</div>
-                                <div class="dark:text-gray-200 even:font-bold even:ml-2 transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-[500ms]">GSou T16s 1080p</div>
+                                <div class="dark:text-gray-200 even:font-bold even:ml-2 transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-500">GSou T16s 1080p</div>
                                 <div class="dark:text-gray-400 even:font-bold even:ml-2">Monitor 1</div>
-                                <div class="dark:text-gray-200 even:font-bold even:ml-2 transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-[500ms]">ASUS ROG XG27ACS-W 27" 180Hz</div>
+                                <div class="dark:text-gray-200 even:font-bold even:ml-2 transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-500">ASUS ROG XG27ACS-W 27" 180Hz</div>
                                 <div class="dark:text-gray-400 even:font-bold even:ml-2">Monitor 2</div>
-                                <div class="dark:text-gray-200 even:font-bold even:ml-2 transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-[500ms]">Viewplus ML-24HI 23.8" IPS FLAT 165Hz</div>
+                                <div class="dark:text-gray-200 even:font-bold even:ml-2 transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-500">Viewplus ML-24HI 23.8" IPS FLAT 165Hz</div>
                                 <div class="dark:text-gray-400 even:font-bold even:ml-2">CPU</div>
-                                <div class="dark:text-gray-200 even:font-bold even:ml-2 transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-[500ms]">AMD Ryzen 7 5700X AM4</div>
+                                <div class="dark:text-gray-200 even:font-bold even:ml-2 transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-500">AMD Ryzen 7 5700X AM4</div>
                                 <div class="dark:text-gray-400 even:font-bold even:ml-2">GPU</div>
-                                <div class="dark:text-gray-200 even:font-bold even:ml-2 transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-[500ms]">MSi RTX 4060 Ventus 2X White OC 8GB GDDR6</div>
+                                <div class="dark:text-gray-200 even:font-bold even:ml-2 transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-500">MSi RTX 4060 Ventus 2X White OC 8GB GDDR6</div>
                                 <div class="dark:text-gray-400 even:font-bold even:ml-2">PSU</div>
-                                <div class="dark:text-gray-200 even:font-bold even:ml-2 transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-[500ms]">Corsair RM850 850W White</div>
+                                <div class="dark:text-gray-200 even:font-bold even:ml-2 transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-500">Corsair RM850 850W White</div>
                                 <div class="dark:text-gray-400 even:font-bold even:ml-2">CPU AIO Cooler</div>
-                                <div class="dark:text-gray-200 even:font-bold even:ml-2 transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-[500ms]">NZXT Kraken X53 RGB White</div>
+                                <div class="dark:text-gray-200 even:font-bold even:ml-2 transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-500">NZXT Kraken X53 RGB White</div>
                                 <div class="dark:text-gray-400 even:font-bold even:ml-2">Motherboard</div>
-                                <div class="dark:text-gray-200 even:font-bold even:ml-2 transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-[500ms]">MSi B550M PRO-VDH Wifi AM4</div>
+                                <div class="dark:text-gray-200 even:font-bold even:ml-2 transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-500">MSi B550M PRO-VDH Wifi AM4</div>
                                 <div class="dark:text-gray-400 even:font-bold even:ml-2">Fans</div>
-                                <div class="dark:text-gray-200 even:font-bold even:ml-2 transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-[500ms]">NZXT F120 RGB Core Fans x5</div>
+                                <div class="dark:text-gray-200 even:font-bold even:ml-2 transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-500">NZXT F120 RGB Core Fans x5</div>
                                 <div class="dark:text-gray-400 even:font-bold even:ml-2">SSD 1</div>
-                                <div class="dark:text-gray-200 even:font-bold even:ml-2 transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-[500ms]">Kingston NV2 NVMe M.2 500GB</div>
+                                <div class="dark:text-gray-200 even:font-bold even:ml-2 transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-500">Kingston NV2 NVMe M.2 500GB</div>
                                 <div class="dark:text-gray-400 even:font-bold even:ml-2">SSD 2</div>
-                                <div class="dark:text-gray-200 even:font-bold even:ml-2 transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-[500ms]">ADATA NVMe 1TB</div>
+                                <div class="dark:text-gray-200 even:font-bold even:ml-2 transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-500">ADATA NVMe 1TB</div>
                                 <div class="dark:text-gray-400 even:font-bold even:ml-2">Computer Case</div>
-                                <div class="dark:text-gray-200 even:font-bold even:ml-2 transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-[500ms]">NZXT H7 Flow White</div>
+                                <div class="dark:text-gray-200 even:font-bold even:ml-2 transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-500">NZXT H7 Flow White</div>
                                 <div class="dark:text-gray-400 even:font-bold even:ml-2">Speakers</div>
-                                <div class="dark:text-gray-200 even:font-bold even:ml-2 transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-[500ms]">Redragon GS520 Anvil RGB White</div>
+                                <div class="dark:text-gray-200 even:font-bold even:ml-2 transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-500">Redragon GS520 Anvil RGB White</div>
                                 <div class="dark:text-gray-400 even:font-bold even:ml-2">Keyboard</div>
-                                <div class="dark:text-gray-200 even:font-bold even:ml-2 transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-[500ms]">AULA F87 TKL Wireless Mechanical Keyboard</div>
+                                <div class="dark:text-gray-200 even:font-bold even:ml-2 transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-500">AULA F87 TKL Wireless Mechanical Keyboard</div>
                                 <div class="dark:text-gray-400 even:font-bold even:ml-2">Mouse</div>
-                                <div class="dark:text-gray-200 even:font-bold even:ml-2 transition duration-[2000ms] -translate-x-[8rem] opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-[500ms]">Redragon Woki Supperlight Wireless Mouse</div>
+                                <div class="dark:text-gray-200 even:font-bold even:ml-2 transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-500">Redragon Woki Supperlight Wireless Mouse</div>
                             </div>
                         </div>
 
                         <div class="mt-14 hidden lg:flex justify-end gap-8 sm:flex-row sm:-mt-10 sm:justify-start sm:pl-2 md:pl-16 lg:mt-0 lg:pl-0">
                             <div class="space-y-8 pt-32 sm:pt-48 lg:pt-32">
                                 <div class="relative">
-                                    <img src="{{ asset('/images/homepage-6.webp') }}" class="aspect-square w-full rounded-xl bg-gray-900/5 shadow-lg dark:bg-gray-700/5 hover:scale-110 -translate-x-[8rem] opacity-0 intersect-once intersect:translate-x-0 intersect:opacity-100" style="transition: scale 0.25s, translate 2s, opacity 3s 200ms;" />
+                                    <img src="{{ asset('/images/homepage-6.webp') }}" class="aspect-square w-full rounded-xl bg-gray-900/5 shadow-lg dark:bg-gray-700/5 hover:scale-110 -translate-x-32 opacity-0 intersect-once intersect:translate-x-0 intersect:opacity-100" style="transition: scale 0.25s, translate 2s, opacity 3s 200ms;" />
                                     <div class="absolute inset-0"></div>
                                 </div>
                             </div>

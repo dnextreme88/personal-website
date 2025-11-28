@@ -11,9 +11,9 @@ use Flowframe\Trend\TrendValue;
 
 class SoldItemsFrequencyChart extends ChartWidget
 {
-    protected static ?string $heading = 'Sold Items Chart';
+    protected ?string $heading = 'Sold Items Chart';
 
-    protected static ?string $pollingInterval = null; // Avoid refreshing the chart data
+    protected ?string $pollingInterval = null; // Avoid refreshing the chart data
 
     public ?string $filter = 'this_week';
 

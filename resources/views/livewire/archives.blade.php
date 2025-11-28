@@ -21,79 +21,12 @@
                 <label class="py-2 text-2xl text-gray-800 dark:text-gray-200">Advanced Filters</label>
 
                 <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                    <div class="grid items-center grid-cols-2">
-                        <label class="text-gray-600 dark:text-gray-200 me-2">Brand</label>
-
-                        <input wire:model="archive_brands_choice" class="col-span-3 sm:col-span-2" list="archive-brands" placeholder="Select brand" />
-                        <datalist id="archive-brands">
-                            <option value="SHOW ALL"></option>
-
-                            @foreach ($brands as $brand)
-                                <option value="{{ $brand }}"></option>
-                            @endforeach
-                        </datalist>
-                    </div>
-
-                    <div class="grid items-center grid-cols-2">
-                        <label class="text-gray-600 dark:text-gray-200 me-2">Type</label>
-
-                        <input wire:model="archive_types_choice" class="col-span-3 sm:col-span-2" list="archive-types" placeholder="Select type" />
-                        <datalist id="archive-types">
-                            <option value="SHOW ALL"></option>
-
-                            @foreach ($types as $type)
-                                <option value="{{ $type }}"></option>
-                            @endforeach
-                        </datalist>
-                    </div>
-
-                    <div class="grid items-center grid-cols-2">
-                        <label class="text-gray-600 dark:text-gray-200 me-2">Month</label>
-
-                        <select wire:model="archive_months_choice" class="col-span-3 sm:col-span-2">
-                            <option value="">SHOW ALL</option>
-
-                            @foreach ($months as $key => $month)
-                                <option value="{{ $key }}">{{ ucfirst($month) }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-
-                    <div class="grid items-center grid-cols-2">
-                        <label class="text-gray-600 dark:text-gray-200 me-2">Year</label>
-
-                        <select wire:model="archive_years_choice" class="col-span-3 sm:col-span-2">
-                            <option value="">SHOW ALL</option>
-
-                            @foreach ($years as $year)
-                                <option value="{{ $year }}">{{ $year }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-
-                    <div class="grid items-center grid-cols-2">
-                        <label class="text-gray-600 dark:text-gray-200 me-2">Payment Method</label>
-
-                        <select wire:model="archive_pay_methods_choice" class="col-span-3 sm:col-span-2">
-                            <option value="">SHOW ALL</option>
-
-                            @foreach (\App\Enums\PaymentMethods::cases() as $pay_method)
-                                <option value="{{ $pay_method->value }}">{{ $pay_method->value }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-
-                    <div class="grid items-center grid-cols-2">
-                        <label class="text-gray-600 dark:text-gray-200 me-2">Sell Method</label>
-
-                        <select wire:model="archive_sell_methods_choice" class="col-span-3 sm:col-span-2">
-                            <option value="">SHOW ALL</option>
-
-                            @foreach (\App\Enums\SellMethods::cases() as $sell_method)
-                                <option value="{{ $sell_method->value }}">{{ $sell_method->value }}</option>
-                            @endforeach
-                        </select>
-                    </div>
+                    <x-forms.input-datalist :elements="$brands" :elements_label="'archive-brands'" :label="'Brand'" :text_placeholder="'Select brand'" :wire_model="'archive_brands_choice'" />
+                    <x-forms.input-datalist :elements="$types" :elements_label="'archive-types'" :label="'Type'" :text_placeholder="'Select type'" :wire_model="'archive_types_choice'" />
+                    <x-forms.input-select :elements="$months" :label="'Month'" :wire_model="'archive_months_choice'" />
+                    <x-forms.input-select :elements="$years" :label="'Year'" :wire_model="'archive_years_choice'" />
+                    <x-forms.input-select :elements="\App\Enums\PaymentMethods::cases()" :label="'Payment Method'" :use_enum_values="true" :wire_model="'archive_pay_methods_choice'" />
+                    <x-forms.input-select :elements="\App\Enums\SellMethods::cases()" :label="'Sell Method'" :use_enum_values="true" :wire_model="'archive_sell_methods_choice'" />
 
                     <div x-data="{
                         selectedTags: $wire.entangle('archive_tags_choice'),

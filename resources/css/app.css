@@ -1,6 +1,8 @@
 @import 'tailwindcss';
+@import 'tailwindcss-intersect';
 
-@config '../../tailwind.config.js';
+@source '../../app/Filament/';
+@source '../../resources/views/filament';
 
 /*
   The default border color has changed to `currentcolor` in Tailwind CSS v4,
@@ -30,6 +32,12 @@
 
 /* Define custom CSS here that will be extended by Tailwind */
 /* Examples below */
+@custom-variant dark (
+    &:where(
+        .dark, .dark *
+    )
+);
+
 @layer utilities {
     .h-25-vh {
         height: 25vh;
@@ -114,20 +122,21 @@
             background-position: 100% 0;
         }
     }
+
+    /* Shimmer Animation Effect */
+    .skeleton-loader {
+      background: linear-gradient(to right, #7489b6 0%, #ddd 50%, #7489b6 25%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s linear infinite;
+    }
+    
+    @keyframes shimmer {
+      0% {
+        background-position: -200% 0;
+      }
+      100% {
+        background-position: 200% 0;
+      }
+    }
 }
 
-/* Shimmer Animation Effect */
-.skeleton-loader {
-  background: linear-gradient(to right, #7489b6 0%, #ddd 50%, #7489b6 25%);
-  background-size: 200% 100%;
-  animation: shimmer 1.5s linear infinite;
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
