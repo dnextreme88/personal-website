@@ -6,10 +6,10 @@
     "keywords": ["laravel", "framework"],
     "license": "MIT",
     "require": {
-        "php": "^8.2",
-        "filament/filament": "4.0",
+        "php": "^8.3",
+        "filament/filament": "4.2.4",
         "flowframe/laravel-trend": "^0.4.0",
-        "laravel/framework": "^12.0.4",
+        "laravel/framework": "^12.10.0",
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.6.2",
         "masmerise/livewire-toaster": "^2.7"
@@ -17,13 +17,13 @@
     "require-dev": {
         "fakerphp/faker": "^1.23",
         "filament/upgrade": "4.0",
-        "laravel/pail": "^1.1",
-        "laravel/pint": "^1.21.2",
-        "laravel/sail": "^1.26",
+        "laravel/pail": "^1.2.4",
+        "laravel/pint": "^1.26.0",
+        "laravel/sail": "^1.48.1",
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.8.2",
-        "pestphp/pest": "^3.8.1",
-        "pestphp/pest-plugin-laravel": "^3.0"
+        "pestphp/pest": "^3.8.4",
+        "pestphp/pest-plugin-laravel": "^3.2.0"
     },
     "autoload": {
         "psr-4": {
