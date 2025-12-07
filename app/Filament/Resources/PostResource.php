@@ -73,6 +73,7 @@ class PostResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('category.name')
+                    ->badge()
                     ->label('Category')
                     ->searchable()
                     ->sortable(),
@@ -89,8 +90,9 @@ class PostResource extends Resource
                     ->searchable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('description')
+                    ->getStateUsing(fn ($record): string => strip_tags($record->description))
                     ->searchable()
-                    ->words(5),
+                    ->words(8),
                 TextColumn::make('date_published')
                     ->dateTime('M d, Y'),
                 TextColumn::make('updated_at')
