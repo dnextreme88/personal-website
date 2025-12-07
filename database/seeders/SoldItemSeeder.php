@@ -310,6 +310,7 @@ class SoldItemSeeder extends Seeder
             ['method' => PaymentMethods::REMITTANCE->value, 'remittance_location' => Remittances::BUYERS_DROPPING_AREA->value],
             ['method' => PaymentMethods::REMITTANCE->value, 'remittance_location' => Remittances::GCASH->value],
             ['method' => PaymentMethods::REMITTANCE->value, 'remittance_location' => Remittances::GCASH->value],
+            ['method' => PaymentMethods::REMITTANCE->value, 'remittance_location' => Remittances::GCASH->value],
         ]);
 
         SellMethod::insert([
@@ -601,6 +602,7 @@ class SoldItemSeeder extends Seeder
             ['method' => SellMethods::DROPPING->value, 'location' => 'Buyer\'s dropping area'],
             ['method' => SellMethods::MEETUP->value, 'location' => 'Camp 8'],
             ['method' => SellMethods::MEETUP->value, 'location' => 'Camp 8'],
+            ['method' => SellMethods::SHIPMENT->value, 'location' => ShipmentLocations::J_AND_T_EXPRESS->value],
         ]);
 
         SoldItem::insert([
@@ -5497,6 +5499,23 @@ class SoldItemSeeder extends Seeder
                 'tags' => 'australia,female buyer,sold to friend',
                 'notes' => 'Sold to Abee. Payment sent through GCash on 7/27. Received payment on ?/?.',
                 'image_location' => 'sold-items/2025/tradie1-1.jpg',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'pay_method_id' => 289,
+                'sell_method_id' => 289,
+                'transaction_id' => '2025_18',
+                'brand' => 'Toy Story',
+                'name' => 'Slinky Dog',
+                'type' => 'Toy',
+                'price' => 250,
+                'condition' => 'used',
+                'size' => 'N/A',
+                'date_sold' => '2025-12-01',
+                'tags' => 'australia,female buyer,sold to friend',
+                'notes' => 'Payment sent through GCash on 12/4. Received payment on 12/7.',
+                'image_location' => 'sold-items/2025/toy-story1-1.jpg',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
