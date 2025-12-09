@@ -60,7 +60,9 @@ class ListPost extends Component
             $posts = $posts->where(fn ($query) => $query->whereLike('title', '%' .$this->search_query. '%')->orWhereLike('description', '%' .$this->search_query. '%'));
         }
 
-        $posts = $posts->paginate(8);
+        $posts = $posts->orderBy('date_published', 'DESC')
+            ->orderBy('id', 'DESC')
+            ->paginate(8);
 
         return view('livewire.blog.list-post', ['posts' => $posts]);
     }
