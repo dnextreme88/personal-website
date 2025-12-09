@@ -24,7 +24,7 @@
 
 @font-face {
     font-family: 'Neon Retro';
-    src: 
+    src:
         url('../fonts/Neonblitz.ttf') format('truetype'),
         url('https://fonts.googleapis.com/css?family=Poppins:wght@200;400;700&display=swap') format('woff2');
     font-display: swap;
@@ -129,7 +129,7 @@
       background-size: 200% 100%;
       animation: shimmer 1.5s linear infinite;
     }
-    
+
     @keyframes shimmer {
       0% {
         background-position: -200% 0;
@@ -138,5 +138,39 @@
         background-position: 200% 0;
       }
     }
+
+    .gradient-gray-1 {
+        background-size: 300% 300%;
+        animation: animated-gradient 7s ease infinite;
+        @apply from-gray-100;
+        @apply via-gray-900;
+        @apply to-blue-300;
+    }
+
+    .gradient-gray-2 {
+        background-size: 300% 300%;
+        animation: animated-gradient 7s ease infinite;
+        @apply from-gray-300/50;
+        @apply via-gray-600/75;
+        @apply to-blue-600;
+    }
+
+    .gradient-gray-3 {
+        background-size: 300% 300%;
+        animation: animated-gradient 7s ease infinite;
+        @apply from-gray-500/75;
+        @apply via-gray-300/50;
+        @apply to-blue-900;
+    }
+
+    @keyframes animated-gradient {
+        0%, 100% {
+            background-position: 0%
+        }
+        50% {
+            background-position: 100%
+        }
+    }
+
 }
 
