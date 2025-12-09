@@ -311,6 +311,7 @@ class SoldItemSeeder extends Seeder
             ['method' => PaymentMethods::REMITTANCE->value, 'remittance_location' => Remittances::GCASH->value],
             ['method' => PaymentMethods::REMITTANCE->value, 'remittance_location' => Remittances::GCASH->value],
             ['method' => PaymentMethods::REMITTANCE->value, 'remittance_location' => Remittances::GCASH->value],
+            ['method' => PaymentMethods::CASH_ON_HAND->value, 'remittance_location' => 'Malcolm Square'],
         ]);
 
         SellMethod::insert([
@@ -603,6 +604,7 @@ class SoldItemSeeder extends Seeder
             ['method' => SellMethods::MEETUP->value, 'location' => 'Camp 8'],
             ['method' => SellMethods::MEETUP->value, 'location' => 'Camp 8'],
             ['method' => SellMethods::SHIPMENT->value, 'location' => ShipmentLocations::J_AND_T_EXPRESS->value],
+            ['method' => SellMethods::MEETUP->value, 'location' => 'Malcolm Square'],
         ]);
 
         SoldItem::insert([
@@ -5516,6 +5518,23 @@ class SoldItemSeeder extends Seeder
                 'tags' => 'australia,female buyer,sold to friend',
                 'notes' => 'Payment sent through GCash on 12/4. Received payment on 12/7.',
                 'image_location' => 'sold-items/2025/toy-story1-1.jpg',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'pay_method_id' => 290,
+                'sell_method_id' => 290,
+                'transaction_id' => '2025_19',
+                'brand' => 'Billabong',
+                'name' => null,
+                'type' => 'Cap',
+                'price' => 250,
+                'condition' => 'used',
+                'size' => 'N/A',
+                'date_sold' => '2025-12-09',
+                'tags' => 'australia,helped by friend',
+                'notes' => 'Abee helped post the item.',
+                'image_location' => 'sold-items/2025/billabong4-1.jpg',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
