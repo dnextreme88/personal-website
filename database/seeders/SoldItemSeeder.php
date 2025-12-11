@@ -5515,7 +5515,7 @@ class SoldItemSeeder extends Seeder
                 'condition' => 'used',
                 'size' => 'N/A',
                 'date_sold' => '2025-12-01',
-                'tags' => 'australia,female buyer,sold to friend',
+                'tags' => null,
                 'notes' => 'Payment sent through GCash on 12/4. Received payment on 12/7.',
                 'image_location' => 'sold-items/2025/toy-story1-1.jpg',
                 'created_at' => Carbon::now(),
