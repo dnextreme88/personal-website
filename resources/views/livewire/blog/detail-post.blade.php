@@ -16,7 +16,7 @@
             <p class="text-gray-600 dark:text-gray-400 text-xs sm:text-sm">Updated on <span class="font-semibold">{{ \Carbon\Carbon::parse($post->updated_at)->format('D, M j, Y \a\t g:i A') }}</span></p>
         @endif
 
-        <div class="mt-5 dark:text-gray-400">{!! Markdown::parse($post->description) !!}</div>
+        <div class="mt-5 dark:text-gray-400 prose prose-xl lg:prose-lg dark:prose-invert max-w-none">{!! Markdown::parse($post->description) !!}</div>
 
         <div class="border-t border-t-gray-400 mt-4 pt-2 flex flex-row justify-between items-center">
             <p><a wire:navigate class="text-blue-800 dark:text-blue-200 hover:text-blue-600 dark:hover:text-blue-400" href="{{ route('blog.index') }}">&larr; Back to Blog</a></p>
