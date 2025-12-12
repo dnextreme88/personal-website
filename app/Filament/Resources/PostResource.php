@@ -17,8 +17,8 @@ use App\Models\Blog\Category;
 use App\Models\Blog\Post;
 use Carbon\Carbon;
 use Filament\Forms\Components\DatePicker;
-use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\Placeholder;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\Resource;
@@ -51,9 +51,10 @@ class PostResource extends Resource
                     ->minLength(3)
                     ->required()
                     ->unique(),
-                MarkdownEditor::make('description')
+                RichEditor::make('description')
                     ->columnSpanFull()
                     ->disableToolbarButtons(['attachFiles', 'table'])
+                    ->extraInputAttributes(['class' => 'min-h-[360px]'])
                     ->required(),
                 Section::make('Post Details')
                     ->columns(2)
@@ -72,6 +73,7 @@ class PostResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('category.name')
+                    ->badge()
                     ->label('Category')
                     ->searchable()
                     ->sortable(),
@@ -88,8 +90,9 @@ class PostResource extends Resource
                     ->searchable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('description')
+                    ->getStateUsing(fn ($record): string => strip_tags($record->description))
                     ->searchable()
-                    ->words(5),
+                    ->words(8),
                 TextColumn::make('date_published')
                     ->dateTime('M d, Y'),
                 TextColumn::make('updated_at')

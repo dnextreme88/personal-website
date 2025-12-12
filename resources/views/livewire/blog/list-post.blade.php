@@ -60,11 +60,11 @@
                     </h2>
 
                     @if (str_word_count($post->description) > 80)
-                        <div class="mt-3 indent-3 text-justify line-clamp-5 text-gray-800 dark:text-gray-200">{!! Markdown::parse($post->description) !!}</div>
+                        <div class="mt-3 indent-3 text-justify line-clamp-5 text-gray-800 dark:text-gray-200 prose dark:prose-invert">{!! Markdown::parse($post->description) !!}</div>
 
                         <a wire:navigate class="inline-block mt-3 transition duration-200 text-blue-800 dark:text-blue-200 hover:text-blue-600 dark:hover:text-blue-400 hover:underline" href="{{ route('blog.post.detail', ['id' => $post->id, 'slug' => $post->slug]) }}" title="Click me to read more">Read more</a>
                     @else
-                        <div class="mt-3 indent-2 text-justify text-gray-800 dark:text-gray-200">{!! Markdown::parse($post->description) !!}</div>
+                        <div class="mt-3 indent-2 text-justify text-gray-800 dark:text-gray-200 prose dark:prose-invert">{!! Markdown::parse($post->description) !!}</div>
                     @endif
                 </div>
             </article>
