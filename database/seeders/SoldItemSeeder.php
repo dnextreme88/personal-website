@@ -312,6 +312,7 @@ class SoldItemSeeder extends Seeder
             ['method' => PaymentMethods::REMITTANCE->value, 'remittance_location' => Remittances::GCASH->value],
             ['method' => PaymentMethods::REMITTANCE->value, 'remittance_location' => Remittances::GCASH->value],
             ['method' => PaymentMethods::CASH_ON_HAND->value, 'remittance_location' => 'Malcolm Square'],
+            ['method' => PaymentMethods::CASH_ON_HAND->value, 'remittance_location' => 'Mcdo (Lower Session Road branch)'],
         ]);
 
         SellMethod::insert([
@@ -605,6 +606,7 @@ class SoldItemSeeder extends Seeder
             ['method' => SellMethods::MEETUP->value, 'location' => 'Camp 8'],
             ['method' => SellMethods::SHIPMENT->value, 'location' => ShipmentLocations::J_AND_T_EXPRESS->value],
             ['method' => SellMethods::MEETUP->value, 'location' => 'Malcolm Square'],
+            ['method' => SellMethods::MEETUP->value, 'location' => 'Mcdo (Lower Session Road branch)'],
         ]);
 
         SoldItem::insert([
@@ -5447,7 +5449,7 @@ class SoldItemSeeder extends Seeder
                 'condition' => 'used',
                 'size' => '23.8 inches',
                 'date_sold' => '2025-09-21',
-                'tags' => 'computer related,female buyer,sold to friend',
+                'tags' => 'computer related,female buyer,sold same item,sold to friend',
                 'notes' => 'P1,000 initially paid through meetup. Sold to Meiganne.',
                 'image_location' => 'sold-items/2025/viewplus1-1.jpg',
                 'created_at' => Carbon::now(),
@@ -5535,6 +5537,23 @@ class SoldItemSeeder extends Seeder
                 'tags' => 'australia,helped by friend',
                 'notes' => 'Abee helped post the item.',
                 'image_location' => 'sold-items/2025/billabong4-1.jpg',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'pay_method_id' => 291,
+                'sell_method_id' => 291,
+                'transaction_id' => '2025_20',
+                'brand' => 'Viewplus',
+                'name' => 'ML-24HI',
+                'type' => 'Monitor',
+                'price' => 1000,
+                'condition' => 'used',
+                'size' => '23.8 inches',
+                'date_sold' => '2025-12-12',
+                'tags' => 'computer related,sold same item,sold with case',
+                'notes' => 'Sold the same item as the item sold on 9/21 but to a different buyer and has original manual.',
+                'image_location' => 'sold-items/2025/viewplus2-1.jpg',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
