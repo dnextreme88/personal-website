@@ -154,9 +154,9 @@
                 <div class="mx-auto max-w-2xl mb-2 lg:mx-0 lg:max-w-none">
                     <a
                         wire:navigate
-                        {{-- TODO: TO CREATE ABOUT ME PAGE --}}
-                        href="{{ route('about_me') }}" 
-                        class="block mt-2 text-lg/8 text-blue-800 dark:text-blue-200 hover:underline transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-3 intersect:opacity-100"
+                        href="{{ route('about_me') }}"
+                        class="inline-block mt-2 text-lg/8 text-blue-800 dark:text-blue-200 hover:underline transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-3 intersect:opacity-100"
+                        title="View the full resume"
                         aria-label="About Me link"
                     >
                         View the full resume &rarr;
@@ -210,7 +210,7 @@
                                 <div class="dark:text-gray-400 even:font-bold even:ml-2">Monitor 1</div>
                                 <div class="dark:text-gray-200 even:font-bold even:ml-2 transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-500">ASUS ROG XG27ACS-W 27" 180Hz</div>
                                 <div class="dark:text-gray-400 even:font-bold even:ml-2">Monitor 2</div>
-                                <div class="dark:text-gray-200 even:font-bold even:ml-2 transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-500">Viewplus ML-24HI 23.8" IPS FLAT 165Hz</div>
+                                <div class="dark:text-gray-200 even:font-bold even:ml-2 transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-500 italic">TBD</div>
                                 <div class="dark:text-gray-400 even:font-bold even:ml-2">CPU</div>
                                 <div class="dark:text-gray-200 even:font-bold even:ml-2 transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-500">AMD Ryzen 7 5700X AM4</div>
                                 <div class="dark:text-gray-400 even:font-bold even:ml-2">GPU</div>

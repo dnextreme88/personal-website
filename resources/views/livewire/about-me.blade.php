@@ -15,48 +15,40 @@
             </section>
 
             <section>
-                <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Skills</h3>
+                <h3 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Soft Skills</h3>
 
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                    <span class="p-3 bg-gray-200 dark:bg-gray-800 rounded-md shadow text-center dark:text-gray-300">.NET</span>
-                    <span class="p-3 bg-gray-200 dark:bg-gray-800 rounded-md shadow text-center dark:text-gray-300">AlpineJs</span>
-                    <span class="p-3 bg-gray-200 dark:bg-gray-800 rounded-md shadow text-center dark:text-gray-300">Bootstrap</span>
-                    <span class="p-3 bg-gray-200 dark:bg-gray-800 rounded-md shadow text-center dark:text-gray-300">JavaScript</span>
-                    <span class="p-3 bg-gray-200 dark:bg-gray-800 rounded-md shadow text-center dark:text-gray-300">jQuery</span>
-                    <span class="p-3 bg-gray-200 dark:bg-gray-800 rounded-md shadow text-center dark:text-gray-300">Node.js / Express.js</span>
-                    <span class="p-3 bg-gray-200 dark:bg-gray-800 rounded-md shadow text-center dark:text-gray-300">PHP / CodeIgniter / Laravel / Livewire</span>
-                    <span class="p-3 bg-gray-200 dark:bg-gray-800 rounded-md shadow text-center dark:text-gray-300">Python / Django</span>
-                    <span class="p-3 bg-gray-200 dark:bg-gray-800 rounded-md shadow text-center dark:text-gray-300">React.js / Next.js</span>
-                    <span class="p-3 bg-gray-200 dark:bg-gray-800 rounded-md shadow text-center dark:text-gray-300">Tailwind CSS</span>
-                    <span class="p-3 bg-gray-200 dark:bg-gray-800 rounded-md shadow text-center dark:text-gray-300">WordPress</span>
-                    <span class="p-3 bg-gray-200 dark:bg-gray-800 rounded-md shadow text-center dark:text-gray-300">Chat Support</span>
-                    <span class="p-3 bg-gray-200 dark:bg-gray-800 rounded-md shadow text-center dark:text-gray-300">Data Entry</span>
-                    <span class="p-3 bg-gray-200 dark:bg-gray-800 rounded-md shadow text-center dark:text-gray-300">GoHighLevel / Monday.com</span>
-                    <span class="p-3 bg-gray-200 dark:bg-gray-800 rounded-md shadow text-center dark:text-gray-300">Virtual Assistance</span>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <span class="rounded-xl p-3 text-center text-gray-800 dark:text-gray-200 bg-gray-300 dark:bg-gray-600/25">Efficient critical thinker</span>
+                    <span class="rounded-xl p-3 text-center text-gray-800 dark:text-gray-200 bg-gray-300 dark:bg-gray-600/25">High work ethics and standards</span>
+                    <span class="rounded-xl p-3 text-center text-gray-800 dark:text-gray-200 bg-gray-300 dark:bg-gray-600/25">Motivates on extreme circumstances</span>
+                    <span class="rounded-xl p-3 text-center text-gray-800 dark:text-gray-200 bg-gray-300 dark:bg-gray-600/25">Reliable turnaround</span>
+                    <span class="rounded-xl p-3 text-center text-gray-800 dark:text-gray-200 bg-gray-300 dark:bg-gray-600/25">Open to learning new skills</span>
+                    <span class="rounded-xl p-3 text-center text-gray-800 dark:text-gray-200 bg-gray-300 dark:bg-gray-600/25">Works on pressure</span>
+                    <span class="rounded-xl p-3 text-center text-gray-800 dark:text-gray-200 bg-gray-300 dark:bg-gray-600/25">Works under minimal supervision</span>
                 </div>
             </section>
 
             <section>
-                <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Education</h3>
+                <h3 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Education</h3>
 
                 <div class="bg-gray-200 dark:bg-gray-800 p-6 rounded-lg shadow space-y-2">
                     <p class="font-semibold text-gray-700 dark:text-gray-200">BS Information Technology</p>
-                    <p class="text-gray-600 dark:text-gray-300">University of the Cordilleras • 2017</p>
+                    <p class="text-gray-600 dark:text-gray-400">University of the Cordilleras • 2017</p>
 
                     <hr class="border-gray-300 dark:border-gray-700">
 
                     <p class="font-semibold text-gray-700 dark:text-gray-200">Secondary</p>
-                    <p class="text-gray-600 dark:text-gray-300">Northridge Academy Inc. • 2012</p>
+                    <p class="text-gray-600 dark:text-gray-400">Northridge Academy Inc. • 2012</p>
 
                     <hr class="border-gray-300 dark:border-gray-700">
 
                     <p class="font-semibold text-gray-700 dark:text-gray-200">Primary</p>
-                    <p class="text-gray-600 dark:text-gray-300">Baguio Achievers' Academy • 2008</p>
+                    <p class="text-gray-600 dark:text-gray-400">Baguio Achievers' Academy • 2008</p>
                 </div>
             </section>
 
             <section>
-                <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Extra Curricular / Seminars / Trainings</h3>
+                <h3 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Extra Curricular / Trainings</h3>
 
                 <div class="bg-gray-200 dark:bg-gray-800 p-6 rounded-lg shadow space-y-3">
                     <div>
@@ -135,7 +127,7 @@
                         :experiences="[
                             'Create and maintain workflows of carrier integrations using the Limber platform',
                             'Create solutions for integrating existing carriers on the MachShip platform into Limber',
-                            'Test carrier integrations on the MachShip platform'
+                            'Test carrier integrations on the MachShip platform',
                         ]"
                         :position="'Workflow Scripter'"
                         :tech_stacks="[
@@ -147,7 +139,7 @@
                         :duration="'June 2024 - December 2024 • Onsite'"
                         :employment="'Zeldan Nordic Languages Review Center'"
                         :experiences="[
-                            'Develop a simple learning website for trainees and instructors for their language training courses using the TALL stack (Tailwind, AlpineJS, Laravel, and Livewire)',
+                            'Develop a simple learning website for trainees and instructors for their language training courses',
                         ]"
                         :position="'Laravel Developer (Part-time)'"
                         :tech_stacks="[
@@ -166,7 +158,7 @@
                         :experiences="[
                             'Assist in workflow automations, ensure updated data, and review prospect leads using GoHighLevel CRM',
                             'Quality assurance calls based on company criteria by reviewing calls of appointment setters using VICIdial',
-                            'Review leads for the waitlist process and check if they conflict with any existing active clients'
+                            'Review leads for the waitlist process and check if they conflict with any existing active clients',
                         ]"
                         :position="'Virtual Assistant'"
                         {{--
@@ -184,7 +176,7 @@
                         :employment="'Professional Software Solutions Philippines'"
                         :experiences="[
                             'Create API to interact between documentation and survey sites',
-                            'Develop and maintain client\'s 2 decade-old therapeutic websites using PHP 5.6 and CodeIgniter 2 framework',
+                            'Develop and maintain client\'s 2 decade-old therapeutic websites',
                             'Fix non-responsive webpages using new and modern front-end layout standards',
                         ]"
                         :position="'Full Stack Web Developer'"
@@ -220,8 +212,8 @@
                         :employment="'Thrive Media'"
                         :experiences="[
                             'Audit, improve, and optimize loading of real-estate website using CSS, HTML, and PageSpeed Insights',
-                            'Develop a local barangays/cities/municipalities tracker API with PHP 5.4/Laravel 5 as backend and Vue.js/Quasar as frontend',
-                            'Develop a simple WordPress job freelance website and modify plugins and theme to conform to design',
+                            'Develop a local barangays/cities/municipalities tracker API',
+                            'Develop a simple WordPress job freelance website, modify plugins and customize themes to conform to design',
                             'Promoted to web dev team leader to oversee the developer team\'s productivity',
                         ]"
                         :position="'Laravel Developer'"
@@ -240,7 +232,7 @@
                         :experiences="[
                             'As a chat support, assist customers by answering queries via chat and resolve Asana tickets',
                             'Correctly indicate the data of grocery invoices, requisitions, and other forms',
-                            'Identify out-of-stock, messy and invalid products on a grocery stall taken using the Focal platform'
+                            'Identify out-of-stock, messy and invalid products on a grocery stall taken using the Focal platform',
                         ]"
                         :position="'Chat Support / Data Entry Specialist'"
                         {{--

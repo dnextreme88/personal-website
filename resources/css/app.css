@@ -14,13 +14,13 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
-  }
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentcolor);
+    }
 }
 
 @font-face {
@@ -93,51 +93,46 @@
             #1e2b4a,
             #223c63,
             #223c63,
-            #7489b6,
-            #7489b6,
-            #b49ce5,
-            #b49ce5,
+            #a18ccc,
+            #a18ccc,
             #5995aa,
             #5995aa,
-            #6f42ff,
-            #6f42ff,
-            #1e2b4a,
-            #1e2b4a,
+            #613bdd,
+            #613bdd,
             #223c63,
-            #223c63
+            #223c63,
+            #1e2b4a,
+            #1e2b4a
         );
     }
 
     .animate-shimmering-gradient {
-        animation: shimmering-gradient 5.5s linear infinite;
+        animation: shimmering-gradient 8s linear infinite;
     }
 
     @keyframes shimmering-gradient {
         0% {
-            background-position: 0 0;
+            background-position: -100% 0;
         }
-        75% {
-            background-position: 80% 0;
-        }
-        to {
+        100% {
             background-position: 100% 0;
         }
     }
 
     /* Shimmer Animation Effect */
     .skeleton-loader {
-      background: linear-gradient(to right, #7489b6 0%, #ddd 50%, #7489b6 25%);
-      background-size: 200% 100%;
-      animation: shimmer 1.5s linear infinite;
+        background: linear-gradient(to right, #7489b6 0%, #ddd 50%, #7489b6 25%);
+        background-size: 200% 100%;
+        animation: shimmer 1.5s linear infinite;
     }
 
     @keyframes shimmer {
-      0% {
-        background-position: -200% 0;
-      }
-      100% {
-        background-position: 200% 0;
-      }
+        0% {
+            background-position: -200% 0;
+        }
+        100% {
+            background-position: 200% 0;
+        }
     }
 
     .gradient-gray-1 {
@@ -166,12 +161,10 @@
 
     @keyframes animated-gradient {
         0%, 100% {
-            background-position: 0%
+            background-position: 0%;
         }
         50% {
-            background-position: 100%
+            background-position: 100%;
         }
     }
-
 }
-
