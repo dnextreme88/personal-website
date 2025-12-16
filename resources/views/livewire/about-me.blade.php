@@ -138,6 +138,9 @@
                             'Test carrier integrations on the MachShip platform'
                         ]"
                         :position="'Workflow Scripter'"
+                        :tech_stacks="[
+                            'JavaScript' => 'bg-yellow-500',
+                        ]"
                     />
 
                     <x-work-experience
@@ -145,9 +148,16 @@
                         :employment="'Zeldan Nordic Languages Review Center'"
                         :experiences="[
                             'Develop a simple learning website for trainees and instructors for their language training courses using the TALL stack (Tailwind, AlpineJS, Laravel, and Livewire)',
-                            'Technologies used: AlpineJS, JavaScript, Laravel 11, Livewire, PHP 8.3, and Tailwind'
                         ]"
                         :position="'Laravel Developer (Part-time)'"
+                        :tech_stacks="[
+                            'AlpineJs' => 'bg-[linear-gradient(120deg,#97C4D0_25%,#D4DBE5_80%)]',
+                            'JavaScript' => 'bg-yellow-500',
+                            'Laravel 11' => 'bg-red-500',
+                            'Livewire' => 'bg-pink-400',
+                            'PHP 8.3' => 'bg-purple-300',
+                            'Tailwind 3' => 'bg-teal-600',
+                        ]"
                     />
 
                     <x-work-experience
@@ -159,6 +169,14 @@
                             'Review leads for the waitlist process and check if they conflict with any existing active clients'
                         ]"
                         :position="'Virtual Assistant'"
+                        {{--
+                        :tech_stacks="[
+                            'GoHighLevel' => 'bg-gray-500',
+                            'Monday.com' => 'bg-gray-500',
+                            'Quality Assurance' => 'bg-gray-500',
+                            'Virtual Assistance' => 'bg-gray-500',
+                        ]"
+                        --}}
                     />
 
                     <x-work-experience
@@ -168,9 +186,15 @@
                             'Create API to interact between documentation and survey sites',
                             'Develop and maintain client\'s 2 decade-old therapeutic websites using PHP 5.6 and CodeIgniter 2 framework',
                             'Fix non-responsive webpages using new and modern front-end layout standards',
-                            'Technologies used: CodeIgniter 2, CSS, JavaScript, jQuery 3.2, HTML, and PHP 5.6'
                         ]"
                         :position="'Full Stack Web Developer'"
+                        :tech_stacks="[
+                            'CodeIgniter 2' => 'bg-[linear-gradient(120deg,#E84C35_25%,#F7F7F7_80%)]',
+                            'CSS' => 'bg-purple-500',
+                            'JavaScript' => 'bg-yellow-500',
+                            'jQuery 3.2' => 'bg-[linear-gradient(120deg,#E9D34C_25%,#20A7DB_80%)]',
+                            'PHP 5.6' => 'bg-purple-300',
+                        ]"
                     />
 
                     <x-work-experience
@@ -181,9 +205,14 @@
                             'Create software documentation of Node.js repository',
                             'Implement SEO audits to clients made by eFlex SEO specialists',
                             'Web scraping using Puppeeteer, utilize AWS APIs',
-                            'Technologies used: .NET, Express.js, Node.js, React.js'
                         ]"
                         :position="'Web Developer'"
+                        :tech_stacks="[
+                            '.NET' => 'bg-[linear-gradient(120deg,#F7F7F7_25%,#4E2ACD_80%)]',
+                            'Express.js' => 'bg-green-600',
+                            'Node.js' => 'bg-[linear-gradient(120deg,#8BBF3F_25%,#44463B_80%)]',
+                            'React.js' => 'bg-teal-400',
+                        ]"
                     />
 
                     <x-work-experience
@@ -194,9 +223,15 @@
                             'Develop a local barangays/cities/municipalities tracker API with PHP 5.4/Laravel 5 as backend and Vue.js/Quasar as frontend',
                             'Develop a simple WordPress job freelance website and modify plugins and theme to conform to design',
                             'Promoted to web dev team leader to oversee the developer team\'s productivity',
-                            'Technologies used: CSS, HTML, Laravel 5, PHP 5.4, and WordPress'
                         ]"
                         :position="'Laravel Developer'"
+                        :tech_stacks="[
+                            'CSS' => 'bg-purple-500',
+                            'JavaScript' => 'bg-yellow-500',
+                            'Laravel 5' => 'bg-red-500',
+                            'PHP 5.4' => 'bg-purple-300',
+                            'WordPress' => 'bg-[linear-gradient(120deg,#D4DBE5_25%,#207196_80%)]',
+                        ]"
                     />
 
                     <x-work-experience
@@ -208,6 +243,11 @@
                             'Identify out-of-stock, messy and invalid products on a grocery stall taken using the Focal platform'
                         ]"
                         :position="'Chat Support / Data Entry Specialist'"
+                        {{--
+                        :tech_stacks="[
+                            'Empathy' => 'bg-gray-500',
+                        ]"
+                        --}}
                     />
 
                     <x-work-experience
@@ -218,9 +258,13 @@
                             'Develop POS systems of different payment types using Loyverse',
                             'Expose and consume APIs for self-made cryptocurrency called BitPal (based on Bitcoin)',
                             'Maintain security of BitShares wallets in the Blockchain technology',
-                            'Technologies used: AWS, Django 2.2, Docker, and Python'
                         ]"
                         :position="'Senior Python Backend Developer'"
+                        :tech_stacks="[
+                            'Docker' => 'bg-[linear-gradient(120deg,#1D91E6_25%,#F7F7F7_80%)]',
+                            'Django 2.2' => 'bg-[linear-gradient(120deg,#092D1F_25%,#2E8944_80%)]',
+                            'Python' => 'bg-[linear-gradient(120deg,#3470A2_25%,#F5CA3B_80%)]',
+                        ]"
                     />
                 </div>
             </section>
