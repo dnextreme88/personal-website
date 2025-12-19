@@ -23,6 +23,8 @@
                     </x-slot>
                 </x-dark-mode-toggle>
 
+                <a wire:navigate class="text-gray-900 transition duration-100 dark:text-gray-100 hover:text-blue-800 dark:hover:text-blue-200 hover:scale-105" href="{{ route('about_me') }}">About Me</a>
+
                 <a wire:navigate class="text-gray-900 transition duration-100 dark:text-gray-100 hover:text-blue-800 dark:hover:text-blue-200 hover:scale-105" href="{{ route('archives') }}">Archives</a>
 
                 <a wire:navigate class="text-gray-900 transition duration-100 dark:text-gray-100 hover:text-blue-800 dark:hover:text-blue-200 hover:scale-105" href="{{ route('blog.index') }}">Blog</a>
@@ -59,6 +61,10 @@
                 </svg>
             </x-slot>
         </x-dark-mode-toggle>
+
+        <div class="pb-2 sm:hidden">
+            <x-responsive-nav-link :active="request()->routeIs('about_me')" wire:navigate href="{{ route('about_me') }}" aria-label="About Me link">About Me</x-responsive-nav-link>
+        </div>
 
         <div class="pb-2 sm:hidden">
             <x-responsive-nav-link :active="request()->routeIs('archives')" wire:navigate href="{{ route('archives') }}" aria-label="Archives link">Archives</x-responsive-nav-link>

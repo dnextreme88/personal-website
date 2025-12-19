@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\AboutMe;
 use App\Livewire\Archives;
 use App\Livewire\Blog\Blog;
 use App\Livewire\Blog\DetailPost;
@@ -9,6 +10,7 @@ use App\Livewire\Homepage;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', Homepage::class)->name('home');
+Route::get('/about-me', AboutMe::class)->name('about_me');
 Route::get('/archives', Archives::class)->name('archives');
 
 Route::group(['prefix' => 'blog', 'as' => 'blog.'], function() {
