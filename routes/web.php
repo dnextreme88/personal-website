@@ -3,6 +3,7 @@
 use App\Livewire\AboutMe;
 use App\Livewire\Archive\Archive;
 use App\Livewire\Archive\ListSoldItem;
+use App\Livewire\Archive\StaticGameScreenshots;
 use App\Livewire\Blog\Blog;
 use App\Livewire\Blog\DetailPost;
 use App\Livewire\Blog\ListCategoryPost;
@@ -15,6 +16,7 @@ Route::get('/about-me', AboutMe::class)->name('about_me');
 Route::group(['prefix' => 'archive', 'as' => 'archive.'], function() {
     Route::get('/', Archive::class)->name('index');
     Route::get('/sold-items', ListSoldItem::class)->name('sold-items.list');
+    Route::get('/static-game-screenshots', StaticGameScreenshots::class)->name('game-screenshots.static');
 });
 
 Route::group(['prefix' => 'blog', 'as' => 'blog.'], function() {
