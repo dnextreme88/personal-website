@@ -25,7 +25,7 @@
 
                 <a wire:navigate class="text-gray-900 transition duration-100 dark:text-gray-100 hover:text-blue-800 dark:hover:text-blue-200 hover:scale-105" href="{{ route('about_me') }}">About Me</a>
 
-                <a wire:navigate class="text-gray-900 transition duration-100 dark:text-gray-100 hover:text-blue-800 dark:hover:text-blue-200 hover:scale-105" href="{{ route('archives') }}">Archives</a>
+                <a wire:navigate class="text-gray-900 transition duration-100 dark:text-gray-100 hover:text-blue-800 dark:hover:text-blue-200 hover:scale-105" href="{{ route('archive.index') }}">Archives</a>
 
                 <a wire:navigate class="text-gray-900 transition duration-100 dark:text-gray-100 hover:text-blue-800 dark:hover:text-blue-200 hover:scale-105" href="{{ route('blog.index') }}">Blog</a>
 
@@ -67,7 +67,7 @@
         </div>
 
         <div class="pb-2 sm:hidden">
-            <x-responsive-nav-link :active="request()->routeIs('archives')" wire:navigate href="{{ route('archives') }}" aria-label="Archives link">Archives</x-responsive-nav-link>
+            <x-responsive-nav-link :active="request()->routeIs('archive.index')" wire:navigate href="{{ route('archive.index') }}" aria-label="Archives link">Archives</x-responsive-nav-link>
         </div>
 
         <div class="pb-2 sm:hidden">

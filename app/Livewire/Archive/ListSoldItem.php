@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Archive;
 
 use App\Models\SoldItem;
 use Carbon\Carbon;
@@ -10,7 +10,7 @@ use Livewire\Attributes\On;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class Archives extends Component
+class ListSoldItem extends Component
 {
     use WithPagination;
 
@@ -122,6 +122,6 @@ class Archives extends Component
             $sold_items = SoldItem::with(['pay_method', 'sell_method'])->paginate(18);
         }
 
-        return view('livewire.archives', ['sold_items' => $sold_items]);
+        return view('livewire.archive.list-sold-item', ['sold_items' => $sold_items]);
     }
 }

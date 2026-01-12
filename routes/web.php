@@ -1,7 +1,8 @@
 <?php
 
 use App\Livewire\AboutMe;
-use App\Livewire\Archives;
+use App\Livewire\Archive\Archive;
+use App\Livewire\Archive\ListSoldItem;
 use App\Livewire\Blog\Blog;
 use App\Livewire\Blog\DetailPost;
 use App\Livewire\Blog\ListCategoryPost;
@@ -11,7 +12,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', Homepage::class)->name('home');
 Route::get('/about-me', AboutMe::class)->name('about_me');
-Route::get('/archives', Archives::class)->name('archives');
+Route::group(['prefix' => 'archive', 'as' => 'archive.'], function() {
+    Route::get('/', Archive::class)->name('index');
+    Route::get('/sold-items', ListSoldItem::class)->name('sold-items.list');
+});
 
 Route::group(['prefix' => 'blog', 'as' => 'blog.'], function() {
     Route::get('/', Blog::class)->name('index');

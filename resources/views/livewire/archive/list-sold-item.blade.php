@@ -29,20 +29,21 @@
                     <x-forms.input-select :elements="\App\Enums\SellMethods::cases()" :label="'Sell Method'" :use_enum_values="true" :wire_model="'archive_sell_methods_choice'" />
 
                     <div x-data="{
-                        selectedTags: $wire.entangle('archive_tags_choice'),
-                        addToTags(tag) {
-                            if (this.selectedTags.includes(tag)) {
-                                const tagIndex = this.selectedTags.indexOf(tag);
-                                this.selectedTags.splice(tagIndex, 1);
-                            } else {
-                                this.selectedTags.push(tag);
+                            selectedTags: $wire.entangle('archive_tags_choice'),
+                            addToTags(tag) {
+                                if (this.selectedTags.includes(tag)) {
+                                    const tagIndex = this.selectedTags.indexOf(tag);
+                                    this.selectedTags.splice(tagIndex, 1);
+                                } else {
+                                    this.selectedTags.push(tag);
+                                }
+                            },
+                            clearTags() {
+                                this.selectedTags = [];
                             }
-                        },
-                        clearTags() {
-                            this.selectedTags = [];
-                        }
-                    }"
-                        class="grid grid-cols-1 sm:col-span-2 lg:col-span-3">
+                        }"
+                        class="grid grid-cols-1 sm:col-span-2 lg:col-span-3"
+                    >
                         <label class="text-gray-600 dark:text-gray-200 me-2">Filter by tags</label>
                         <span
                             x-on:click="clearTags"
@@ -102,15 +103,15 @@
             <div class="grid grid-cols-1 mt-6 gap-x-6 gap-y-10 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-8 min-h-[200px] content-container">
                 @forelse ($sold_items as $sold_item)
                     {{-- id is used to identify the element being lazy loaded --}}
-                    <div 
+                    <div
                         x-data="skeletonLoader()"
                         @destroyed="destroy()"
-                        class="relative" 
+                        class="relative"
                         id="sold-item-{{ $sold_item->id }}"
                     >
                         <!-- Skeleton Loader -->
-                        <div 
-                            x-show="!isLoaded" 
+                        <div
+                            x-show="!isLoaded"
                             class="rounded-md h-25-vh *:bg-transparent min-h-[300px] min-w-[300px] skeleton-loader"
                         >
                             <div class="mb-4 h-full w-full text-center text-3xl content-center">
@@ -126,13 +127,13 @@
                         </div>
 
                         <!-- Actual Content -->
-                        <img 
+                        <img
                             x-show="isLoaded"
-                            src="{{ $sold_item->image_location ? asset('/storage/' .$sold_item->image_location) : 'https://tailwindui.com/plus/img/ecommerce-images/product-page-01-related-product-01.jpg' }}" 
-                            class="object-cover w-full transition duration-300 bg-transparent rounded-md aspect-square group-hover:opacity-75 lg:aspect-auto lg:h-80 hover:scale-105 actual-content" 
-                            alt="Sold item image" 
-                            title="Sold item image" 
-                            loading="lazy" 
+                            src="{{ $sold_item->image_location ? asset('/storage/' .$sold_item->image_location) : 'https://tailwindui.com/plus/img/ecommerce-images/product-page-01-related-product-01.jpg' }}"
+                            class="object-cover w-full transition duration-300 bg-transparent rounded-md aspect-square group-hover:opacity-75 lg:aspect-auto lg:h-80 hover:scale-105 actual-content"
+                            alt="Sold item image"
+                            title="Sold item image"
+                            loading="lazy"
                         />
 
                         <div class="flex flex-col mt-4">
