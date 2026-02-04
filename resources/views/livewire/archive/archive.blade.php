@@ -42,6 +42,24 @@
                     <h4 class="mt-3 text-base/6 text-gray-300/70 dark:text-gray-400">Archived images of memorable gaming moments</h4>
                 </a>
             </section>
+
+            <section class="relative isolate flex flex-col justify-end rounded-2xl bg-gray-900 px-8 pt-80 pb-8 sm:pt-48 lg:pt-50 lg:px-4 dark:bg-gray-800 hover:scale-110 transition [transition:scale_0.25s,translate_2s,opacity_3s]">
+                <a wire:navigate href="{{ route('archive.dropping-areas.static') }}">
+                    <img
+                        src="{{ asset('/images/archive/bg-static-dropping-areas.webp') }}"
+                        class="absolute inset-0 object-cover size-full rounded-2xl -z-10 aspect-square lg:aspect-auto"
+                        alt="Dropping areas background"
+                        title="Dropping areas background"
+                        loading="lazy"
+                    />
+                    <div class="absolute inset-0 -z-10 rounded-2xl size-full bg-linear-to-tl dark:bg-linear-to-r opacity-80 gradient-gray-3"></div>
+                    <div class="absolute inset-0 top-[25%] -z-10 rounded-2xl bg-linear-to-t from-gray-700 via-gray-700/50 dark:from-black/ dark:via-black/40"></div>
+                    <div class="absolute inset-0 -z-10 rounded-2xl inset-ring inset-ring-gray-900/10 dark:inset-ring-white/10"></div>
+
+                    <h3 class="mt-3 text-lg/6 font-semibold text-white">Dropping Areas</h3>
+                    <h4 class="mt-3 text-base/6 text-gray-300/70 dark:text-gray-400">Archived images of dropping areas</h4>
+                </a>
+            </section>
         </div>
     </div>
 </div>
