@@ -10,7 +10,7 @@
             imagePreviewSrc: ''
         }"
     >
-        <p class="text-xl">A list of Dropping Areas over the years</p>
+        <p class="text-xl text-gray-500 dark:text-gray-300">A list of Dropping Areas over the years</p>
 
         <div class="mx-auto mt-8 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-12 lg:mx-0 lg:max-w-none lg:grid-cols-3">
             @forelse ($dropping_areas as $dropping_area)
