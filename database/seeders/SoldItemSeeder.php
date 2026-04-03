@@ -319,6 +319,7 @@ class SoldItemSeeder extends Seeder
             ['method' => PaymentMethods::REMITTANCE->value, 'remittance_location' => Remittances::GCASH->value],
             ['method' => PaymentMethods::REMITTANCE->value, 'remittance_location' => Remittances::GCASH->value],
             ['method' => PaymentMethods::REMITTANCE->value, 'remittance_location' => Remittances::GCASH->value],
+            ['method' => PaymentMethods::CASH_ON_HAND, 'remittance_location' => 'Abee\'s House'],
         ]);
 
         SellMethod::insert([
@@ -619,6 +620,7 @@ class SoldItemSeeder extends Seeder
             ['method' => SellMethods::MEETUP->value, 'location' => 'Malcolm Square'],
             ['method' => SellMethods::MEETUP->value, 'location' => 'Malcolm Square'],
             ['method' => SellMethods::SHIPMENT->value, 'location' => ShipmentLocations::J_AND_T_EXPRESS->value],
+            ['method' => SellMethods::DROPPING->value, 'location' => DroppingAreas::MABINI_SHOPPING_CENTER_ROOM_203->value],
         ]);
 
         SoldItem::insert([
@@ -5668,6 +5670,23 @@ class SoldItemSeeder extends Seeder
                 'tags' => 'sold with case',
                 'notes' => 'Payment sent through GCash on 1/24. Received payment on 1/27 and I sent the cash-out to Abee instead of the pharmacy.',
                 'image_location' => 'sold-items/2026/marvel1-1.jpg',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'pay_method_id' => 298,
+                'sell_method_id' => 298,
+                'transaction_id' => '2026_04',
+                'brand' => 'Bubba Keg',
+                'name' => null,
+                'type' => 'Drink Dispenser',
+                'price' => 200,
+                'condition' => 'used',
+                'size' => '3L',
+                'date_sold' => '2026-03-25',
+                'tags' => 'australia,helped by friend',
+                'notes' => 'Abee helped post the item. Buyer picked up on 3/28. Received payment on 4/1 from Abee as she cashed out on 3/29.',
+                'image_location' => 'sold-items/2026/bubba-keg1-1.jpg',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
