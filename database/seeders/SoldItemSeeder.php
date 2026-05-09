@@ -5463,7 +5463,7 @@ class SoldItemSeeder extends Seeder
                 'brand' => 'Viewplus',
                 'name' => 'ML-24HI',
                 'type' => 'Monitor',
-                'price' => 1000, // TODO: This must be 2000
+                'price' => 1000,
                 'condition' => 'used',
                 'size' => '23.8 inches',
                 'date_sold' => '2025-09-21',
