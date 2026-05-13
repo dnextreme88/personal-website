@@ -30,12 +30,45 @@ class ListSoldItem extends Component
     public $archive_sell_methods_choice;
     public $archive_tags_choice = [];
 
-    public function search_archives()
+    public function reset_archives_form()
     {
+        // dump('archive_brands_choice', $this->archive_brands_choice);
+        // dump('archive_types_choice', $this->archive_types_choice);
+        // dump('archive_months_choice', $this->archive_months_choice);
+        // dump('archive_years_choice', $this->archive_years_choice);
+        // dump('archive_pay_methods_choice', $this->archive_pay_methods_choice);
+        // dump('archive_sell_methods_choice', $this->archive_sell_methods_choice);
+        // dump('archive_tags_choice', $this->archive_tags_choice);
+
+        $this->reset([
+            'is_filtered',
+            'search_query',
+            'archive_brands_choice',
+            'archive_types_choice',
+            'archive_months_choice',
+            'archive_years_choice',
+            'archive_pay_methods_choice',
+            'archive_sell_methods_choice',
+            'archive_tags_choice',
+        ]);
+
+        $this->is_filtered = false;
+        $this->resetPage();
+        $this->dispatch('form-reset');
+    }
+
+    public function search_archives(array $filters = [])
+    {
+        // dump($filters);
+        $this->archive_brands_choice = $filters['archive_brands_choice'] ?? '';
+        $this->archive_types_choice = $filters['archive_types_choice'] ?? '';
+        $this->archive_months_choice = $filters['archive_months_choice'] ?? '';
+        $this->archive_years_choice = $filters['archive_years_choice'] ?? '';
+        $this->archive_pay_methods_choice = $filters['archive_pay_methods_choice'] ?? '';
+        $this->archive_sell_methods_choice = $filters['archive_sell_methods_choice'] ?? '';
         $this->is_filtered = true;
 
-        $this->resetPage(); // Reset pagination after filtering data
-
+        $this->resetPage();
         $this->dispatch('filtered-sold-items');
     }
 

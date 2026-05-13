@@ -15,18 +15,60 @@
         <div>
             <h2 class="px-2 py-4 text-xl text-gray-800 bg-gray-300 dark:bg-gray-700 dark:text-gray-200">Search Archives</h2>
 
-            <form wire:submit="search_archives" class="flex flex-col justify-between gap-6 px-6 py-4 bg-gray-200 border-b-2 border-b-gray-400 dark:border-b-gray-200 md:gap-8 dark:bg-gray-800">
+            <form
+                {{-- Initialize the filters array for each sub-component --}}
+                x-data="{ filters: {} }"
+                {{-- Capture values from the sub-components (x-forms.input-select etc.) --}}
+                x-on:filter-changed.window="filters[$event.detail.key] = $event.detail.value"
+                x-on:form-reset.window="filters = {}"
+                wire:submit="search_archives"
+                class="flex flex-col justify-between gap-6 px-6 py-4 bg-gray-200 border-b-2 border-b-gray-400 dark:border-b-gray-200 md:gap-8 dark:bg-gray-800"
+            >
                 <x-forms.input-text class="md:mx-6 lg:mx-12" for="search_query" placeholder_text="Type a name of an item..." title_text="Search archives" />
 
                 <label class="py-2 text-2xl text-gray-800 dark:text-gray-200">Advanced Filters</label>
 
                 <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                    <x-forms.input-datalist :elements="$brands" :elements_label="'archive-brands'" :label="'Brand'" :text_placeholder="'Select brand'" :wire_model="'archive_brands_choice'" />
-                    <x-forms.input-datalist :elements="$types" :elements_label="'archive-types'" :label="'Type'" :text_placeholder="'Select type'" :wire_model="'archive_types_choice'" />
-                    <x-forms.input-select :elements="$months" :label="'Month'" :wire_model="'archive_months_choice'" />
-                    <x-forms.input-select :elements="$years" :label="'Year'" :wire_model="'archive_years_choice'" />
-                    <x-forms.input-select :elements="\App\Enums\PaymentMethods::cases()" :label="'Payment Method'" :use_enum_values="true" :wire_model="'archive_pay_methods_choice'" />
-                    <x-forms.input-select :elements="\App\Enums\SellMethods::cases()" :label="'Sell Method'" :use_enum_values="true" :wire_model="'archive_sell_methods_choice'" />
+                    <x-forms.input-datalist
+                        :elements="$brands"
+                        :elements_label="'archive-brands'"
+                        :label="'Brand'"
+                        :text_placeholder="'Select brand'"
+                        :wire_model="'archive_brands_choice'"
+                    />
+                    <x-forms.input-datalist
+                        :elements="$types"
+                        :elements_label="'archive-types'"
+                        :label="'Type'"
+                        :text_placeholder="'Select type'"
+                        :wire_model="'archive_types_choice'"
+                    />
+                    <x-forms.input-select
+                        :elements="$months"
+                        :is_animated="true"
+                        :label="'Month'"
+                        :wire_model="'archive_months_choice'"
+                    />
+                    <x-forms.input-select
+                        :elements="$years"
+                        :is_animated="true"
+                        :label="'Year'"
+                        :wire_model="'archive_years_choice'"
+                    />
+                    <x-forms.input-select
+                        :elements="\App\Enums\PaymentMethods::cases()"
+                        :is_animated="true"
+                        :label="'Payment Method'"
+                        :use_enum_values="true"
+                        :wire_model="'archive_pay_methods_choice'"
+                    />
+                    <x-forms.input-select
+                        :elements="\App\Enums\SellMethods::cases()"
+                        :is_animated="true"
+                        :label="'Sell Method'"
+                        :use_enum_values="true"
+                        :wire_model="'archive_sell_methods_choice'"
+                    />
 
                     <div x-data="{
                             selectedTags: $wire.entangle('archive_tags_choice'),
@@ -68,11 +110,17 @@
                 </div>
 
                 <div class="flex justify-center gap-3">
-                    <input class="px-4 py-2 text-gray-800 transition duration-300 bg-red-300 cursor-pointer dark:bg-red-600 dark:text-gray-200 hover:bg-red-500 dark:hover:bg-red-700 hover:text-gray-100 dark:hover:text-gray-200" type="reset" value="Clear Form" />
+                    <input
+                        wire:click="reset_archives_form"
+                        value="Clear Form"
+                        type="button"
+                        class="px-4 py-2 text-gray-800 transition duration-300 bg-red-300 cursor-pointer dark:bg-red-600 dark:text-gray-200 hover:bg-red-500 dark:hover:bg-red-700 hover:text-gray-100 dark:hover:text-gray-200"
+                    />
 
                     <button
+                        x-on:click.prevent="$wire.call('search_archives', filters)"
                         class="px-4 py-2 text-gray-800 transition duration-300 bg-green-300 cursor-pointer min-w-[130px] dark:bg-green-600 dark:text-gray-200 hover:bg-green-500 dark:hover:bg-green-700 hover:text-gray-100 dark:hover:text-gray-200"
-                        type="submit"
+                        type="button"
                     >
                         <span wire:loading.flex wire:target="search_archives">
                             <x-loading-indicator

@@ -12,14 +12,16 @@
     @endif
 
     <input
-        @if ($wire_model) wire:model="{{ $wire_model }}" @endif
+        x-data
+        x-on:change="$dispatch('filter-changed', { key: '{{ $wire_model }}', value: $event.target.value })"
+        x-on:form-reset.window="$el.value = ''; $event.target.value = '';"
         class="py-2 px-3 bg-white border border-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-400"
         list="{{ $elements_label }}"
         placeholder="{{ $text_placeholder }}"
     />
     <datalist id="{{ $elements_label }}">
         @if ($elements)
-            <option value="SHOW ALL"></option>
+            <option value=""></option>
 
             @foreach ($elements as $element)
                 <option value="{{ $element }}">{{ $element }}</option>
