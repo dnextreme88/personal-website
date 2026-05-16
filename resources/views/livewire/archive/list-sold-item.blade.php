@@ -177,10 +177,13 @@
                         <!-- Actual Content -->
                         <img
                             x-show="isLoaded"
-                            src="{{ $sold_item->image_location ? asset('/storage/' .$sold_item->image_location) : 'https://tailwindui.com/plus/img/ecommerce-images/product-page-01-related-product-01.jpg' }}"
+                            src="{{ $sold_item->image_location ? asset('/storage/' .$sold_item->image_location) : asset('/images/no-image-available-placeholder-1920x1080-transparent.svg') }}"
                             class="object-cover w-full transition duration-300 bg-transparent rounded-md aspect-square group-hover:opacity-75 lg:aspect-auto lg:h-80 hover:scale-105 actual-content"
-                            alt="Sold item image"
-                            title="Sold item image"
+                            @php
+                                $image_text = $sold_item->image_location ? 'Image of ' .$sold_item->item_name : 'No image found for ' .$sold_item->item_name;
+                            @endphp
+                            alt="{{ $image_text }}"
+                            title="{{ $image_text }}"
                             loading="lazy"
                         />
 
