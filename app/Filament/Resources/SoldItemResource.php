@@ -214,11 +214,15 @@ class SoldItemResource extends Resource
                 TextColumn::make('notes')
                     ->searchable()
                     ->toggleable(isToggledHiddenByDefault: true),
-                TextColumn::make('pay_method.method'),
+                TextColumn::make('pay_method.method')
+                    ->badge()
+                    ->color(fn (string $state): string => PaymentMethods::from($state)->getColor()),
                 TextColumn::make('pay_method.remittance_location')
                     ->label('Remittance location')
                     ->toggleable(isToggledHiddenByDefault: true),
-                TextColumn::make('sell_method.method'),
+                TextColumn::make('sell_method.method')
+                    ->badge()
+                    ->color(fn (string $state): string => SellMethods::from($state)->getColor()),
                 TextColumn::make('sell_method.location')
                     ->label('Sell location')
                     ->toggleable(isToggledHiddenByDefault: true),
