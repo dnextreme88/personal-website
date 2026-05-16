@@ -11,6 +11,7 @@ class SoldItem extends Model
     protected $fillable = [
         'pay_method_id',
         'sell_method_id',
+        'transaction_id',
         'brand',
         'name',
         'type',

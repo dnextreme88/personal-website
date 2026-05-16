@@ -149,16 +149,16 @@ class SoldItemResource extends Resource
                             ->maxLength(128)
                             ->minLength(2)
                             ->required()
-                            ->visible(fn (Get $get): bool => $get('pay_method_name') == PaymentMethods::CASH_ON_HAND->value),
+                            ->visible(fn (Get $get): bool => $get('pay_method_name') === PaymentMethods::CASH_ON_HAND),
                         Select::make('pay_method_location')
                             ->label('Dropping Area')
                             ->options(DroppingAreas::class)
                             ->required()
-                            ->visible(fn (Get $get): bool => $get('pay_method_name') == PaymentMethods::DROPPING_AREA_CASHOUT->value),
+                            ->visible(fn (Get $get): bool => $get('pay_method_name') === PaymentMethods::DROPPING_AREA_CASHOUT),
                         Select::make('pay_method_location')
                             ->options(Remittances::class)
                             ->required()
-                            ->visible(fn (Get $get): bool => $get('pay_method_name') == PaymentMethods::REMITTANCE->value),
+                            ->visible(fn (Get $get): bool => $get('pay_method_name') === PaymentMethods::REMITTANCE),
                     ])
                     ->columns(['sm' => 1, 'lg' => 2]),
                 Section::make('Sell Method')
@@ -177,17 +177,17 @@ class SoldItemResource extends Resource
                             ->maxLength(128)
                             ->minLength(2)
                             ->required()
-                            ->visible(fn (Get $get): bool => $get('sell_method_name') == SellMethods::MEETUP->value),
+                            ->visible(fn (Get $get): bool => $get('sell_method_name') === SellMethods::MEETUP),
                         Select::make('sell_method_location')
                             ->label('Dropping Area')
                             ->options(DroppingAreas::class)
                             ->required()
-                            ->visible(fn (Get $get): bool => $get('sell_method_name') == SellMethods::DROPPING->value),
+                            ->visible(fn (Get $get): bool => $get('sell_method_name') === SellMethods::DROPPING),
                         Select::make('sell_method_location')
                             ->label('Shipping Company')
                             ->options(ShipmentLocations::class)
                             ->required()
-                            ->visible(fn (Get $get): bool => $get('sell_method_name') == SellMethods::SHIPMENT->value),
+                            ->visible(fn (Get $get): bool => $get('sell_method_name') === SellMethods::SHIPMENT),
 
                     ])
                     ->columns(['sm' => 1, 'lg' => 2]),
