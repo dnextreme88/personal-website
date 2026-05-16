@@ -75,6 +75,7 @@ class SoldItemResource extends Resource
                             ->required(),
                         TextInput::make('price')
                             ->numeric()
+                            ->prefix('₱')
                             ->required()
                             ->rules(['gt:0']),
                         Select::make('condition')
@@ -130,7 +131,8 @@ class SoldItemResource extends Resource
                             ->getUploadedFileNameForStorageUsing(fn (TemporaryUploadedFile $file): string => str($file->getClientOriginalName()))
                             ->label('Thumbnail image'),
                     ])
-                    ->columns(['sm' => 1, 'md' => 2]),
+                    ->columns(['sm' => 1, 'md' => 2])
+                    ->columnSpan(2),
                 Section::make('Payment Method')
                     ->schema([
                         Select::make('pay_method_name')
@@ -140,7 +142,7 @@ class SoldItemResource extends Resource
                             ->required(),
                         TextInput::make('pay_method_location')
                             ->datalist(fn (): Collection =>
-                                PayMethod::where('method', PaymentMethods::CASH_ON_HAND)->pluck('remittance_location')
+                                PayMethod::getMethod(PaymentMethods::CASH_ON_HAND)->pluck('remittance_location')
                                     ->unique()
                                     ->sort()
                                     ->values()
@@ -156,6 +158,7 @@ class SoldItemResource extends Resource
                             ->required()
                             ->visible(fn (Get $get): bool => $get('pay_method_name') === PaymentMethods::DROPPING_AREA_CASHOUT),
                         Select::make('pay_method_location')
+                            ->label('Remittance Provider')
                             ->options(Remittances::class)
                             ->required()
                             ->visible(fn (Get $get): bool => $get('pay_method_name') === PaymentMethods::REMITTANCE),
@@ -169,11 +172,12 @@ class SoldItemResource extends Resource
                             ->required(),
                         TextInput::make('sell_method_location')
                             ->datalist(fn (): Collection =>
-                                SellMethod::where('method', SellMethods::MEETUP)->pluck('location')
+                                SellMethod::getMethod(SellMethods::MEETUP)->pluck('location')
                                     ->unique()
                                     ->sort()
                                     ->values()
                             )
+                            ->label('Meetup Location')
                             ->maxLength(128)
                             ->minLength(2)
                             ->required()
