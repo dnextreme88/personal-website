@@ -30,6 +30,13 @@ class ListSoldItem extends Component
     public $archive_sell_methods_choice;
     public $archive_tags_choice = [];
 
+    #[On('view-changed')]
+    public function onViewChanged(): void
+    {
+        $this->resetPage();
+        $this->dispatch('filtered-sold-items'); // Keep the filter on
+    }
+
     public function reset_archives_form()
     {
         // dump('archive_brands_choice', $this->archive_brands_choice);

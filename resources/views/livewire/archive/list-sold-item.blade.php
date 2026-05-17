@@ -8,7 +8,6 @@
     {{-- TODO:
         1. Filtering of the ff:
             - Toggle whether the sold items have notes or not
-        2. Display a way to switch between table and compact versions
     --}}
 
     <div>
@@ -139,16 +138,84 @@
             </form>
         </div>
 
-        <div class="my-6">
-            <h2 class="text-2xl font-bold tracking-tight text-gray-800 dark:text-gray-200">Sold Items</h2>
+        <div
+            x-cloak
+            x-data="{
+                loading: false,
+                view: 'table'
+            }"
+            class="my-6"
+        >
+            <div class="flex items-center justify-between mb-2">
+                <h2 class="text-2xl font-bold tracking-tight text-gray-800 dark:text-gray-200">Sold Items</h2>
+
+                {{-- View toggle --}}
+                <div class="flex items-center py-2">
+                    <p class="px-2 text-gray-800 dark:text-gray-200">Toggle view</p>
+
+                    {{-- Table icon --}}
+                    <button
+                        x-on:click="loading = true; $dispatch('view-changed'); setTimeout(() => { view = 'table'; loading = false; }, 500)"
+                        x-bind:class="view === 'table' ? 'text-blue-500 dark:text-blue-300' : 'text-black dark:text-gray-400 dark:hover:text-blue-200 hover:text-blue-800'"
+                        x-bind:disabled="view === 'table' || loading"
+                        class="p-1.5 border border-gray-300 dark:border-gray-600 transition-colors"
+                        title="Toggle table view"
+                    >
+                        <svg class="size-5" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Toggle table view">
+                            {{-- Outer border --}}
+                            <rect x="1" y="1" width="14" height="14" rx="1.5" stroke="currentColor" stroke-width="1.25" />
+                            {{-- Vertical divider --}}
+                            <line x1="6" y1="1" x2="6" y2="15" stroke="currentColor" stroke-width="1.25" />
+                            {{-- Horizontal dividers --}}
+                            <line x1="1" y1="5.5" x2="15" y2="5.5" stroke="currentColor" stroke-width="1.25" />
+                            <line x1="1" y1="10" x2="15" y2="10" stroke="currentColor" stroke-width="1.25" />
+                        </svg>
+                    </button>
+
+                    {{-- List icon --}}
+                    <button
+                        x-on:click="loading = true; $dispatch('view-changed'); setTimeout(() => { view = 'list'; loading = false; }, 500)"
+                        x-bind:class="view === 'list' ? 'text-blue-500 dark:text-blue-300' : 'text-black dark:text-gray-400 dark:hover:text-blue-200 hover:text-blue-800'"
+                        x-bind:disabled="view === 'list' || loading"
+                        class="p-1.5 border border-gray-300 dark:border-gray-600 transition-colors"
+                        title="Toggle list view"
+                    >
+                        <svg class="size-5" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Toggle list view">
+                        {{-- Three horizontal rows representing a list --}}
+                            <rect x="1" y="3"  width="2" height="2" rx="0.5" fill="currentColor" />
+                            <rect x="4.5" y="3"  width="10.5" height="2" rx="0.5" fill="currentColor" />
+                            <rect x="1" y="7"  width="2" height="2" rx="0.5" fill="currentColor" />
+                            <rect x="4.5" y="7"  width="10.5" height="2" rx="0.5" fill="currentColor" />
+                            <rect x="1" y="11" width="2" height="2" rx="0.5" fill="currentColor" />
+                            <rect x="4.5" y="11" width="10.5" height="2" rx="0.5" fill="currentColor" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
 
             @if ($is_filtered && $sold_items->total() >= 1)
                 <p class="px-2 text-green-800 dark:text-green-200">Your search returned {{ $sold_items->total() }} {{ $sold_items->total() == 1 ? 'result' : 'results' }}.</p>
             @endif
 
+            <span x-show="loading">
+                <x-loading-indicator
+                    :loader_color_bg="'fill-gray-800 dark:fill-gray-200'"
+                    :loader_color_spin="'fill-gray-800 dark:fill-gray-200'"
+                    :showText="true"
+                    :size="4"
+                    :text="'Changing view...'"
+                    :text_color="'text-gray-800 dark:text-gray-200'"
+                />
+            </span>
+
             {{ $sold_items->withQueryString()->links(data: ['scrollTo' => false]) }}
 
-            <div class="grid grid-cols-1 mt-6 gap-x-6 gap-y-10 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-8 min-h-[200px] content-container">
+            <div x-show="view === 'table'"
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0 translate-y-5"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                class="grid grid-cols-1 mt-6 gap-x-6 gap-y-10 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-8 min-h-[200px]"
+            >
                 @forelse ($sold_items as $sold_item)
                     {{-- id is used to identify the element being lazy loaded --}}
                     <div
@@ -160,9 +227,9 @@
                         <!-- Skeleton Loader -->
                         <div
                             x-show="!isLoaded"
-                            class="rounded-md h-25-vh *:bg-transparent min-h-[300px] min-w-[300px] skeleton-loader"
+                            class="rounded-md h-25-vh *:bg-transparent min-h-[300px] min-w-[300px] skeleton-loader-lg"
                         >
-                            <div class="mb-4 h-full w-full text-center text-3xl content-center">
+                            <div class="mb-4 size-full text-center text-3xl content-center">
                                 <x-loading-indicator
                                     :loader_color_bg="'fill-gray-200'"
                                     :loader_color_spin="'fill-gray-200'"
@@ -178,7 +245,7 @@
                         <img
                             x-show="isLoaded"
                             src="{{ $sold_item->image_location ? asset('/storage/' .$sold_item->image_location) : asset('/images/no-image-available-placeholder-1920x1080-transparent.svg') }}"
-                            class="object-cover w-full transition duration-300 bg-transparent rounded-md aspect-square group-hover:opacity-75 lg:aspect-auto lg:h-80 hover:scale-105 actual-content"
+                            class="object-cover w-full transition duration-300 bg-transparent rounded-md aspect-square group-hover:opacity-75 lg:aspect-auto lg:h-80 hover:scale-105"
                             @php
                                 $image_text = $sold_item->image_location ? 'Image of ' .$sold_item->item_name : 'No image found for ' .$sold_item->item_name;
                             @endphp
@@ -213,6 +280,76 @@
                                 <p class="text-sm justify-self-end text-gray-500 max-w-full dark:text-gray-400 md:truncate md:max-w-[200px]" title="Sell location">{{ $sold_item->sell_method->location }}</p>
                             </div>
                         </div>
+                    </div>
+                @empty
+                    <p class="col-span-1 px-2 text-red-800 dark:text-red-200 md:col-span-2 xl:col-span-3">No sold items found for this filter. Please adjust your filters.</p>
+                @endforelse
+            </div>
+
+            <div
+                x-show="view === 'list'"
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0 translate-y-5"
+                x-transition:enter-end="opacity-100 translate-y-0"
+            >
+                @forelse ($sold_items as $sold_item)
+                    <div class="flex items-center justify-between gap-2 px-2 py-4 delay-120ms">
+                        <div
+                            x-data="skeletonLoader()"
+                            @destroyed="destroy()"
+                            class="relative"
+                            id="sold-item-{{ $sold_item->id }}"
+                        >
+                            <!-- Skeleton Loader -->
+                            <div
+                                x-show="!isLoaded"
+                                class="rounded-md size-[74.5px] *:bg-transparent skeleton-loader"
+                            >
+                                <div class="mb-4 size-full text-center text-3xl content-center">
+                                    <x-loading-indicator
+                                        :loader_color_bg="'fill-gray-200'"
+                                        :loader_color_spin="'fill-gray-200'"
+                                        :showText="false"
+                                        :size="4"
+                                    />
+                                </div>
+                            </div>
+
+                            <!-- Actual Content -->
+                            <img
+                                x-show="isLoaded"
+                                src="{{ $sold_item->image_location ? asset('/storage/' .$sold_item->image_location) : asset('/images/no-image-available-placeholder-1920x1080-transparent.svg') }}"
+                                class="object-cover w-full transition duration-300 bg-transparent rounded-md aspect-square h-20 group-hover:opacity-75 lg:aspect-auto hover:scale-105"
+                                @php
+                                    $image_text = $sold_item->image_location ? 'Image of ' .$sold_item->item_name : 'No image found for ' .$sold_item->item_name;
+                                @endphp
+                                alt="{{ $image_text }}"
+                                title="{{ $image_text }}"
+                                loading="lazy"
+                            />
+                        </div>
+
+                        <div class="w-full flex flex-col gap-0.5">
+                            <h3 class="text-lg text-gray-800 border-b border-b-gray-500 dark:border-b-gray-400 dark:text-gray-200 md:truncate" title="{{ $sold_item->item_name }}">{{ $sold_item->item_name }}</h3>
+
+                            <p class="text-sm text-gray-500 dark:text-gray-400">
+                                <span title="Price">&#8369; {{ $sold_item->price }}</span>
+                                <span class="px-1 text-gray-500 dark:text-gray-400">&nbsp;·&nbsp;</span>
+                                <span title="Date sold">{{ Carbon\Carbon::parse($sold_item->date_sold)->format('M d, Y') }}</span>
+                                <span class="px-1 text-gray-500 dark:text-gray-400">&nbsp;·&nbsp;</span>
+                                <span title="Size">{{ $sold_item->size }}</span>
+                                <span class="px-1 text-gray-500 dark:text-gray-400">&nbsp;·&nbsp;</span>
+                                <span title="Condition">{{ $sold_item->condition }}</span>
+                                <span class="px-1 text-gray-500 dark:text-gray-400">&nbsp;·&nbsp;</span>
+                                <span title="Pay method">{{ $sold_item->pay_method->method }} (<span title="Remittance location">{{ $sold_item->pay_method->remittance_location }}</span>)</span>
+                                <span class="px-1 text-gray-500 dark:text-gray-400">&nbsp;·&nbsp;</span>
+                                <span title="Sell method">{{ $sold_item->sell_method->method }} (<span title="Sell location">{{ $sold_item->sell_method->location }}</span>)</span>
+                                <p class="text-sm justify-self-end text-gray-500 max-w-full dark:text-gray-400 md:truncate md:max-w-[200px] {{ !$sold_item->tags ? 'italic' : '' }}" title="{{ $sold_item->tags }}">{{ $sold_item->tags ? $sold_item->tags : 'No tags' }}</p>
+                            </p>
+                        </div>
+
+                        {{-- TODO: FOR ITEMS WITH MORE THAN 10 INQUIRIES (TO IMPLEMENT TAG FIRST AND AN IF-LOGIC TO ONLY SHOW THIS IF THE TAG EXISTS ON THE ITEM) --}}
+                        {{-- <span class="flex items-center text-base leading-none">⭐🔥</span> --}}
                     </div>
                 @empty
                     <p class="col-span-1 px-2 text-red-800 dark:text-red-200 md:col-span-2 xl:col-span-3">No sold items found for this filter. Please adjust your filters.</p>
