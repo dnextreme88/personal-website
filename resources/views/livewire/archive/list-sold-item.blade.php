@@ -224,7 +224,7 @@
                         <div
                             x-data="skeletonLoader()"
                             @destroyed="destroy()"
-                            class="relative lg:h-[320px] lg:w-[384px]"
+                            class="relative h-80 w-full xl:w-[384px]"
                             id="sold-item-{{ $sold_item->id }}"
                         >
                             <!-- Skeleton Loader -->
@@ -254,7 +254,7 @@
                                 x-transition:enter-start="opacity-0"
                                 x-transition:enter-end="opacity-100"
                                 src="{{ $sold_item->image_location ? asset('/storage/' .$sold_item->image_location) : asset('/images/no-image-available-placeholder-1920x1080-transparent.svg') }}"
-                                class="object-cover w-full transition duration-300 bg-transparent rounded-md aspect-square group-hover:opacity-75 lg:aspect-auto lg:h-80 hover:scale-105"
+                                class="object-cover transition duration-300 bg-transparent rounded-md aspect-square group-hover:opacity-75 w-full max-h-80 lg:aspect-auto hover:scale-105"
                                 @php
                                     $image_text = $sold_item->image_location ? 'Image of ' .$sold_item->item_name : 'No image found for ' .$sold_item->item_name;
                                 @endphp
@@ -335,7 +335,7 @@
                                 x-transition:enter-start="opacity-0"
                                 x-transition:enter-end="opacity-100"
                                 src="{{ $sold_item->image_location ? asset('/storage/' .$sold_item->image_location) : asset('/images/no-image-available-placeholder-1920x1080-transparent.svg') }}"
-                                class="object-cover w-full transition duration-300 bg-transparent rounded-md aspect-square h-20 group-hover:opacity-75 lg:aspect-auto hover:scale-105"
+                                class="object-cover transition duration-300 bg-transparent rounded-md aspect-square group-hover:opacity-75 w-full h-20 lg:aspect-auto hover:scale-105"
                                 @php
                                     $image_text = $sold_item->image_location ? 'Image of ' .$sold_item->item_name : 'No image found for ' .$sold_item->item_name;
                                 @endphp
@@ -357,10 +357,10 @@
                                 <span class="px-1 text-gray-500 dark:text-gray-400">&nbsp;·&nbsp;</span>
                                 <span title="Condition">{{ $sold_item->condition }}</span>
                                 <span class="px-1 text-gray-500 dark:text-gray-400">&nbsp;·&nbsp;</span>
-                                <span title="Pay method">{{ $sold_item->pay_method->method }} (<span title="Remittance location">{{ $sold_item->pay_method->remittance_location }}</span>)</span>
+                                <span title="Pay method">{{ $sold_item->pay_method->method }}: <span title="Remittance location">{{ $sold_item->pay_method->remittance_location }}</span></span>
                                 <span class="px-1 text-gray-500 dark:text-gray-400">&nbsp;·&nbsp;</span>
-                                <span title="Sell method">{{ $sold_item->sell_method->method }} (<span title="Sell location">{{ $sold_item->sell_method->location }}</span>)</span>
-                                <p class="text-sm justify-self-end text-gray-500 max-w-full dark:text-gray-400 md:truncate md:max-w-[200px] {{ !$sold_item->tags ? 'italic' : '' }}" title="{{ $sold_item->tags }}">{{ $sold_item->tags ? $sold_item->tags : 'No tags' }}</p>
+                                <span title="Sell method">{{ $sold_item->sell_method->method }}: <span title="Sell location">{{ $sold_item->sell_method->location }}</span></span>
+                                <p class="text-sm justify-self-end text-gray-500 max-w-full dark:text-gray-400 {{ !$sold_item->tags ? 'italic' : '' }}" title="{{ $sold_item->tags }}">{{ $sold_item->tags ? $sold_item->tags : 'No tags' }}</p>
                             </p>
                         </div>
 
