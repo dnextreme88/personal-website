@@ -203,7 +203,12 @@ class SoldItemResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('itemName')
-                    ->searchable()
+                    ->searchable(query: function (Builder $query, string $search): Builder {
+                        return $query
+                            ->where('brand', 'like', "%{$search}%")
+                            ->orWhere('name', 'like', "%{$search}%")
+                            ->orWhere('type', 'like', "%{$search}%");
+                    })
                     ->words(5),
                 TextColumn::make('price')
                     ->sortable(),
