@@ -213,191 +213,6 @@ class PostSeeder extends Seeder
         ]);
 
         Post::create([
-            'category_id' => 3,
-            'user_id' => 1,
-            'title' => 'Poem #4',
-            'description' => '<p style="text-align:center;">"The Golden Sun"</p><p>By: Jenica Cayabyab and Tristan Pullido</p>
-            <p style="text-align:left;">I.</p>
-                <p style="margin-left:2em;">The golden sun gently peeps</p>
-                <p style="margin-left:2em;">Among the green towering mountains</p>
-                <p style="margin-left:2em;">As its rays reflect and slowly leaps</p>
-                <p style="margin-left:2em;">On mother nature who had just awaken</p>
-            <p style="text-align:left;">II.</p>
-                <p style="margin-left:2em;">The birds sing such sweet music</p>
-                <p style="margin-left:2em;">While trees dance in a cheerful song</p>
-                <p style="margin-left:2em;">And the waves collide really quick</p>
-                <p style="margin-left:2em;">That they run back to the peaceful horizon</p>
-            <p style="text-align:left;">III.</p>
-                <p style="margin-left:2em;">One could close his eyes to be welcomed again</p>
-                <p style="margin-left:2em;">By a paradise as perfect as Eden</p>
-                <p style="margin-left:2em;">No one would have thought this will be by then</p>
-                <p style="margin-left:2em;">Of man\'s technologies, a dumpsite not garden</p>
-            <p style="text-align:left;">IV.</p>
-                <p style="margin-left:2em;">Buildings made on flattened mountains</p>
-                <p style="margin-left:2em;">Vehicles eat on energy below</p>
-                <p style="margin-left:2em;">Blue skies filled with gray stains</p>
-                <p style="margin-left:2em;">Gray air, dirty to everyone, a no-no</p>
-            <p style="text-align:left;">V.</p>
-                <p style="margin-left:2em;">The plastics that harm the smallest lands</p>
-                <p style="margin-left:2em;">Chemicals that kill these young, little plants</p>
-                <p style="margin-left:2em;">All from man\'s curious but deadly hands</p>
-                <p style="margin-left:2em;">The product of all our selfish wants</p>
-            <p style="text-align:left;">VI.</p>
-                <p style="margin-left:2em;">Aren\'t we one of God\'s creations</p>
-                <p style="margin-left:2em;">Along with nature, earth and everything?</p>
-                <p style="margin-left:2em;">We weren\'t made to bring divisions</p>
-                <p style="margin-left:2em;">We were born to take care of all God\'s beings</p>
-            <p style="text-align:left;">VII.</p>
-                <p style="margin-left:2em;">We were happy, everyone was</p>
-                <p style="margin-left:2em;">Simply by just wandering inside nature</p>
-                <p style="margin-left:2em;">Simply by lying down the thick, green grass</p>
-                <p style="margin-left:2em;">Simply by living without destroying pastures</p>
-            <p style="text-align:left;">VIII.</p>
-                <p style="margin-left:2em;">Yes, indeed, many of us have been in cases</p>
-                <p style="margin-left:2em;">Strived to bring back what nature was before</p>
-                <p style="margin-left:2em;">The rest needs reality to crash to their faces</p>
-                <p style="margin-left:2em;">Before nature actually shuts its long-opened door</p>',
-            'created_at' => Carbon::parse('April 30, 2015 00:00:00')->format('Y-m-d H:i:s'),
-            'date_published' => '2011-10-17',
-        ]);
-
-        Post::create([
-            'category_id' => 3,
-            'user_id' => 1,
-            'title' => 'Poem #5',
-            'description' => '<p style="text-align:center;">"Salvation"</p><p>By: Troy Mascenon and Ida Caja</p>
-            <p style="text-align:left;">I.</p>
-                <p style="margin-left:2em;">Our world is a beautiful place you see</p>
-                <p style="margin-left:2em;">Man and nature living in harmony</p>
-                <p style="margin-left:2em;">Breath-taking wonders and heart-racing views</p>
-                <p style="margin-left:2em;">That fills you with joy and makes you feel new</p>
-            <p style="text-align:left;">II.</p>
-                <p style="margin-left:2em;">The clouds so fluffy, the sky so smooth</p>
-                <p style="margin-left:2em;">The light that guides you in every move</p>
-                <p style="margin-left:2em;">The trees so sturdy, the winds so fresh</p>
-                <p style="margin-left:2em;">Thanks God, you\'re the best!</p>
-            <p style="text-align:left;">III.</p>
-                <p style="margin-left:2em;">And God says "Anything for you"</p>
-                <p style="margin-left:2em;">I wonder how I can see God in full view</p>
-                <p style="margin-left:2em;">I pinch myself, no this isn\'t a dream</p>
-                <p style="margin-left:2em;">I\'m in heaven now, that\'s what it seems</p>
-            <p style="text-align:left;">IV.</p>
-                <p style="margin-left:2em;">God showed the world that I used to live in</p>
-                <p style="margin-left:2em;">Full of greed, full of wrath, full of sin</p>
-                <p style="margin-left:2em;">The air is filled with smoke, darkness fills the air</p>
-                <p style="margin-left:2em;">The water is polluted, life is hard to bear</p>
-            <p style="text-align:left;">V.</p>
-                <p style="margin-left:2em;">"This is all your fault" God exclaimed out loud</p>
-                <p style="margin-left:2em;">"You took everything for granted, brought yourselves down"</p>
-                <p style="margin-left:2em;">"But I love you, I\'ll keep you safe and warm"</p>
-                <p style="margin-left:2em;">"No matter what faults, I\'ll take you away from harm"</p>',
-            'created_at' => Carbon::parse('April 30, 2015 00:00:00')->format('Y-m-d H:i:s'),
-            'date_published' => '2011-10-17',
-        ]);
-
-        Post::create([
-            'category_id' => 3,
-            'user_id' => 1,
-            'title' => 'Poem #6',
-            'description' => '<p style="text-align:center;">"The Big Difference"</p><p>By: Sharmaine Modgil and Kristine Prieto</p>
-            <p style="text-align:left;">I.</p>
-                <p style="margin-left:2em;">I remember the cold breeze</p>
-                <p style="margin-left:2em;">When it brushed my hair with ease</p>
-                <p style="margin-left:2em;">As I sat under an old tree</p>
-                <p style="margin-left:2em;">But now, what do I see?</p>
-            <p style="text-align:left;">II.</p>
-                <p style="margin-left:2em;">Now, what can I say?</p>
-                <p style="margin-left:2em;">As I wake up day by day</p>
-                <p style="margin-left:2em;">This feeling I have is strange</p>
-                <p style="margin-left:2em;">Now that everything has changed</p>
-            <p style="text-align:left;">III.</p>
-                <p style="margin-left:2em;">I used to watch the sun as it sets</p>
-                <p style="margin-left:2em;">Now, I\'m simply filled with regrets</p>
-                <p style="margin-left:2em;">I remember the waves crash so gently</p>
-                <p style="margin-left:2em;">But now, everything\'s depleting silently</p>
-            <p style="text-align:left;">IV.</p>
-                <p style="margin-left:2em;">I missed the high mountains I climbed</p>
-                <p style="margin-left:2em;">On the peak, joy is what I find</p>
-                <p style="margin-left:2em;">The sound of the waterfalls I used to hear</p>
-                <p style="margin-left:2em;">But now, the end is almost near</p>
-            <p style="text-align:left;">V.</p>
-                <p style="margin-left:2em;">Now I see the big difference</p>
-                <p style="margin-left:2em;">Only if we all come to our sense</p>
-                <p style="margin-left:2em;">We must start the change now</p>
-                <p style="margin-left:2em;">We must find a way how</p>',
-            'created_at' => Carbon::parse('April 30, 2015 00:00:00')->format('Y-m-d H:i:s'),
-            'date_published' => '2011-10-17',
-        ]);
-
-        Post::create([
-            'category_id' => 3,
-            'user_id' => 1,
-            'title' => 'Poem #7',
-            'description' => '<p style="text-align:center;">"Filthy Atmosphere"</p><p>By: Kevin Decena and Lianne Ritos</p>
-            <p style="text-align:left;">I.</p>
-                <p style="margin-left:2em;">People throw their garbages everywhere</p>
-                <p style="margin-left:2em;">In a park, in the streets, almost anywhere</p>
-                <p style="margin-left:2em;">We live in an environment so filthy</p>
-                <p style="margin-left:2em;">Sad to say, not everyone is guilty</p>
-            <p style="text-align:left;">II.</p>
-                <p style="margin-left:2em;">Throwing garbages anywhere, we had so many lies</p>
-                <p style="margin-left:2em;">While on the other hand, it is our nature that cries</p>
-                <p style="margin-left:2em;">Our environment already has huge dents</p>
-                <p style="margin-left:2em;">As air pollution come through our vents</p>
-            <p style="text-align:left;">III.</p>
-                <p style="margin-left:2em;">Underwater, it is the aquatic animals we affect</p>
-                <p style="margin-left:2em;">When harmed, the creatures leave a horrendous effect</p>
-                <p style="margin-left:2em;">Innocent lives are lost due to selfish motive</p>
-                <p style="margin-left:2em;">Only giving them limited days to live</p>
-            <p style="text-align:left;">IV.</p>
-                <p style="margin-left:2em;">We don\'t breath clean and fresh air</p>
-                <p style="margin-left:2em;">Some people tend to make lives unfair</p>
-                <p style="margin-left:2em;">There are garbages that are being burned</p>
-                <p style="margin-left:2em;">When all hope is gone, it\'ll be a lesson learned</p>
-            <p style="text-align:left;">V.</p>
-                <p style="margin-left:2em;">Despite the condition of our environment</p>
-                <p style="margin-left:2em;">So little actions were done by our government</p>
-                <p style="margin-left:2em;">We must act before it\'s too late</p>
-                <p style="margin-left:2em;">Before mother nature decides our fate</p>',
-            'created_at' => Carbon::parse('April 30, 2015 00:00:00')->format('Y-m-d H:i:s'),
-            'date_published' => '2011-10-17',
-        ]);
-
-        Post::create([
-            'category_id' => 3,
-            'user_id' => 1,
-            'title' => 'Poem #8',
-            'description' => '<p style="text-align:center;">"Oblivion"</p>
-            <p style="text-align:left;">I.</p>
-                <p style="margin-left:2em;">I live in a world of lies</p>
-                <p style="margin-left:2em;">The light fades as daylight dies</p>
-                <p style="margin-left:2em;">Time ticks life away while nature cries</p>
-                <p style="margin-left:2em;">Oblivion is near as humanity had many tries</p>
-            <p style="text-align:left;">II.</p>
-                <p style="margin-left:2em;">Our hearts so hard like a rock</p>
-                <p style="margin-left:2em;">To other people whom we mock</p>
-                <p style="margin-left:2em;">Yet we pretend we are in shock</p>
-                <p style="margin-left:2em;">Forgiveness from us is so hard to unlock</p>
-            <p style="text-align:left;">III.</p>
-                <p style="margin-left:2em;">Wrath engulfs our hearts so deep</p>
-                <p style="margin-left:2em;">Hatred sinks our minds as it creep</p>
-                <p style="margin-left:2em;">A blank expression from others as they weep</p>
-                <p style="margin-left:2em;">Pray the Lord my soul to keep</p>
-            <p style="text-align:left;">IV.</p>
-                <p style="margin-left:2em;">Million cries will birth a new balance</p>
-                <p style="margin-left:2em;">In the future, we may not stand a chance</p>
-                <p style="margin-left:2em;">We don\'t know if it\'s our last dance</p>
-                <p style="margin-left:2em;">Right now, we must make haste in advance</p>
-            <p style="text-align:left;">V.</p>
-                <p style="margin-left:2em;">Darkness fills the atmosphere and the end draws near</p>
-                <p style="margin-left:2em;">Showering rain of chaos, crippled with fear</p>
-                <p style="margin-left:2em;">So much pain and agony I always hear</p>
-                <p style="margin-left:2em;">Take a minute to look around you, my dear</p>',
-            'created_at' => Carbon::parse('April 30, 2015 00:00:00')->format('Y-m-d H:i:s'),
-            'date_published' => '2011-12-09',
-        ]);
-
-        Post::create([
             'category_id' => 2,
             'user_id' => 1,
             'title' => 'Jogging, Exams, and Dates',
@@ -737,6 +552,191 @@ class PostSeeder extends Seeder
             <p>This is a classic English poem containing about 800 of the worst irregularities in English spelling and pronunciation. This is the first known version containing 146 lines.</p>',
             'created_at' => Carbon::parse('April 22, 2015 00:00:00')->format('Y-m-d H:i:s'),
             'date_published' => '2014-05-24',
+        ]);
+
+        Post::create([
+            'category_id' => 3,
+            'user_id' => 1,
+            'title' => 'Poem #4',
+            'description' => '<p style="text-align:center;">"The Golden Sun"</p><p>By: Jenica Cayabyab and Tristan Pullido</p>
+            <p style="text-align:left;">I.</p>
+                <p style="margin-left:2em;">The golden sun gently peeps</p>
+                <p style="margin-left:2em;">Among the green towering mountains</p>
+                <p style="margin-left:2em;">As its rays reflect and slowly leaps</p>
+                <p style="margin-left:2em;">On mother nature who had just awaken</p>
+            <p style="text-align:left;">II.</p>
+                <p style="margin-left:2em;">The birds sing such sweet music</p>
+                <p style="margin-left:2em;">While trees dance in a cheerful song</p>
+                <p style="margin-left:2em;">And the waves collide really quick</p>
+                <p style="margin-left:2em;">That they run back to the peaceful horizon</p>
+            <p style="text-align:left;">III.</p>
+                <p style="margin-left:2em;">One could close his eyes to be welcomed again</p>
+                <p style="margin-left:2em;">By a paradise as perfect as Eden</p>
+                <p style="margin-left:2em;">No one would have thought this will be by then</p>
+                <p style="margin-left:2em;">Of man\'s technologies, a dumpsite not garden</p>
+            <p style="text-align:left;">IV.</p>
+                <p style="margin-left:2em;">Buildings made on flattened mountains</p>
+                <p style="margin-left:2em;">Vehicles eat on energy below</p>
+                <p style="margin-left:2em;">Blue skies filled with gray stains</p>
+                <p style="margin-left:2em;">Gray air, dirty to everyone, a no-no</p>
+            <p style="text-align:left;">V.</p>
+                <p style="margin-left:2em;">The plastics that harm the smallest lands</p>
+                <p style="margin-left:2em;">Chemicals that kill these young, little plants</p>
+                <p style="margin-left:2em;">All from man\'s curious but deadly hands</p>
+                <p style="margin-left:2em;">The product of all our selfish wants</p>
+            <p style="text-align:left;">VI.</p>
+                <p style="margin-left:2em;">Aren\'t we one of God\'s creations</p>
+                <p style="margin-left:2em;">Along with nature, earth and everything?</p>
+                <p style="margin-left:2em;">We weren\'t made to bring divisions</p>
+                <p style="margin-left:2em;">We were born to take care of all God\'s beings</p>
+            <p style="text-align:left;">VII.</p>
+                <p style="margin-left:2em;">We were happy, everyone was</p>
+                <p style="margin-left:2em;">Simply by just wandering inside nature</p>
+                <p style="margin-left:2em;">Simply by lying down the thick, green grass</p>
+                <p style="margin-left:2em;">Simply by living without destroying pastures</p>
+            <p style="text-align:left;">VIII.</p>
+                <p style="margin-left:2em;">Yes, indeed, many of us have been in cases</p>
+                <p style="margin-left:2em;">Strived to bring back what nature was before</p>
+                <p style="margin-left:2em;">The rest needs reality to crash to their faces</p>
+                <p style="margin-left:2em;">Before nature actually shuts its long-opened door</p>',
+            'created_at' => Carbon::parse('April 30, 2015 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2011-10-17',
+        ]);
+
+        Post::create([
+            'category_id' => 3,
+            'user_id' => 1,
+            'title' => 'Poem #5',
+            'description' => '<p style="text-align:center;">"Salvation"</p><p>By: Troy Mascenon and Ida Caja</p>
+            <p style="text-align:left;">I.</p>
+                <p style="margin-left:2em;">Our world is a beautiful place you see</p>
+                <p style="margin-left:2em;">Man and nature living in harmony</p>
+                <p style="margin-left:2em;">Breath-taking wonders and heart-racing views</p>
+                <p style="margin-left:2em;">That fills you with joy and makes you feel new</p>
+            <p style="text-align:left;">II.</p>
+                <p style="margin-left:2em;">The clouds so fluffy, the sky so smooth</p>
+                <p style="margin-left:2em;">The light that guides you in every move</p>
+                <p style="margin-left:2em;">The trees so sturdy, the winds so fresh</p>
+                <p style="margin-left:2em;">Thanks God, you\'re the best!</p>
+            <p style="text-align:left;">III.</p>
+                <p style="margin-left:2em;">And God says "Anything for you"</p>
+                <p style="margin-left:2em;">I wonder how I can see God in full view</p>
+                <p style="margin-left:2em;">I pinch myself, no this isn\'t a dream</p>
+                <p style="margin-left:2em;">I\'m in heaven now, that\'s what it seems</p>
+            <p style="text-align:left;">IV.</p>
+                <p style="margin-left:2em;">God showed the world that I used to live in</p>
+                <p style="margin-left:2em;">Full of greed, full of wrath, full of sin</p>
+                <p style="margin-left:2em;">The air is filled with smoke, darkness fills the air</p>
+                <p style="margin-left:2em;">The water is polluted, life is hard to bear</p>
+            <p style="text-align:left;">V.</p>
+                <p style="margin-left:2em;">"This is all your fault" God exclaimed out loud</p>
+                <p style="margin-left:2em;">"You took everything for granted, brought yourselves down"</p>
+                <p style="margin-left:2em;">"But I love you, I\'ll keep you safe and warm"</p>
+                <p style="margin-left:2em;">"No matter what faults, I\'ll take you away from harm"</p>',
+            'created_at' => Carbon::parse('April 30, 2015 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2011-10-17',
+        ]);
+
+        Post::create([
+            'category_id' => 3,
+            'user_id' => 1,
+            'title' => 'Poem #6',
+            'description' => '<p style="text-align:center;">"The Big Difference"</p><p>By: Sharmaine Modgil and Kristine Prieto</p>
+            <p style="text-align:left;">I.</p>
+                <p style="margin-left:2em;">I remember the cold breeze</p>
+                <p style="margin-left:2em;">When it brushed my hair with ease</p>
+                <p style="margin-left:2em;">As I sat under an old tree</p>
+                <p style="margin-left:2em;">But now, what do I see?</p>
+            <p style="text-align:left;">II.</p>
+                <p style="margin-left:2em;">Now, what can I say?</p>
+                <p style="margin-left:2em;">As I wake up day by day</p>
+                <p style="margin-left:2em;">This feeling I have is strange</p>
+                <p style="margin-left:2em;">Now that everything has changed</p>
+            <p style="text-align:left;">III.</p>
+                <p style="margin-left:2em;">I used to watch the sun as it sets</p>
+                <p style="margin-left:2em;">Now, I\'m simply filled with regrets</p>
+                <p style="margin-left:2em;">I remember the waves crash so gently</p>
+                <p style="margin-left:2em;">But now, everything\'s depleting silently</p>
+            <p style="text-align:left;">IV.</p>
+                <p style="margin-left:2em;">I missed the high mountains I climbed</p>
+                <p style="margin-left:2em;">On the peak, joy is what I find</p>
+                <p style="margin-left:2em;">The sound of the waterfalls I used to hear</p>
+                <p style="margin-left:2em;">But now, the end is almost near</p>
+            <p style="text-align:left;">V.</p>
+                <p style="margin-left:2em;">Now I see the big difference</p>
+                <p style="margin-left:2em;">Only if we all come to our sense</p>
+                <p style="margin-left:2em;">We must start the change now</p>
+                <p style="margin-left:2em;">We must find a way how</p>',
+            'created_at' => Carbon::parse('April 30, 2015 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2011-10-17',
+        ]);
+
+        Post::create([
+            'category_id' => 3,
+            'user_id' => 1,
+            'title' => 'Poem #7',
+            'description' => '<p style="text-align:center;">"Filthy Atmosphere"</p><p>By: Kevin Decena and Lianne Ritos</p>
+            <p style="text-align:left;">I.</p>
+                <p style="margin-left:2em;">People throw their garbages everywhere</p>
+                <p style="margin-left:2em;">In a park, in the streets, almost anywhere</p>
+                <p style="margin-left:2em;">We live in an environment so filthy</p>
+                <p style="margin-left:2em;">Sad to say, not everyone is guilty</p>
+            <p style="text-align:left;">II.</p>
+                <p style="margin-left:2em;">Throwing garbages anywhere, we had so many lies</p>
+                <p style="margin-left:2em;">While on the other hand, it is our nature that cries</p>
+                <p style="margin-left:2em;">Our environment already has huge dents</p>
+                <p style="margin-left:2em;">As air pollution come through our vents</p>
+            <p style="text-align:left;">III.</p>
+                <p style="margin-left:2em;">Underwater, it is the aquatic animals we affect</p>
+                <p style="margin-left:2em;">When harmed, the creatures leave a horrendous effect</p>
+                <p style="margin-left:2em;">Innocent lives are lost due to selfish motive</p>
+                <p style="margin-left:2em;">Only giving them limited days to live</p>
+            <p style="text-align:left;">IV.</p>
+                <p style="margin-left:2em;">We don\'t breath clean and fresh air</p>
+                <p style="margin-left:2em;">Some people tend to make lives unfair</p>
+                <p style="margin-left:2em;">There are garbages that are being burned</p>
+                <p style="margin-left:2em;">When all hope is gone, it\'ll be a lesson learned</p>
+            <p style="text-align:left;">V.</p>
+                <p style="margin-left:2em;">Despite the condition of our environment</p>
+                <p style="margin-left:2em;">So little actions were done by our government</p>
+                <p style="margin-left:2em;">We must act before it\'s too late</p>
+                <p style="margin-left:2em;">Before mother nature decides our fate</p>',
+            'created_at' => Carbon::parse('April 30, 2015 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2011-10-17',
+        ]);
+
+        Post::create([
+            'category_id' => 3,
+            'user_id' => 1,
+            'title' => 'Poem #8',
+            'description' => '<p style="text-align:center;">"Oblivion"</p>
+            <p style="text-align:left;">I.</p>
+                <p style="margin-left:2em;">I live in a world of lies</p>
+                <p style="margin-left:2em;">The light fades as daylight dies</p>
+                <p style="margin-left:2em;">Time ticks life away while nature cries</p>
+                <p style="margin-left:2em;">Oblivion is near as humanity had many tries</p>
+            <p style="text-align:left;">II.</p>
+                <p style="margin-left:2em;">Our hearts so hard like a rock</p>
+                <p style="margin-left:2em;">To other people whom we mock</p>
+                <p style="margin-left:2em;">Yet we pretend we are in shock</p>
+                <p style="margin-left:2em;">Forgiveness from us is so hard to unlock</p>
+            <p style="text-align:left;">III.</p>
+                <p style="margin-left:2em;">Wrath engulfs our hearts so deep</p>
+                <p style="margin-left:2em;">Hatred sinks our minds as it creep</p>
+                <p style="margin-left:2em;">A blank expression from others as they weep</p>
+                <p style="margin-left:2em;">Pray the Lord my soul to keep</p>
+            <p style="text-align:left;">IV.</p>
+                <p style="margin-left:2em;">Million cries will birth a new balance</p>
+                <p style="margin-left:2em;">In the future, we may not stand a chance</p>
+                <p style="margin-left:2em;">We don\'t know if it\'s our last dance</p>
+                <p style="margin-left:2em;">Right now, we must make haste in advance</p>
+            <p style="text-align:left;">V.</p>
+                <p style="margin-left:2em;">Darkness fills the atmosphere and the end draws near</p>
+                <p style="margin-left:2em;">Showering rain of chaos, crippled with fear</p>
+                <p style="margin-left:2em;">So much pain and agony I always hear</p>
+                <p style="margin-left:2em;">Take a minute to look around you, my dear</p>',
+            'created_at' => Carbon::parse('April 30, 2015 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2011-12-09',
         ]);
 
         Post::create([
@@ -1336,15 +1336,6 @@ class PostSeeder extends Seeder
         ]);
 
         Post::create([
-            'category_id' => 1,
-            'user_id' => 1,
-            'title' => 'Re-acquisition of Student Permit',
-            'description' => '<p>So I was working at home as mandated by Tito Rommel and Tita Ruthie. I\'m working at home this week from October 24 - 28, so I grabbed the chance to work on getting my Student Permit at a secondary LTO branch in Porta Vaga. Today, I went out to do that, but I did leave for town yesterday too - I passed Porta Vaga just to confirm that the LTO office is open every weekdays and to confirm the requirements needed by the branch to get the permit. I was able to ask 2 of the male applicants and confirmed that I didn\'t need a 1x1 photo in a white background, as opposed to what Rocko\'s Driving School gave me in a piece of paper. Plus, I need a medical certificate from a certified physician, and that\'s easy enough because there\'s a clinic just near the LTO office in the mall. Due to overextending my 1-hour lunch break, I decided to do it today and verify my requirements, even if I overextend my lunch break again.<p>I went to town and headed directly to the medical clinic. I got my initial blood pressure check but apparently, I needed to get a completion certificate from Rocko\'s before proceeding further, so I headed to that office, which was just in front of the clinic. I got my certificate, had one of the staff snapped a photo of me (to be posted on their FB page), and paid P450 for the medical certificate payment. Headed back to the clinic and was able to get my medical certificate. I headed to the LTO office and submitted all my requirements but turns out my LTMS (Land Transportation Management System) profile is incomplete, which I overlooked. They advised me to go back to Rocko\'s and complete my profile in the LTO website and once again, I\'m back with the LTO office. I pledged and read an oath, had my picture taken, had my fingerprints registered, and paid P250 for my Student Permit. I\'m a little surprised though, as they gave me a crosswise paper that looks different compared to the 2020 version of the Student Permit. Anyway, I got out so happy because finally, I can enroll in Rocko\'s Driving School practical courses where I am a step closer to achieving my goal of driving and owning a motor.</p><p>I looked back at the same paper that Rocko\'s gave me and I just can\'t wait to get enrolled! Thank you so much, God, to Rocko\'s Driving School, and to LTO for making this dream a reality!<p>',
-            'created_at' => Carbon::parse('October 28, 2022 00:00:00')->format('Y-m-d H:i:s'),
-            'date_published' => '2022-10-26',
-        ]);
-
-        Post::create([
             'category_id' => 2,
             'user_id' => 1,
             'title' => 'Hotel 45 vs. 45 Hotel: A Night of Bad Service',
@@ -1754,15 +1745,6 @@ class PostSeeder extends Seeder
         ]);
 
         Post::create([
-            'category_id' => 1,
-            'user_id' => 1,
-            'title' => 'Web Development on a New Era',
-            'description' => '<p>Today, I watched web development related videos at YouTube. Boy, it got me surprised on how Next.js could be used as a backend framework on the video <a href="https://www.youtube.com/watch?v=W4UhNo3HAMw">Theo Browne: Next.js is a backend framework</a>. I was amazed so I decided to watch a little bit more and this time, I watched <a href="https://www.youtube.com/watch?v=6mQ3M1CUGnk">Sam Selikoff: Improving developer and user experience with nested layouts in Next.js</a> regarding the framework\'s next major update, Next.js 13 on asynchronous / await functions being used inside a server component. This is really cool because writing APIs from scratch won\'t be a hassle anymore. A golden, new era has come at last to web development! It made me excited to resume learning Next.js, but I\'ll postpone it for now.</p><p>Still on the subject of web development, I watched <a href="https://www.youtube.com/watch?v=BU9zgOTlMqk">Una Kravets: What\'s new in Web UI</a>, which focused on new features that is supported and coming to major browsers. Things that I\'m excited to use are the container queries and the :has() selector, which would make responsive design easier. I\'m thankful that I watched these helpful videos today, considering that I am constantly learning web technologies despite the ever-changing world of the Internet, where evolution is constant and challenging.</p>',
-            'created_at' => Carbon::parse('October 28, 2022 00:00:00')->format('Y-m-d H:i:s'),
-            'date_published' => '2022-10-28',
-        ]);
-
-        Post::create([
             'category_id' => 7,
             'user_id' => 1,
             'title' => 'Unholy Confessions #14',
@@ -1890,10 +1872,37 @@ class PostSeeder extends Seeder
         Post::create([
             'category_id' => 1,
             'user_id' => 1,
+            'title' => 'Re-acquisition of Student Permit',
+            'description' => '<p>So I was working at home as mandated by Tito Rommel and Tita Ruthie. I\'m working at home this week from October 24 - 28, so I grabbed the chance to work on getting my Student Permit at a secondary LTO branch in Porta Vaga. Today, I went out to do that, but I did leave for town yesterday too - I passed Porta Vaga just to confirm that the LTO office is open every weekdays and to confirm the requirements needed by the branch to get the permit. I was able to ask 2 of the male applicants and confirmed that I didn\'t need a 1x1 photo in a white background, as opposed to what Rocko\'s Driving School gave me in a piece of paper. Plus, I need a medical certificate from a certified physician, and that\'s easy enough because there\'s a clinic just near the LTO office in the mall. Due to overextending my 1-hour lunch break, I decided to do it today and verify my requirements, even if I overextend my lunch break again.<p>I went to town and headed directly to the medical clinic. I got my initial blood pressure check but apparently, I needed to get a completion certificate from Rocko\'s before proceeding further, so I headed to that office, which was just in front of the clinic. I got my certificate, had one of the staff snapped a photo of me (to be posted on their FB page), and paid P450 for the medical certificate payment. Headed back to the clinic and was able to get my medical certificate. I headed to the LTO office and submitted all my requirements but turns out my LTMS (Land Transportation Management System) profile is incomplete, which I overlooked. They advised me to go back to Rocko\'s and complete my profile in the LTO website and once again, I\'m back with the LTO office. I pledged and read an oath, had my picture taken, had my fingerprints registered, and paid P250 for my Student Permit. I\'m a little surprised though, as they gave me a crosswise paper that looks different compared to the 2020 version of the Student Permit. Anyway, I got out so happy because finally, I can enroll in Rocko\'s Driving School practical courses where I am a step closer to achieving my goal of driving and owning a motor.</p><p>I looked back at the same paper that Rocko\'s gave me and I just can\'t wait to get enrolled! Thank you so much, God, to Rocko\'s Driving School, and to LTO for making this dream a reality!<p>',
+            'created_at' => Carbon::parse('October 28, 2022 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2022-10-26',
+        ]);
+
+        Post::create([
+            'category_id' => 1,
+            'user_id' => 1,
             'title' => 'Blog Revival',
             'description' => '<p>I have decided to come back to my Blogging site (well, at least pop in every once in awhile) to post content about my daily life as well as continue posting content on existing categories. At the time of this writing, I currently have categories for Journal Entry, TV Marathons, Poems, and Unholy Confessions. This blog post will be the first post I\'ll be putting on a new category called Announcements, where I will be posting important information relevant to me or to this blog. I\'m planning to add more categories soon. Stay tuned!</p>',
             'created_at' => Carbon::parse('October 28, 2022 00:00:00')->format('Y-m-d H:i:s'),
             'date_published' => '2022-10-28',
+        ]);
+
+        Post::create([
+            'category_id' => 1,
+            'user_id' => 1,
+            'title' => 'Web Development on a New Era',
+            'description' => '<p>Today, I watched web development related videos at YouTube. Boy, it got me surprised on how Next.js could be used as a backend framework on the video <a href="https://www.youtube.com/watch?v=W4UhNo3HAMw">Theo Browne: Next.js is a backend framework</a>. I was amazed so I decided to watch a little bit more and this time, I watched <a href="https://www.youtube.com/watch?v=6mQ3M1CUGnk">Sam Selikoff: Improving developer and user experience with nested layouts in Next.js</a> regarding the framework\'s next major update, Next.js 13 on asynchronous / await functions being used inside a server component. This is really cool because writing APIs from scratch won\'t be a hassle anymore. A golden, new era has come at last to web development! It made me excited to resume learning Next.js, but I\'ll postpone it for now.</p><p>Still on the subject of web development, I watched <a href="https://www.youtube.com/watch?v=BU9zgOTlMqk">Una Kravets: What\'s new in Web UI</a>, which focused on new features that is supported and coming to major browsers. Things that I\'m excited to use are the container queries and the :has() selector, which would make responsive design easier. I\'m thankful that I watched these helpful videos today, considering that I am constantly learning web technologies despite the ever-changing world of the Internet, where evolution is constant and challenging.</p>',
+            'created_at' => Carbon::parse('October 28, 2022 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2022-10-28',
+        ]);
+
+        Post::create([
+            'category_id' => 7,
+            'user_id' => 1,
+            'title' => 'Unholy Confessions #15',
+            'description' => '<p style="text-align:center;">"The Useless Feeling"</p><p>I\'m resigning at eFlexervices because I couldn\'t tolerate the toxic situation anymore. I feel useless, that I couldn\'t do much during my shifts. I\'ve been working alone since I got employed and I hardly get to enjoy working with others. Ever since Sir Jackson abruptly resigned, I have been directionless. There\'s no substance in accomplishing tasks anymore because I have no idea what I want to finish anymore.</p><p>When Sir Jackson was still around on November 2021, there\'s always a purpose in accomplishing tasks because he knows the goal for these Victorious projects. He has it all on his head. That\'s also the negative part - he knows the goal for the projects but I don\'t. Once he resigned, it\'s like he took the ideas with him, leaving me clueless as to what I should even accomplish with Victorious. I can\'t blame him for finding greener pastures, because everyone deserves to be better, right? I never liked the fact that the director of Victorious, Sir Bryan, threw some tasks at me in Asana that I\'m not even familiar with. I\'ve already learned a lot while in this company but I guess it\'s just time to go.</p>',
+            'created_at' => Carbon::parse('January 15, 2023 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2022-01-14',
         ]);
 
         Post::create([
@@ -1926,7 +1935,7 @@ class PostSeeder extends Seeder
         Post::create([
             'category_id' => 7,
             'user_id' => 1,
-            'title' => 'Unholy Confessions #15',
+            'title' => 'Unholy Confessions #16',
             'description' => '<p style="text-align: center;">"Maybe it\'s a Wong Move"</p><p>Simping 100000% hah. Anyway just to add what I wrote, and stuff I remember while I can still remember some details.</p> <p>Reading this today while looking at my documents in Google Drive, I remember most of it and how it all went. The previous night, I was watching an episode of The Big Bang Theory but I forgot what episode that was (it\'s probably between Seasons 5 - 7, it\'s one of the episodes where Howard was in space lol). I normally don\'t post anything in My Day but it\'s that same night that I did and she happens to message out of the blue inviting me for a hangout. I was happy and the fact that I keep bursting on laughter while watching just made my night. Didn\'t realize she would be treating me to a spa, as I\'ve never been in one before, so she setup an appointment for the next day. What I don\'t remember is if the schedule she picked was 1 PM or 3 PM.</p> <p>I remember travelling there using a taxi, as I groomed up pretty late (I forgot what I was doing, but I remember I was just late lol). I was using this broken Xiaomi phone because the lower left part of my ASUS phone was entirely black. Anyway, once I arrived at the spa, I waited for around 30 minutes and to update her progress, she\'s sending pics of the walkway in front of her, indicating how close she is. We walked up, sat on the benches first to confirm the appointment. We had sauna, shower, and finally a massage. In the sauna, we had a variety of topics. I remember we talked about our own past relationships, favorite series in Netflix, that she has a brother, among others. Soooo I have documents in Google to audit all my expenses then checked the Sept 2021 logs and found out that she paid for a bronze package, which I believe costs P800, if I\'m not mistaken.</p> <p>We ate at Canto, my 1st time there, and this time it was my treat. After that, we walked back to the entrance of the spa and hailed a cab, to go to Centermall. We took a photo but for the life of me, cannot remember what happened to it. I don\'t remember syncing it to Google Photos, and I cannot find it to Drive either. Anyway, we headed straight to one of the other branches of Good Taste, also literally my 1st time for the said branch. She bought some food to return home to her family.</p> <p>Next, we looked for trash bags and walked to Malcolm Square to get one. I think it started raining by this time. After that, we went to the Jollibee branch nearest to Baguio Centermall and treated me once again. We sat somewhere upstairs, near some block of wood. Afterwards, we parted ways. Little did I know that was the last time things would be good.</p><p>Sometime later, I would ask her out again, but she declined, saying that she needs to look at her father. Attempted for a 2nd time, and she declined also, this time she needs to meet up with some friend. She mentioned a female name but I don\'t remember it. I guess it started with a J? Dunno. I took it negatively then, coupled with a myriad of problems with work and other people huhu. I asked her out to confess to her, as it\'s always better to say it in person than in chat, but sadly it never came to fruition. Aaaaaaaand I took matters badly, I unfriended 3 of my friends - including her, out of overthinking. A year later, I re-added them back, and was able to accept me again, except for one, after some apology. I realized I needed them and just wanted to bury the hatchet. However, it\'s no use telling her what I wanted to say, as it\'s too late.</p> <p>She was good. She even shares striking similarities on one of my favorite characters of the Capcom franchise - her maiden name, and even by blood. She has surprisingly great sense of humor, short, speaks English well, and smart.</p> <p>To this day, I wonder: maybe I shouldn\'t have unfriended them 2 years ago. I wished I haven\'t deleted the convos. I took matters into my own hands. Somehow it\'s painful to be neglected by peers all these years. I should\'ve just let it be.</p> <p>Yet it\'s one of the best days I won\'t forget.</p>',
             'created_at' => Carbon::parse('September 6, 2023 00:00:00')->format('Y-m-d H:i:s'),
             'date_published' => '2023-09-06',
@@ -1939,15 +1948,6 @@ class PostSeeder extends Seeder
             'description' => '<p>I had this crazy dream last night about my crush in one of my employments, Thrive Media. She\'s the same person that I\'m referring to in the Unholy Confessions #16 post so here goes.</p><p>Starts out with me waking up at a vacant lease. I remember the past night drinking Smirnoff Mule at Cholo\'s Gastropark. I woke up in a room filled with people where most are still asleep, benched in beds similar to the one I have in my room. I was sleeping face-down and luckily I have my own bed. Some woman I don\'t recognize in real-life called me out and I asked her how I ended up here. She said that I agreed to go out partying, and I exclaimed that I remember going home and sleeping in my own bed. Then I suddenly thought that I may have been confused with last night\'s events, aka drunk. I was holding her right hand and felt how soft it is that I told her that "you\'re skin is soft, are you not used to doing household chores?" (hahaha!). She didn\'t reply. I looked around and a few people started waking up as well, maybe due to the conversation me and the woman had. I asked her if I can check my home and to assure her that I would be back, I would leave one of my jackets to come back to it later. I found out that the jacket I have on my bed is not mine, and I had no recollection as how I got it. So I left and went up two floors above. I found out that I\'m on a building that used to be UC\'s Nursing building and it\'s actually a multi-purpose building that is not focused on education (similar to Starwood Hotel that me and my aunt Mama Cathy had Korean buffet lunch at on November 22). I recognized this because the area surrounding it was Gov Pack. The 1st part of my dream then ends.</p><p>My 2nd dream then happens. It starts with Christine inviting me to go somewhere with her. Without hesitation, I immediately agreed. We arrived and I realized we arrived at some theatre where actors/actresses are doing rehearsals for the play later in a few hours. I actually thought I\'ve been to a live WWE event, because I assumed that the people who went out in the restroom area running were Bianca Belair and Natalya and that the person in the ring was Kane calling out Brock Lesnar for an impromptu WWE Universal Championship match (wow, that was specific!). After watching that segment, I turned to another part of the rehearsal where I saw people in Filipino costumes doing a rehearsal for an old Filipino tradition that I honestly don\'t know. Midway, I saw Christine standing up on her seat and approached me, this time I am already seated to one of the monoblocks near the entrance. We talked a bit, mostly on how she enjoyed watching and how I enjoyed seeing her with me. She laid her head on my shoulders and how I was just enjoying the moment. Until I realized she slowly started fading, pixel by pixel. I froze and was telling myself "how could this happen? this is not supposed to happen!", like I\'m screaming inside my head and was just surprised on how it\'s turning out. The dream ended with me crying as I touched the monoblock she was seated on.</p><p>After the dream, I woke up with tears in my eyes, and I believe it\'s the first time it happened because I couldn\'t recall any other instances of crying after a dream. It made me miss her a lot. I hope she\'s doing fine these days.</p>',
             'created_at' => Carbon::parse('November 26, 2023 00:00:00')->format('Y-m-d H:i:s'),
             'date_published' => '2023-11-26',
-        ]);
-
-        Post::create([
-            'category_id' => 7,
-            'user_id' => 1,
-            'title' => 'Unholy Confessions #16',
-            'description' => '<p style="text-align:center;">"The Useless Feeling"</p><p>I\'m resigning at eFlexervices because I couldn\'t tolerate the toxic situation anymore. I feel useless, that I couldn\'t do much during my shifts. I\'ve been working alone since I got employed and I hardly get to enjoy working with others. Ever since Sir Jackson abruptly resigned, I have been directionless. There\'s no substance in accomplishing tasks anymore because I have no idea what I want to finish anymore.</p><p>When Sir Jackson was still around on November 2021, there\'s always a purpose in accomplishing tasks because he knows the goal for these Victorious projects. He has it all on his head. That\'s also the negative part - he knows the goal for the projects but I don\'t. Once he resigned, it\'s like he took the ideas with him, leaving me clueless as to what I should even accomplish with Victorious. I can\'t blame him for finding greener pastures, because everyone deserves to be better, right? I never liked the fact that the director of Victorious, Sir Bryan, threw some tasks at me in Asana that I\'m not even familiar with. I\'ve already learned a lot while in this company but I guess it\'s just time to go.</p>',
-            'created_at' => Carbon::parse('January 15, 2025 00:00:00')->format('Y-m-d H:i:s'),
-            'date_published' => '2022-01-14',
         ]);
 
         Post::create([
