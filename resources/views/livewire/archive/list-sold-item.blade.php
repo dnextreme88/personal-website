@@ -208,51 +208,61 @@
                 />
             </span>
 
-            {{ $sold_items->withQueryString()->links(data: ['scrollTo' => false]) }}
+            <div x-show="!loading">
+                {{ $sold_items->withQueryString()->links(data: ['scrollTo' => false]) }}
+            </div>
 
-            <div x-show="view === 'table'"
+            <div x-show="view === 'table' && !loading"
                 x-transition:enter="transition ease-out duration-300"
                 x-transition:enter-start="opacity-0 translate-y-5"
                 x-transition:enter-end="opacity-100 translate-y-0"
                 class="grid grid-cols-1 mt-6 gap-x-6 gap-y-10 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-8 min-h-[200px]"
             >
                 @forelse ($sold_items as $sold_item)
-                    {{-- id is used to identify the element being lazy loaded --}}
-                    <div
-                        x-data="skeletonLoader()"
-                        @destroyed="destroy()"
-                        class="relative"
-                        id="sold-item-{{ $sold_item->id }}"
-                    >
-                        <!-- Skeleton Loader -->
+                    <div>
+                        {{-- id is used to identify the element being lazy loaded --}}
                         <div
-                            x-show="!isLoaded"
-                            class="rounded-md h-25-vh *:bg-transparent min-h-[300px] min-w-[300px] skeleton-loader-lg"
+                            x-data="skeletonLoader()"
+                            @destroyed="destroy()"
+                            class="relative lg:h-[320px] lg:w-[384px]"
+                            id="sold-item-{{ $sold_item->id }}"
                         >
-                            <div class="mb-4 size-full text-center text-3xl content-center">
-                                <x-loading-indicator
-                                    :loader_color_bg="'fill-gray-200'"
-                                    :loader_color_spin="'fill-gray-200'"
-                                    :showText="true"
-                                    :size="4"
-                                    :text="'Loading...'"
-                                    :text_color="'text-white'"
-                                />
+                            <!-- Skeleton Loader -->
+                            <div
+                                x-show="!isLoaded"
+                                x-transition:leave="transition ease-in duration-500"
+                                x-transition:leave-start="opacity-100"
+                                x-transition:leave-end="opacity-0"
+                                class="absolute inset-0 rounded-md *:bg-transparent skeleton-loader-lg"
+                            >
+                                <div class="mb-4 size-full text-center text-3xl content-center">
+                                    <x-loading-indicator
+                                        :loader_color_bg="'fill-gray-200'"
+                                        :loader_color_spin="'fill-gray-200'"
+                                        :showText="true"
+                                        :size="4"
+                                        :text="'Loading...'"
+                                        :text_color="'text-white'"
+                                    />
+                                </div>
                             </div>
-                        </div>
 
-                        <!-- Actual Content -->
-                        <img
-                            x-show="isLoaded"
-                            src="{{ $sold_item->image_location ? asset('/storage/' .$sold_item->image_location) : asset('/images/no-image-available-placeholder-1920x1080-transparent.svg') }}"
-                            class="object-cover w-full transition duration-300 bg-transparent rounded-md aspect-square group-hover:opacity-75 lg:aspect-auto lg:h-80 hover:scale-105"
-                            @php
-                                $image_text = $sold_item->image_location ? 'Image of ' .$sold_item->item_name : 'No image found for ' .$sold_item->item_name;
-                            @endphp
-                            alt="{{ $image_text }}"
-                            title="{{ $image_text }}"
-                            loading="lazy"
-                        />
+                            <!-- Actual Content -->
+                            <img
+                                x-show="isLoaded"
+                                x-transition:enter="transition ease-out duration-500"
+                                x-transition:enter-start="opacity-0"
+                                x-transition:enter-end="opacity-100"
+                                src="{{ $sold_item->image_location ? asset('/storage/' .$sold_item->image_location) : asset('/images/no-image-available-placeholder-1920x1080-transparent.svg') }}"
+                                class="object-cover w-full transition duration-300 bg-transparent rounded-md aspect-square group-hover:opacity-75 lg:aspect-auto lg:h-80 hover:scale-105"
+                                @php
+                                    $image_text = $sold_item->image_location ? 'Image of ' .$sold_item->item_name : 'No image found for ' .$sold_item->item_name;
+                                @endphp
+                                alt="{{ $image_text }}"
+                                title="{{ $image_text }}"
+                                loading="lazy"
+                            />
+                        </div>
 
                         <div class="flex flex-col mt-4">
                             <div class="flex justify-between gap-2">
@@ -287,7 +297,7 @@
             </div>
 
             <div
-                x-show="view === 'list'"
+                x-show="view === 'list' && !loading"
                 x-transition:enter="transition ease-out duration-300"
                 x-transition:enter-start="opacity-0 translate-y-5"
                 x-transition:enter-end="opacity-100 translate-y-0"
@@ -297,13 +307,16 @@
                         <div
                             x-data="skeletonLoader()"
                             @destroyed="destroy()"
-                            class="relative"
+                            class="relative size-[74.5px]"
                             id="sold-item-{{ $sold_item->id }}"
                         >
                             <!-- Skeleton Loader -->
                             <div
                                 x-show="!isLoaded"
-                                class="rounded-md size-[74.5px] *:bg-transparent skeleton-loader"
+                                x-transition:leave="transition ease-in duration-500"
+                                x-transition:leave-start="opacity-100"
+                                x-transition:leave-end="opacity-0"
+                                class="absolute inset-0 rounded-md *:bg-transparent skeleton-loader"
                             >
                                 <div class="mb-4 size-full text-center text-3xl content-center">
                                     <x-loading-indicator
@@ -318,6 +331,9 @@
                             <!-- Actual Content -->
                             <img
                                 x-show="isLoaded"
+                                x-transition:enter="transition ease-out duration-500"
+                                x-transition:enter-start="opacity-0"
+                                x-transition:enter-end="opacity-100"
                                 src="{{ $sold_item->image_location ? asset('/storage/' .$sold_item->image_location) : asset('/images/no-image-available-placeholder-1920x1080-transparent.svg') }}"
                                 class="object-cover w-full transition duration-300 bg-transparent rounded-md aspect-square h-20 group-hover:opacity-75 lg:aspect-auto hover:scale-105"
                                 @php
@@ -356,7 +372,9 @@
                 @endforelse
             </div>
 
-            {{ $sold_items->withQueryString()->links(data: ['scrollTo' => false]) }}
+            <div x-show="!loading">
+                {{ $sold_items->withQueryString()->links(data: ['scrollTo' => false]) }}
+            </div>
         </div>
     </div>
 </div>
