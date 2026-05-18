@@ -22,7 +22,9 @@
                 <div
                     wire:click="view_posts_on_date('{{ $carbon_instance->format('Y-m-d') }}')"
                     class="border cursor-pointer transition duration-200 p-1 hover:bg-gray-300 dark:hover:bg-gray-600 md:p-0 lg:p-2
-                        @if ($current_day == $carbon_instance->day && $current_month == \Carbon\Carbon::now()->month)
+                        @if ($current_year == \Carbon\Carbon::now()->year &&
+                            $current_month == \Carbon\Carbon::now()->month &&
+                            $current_day == $carbon_instance->day)
                             font-bold text-gray-800 dark:text-gray-200 bg-gray-300 dark:bg-gray-600
 
                             @if ($selected_date && $selected_date != $carbon_instance->format('Y-m-d'))

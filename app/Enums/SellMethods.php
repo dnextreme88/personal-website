@@ -2,9 +2,10 @@
 
 namespace App\Enums;
 
+use Filament\Support\Contracts\HasColor;
 use Filament\Support\Contracts\HasLabel;
 
-enum SellMethods: string implements HasLabel
+enum SellMethods: string implements HasColor, HasLabel
 {
     case DROPPING = 'dropping';
     case MEETUP = 'meetup';
@@ -16,6 +17,15 @@ enum SellMethods: string implements HasLabel
             self::DROPPING => 'dropping',
             self::MEETUP => 'meetup',
             self::SHIPMENT => 'shipment',
+        };
+    }
+
+        public function getColor(): string|array|null
+    {
+        return match ($this) {
+            self::DROPPING => 'danger',
+            self::MEETUP => 'info',
+            self::SHIPMENT => 'success',
         };
     }
 }

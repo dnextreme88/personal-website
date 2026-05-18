@@ -75,6 +75,7 @@ class SoldItemResource extends Resource
                             ->required(),
                         TextInput::make('price')
                             ->numeric()
+                            ->prefix('₱')
                             ->required()
                             ->rules(['gt:0']),
                         Select::make('condition')
@@ -130,7 +131,8 @@ class SoldItemResource extends Resource
                             ->getUploadedFileNameForStorageUsing(fn (TemporaryUploadedFile $file): string => str($file->getClientOriginalName()))
                             ->label('Thumbnail image'),
                     ])
-                    ->columns(['sm' => 1, 'md' => 2]),
+                    ->columns(['sm' => 1, 'md' => 2])
+                    ->columnSpan(2),
                 Section::make('Payment Method')
                     ->schema([
                         Select::make('pay_method_name')
@@ -140,7 +142,7 @@ class SoldItemResource extends Resource
                             ->required(),
                         TextInput::make('pay_method_location')
                             ->datalist(fn (): Collection =>
-                                PayMethod::where('method', PaymentMethods::CASH_ON_HAND)->pluck('remittance_location')
+                                PayMethod::getMethod(PaymentMethods::CASH_ON_HAND)->pluck('remittance_location')
                                     ->unique()
                                     ->sort()
                                     ->values()
@@ -149,16 +151,17 @@ class SoldItemResource extends Resource
                             ->maxLength(128)
                             ->minLength(2)
                             ->required()
-                            ->visible(fn (Get $get): bool => $get('pay_method_name') == PaymentMethods::CASH_ON_HAND->value),
+                            ->visible(fn (Get $get): bool => $get('pay_method_name') === PaymentMethods::CASH_ON_HAND),
                         Select::make('pay_method_location')
                             ->label('Dropping Area')
                             ->options(DroppingAreas::class)
                             ->required()
-                            ->visible(fn (Get $get): bool => $get('pay_method_name') == PaymentMethods::DROPPING_AREA_CASHOUT->value),
+                            ->visible(fn (Get $get): bool => $get('pay_method_name') === PaymentMethods::DROPPING_AREA_CASHOUT),
                         Select::make('pay_method_location')
+                            ->label('Remittance Provider')
                             ->options(Remittances::class)
                             ->required()
-                            ->visible(fn (Get $get): bool => $get('pay_method_name') == PaymentMethods::REMITTANCE->value),
+                            ->visible(fn (Get $get): bool => $get('pay_method_name') === PaymentMethods::REMITTANCE),
                     ])
                     ->columns(['sm' => 1, 'lg' => 2]),
                 Section::make('Sell Method')
@@ -169,25 +172,26 @@ class SoldItemResource extends Resource
                             ->required(),
                         TextInput::make('sell_method_location')
                             ->datalist(fn (): Collection =>
-                                SellMethod::where('method', SellMethods::MEETUP)->pluck('location')
+                                SellMethod::getMethod(SellMethods::MEETUP)->pluck('location')
                                     ->unique()
                                     ->sort()
                                     ->values()
                             )
+                            ->label('Meetup Location')
                             ->maxLength(128)
                             ->minLength(2)
                             ->required()
-                            ->visible(fn (Get $get): bool => $get('sell_method_name') == SellMethods::MEETUP->value),
+                            ->visible(fn (Get $get): bool => $get('sell_method_name') === SellMethods::MEETUP),
                         Select::make('sell_method_location')
                             ->label('Dropping Area')
                             ->options(DroppingAreas::class)
                             ->required()
-                            ->visible(fn (Get $get): bool => $get('sell_method_name') == SellMethods::DROPPING->value),
+                            ->visible(fn (Get $get): bool => $get('sell_method_name') === SellMethods::DROPPING),
                         Select::make('sell_method_location')
                             ->label('Shipping Company')
                             ->options(ShipmentLocations::class)
                             ->required()
-                            ->visible(fn (Get $get): bool => $get('sell_method_name') == SellMethods::SHIPMENT->value),
+                            ->visible(fn (Get $get): bool => $get('sell_method_name') === SellMethods::SHIPMENT),
 
                     ])
                     ->columns(['sm' => 1, 'lg' => 2]),
@@ -199,7 +203,12 @@ class SoldItemResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('itemName')
-                    ->searchable()
+                    ->searchable(query: function (Builder $query, string $search): Builder {
+                        return $query
+                            ->where('brand', 'like', "%{$search}%")
+                            ->orWhere('name', 'like', "%{$search}%")
+                            ->orWhere('type', 'like', "%{$search}%");
+                    })
                     ->words(5),
                 TextColumn::make('price')
                     ->sortable(),
@@ -214,11 +223,15 @@ class SoldItemResource extends Resource
                 TextColumn::make('notes')
                     ->searchable()
                     ->toggleable(isToggledHiddenByDefault: true),
-                TextColumn::make('pay_method.method'),
+                TextColumn::make('pay_method.method')
+                    ->badge()
+                    ->color(fn (string $state): string => PaymentMethods::from($state)->getColor()),
                 TextColumn::make('pay_method.remittance_location')
                     ->label('Remittance location')
                     ->toggleable(isToggledHiddenByDefault: true),
-                TextColumn::make('sell_method.method'),
+                TextColumn::make('sell_method.method')
+                    ->badge()
+                    ->color(fn (string $state): string => SellMethods::from($state)->getColor()),
                 TextColumn::make('sell_method.location')
                     ->label('Sell location')
                     ->toggleable(isToggledHiddenByDefault: true),
