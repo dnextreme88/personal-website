@@ -555,10 +555,10 @@ class PostSeeder extends Seeder
         ]);
 
         Post::create([
-            'category_id' => 3,
+            'category_id' => 4,
             'user_id' => 1,
-            'title' => 'Poem #4',
-            'description' => '<p style="text-align:center;">"The Golden Sun"</p><p>By: Jenica Cayabyab and Tristan Pullido</p>
+            'title' => 'The Golden Sun',
+            'description' => '<p>By: Jenica Cayabyab and Tristan Pullido</p>
             <p style="text-align:left;">I.</p>
                 <p style="margin-left:2em;">The golden sun gently peeps</p>
                 <p style="margin-left:2em;">Among the green towering mountains</p>
@@ -604,10 +604,10 @@ class PostSeeder extends Seeder
         ]);
 
         Post::create([
-            'category_id' => 3,
+            'category_id' => 4,
             'user_id' => 1,
-            'title' => 'Poem #5',
-            'description' => '<p style="text-align:center;">"Salvation"</p><p>By: Troy Mascenon and Ida Caja</p>
+            'title' => 'Salvation',
+            'description' => '<p>By: Troy Mascenon and Ida Caja</p>
             <p style="text-align:left;">I.</p>
                 <p style="margin-left:2em;">Our world is a beautiful place you see</p>
                 <p style="margin-left:2em;">Man and nature living in harmony</p>
@@ -638,10 +638,10 @@ class PostSeeder extends Seeder
         ]);
 
         Post::create([
-            'category_id' => 3,
+            'category_id' => 4,
             'user_id' => 1,
-            'title' => 'Poem #6',
-            'description' => '<p style="text-align:center;">"The Big Difference"</p><p>By: Sharmaine Modgil and Kristine Prieto</p>
+            'title' => 'The Big Difference',
+            'description' => '<p>By: Sharmaine Modgil and Kristine Prieto</p>
             <p style="text-align:left;">I.</p>
                 <p style="margin-left:2em;">I remember the cold breeze</p>
                 <p style="margin-left:2em;">When it brushed my hair with ease</p>
@@ -672,10 +672,10 @@ class PostSeeder extends Seeder
         ]);
 
         Post::create([
-            'category_id' => 3,
+            'category_id' => 4,
             'user_id' => 1,
-            'title' => 'Poem #7',
-            'description' => '<p style="text-align:center;">"Filthy Atmosphere"</p><p>By: Kevin Decena and Lianne Ritos</p>
+            'title' => 'Filthy Atmosphere',
+            'description' => '<p>By: Kevin Decena and Lianne Ritos</p>
             <p style="text-align:left;">I.</p>
                 <p style="margin-left:2em;">People throw their garbages everywhere</p>
                 <p style="margin-left:2em;">In a park, in the streets, almost anywhere</p>
@@ -708,7 +708,7 @@ class PostSeeder extends Seeder
         Post::create([
             'category_id' => 3,
             'user_id' => 1,
-            'title' => 'Poem #8',
+            'title' => 'Poem #4',
             'description' => '<p style="text-align:center;">"Oblivion"</p>
             <p style="text-align:left;">I.</p>
                 <p style="margin-left:2em;">I live in a world of lies</p>
@@ -769,7 +769,7 @@ class PostSeeder extends Seeder
         Post::create([
             'category_id' => 3,
             'user_id' => 1,
-            'title' => 'Poem #9',
+            'title' => 'Poem #5',
             'description' => '<p style="text-align:center;">"Gamer Girl"</p>
             <p style="text-align:left;">I.</p>
                 <p style="margin-left:2em;">I had this awesome dream one day</p>
@@ -798,7 +798,7 @@ class PostSeeder extends Seeder
         Post::create([
             'category_id' => 3,
             'user_id' => 1,
-            'title' => 'Poem #10',
+            'title' => 'Poem #6',
             'description' => '<p style="text-align:center;">"Sisig Lord"</p>
             <p style="text-align:left;">I.</p>
                 <p style="margin-left:2em;">When I first tasted you</p>
@@ -827,7 +827,7 @@ class PostSeeder extends Seeder
         Post::create([
             'category_id' => 3,
             'user_id' => 1,
-            'title' => 'Poem #11',
+            'title' => 'Poem #7',
             'description' => '<p style="text-align:center;">"There Is No One Else"</p>
             <p style="text-align:left;">I.</p>
                 <p style="margin-left:2em;">You brought me to this world unknown to me</p>
@@ -857,7 +857,7 @@ class PostSeeder extends Seeder
         Post::create([
             'category_id' => 3,
             'user_id' => 1,
-            'title' => 'Poem #12',
+            'title' => 'Poem #8',
             'description' => '<p style="text-align:center;">"Wings"</p>
             <p style="text-align:left;">I.</p>
                 <p style="margin-left:2em;">A common misconception about wings</p>
@@ -886,7 +886,7 @@ class PostSeeder extends Seeder
         Post::create([
             'category_id' => 3,
             'user_id' => 1,
-            'title' => 'Poem #13',
+            'title' => 'Poem #9',
             'description' => '<p style="text-align:center;">"The Calling"</p>
             <p style="text-align:left;">I.</p>
                 <p style="margin-left:2em;">We will rise from the ashes</p>
@@ -940,7 +940,7 @@ class PostSeeder extends Seeder
         Post::create([
             'category_id' => 3,
             'user_id' => 1,
-            'title' => 'Poem #14',
+            'title' => 'Poem #10',
             'description' => '<p style="text-align:center;">"Invisibility"</p>
             <p style="text-align:left;">I.</p>
                 <p style="margin-left:2em;">Imagine being the unknown</p>
@@ -969,7 +969,7 @@ class PostSeeder extends Seeder
         Post::create([
             'category_id' => 3,
             'user_id' => 1,
-            'title' => 'Poem #15',
+            'title' => 'Poem #11',
             'description' => '<p style="text-align:center;">"No Internet Is Such A Dull Day"</p>
             <p style="text-align:left;">I.</p>
                 <p style="margin-left:2em;">The internet is the source of everything</p>
@@ -1257,7 +1257,7 @@ class PostSeeder extends Seeder
         Post::create([
             'category_id' => 3,
             'user_id' => 1,
-            'title' => 'Poem #16',
+            'title' => 'Poem #12',
             'description' => '<p style="text-align:center;">"Kahinaan"</p>
             <p style="text-align:left;">I.</p>
                 <p style="margin-left:2em;">Sa isang silid, napansin ko itong dalaga</p>
@@ -1287,7 +1287,7 @@ class PostSeeder extends Seeder
         Post::create([
             'category_id' => 3,
             'user_id' => 1,
-            'title' => 'Poem #17',
+            'title' => 'Poem #13',
             'description' => '<p style="text-align:center;">"Deep Blue Ocean"</p>
             <p style="text-align:left;">I.</p>
                 <p style="margin-left:2em;">I looked far to the deep blue ocean</p>
@@ -1620,7 +1620,7 @@ class PostSeeder extends Seeder
             'title' => 'CSI Season 13 Marathon',
             'description' => '<p>Watched CSI Season 13 on iflix.com</p>
             <ul>
-                <li>11/11/17: Episodes 1- 3</li>
+                <li>11/11/17: Episodes 1 - 3</li>
                 <li>11/13/17: 4 - 9</li>
                 <li>11/14/17: 10 - 11</li>
                 <li>11/16/17: 12 - 14</li>
@@ -1953,6 +1953,20 @@ class PostSeeder extends Seeder
         Post::create([
             'category_id' => 5,
             'user_id' => 1,
+            'title' => 'The Witcher Season 1 Marathon',
+            'description' => '<p>Watched The Witcher Season 1 on netflix.com</p>
+            <ul>
+                <li>4/9/21: Episode 1</li>
+                <li>4/10/21: 2 - 5</li>
+                <li>4/11/21: 6 - 8 (finale)</li>
+            </ul>',
+            'created_at' => Carbon::parse('January 15, 2025 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2021-04-11',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
             'title' => 'The Big Bang Theory Season 3 Marathon',
             'description' => '<p>Watched The Big Bang Theory Season 3 on netflix.com</p>
             <ul>
@@ -1962,21 +1976,7 @@ class PostSeeder extends Seeder
                 <li>5/28/21: 19 - 23 (finale)</li>
             </ul>',
             'created_at' => Carbon::parse('January 15, 2025 00:00:00')->format('Y-m-d H:i:s'),
-            'date_published' => '2025-01-15',
-        ]);
-
-        Post::create([
-            'category_id' => 5,
-            'user_id' => 1,
-            'title' => 'The Witcher Season 1 Marathon',
-            'description' => '<p>Watched The Witcher Season 1 on netflix.com</p>
-            <ul>
-                <li>4/9/21: Episode 1</li>
-                <li>4/10/21: 2 - 5</li>
-                <li>4/11/21: 6 - 8 (finale)</li>
-            </ul>',
-            'created_at' => Carbon::parse('January 15, 2025 00:00:00')->format('Y-m-d H:i:s'),
-            'date_published' => '2025-01-15',
+            'date_published' => '2021-05-28',
         ]);
 
         Post::create([
@@ -1991,7 +1991,7 @@ class PostSeeder extends Seeder
                 <li>6/9/21: 22 - 24 (finale)</li>
             </ul>',
             'created_at' => Carbon::parse('January 15, 2025 00:00:00')->format('Y-m-d H:i:s'),
-            'date_published' => '2025-01-15',
+            'date_published' => '2021-06-09',
         ]);
 
         Post::create([
@@ -2006,7 +2006,7 @@ class PostSeeder extends Seeder
                 <li>6/20/21: 20 - 24 (finale)</li>
             </ul>',
             'created_at' => Carbon::parse('January 15, 2025 00:00:00')->format('Y-m-d H:i:s'),
-            'date_published' => '2025-01-15',
+            'date_published' => '2021-06-20',
         ]);
 
         Post::create([
@@ -2021,7 +2021,7 @@ class PostSeeder extends Seeder
                 <li>6/24/21: 20 - 24 (finale)</li>
             </ul>',
             'created_at' => Carbon::parse('January 15, 2025 00:00:00')->format('Y-m-d H:i:s'),
-            'date_published' => '2025-01-15',
+            'date_published' => '2021-06-24',
         ]);
 
         Post::create([
@@ -2038,7 +2038,327 @@ class PostSeeder extends Seeder
                 <li>10/4/21: 21 - 24 (finale)</li>
             </ul>',
             'created_at' => Carbon::parse('January 15, 2025 00:00:00')->format('Y-m-d H:i:s'),
-            'date_published' => '2025-01-15',
+            'date_published' => '2021-10-04',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => 'Money Heist Season 4 Marathon',
+            'description' => '<p>Watched Money Heist Season 4 on netflix.com</p>
+            <ul>
+                <li>4/3/20: Episodes 1 - 8 (finale)</li>
+            </ul>
+            <p>I was considering not putting this in as I have watched the prior seasons on CD back in Malabon but seeing that I didn\'t start watching CSI from the 1st season in Netflix, it would be best to include this series in as well.</p>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2020-04-03',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => 'Resident Evil: Infinite Darkness Season 1 Marathon',
+            'description' => '<p>Watched Resident Evil: Infinite Darkness Season 1 on netflix.com</p>
+            <ul>
+                <li>7/8/21: Episodes 1 - 4 (finale)</li>
+            </ul>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2021-07-08',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => 'Arcane Season 1 Marathon',
+            'description' => '<p>Watched Arcane Season 1 on netflix.com</p>
+            <ul>
+                <li>11/12/21: Episodes 1 - 2</li>
+                <li>11/20/21: 3 - 6</li>
+                <li>12/1/21: 7 - 9 (finale)</li>
+            </ul>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2021-12-01',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => 'The Witcher Season 2 Marathon',
+            'description' => '<p>Watched The Witcher Season 2 on netflix.com</p>
+            <ul>
+                <li>12/20/21: Episode 1</li>
+                <li>12/26/21: 2 - 8 (finale)</li>
+            </ul>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2021-12-26',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => 'Manifest Season 1 Marathon',
+            'description' => '<p>Watched Manifest Season 1 on netflix.com</p>
+            <ul>
+                <li>1/2/22: Episodes 1 - 4</li>
+                <li>1/3/22: 5 - 9</li>
+                <li>1/9/22: 10 - 16 (finale)</li>
+            </ul>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2022-01-09',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => 'Manifest Season 2 Marathon',
+            'description' => '<p>Watched Manifest Season 2 on netflix.com</p>
+            <ul>
+                <li>1/9/22: Episodes 1 - 6</li>
+                <li>1/10/22: 7 - 13 (finale)</li>
+            </ul>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2022-01-10',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => 'Manifest Season 3 Marathon',
+            'description' => '<p>Watched Manifest Season 3 on netflix.com</p>
+            <ul>
+                <li>1/16/22: Episodes 1 - 7</li>
+                <li>1/23/22: 8 - 13 (finale)</li>
+            </ul>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2022-01-23',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => 'Ganglands Season 1 Marathon',
+            'description' => '<p>Watched Ganglands Season 1 on netflix.com</p>
+            <ul>
+                <li>4/24/22: Episodes 1 - 2</li>
+                <li>5/2/22: 3 - 6 (finale)</li>
+            </ul>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2022-05-02',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => 'The Big Bang Theory Season 8 Marathon',
+            'description' => '<p>Watched The Big Bang Theory Season 8 on netflix.com</p>
+            <ul>
+                <li>10/4/21: Episodes 1 - 3</li>
+                <li>10/10/21: 4 - 11</li>
+                <li>12/9/21: 12 - 13</li>
+                <li>5/3/22: 14 - 15</li>
+                <li>5/4/22: 16 - 21</li>
+                <li>5/7/22: 22 - 24 (finale)</li>
+            </ul>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2022-05-07',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => 'Resident Evil Season 1 Marathon',
+            'description' => '<p>Watched Resident Evil Season 1 on netflix.com</p>
+            <ul>
+                <li>7/30/22: Episodes 1 - 8 (finale)</li>
+            </ul>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2022-07-30',
+        ]);
+
+        Post::create([
+            'category_id' => 6,
+            'user_id' => 1,
+            'title' => 'GTA San Andreas Blender Modding',
+            'description' => '<p>carmods.dat: <a target="_blank" rel="noopener noreferrer nofollow" href="https://wiki.multitheftauto.com/wiki/Vehicle_Upgrades"><u>https://wiki.multitheftauto.com/wiki/Vehicle_Upgrades</u></a></p><p>carcols.dat: <a target="_blank" rel="noopener noreferrer nofollow" href="https://gta.fandom.com/wiki/Carcols.dat/GTASA"><u>https://gta.fandom.com/wiki/Carcols.dat/GTASA</u></a></p><p>Free IDs for GTA SA: <a target="_blank" rel="noopener noreferrer nofollow" href="https://gist.github.com/JuniorDjjr/a6096af530835a6411799ecf86126740"><u>https://gist.github.com/JuniorDjjr/a6096af530835a6411799ecf86126740</u></a><h2>Mod parts identifiers</h2><p>When opening the .dff file in Blender and you use the ug_ values, the car is moddable. Following is the name of the dummy parts that correspond to the tuning part:</p><ul><li><p>ug_bonnet: Hood</p></li><li><p>ug_lights: Lights</p></li><li><p>ug_spoiler: Spoilers</p></li><li><p>ug_bonnet_left and ug_bonnet_right: Vents</p></li><li><p>ug_nitro: Nitrous</p></li><li><p>ug_roof: Roofs</p></li><li><p>ug_wing_left and ug_wing_right: Side Skirts</p></li><li><p>exhaust: Exhausts <em>(untested yet)</em></p></li></ul><h2>How to add objects:</h2><p>For example, to add spoilers to a car mod, use the object name “ug_spoiler”. In Object Properties -&gt; Relations -&gt; Parent, choose “boot_dummy”.</p><p></p><p>bonnet_dummy:</p><ul><li><p>ug_bonnet</p></li><li><p>ug_bonnet_left</p></li><li><p>ug_bonnet_right</p></li></ul><p></p><p>boot_dummy:</p><ul><li><p>ug_spoiler</p></li></ul><p></p><p>chassis_dummy:</p><ul><li><p>ug_lights</p></li><li><p>ug_nitro</p></li><li><p>ug_roof</p></li><li><p>ug_wing_left</p></li><li><p>ug_wing_right</p></li></ul><p></p><p>parent relation (whatever the parent of chassis_dummy is)</p><ul><li><p>exhaust</p></li></ul><h2>What to do after adding the new cars:</h2><ul><li><p>After adding new IDs, you must increase the limit in Fastman Limit Adjuster\'s <strong>fastman92limitAdjuster_GTASA.ini file</strong> (you must always add + 1 from your last custom ID to prevent errors, eg. if your last custom ID ended with 3141, your config must be 3142): <strong>Count of killable model IDs = ?</strong></p></li><li><p><strong>carcols.dat</strong> - definition of colors (maximum of 7 colors only)</p></li><li><p><strong>cargrp.dat</strong> - defines where the car should appear in traffic</p></li><li><p><strong>carmods.dat</strong> - parts that can be applied to this car (WARNING: do not just apply any tunable parts here, this must be checked in Blender for correct dummy parts. Refer to the Mod Parts identifiers section)</p></li><li><p><strong>handling.cfg</strong> - controls handling</p></li><li><p><strong>vehicles.ide</strong> - definition of car</p></li><li><p><strong>gtasa_vehicleAudioSettings.cfg</strong> - controls the sounds of the car engine/acceleration/deceleration etc. (BEST TO JUST COPY PASTE A LINE FROM AN EXISTING CAR)</p><p></p></li></ul><h2>Sample *.txt file</h2><p>For example, if your custom car is named sabregt, name the file as <strong>sabregt.txt</strong>:</p><p></p><p><u>#carcols.dat</u></p><pre><code>sabregt, 0,0, 0,8, 36,0, 25,25, 121,121, 79,8, 6,0, 123,73</code></pre><p><u>#carmods.dat</u></p><pre><code>sabregt, nto_b_l, nto_b_s, nto_b_tw, rf_b_sc_r, spl_b_bab_m, spl_b_bbb_m, spl_b_mab_m, spl_b_bar_m, spl_b_bar_m, spl_b_bbr_l, spl_b_bbr_m, spl_b_mar_m
+</code></pre><p><u>#handling.cfg</u></p><pre><code>SABREGT        1400.0    2200.0   2.2    0.0 0.1 -0.2  75  0.70 0.9  0.5  	5 200.0 30.0 10.0 4 P 	11.0  0.45 0 30.0  	1.4  0.14  3.0   0.28 -0.15 0.5  0.3		0.25 0.60 35000 	40000800	0			1  1	19
+</code></pre><p><u>#vehicles.ide</u></p><pre><code>3136,		sabregt,		sabregt,		car,		SABREGT,		SABREGT,		null,		normal,		1,		0,		2ff0,		-1,		0.7,		0.7,		0</code></pre>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2022-08-02',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => 'Manifest Season 4 Part 1 Marathon',
+            'description' => '<p>Watched Manifest Season 4 Part 1 on netflix.com</p>
+            <ul>
+                <li>11/5/22: Episodes 1 - 6</li>
+                <li>11/6/22: 7 - 10 (finale)</li>
+            </ul>
+            <p>This is a two-part season.</p>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2022-11-06',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => 'Warrior Nun Season 2 Marathon',
+            'description' => '<p>Watched Warrior Nun Season 2 on netflix.com</p>
+            <ul>
+                <li>12/2/22: Episodes 1 - 5</li>
+                <li>12/3/22: 6 - 8 (finale)</li>
+            </ul>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2022-12-03',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => 'Money Heist: Korea - Joint Economic Area Season 1 Marathon',
+            'description' => '<p>Watched Money Heist: Korea - Joint Economic Area Season 1 on netflix.com</p>
+            <ul>
+                <li>1/8/23: Episodes 1 - 6</li>
+                <li>1/9/23: 7 - 12 (finale)</li>
+            </ul>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2023-01-09',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => 'The Big Bang Theory Season 9 Marathon',
+            'description' => '<p>Watched The Big Bang Theory Season 9 on netflix.com</p>
+            <ul>
+                <li>5/7/22: Episodes 1 - 4</li>
+                <li>5/15/22: 5 - 10</li>
+                <li>5/16/22: 11 - 14</li>
+                <li>5/17/22: 15 - 18</li>
+                <li>1/28/23: 19 - 20</li>
+                <li>1/31/23: 21 - 24 (finale)</li>
+            </ul>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2023-01-31',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => 'The Night Agent Season 1 Marathon',
+            'description' => '<p>Watched The Night Agent Season 1 on netflix.com</p>
+            <ul>
+                <li>3/27/23: Episodes 1 - 5</li>
+                <li>3/29/23: 6 - 7</li>
+                <li>3/30/23: 8 - 10 (finale)</li>
+            </ul>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2023-03-30',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => 'Wrong Side of the Tracks Season 1 Marathon',
+            'description' => '<p>Watched Wrong Side of the Tracks Season 1 on netflix.com</p>
+            <ul>
+                <li>4/5/23: Episode 1</li>
+                <li>4/7/23: 2 - 3</li>
+                <li>4/8/23: 4 - 6</li>
+                <li>4/9/23: 7 - 8 (finale)</li>
+            </ul>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2023-04-09',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => 'Wrong Side of the Tracks Season 2 Marathon',
+            'description' => '<p>Watched Wrong Side of the Tracks Season 2 on netflix.com</p>
+            <ul>
+                <li>4/27/23: Episodes 1 - 2</li>
+                <li>5/12/23: 3 - 4</li>
+                <li>5/14/23: 5 - 8 (finale)</li>
+            </ul>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2023-05-14',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => '1899 Season 1 Marathon',
+            'description' => '<p>Watched 1899 Season 1 on netflix.com</p>
+            <ul>
+                <li>5/25/23: Episodes 1 - 3</li>
+                <li>5/26/23: 4 - 8 (finale)</li>
+            </ul>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2023-05-26',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => 'Manifest Season 4 Part 2 Marathon',
+            'description' => '<p>Watched Manifest Season 4 Part 2 on netflix.com</p>
+            <ul>
+                <li>6/2/23: Episodes 11 - 15</li>
+                <li>6/4/23: 16 - 20 (finale)</li>
+            </ul>
+            <p>This is a two-part season.</p>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2023-06-04',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => 'Designated Survivor Season 1 Marathon',
+            'description' => '<p>Watched Designated Survivor Season 1 on netflix.com</p>
+            <ul>
+                <li>6/8/23: Episodes 1 - 3</li>
+                <li>6/9/23: 4 - 8</li>
+                <li>6/10/23: 9 - 15</li>
+                <li>6/13/23: 16 - 21 (finale)</li>
+            </ul>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2023-06-13',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => 'Designated Survivor Season 2 Marathon',
+            'description' => '<p>Watched Designated Survivor Season 2 on netflix.com</p>
+            <ul>
+                <li>6/17/23: Episodes 1 - 4</li>
+                <li>6/20/23: 5 - 8</li>
+                <li>6/21/23: 9</li>
+                <li>7/6/23: 10 - 13</li>
+                <li>7/8/23: 14 - 17</li>
+                <li>7/16/23: 18 - 21</li>
+                <li>7/18/23: 22 (finale)</li>
+            </ul>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2023-07-18',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => 'Designated Survivor Season 3 Marathon',
+            'description' => '<p>Watched Designated Survivor Season 3 on netflix.com</p>
+            <ul>
+                <li>7/18/23: Episodes 1 - 2</li>
+                <li>7/23/23: 3 - 5</li>
+                <li>7/24/23: 6</li>
+                <li>8/25/23: 7 - 10 (finale)</li>
+            </ul>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2023-07-18',
         ]);
     }
 }
