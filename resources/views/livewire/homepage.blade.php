@@ -36,14 +36,13 @@
                 </div>
 
                 <div class="mx-auto max-w-7xl px-6 pt-36 pb-32 sm:pt-60 lg:px-8 lg:pt-32">
-                    <div class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
-                        <div class="relative w-full lg:max-w-lg lg:shrink-0 xl:max-w-xl">
+                    <div class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:flex-col lg:items-center xl:flex-row">
+                        <div class="relative w-full lg:max-w-xl lg:shrink-0 xl:max-w-xl">
                             <h1 class="text-5xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-7xl dark:text-white transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100">Web Developer.</h1>
-                            <p class="mt-8 mb-6 text-lg font-medium text-pretty text-gray-500 sm:max-w-lg sm:text-xl/8 lg:max-w-none dark:text-gray-400 transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-500">My name is Jeanne Kevin T. Decena and welcome to my personal website! Here you can find all the goodies I've been doing in my life - from my blog and to my portfolio. Feel free to look around! If you need some web development professional, look no further and contact me right away!</p>
+                            <p class="mt-8 mb-6 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8 sm:pb-16 lg:max-w-none dark:text-gray-400 transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-500">My name is Jeanne Kevin T. Decena and welcome to my personal website! Here you can find all the goodies I've been doing in my life - from my blog and to my portfolio. Feel free to look around! If you need some web development professional, look no further and contact me right away!</p>
                         </div>
 
-                        {{-- TODO: TO FIX RESPONSIVE DESIGN ON 1024px AND UP --}}
-                        <div class="mt-14 flex justify-end gap-8 sm:flex-row sm:-mt-10 sm:justify-start sm:pl-2 md:pl-16 lg:mt-0 lg:pl-0">
+                        <div class="mt-14 flex justify-end gap-8 flex-col sm:flex-row sm:justify-start sm:pl-2 md:mt-10 md:pl-10 lg:mt-0 lg:pl-0">
                             <div class="mx-auto sm:ml-auto w-44 flex-none space-y-8 pt-32 sm:pt-80 lg:order-last lg:pt-66 xl:order-0">
                                 <div class="relative">
                                     <img src="{{ asset('/images/homepage-1.webp') }}" class="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5 hover:scale-110 -translate-x-32 opacity-0 intersect-once intersect:translate-x-0 intersect:opacity-100" style="transition: scale 0.25s, translate 2s, opacity 3s 200ms;" />
