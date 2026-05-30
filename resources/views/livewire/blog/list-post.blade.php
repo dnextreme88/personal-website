@@ -1,6 +1,6 @@
 <div class="grid grid-cols-1 gap-8">
     @if ($is_filtered || $posts->count() > 0)
-        <form wire:submit="search_posts" class="flex justify-between gap-6 py-4">
+        <form wire:submit="search_posts" class="flex flex-col gap-2 sm:flex-row sm:justify-between sm:gap-6 sm:py-4">
             <x-forms.input-text class="w-full" for="search_query" placeholder_text="Search the blog..." title_text="Search posts" />
 
             <button
@@ -45,7 +45,7 @@
         @endif
 
         @forelse ($posts as $post)
-            <article class="flex max-w-2xl flex-col items-start justify-between">
+            <article class="flex w-full flex-col items-start justify-between sm:w-[calc(100%-130px-1.5rem)]">
                 <div class="flex items-center gap-x-2">
                     <time class="text-sm text-gray-500 dark:text-gray-400" datetime="{{ $post->date_published }}">{{ Carbon\Carbon::parse($post->date_published)->format('F j, Y') }}</time>
 
@@ -60,11 +60,11 @@
                     </h2>
 
                     @if (str_word_count($post->description) > 80)
-                        <div class="mt-3 indent-3 text-justify line-clamp-5 text-gray-800 dark:text-gray-200 prose dark:prose-invert">{!! Markdown::parse($post->description) !!}</div>
+                        <div class="w-full max-w-none mt-3 indent-3 text-justify line-clamp-5 text-gray-800 dark:text-gray-200 prose dark:prose-invert">{!! Markdown::parse($post->description) !!}</div>
 
                         <a wire:navigate class="inline-block mt-3 transition duration-200 text-blue-800 dark:text-blue-200 hover:text-blue-600 dark:hover:text-blue-400 hover:underline" href="{{ route('blog.post.detail', ['id' => $post->id, 'slug' => $post->slug]) }}" title="Click me to read more">Read more</a>
                     @else
-                        <div class="mt-3 indent-2 text-justify text-gray-800 dark:text-gray-200 prose dark:prose-invert">{!! Markdown::parse($post->description) !!}</div>
+                        <div class="w-full max-w-none mt-3 indent-2 text-justify text-gray-800 dark:text-gray-200 prose dark:prose-invert">{!! Markdown::parse($post->description) !!}</div>
                     @endif
                 </div>
             </article>
