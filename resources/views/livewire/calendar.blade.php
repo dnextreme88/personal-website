@@ -27,39 +27,41 @@
                 @endphp
 
                 <div
-                    class="border cursor-pointer transition duration-200 p-1 hover:bg-gray-300 dark:hover:bg-gray-600 md:p-0 lg:p-2
+                    class="group relative cursor-pointer p-1 xx md:p-0 lg:p-2
                         @if ($is_current_date)
                             font-bold text-gray-800 dark:text-gray-200 bg-gray-300 dark:bg-gray-600
 
-                            {{-- Determines the styles for the current date and selected date (if date is clicked from the calendar) --}}
-                            @if ($selected_date && $selected_date != $carbon_instance->format('Y-m-d'))
-                                border-transparent
-                            @else
-                                border-gray-600 dark:border-gray-300
+                            @if (($selected_date && $selected_date == $carbon_instance->format('Y-m-d')) || (!$selected_date && $is_date_have_posts))
+                                border border-gray-600 dark:border-gray-300
                             @endif
-                        {{-- Determines the styles for dates with posts and if those dates were selected --}}
                         @elseif ($is_date_have_posts)
-                            font-bold text-blue-800 dark:text-blue-200 underline
+                            font-bold text-blue-800 dark:text-blue-200
 
                             @if ($selected_date == $carbon_instance->format('Y-m-d'))
-                                bg-gray-300 dark:bg-gray-600 border-gray-600 dark:border-gray-300
+                                border bg-gray-300 dark:bg-gray-600 border-gray-600 dark:border-gray-300
                             @else
-                                border-transparent
+                                underline
                             @endif
-                        {{-- Determines the styles dates that do not have posts or is not current date --}}
                         @else
-                            text-gray-800 dark:text-gray-200 border-transparent hover:cursor-not-allowed
-                        @endif
-
-                        @if ($selected_date == $carbon_instance->format('Y-m-d'))
-                            bg-gray-300 dark:bg-gray-600 border-gray-800 dark:border-gray-200
+                            text-gray-800 dark:text-gray-200 hover:cursor-not-allowed
                         @endif
                     "
                     @if ($is_date_have_posts)
                         wire:click="view_posts_on_date('{{ $carbon_instance->format('Y-m-d') }}')"
-                        title="View posts for this date"
+                        title="View posts for {{ $carbon_instance->format('F j, Y') }}"
                     @endif
                 >
+                    {{--
+                    Show the border tracer animation if:
+                        - The date has posts, AND
+                        - It is not the current date while no date is selected, AND
+                        - It is not the currently selected date
+                    --}}
+                    @if (!($selected_date == '' && $is_current_date) && $selected_date != $carbon_instance->format('Y-m-d') && $is_date_have_posts)
+                        <svg class="absolute inset-0 w-full h-full pointer-events-none overflow-visible" viewBox="0 0 44 44">
+                            <rect class="border-tracer fill-none stroke-gray-600 dark:stroke-gray-300 stroke-[1.5]" x="0.75" y="0.75" width="42.5" height="42.5" rx="3.25" />
+                        </svg>
+                    @endif
                     {{ $carbon_instance->day }}
                 </div>
             @endforeach
