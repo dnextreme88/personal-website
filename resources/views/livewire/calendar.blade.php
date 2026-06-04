@@ -19,20 +19,26 @@
             @endfor
 
             @foreach ($days_in_month as $carbon_instance)
+                @php
+                    $is_current_date = $current_year == \Carbon\Carbon::now()->year &&
+                        $current_month == \Carbon\Carbon::now()->month &&
+                        $current_day == $carbon_instance->day;
+                    $is_date_have_posts = in_array($carbon_instance->format('Y-m-d'), $unique_dates->toArray());
+                @endphp
+
                 <div
-                    wire:click="view_posts_on_date('{{ $carbon_instance->format('Y-m-d') }}')"
                     class="border cursor-pointer transition duration-200 p-1 hover:bg-gray-300 dark:hover:bg-gray-600 md:p-0 lg:p-2
-                        @if ($current_year == \Carbon\Carbon::now()->year &&
-                            $current_month == \Carbon\Carbon::now()->month &&
-                            $current_day == $carbon_instance->day)
+                        @if ($is_current_date)
                             font-bold text-gray-800 dark:text-gray-200 bg-gray-300 dark:bg-gray-600
 
+                            {{-- Determines the styles for the current date and selected date (if date is clicked from the calendar) --}}
                             @if ($selected_date && $selected_date != $carbon_instance->format('Y-m-d'))
                                 border-transparent
                             @else
                                 border-gray-600 dark:border-gray-300
                             @endif
-                        @elseif (in_array($carbon_instance->format('Y-m-d'), $unique_dates->toArray()))
+                        {{-- Determines the styles for dates with posts and if those dates were selected --}}
+                        @elseif ($is_date_have_posts)
                             font-bold text-blue-800 dark:text-blue-200 underline
 
                             @if ($selected_date == $carbon_instance->format('Y-m-d'))
@@ -40,15 +46,19 @@
                             @else
                                 border-transparent
                             @endif
+                        {{-- Determines the styles dates that do not have posts or is not current date --}}
                         @else
-                            text-gray-800 dark:text-gray-200 border-transparent
+                            text-gray-800 dark:text-gray-200 border-transparent hover:cursor-not-allowed
                         @endif
 
                         @if ($selected_date == $carbon_instance->format('Y-m-d'))
                             bg-gray-300 dark:bg-gray-600 border-gray-800 dark:border-gray-200
                         @endif
                     "
-                    title="View posts for this date"
+                    @if ($is_date_have_posts)
+                        wire:click="view_posts_on_date('{{ $carbon_instance->format('Y-m-d') }}')"
+                        title="View posts for this date"
+                    @endif
                 >
                     {{ $carbon_instance->day }}
                 </div>
