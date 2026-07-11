@@ -5,7 +5,7 @@
 
     <x-slot name="header">Welcome to my Blog!</x-slot>
 
-    <div class="grid grid-cols-1 md:grid-cols-3">
+    <div class="grid grid-cols-1 lg:grid-cols-3">
         <div class="col-span-2 mb-6 md:mr-6">
             <livewire:blog.list-post />
         </div>

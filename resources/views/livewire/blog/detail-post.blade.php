@@ -10,6 +10,7 @@
 
         <span class="text-xs relative rounded-full bg-gray-200 border border-gray-300 dark:bg-gray-700 px-3 py-1 font-medium text-gray-800 dark:text-gray-200">{{ $post->category->name }}</span>
 
+        <p class="mt-4 text-gray-600 dark:text-gray-400 text-lg">Published on <span class="font-semibold">{{ \Carbon\Carbon::parse($post->date_published)->format('D, M j, Y') }}</span></p>
         <p class="mt-4 text-gray-600 dark:text-gray-400 text-xs sm:text-sm">Posted by {{ $post->user->name }} on <span class="font-semibold">{{ \Carbon\Carbon::parse($post->created_at)->format('D, M j, Y \a\t g:i A') }}</span></p>
 
         @if ($post->created_at != $post->updated_at)

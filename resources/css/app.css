@@ -91,6 +91,16 @@
         @apply tracking-widest;
     }
 
+    .border-tracer {
+        stroke-dasharray: 176;
+        stroke-dashoffset: 176;
+        transition: stroke-dashoffset 750ms ease;
+    }
+
+    .group:hover .border-tracer {
+        stroke-dashoffset: 0;
+    }
+
     .bg-gradient-blue {
         background-image: linear-gradient(120deg,
                 #1e2b4a,

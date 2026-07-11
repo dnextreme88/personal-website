@@ -125,12 +125,14 @@
                         :duration="'February 2025 - present • Remote'"
                         :employment="'MachShip Philippines'"
                         :experiences="[
-                            'Create and maintain workflows of carrier integrations using the Limber platform',
-                            'Create solutions for integrating existing carriers on the MachShip platform into Limber',
-                            'Test carrier integrations on the MachShip platform',
+                            'Created carefully-crafted workflows and occasionally integrated existing carriers on MachShip into Limber',
+                            'Integrated over 30+ new carriers from Australia and New Zealand into Limber that provided custom logic and own workflows',
+                            'Migrated 5+ existing carriers from Limber into MachShip Connect that provided more business value',
+                            'Used an AI tool called Claude that eliminated task unknowns by up to 50% due to its intelligent reasoning and increased productivity in resolving BAU (business-as-usual) tasks'
                         ]"
                         :position="'Workflow Scripter'"
                         :tech_stacks="[
+                            'Claude AI' => 'bg-orange-500',
                             'JavaScript' => 'bg-yellow-500',
                         ]"
                     />
@@ -139,7 +141,7 @@
                         :duration="'June 2024 - December 2024 • Onsite'"
                         :employment="'Zeldan Nordic Languages Review Center'"
                         :experiences="[
-                            'Develop a simple learning website for trainees and instructors for their language training courses',
+                            'Developed a simple e-learning website for trainees and instructors to seamlessly transition their language training courses (Finnish and Nihongo) into a unified, single platform rather than relying on Moodle',
                         ]"
                         :position="'Laravel Developer (Part-time)'"
                         :tech_stacks="[
@@ -156,9 +158,9 @@
                         :duration="'January 2024 - August 2024 • Remote'"
                         :employment="'Think Bullish'"
                         :experiences="[
-                            'Assist in workflow automations, ensure updated data, and review prospect leads using GoHighLevel CRM',
-                            'Quality assurance calls based on company criteria by reviewing calls of appointment setters using VICIdial',
-                            'Review leads for the waitlist process and check if they conflict with any existing active clients',
+                            'Assisted in workflow automations, ensured updated data, and reviewed a few email marketing campaigns on GoHighLevel as needed by the project manager',
+                            'Listened and quality assurance of 500+ call recordings made by appointment setters in conformance with company criteria to ensure high quality calls to our prospects and active patients',
+                            'Reviewed between 5-10 prospect clinics daily based on speed for the waitlist process across different states of the USA and check if they conflict with our existing clients',
                         ]"
                         :position="'Virtual Assistant'"
                         {{--
@@ -175,9 +177,9 @@
                         :duration="'January 2022 - November 2023 • Hybrid'"
                         :employment="'Professional Software Solutions Philippines'"
                         :experiences="[
-                            'Create API to interact between documentation and survey sites',
-                            'Develop and maintain client\'s 2 decade-old therapeutic websites',
-                            'Fix non-responsive webpages using new and modern front-end layout standards',
+                            'Continued the API development of a client\'s 10-year-old documentation and survey websites that market on physical therapy and health welfare',
+                            'Developed scripts and maintained features on a per-request basis from the client',
+                            'Maintained both client websites using modern CSS and responsive design that resulted in a nearly 15% increased web traffic reported from a client\'s meeting',
                         ]"
                         :position="'Full Stack Web Developer'"
                         :tech_stacks="[
@@ -193,10 +195,9 @@
                         :duration="'July 2021 - January 2022 • Remote'"
                         :employment="'eFlexervices Philippines'"
                         :experiences="[
-                            'Convert .NET implementation of SEO backend to Node.js code',
-                            'Create software documentation of Node.js repository',
-                            'Implement SEO audits to clients made by eFlex SEO specialists',
-                            'Web scraping using Puppeeteer, utilize AWS APIs',
+                            'Converted 90% of the .NET implementation of our SEO backend into Node.js code along with a detailed software documentation',
+                            'Implemented a couple of SEO audits to clients made by eFlex SEO specialists',
+                            'Scraped data across different SEO websites using Puppeeteer while utilizing AWS APIs',
                         ]"
                         :position="'Web Developer'"
                         :tech_stacks="[
@@ -211,10 +212,10 @@
                         :duration="'October 2019 - June 2021 • Remote'"
                         :employment="'Thrive Media'"
                         :experiences="[
-                            'Audit, improve, and optimize loading of real-estate website using CSS, HTML, and PageSpeed Insights',
-                            'Develop a local barangays/cities/municipalities tracker API',
-                            'Develop a simple WordPress job freelance website, modify plugins and customize themes to conform to design',
-                            'Promoted to web dev team leader to oversee the developer team\'s productivity',
+                            'Developed a local barangays/cities/municipalities tracker API with PHP',
+                            'Developed a simple WordPress job freelance website, modified plugins and customize themes to conform to design using Divi and Elementor',
+                            'Improved and optimized nearly 90% of all pages on a client\'s real-estate website using CSS, HTML, and PageSpeed Insights that resulted in faster loading times',
+                            'Promoted to web dev team leader to oversee the developer team\'s productivity and throughput with submission of weekly task reports',
                         ]"
                         :position="'Laravel Developer'"
                         :tech_stacks="[
@@ -230,9 +231,9 @@
                         :duration="'June 2019 - October 2019 • Onsite'"
                         :employment="'Chatsmith Online Services'"
                         :experiences="[
-                            'As a chat support, assist customers by answering queries via chat and resolve Asana tickets',
-                            'Correctly indicate the data of grocery invoices, requisitions, and other forms',
-                            'Identify out-of-stock, messy and invalid products on a grocery stall taken using the Focal platform',
+                            'Assisted no more than 10 customers daily via chat using PersistIQ to resolve common technical issues they create with Asana tickets',
+                            'Data accuracy between 40-60 forms daily based on speed including grocery invoices, purchase orders, requisitions, and other documents',
+                            'Identified 25+ grocery shelves screenshots daily based on out-of-stock, messy, and invalid products using the Focal platform',
                         ]"
                         :position="'Chat Support / Data Entry Specialist'"
                         {{--
@@ -246,10 +247,10 @@
                         :duration="'December 2017 - May 2019 • Onsite'"
                         :employment="'Virtual Web Assist, Inc.'"
                         :experiences="[
-                            'Deploy APIs using Docker containers',
-                            'Develop POS systems of different payment types using Loyverse',
-                            'Expose and consume APIs for self-made cryptocurrency called BitPal (based on Bitcoin)',
-                            'Maintain security of BitShares wallets in the Blockchain technology',
+                            'Deployed APIs written on Python and deployed with Docker containers',
+                            'Developed POS systems of different payment types using Loyverse',
+                            'Exposed and consumed APIs for self-made cryptocurrency called BitPal (based on Bitcoin)',
+                            'Maintained the security of BitShares wallets in our Blockchain',
                         ]"
                         :position="'Senior Python Backend Developer'"
                         :tech_stacks="[

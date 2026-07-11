@@ -46,7 +46,7 @@ class PostSeeder extends Seeder
             'category_id' => 2,
             'user_id' => 1,
             'title' => 'NSTP 1 Day 2',
-            'description' => '<p>Here is another day in my NSTP 1 class. Honestly, I felt a weird vigor in me that my assignment (to be passed later on) is wrong because I pasted the picture immediately at my journal (seen on the previous page) when I\'m supposed to just bring the picture instead. That\'s what I thought until the class started wherein our instructor asked who did the assignment.</p><p>Then he asked those who didn\'t do the assignment. Luckily, I was able to accomplish it in the wee hours of the morning. Hard to look for the picture you need due to tiredness, boredom and that urge to sleep and forget about the assignment. However, that wasn\'t the case. I had to fight that sleepiness and accomplish the assignment before going to bed. So I did. Found a newspaper with a lot of pictures of gadgets, technologies etc. and made haste in cutting that newspaper to nab the picture I need.</p><p>I pity those who didn\'t do the assignment. One by one, they were asked to explain why. Some were forgiven while the others had more explaining to do. Standing up in the stage explaining something to save your face and be given consideration seems hard for those students. Well at least those who were given a chance gets to do the assignment.</p><p>Our instructor then revealed what we are going to do with the pasted picture. We had to give a description about it. Seems easy? Somewhat. We had to use 2 paragraphs minimum to fulfill the task. That\'s quite absurd since I prefer just giving it a very simple, yet short description and "direct to the point" rather than an extensive, yet long description that doesn\'t get to the point of what you\'re trying to imply. I did it with as less sentences as possible yet concise.</p><p>Afterwards, we had to select a partner who\'ll be asking questions regarding the description we wrote. This is to prepare for Q &amp; A portions that our instructor will do when activities like this is given, in which he himself told the class awhile ago. Then my partner has to sign it as proof that she was my partner for this activity.</p><p>Next meeting, students will be randomly called and read the description he/she wrote. The Q &amp; A portion comes afterward, The instructor will ask questions based on the description the student read.</p>',
+            'description' => '<p>Here is another day in my NSTP 1 class. Honestly, I felt a weird vigor in me that my assignment (to be passed later on) is wrong because I pasted the picture immediately at my journal (seen on the previous page) when I\'m supposed to just bring the picture instead. That\'s what I thought until the class started wherein our instructor asked who did the assignment.</p><p>Then he asked those who didn\'t do the assignment. Luckily, I was able to accomplish it in the wee hours of the morning. Hard to look for the picture you need due to tiredness, boredom and that urge to sleep and forget about the assignment. However, that wasn\'t the case. I had to fight that sleepiness and accomplish the assignment before going to bed. So I did. Found a newspaper with a lot of pictures of gadgets, technologies etc. and made haste in cutting that newspaper to nab the picture I need.</p><p>I pity those who didn\'t do the assignment. One by one, they were asked to explain why. Some were forgiven while the others had more explaining to do. Standing up in the stage explaining something to save your face and be given consideration seems hard for those students. Well at least those who were given a chance gets to do the assignment.</p><p>Our instructor then revealed what we are going to do with the pasted picture. We had to give a description about it. Seems easy? Somewhat. We had to use 2 paragraphs minimum to fulfill the task. That\'s quite absurd since I prefer just giving it a very simple, yet short description and "direct to the point" rather than an extensive, yet long description that doesn\'t get to the point of what you\'re trying to imply. I did it with as less sentences as possible yet concise.</p><p>Afterwards, we had to select a partner who\'ll be asking questions regarding the description we wrote. This is to prepare for Q & A portions that our instructor will do when activities like this is given, in which he himself told the class awhile ago. Then my partner has to sign it as proof that she was my partner for this activity.</p><p>Next meeting, students will be randomly called and read the description he/she wrote. The Q & A portion comes afterward, The instructor will ask questions based on the description the student read.</p>',
             'created_at' => Carbon::parse('April 2, 2015 00:00:00')->format('Y-m-d H:i:s'),
             'date_published' => '2013-08-07',
         ]);
@@ -73,7 +73,7 @@ class PostSeeder extends Seeder
             'category_id' => 2,
             'user_id' => 1,
             'title' => 'UC Los Angeles',
-            'description' => '<p>Came back to class after yet another long weekend. So we get to meet another instructor today. Last week, we met our first instructor coming from the College of Arts &amp; Science (CAS) department who specializes in the English division. Today, our second instructor comes from the "UC-LA". I even joked around, thinking that UC is in LA (Los Angeles), a state in America. But no, it actually stands for "University of the Cordilleras - Legarda Annex". Seems legit.</p><p>Here\'s something good about him. He speaks French fluently. Very unique personality. Energetic and charismatic, he tries to make us awake with that energy and charisma he possessed. He even shared some French words such as "thank you very much", "hello", "good afternoon" etc. (although I forgot what the actual words were, they sounded really different).</p><p>So we had to present today the activity that was originally slated for Monday but there were no classes due to typhoon Labuyo\'s onslaught. It was by group and we had to name our groups. We named it after the typhoon. Then one representative from each group to read what he wrote for activity #1. In our group, I was chosen to be the representative. I was nagged by my best friend. Haha. Didn\'t have a choice. After the representatives read their activity #1 output, an open forum &amp; feedback part was included. They had to give comments to each group. The comment given to me was "it was nice and straight to the point but it was so short. Overall, it was okay.". Afterwards, the instructors discussed on properly introducing oneself/someone then gave another activity regarding that. We have to make our self-introduction speech and present that next meeting. I doubt all of us will present anyway.</p>',
+            'description' => '<p>Came back to class after yet another long weekend. So we get to meet another instructor today. Last week, we met our first instructor coming from the College of Arts & Science (CAS) department who specializes in the English division. Today, our second instructor comes from the "UC-LA". I even joked around, thinking that UC is in LA (Los Angeles), a state in America. But no, it actually stands for "University of the Cordilleras - Legarda Annex". Seems legit.</p><p>Here\'s something good about him. He speaks French fluently. Very unique personality. Energetic and charismatic, he tries to make us awake with that energy and charisma he possessed. He even shared some French words such as "thank you very much", "hello", "good afternoon" etc. (although I forgot what the actual words were, they sounded really different).</p><p>So we had to present today the activity that was originally slated for Monday but there were no classes due to typhoon Labuyo\'s onslaught. It was by group and we had to name our groups. We named it after the typhoon. Then one representative from each group to read what he wrote for activity #1. In our group, I was chosen to be the representative. I was nagged by my best friend. Haha. Didn\'t have a choice. After the representatives read their activity #1 output, an open forum & feedback part was included. They had to give comments to each group. The comment given to me was "it was nice and straight to the point but it was so short. Overall, it was okay.". Afterwards, the instructors discussed on properly introducing oneself/someone then gave another activity regarding that. We have to make our self-introduction speech and present that next meeting. I doubt all of us will present anyway.</p>',
             'created_at' => Carbon::parse('April 2, 2015 00:00:00')->format('Y-m-d H:i:s'),
             'date_published' => '2013-08-14',
         ]);
@@ -306,7 +306,7 @@ class PostSeeder extends Seeder
             'category_id' => 2,
             'user_id' => 1,
             'title' => 'Chinese New Year 2015',
-            'description' => '<p>Happy Chinese New Year! Thankfully, I have recovered from my colds (maybe because it\'s a holiday?). Which means there\'s also no classes today! Last night, I received an inquiry on my Ecko Ultd. polo at around 11 PM and he will buy it on Friday, which is tomorrow. Today, I received an inquiry each for my Mossimo shirt, Dolce &amp; Gabbana shirt and the Tender Juicy freebies. Now that\'s 3 customers (the 2 shirts were inquired by one person only). I\'m finally selling my clothes!</p><p>First up: the Mossimo and Dolce &amp; Gabbana shirts. We met up at our barangay\'s basketball court. He has a red, hatchback vehicle and I showed him my items. Then he asked me what else I\'m selling so I ran back home, took out the 2 shirts, got all the clothes and went back to his car. Inside, he scanned each clothes and eventually decided to buy the 2 shirts earlier because he didn\'t like the colors of my other clothes. So I ran back and got the 2 shirts. He bought it for a whopping P500! Sweet!</p><p>After the transaction, I went to town to sell my Tender Juicy freebies. I waited for him at SLU, specifically at the nearby computer shops there since he was playing. Once I saw him, we made the transaction and ended fast. I obtained P70.</p><p>I went home and continued the day as normal. Next up: Ecko Ultd. polo tomorrow.</p>',
+            'description' => '<p>Happy Chinese New Year! Thankfully, I have recovered from my colds (maybe because it\'s a holiday?). Which means there\'s also no classes today! Last night, I received an inquiry on my Ecko Ultd. polo at around 11 PM and he will buy it on Friday, which is tomorrow. Today, I received an inquiry each for my Mossimo shirt, Dolce & Gabbana shirt and the Tender Juicy freebies. Now that\'s 3 customers (the 2 shirts were inquired by one person only). I\'m finally selling my clothes!</p><p>First up: the Mossimo and Dolce & Gabbana shirts. We met up at our barangay\'s basketball court. He has a red, hatchback vehicle and I showed him my items. Then he asked me what else I\'m selling so I ran back home, took out the 2 shirts, got all the clothes and went back to his car. Inside, he scanned each clothes and eventually decided to buy the 2 shirts earlier because he didn\'t like the colors of my other clothes. So I ran back and got the 2 shirts. He bought it for a whopping P500! Sweet!</p><p>After the transaction, I went to town to sell my Tender Juicy freebies. I waited for him at SLU, specifically at the nearby computer shops there since he was playing. Once I saw him, we made the transaction and ended fast. I obtained P70.</p><p>I went home and continued the day as normal. Next up: Ecko Ultd. polo tomorrow.</p>',
             'created_at' => Carbon::parse('April 19, 2015 00:00:00')->format('Y-m-d H:i:s'),
             'date_published' => '2015-02-19',
         ]);
@@ -555,10 +555,10 @@ class PostSeeder extends Seeder
         ]);
 
         Post::create([
-            'category_id' => 3,
+            'category_id' => 4,
             'user_id' => 1,
-            'title' => 'Poem #4',
-            'description' => '<p style="text-align:center;">"The Golden Sun"</p><p>By: Jenica Cayabyab and Tristan Pullido</p>
+            'title' => 'The Golden Sun',
+            'description' => '<p>By: Jenica Cayabyab and Tristan Pullido</p>
             <p style="text-align:left;">I.</p>
                 <p style="margin-left:2em;">The golden sun gently peeps</p>
                 <p style="margin-left:2em;">Among the green towering mountains</p>
@@ -604,10 +604,10 @@ class PostSeeder extends Seeder
         ]);
 
         Post::create([
-            'category_id' => 3,
+            'category_id' => 4,
             'user_id' => 1,
-            'title' => 'Poem #5',
-            'description' => '<p style="text-align:center;">"Salvation"</p><p>By: Troy Mascenon and Ida Caja</p>
+            'title' => 'Salvation',
+            'description' => '<p>By: Troy Mascenon and Ida Caja</p>
             <p style="text-align:left;">I.</p>
                 <p style="margin-left:2em;">Our world is a beautiful place you see</p>
                 <p style="margin-left:2em;">Man and nature living in harmony</p>
@@ -638,10 +638,10 @@ class PostSeeder extends Seeder
         ]);
 
         Post::create([
-            'category_id' => 3,
+            'category_id' => 4,
             'user_id' => 1,
-            'title' => 'Poem #6',
-            'description' => '<p style="text-align:center;">"The Big Difference"</p><p>By: Sharmaine Modgil and Kristine Prieto</p>
+            'title' => 'The Big Difference',
+            'description' => '<p>By: Sharmaine Modgil and Kristine Prieto</p>
             <p style="text-align:left;">I.</p>
                 <p style="margin-left:2em;">I remember the cold breeze</p>
                 <p style="margin-left:2em;">When it brushed my hair with ease</p>
@@ -672,10 +672,10 @@ class PostSeeder extends Seeder
         ]);
 
         Post::create([
-            'category_id' => 3,
+            'category_id' => 4,
             'user_id' => 1,
-            'title' => 'Poem #7',
-            'description' => '<p style="text-align:center;">"Filthy Atmosphere"</p><p>By: Kevin Decena and Lianne Ritos</p>
+            'title' => 'Filthy Atmosphere',
+            'description' => '<p>By: Kevin Decena and Lianne Ritos</p>
             <p style="text-align:left;">I.</p>
                 <p style="margin-left:2em;">People throw their garbages everywhere</p>
                 <p style="margin-left:2em;">In a park, in the streets, almost anywhere</p>
@@ -708,7 +708,7 @@ class PostSeeder extends Seeder
         Post::create([
             'category_id' => 3,
             'user_id' => 1,
-            'title' => 'Poem #8',
+            'title' => 'Poem #4',
             'description' => '<p style="text-align:center;">"Oblivion"</p>
             <p style="text-align:left;">I.</p>
                 <p style="margin-left:2em;">I live in a world of lies</p>
@@ -761,7 +761,7 @@ class PostSeeder extends Seeder
             'category_id' => 2,
             'user_id' => 1,
             'title' => 'Pampanga Escapade',
-            'description' => '<p>We made it to Ate Kamille\'s house here in Pampanga last night. Before that, we rode a van designated for Dagupan to check on Ate Collen and along with their friend, we had a spectacular view of the seaside somewhere in Bonuan. Then me and Ate Kamille headed for Tarlac to have the long-planned karting. Sadly, it rained hard and karting is unavailable due to the wet tracks. Well, that sucks. So we just went to Pampanga.</p><p>I\'ve never been here ever. Before heading to their house, Ate Kamille showed me where "The Walking Street" is. At least now I know why there are a lot of foreigners in here. Hahaha! Then she showed me where the original Sisig was made. It\'s an ordinary carinderia owned by "Aling Lucing", who invented the legendary Sisig meal. Sadly, she passed away. The store is just a few blocks from Ate Kamille\'s house (they also own a sari-sari store).</p><p>We woke up in time for lunch. It\'s not that hot here in Pampanga thankfully. We went to Robinsons Angeles to play at Tom\'s World. It\'s like Quantum but tokens cost P4 instead of P6. Ate Kamille nearly lost her phone inside the premises. We were asking around if they found a phone. I still had to text Ate Collen to inform her about it and before I could send the message, an honest kid in green shirt approached her and handed the phone. It fell on the seat she was at. She said she nearly had a "heart attack" because she felt so scared on what transpired. She thanked his dad and his siblings for having such an honest son. She bought tokens to give it to the kid but sadly, they left.</p><p>Ate Kamille still have 2 tokens left. We transferred to the other Tom\'s World of the mall. There were more people out there. We played ice hockey. I lost to her at the score of 1-2. Afterwards, we went home as our next stop is on the gym.</p><p>The gym is Shoulders &amp; Boulders. The walk-in fee is P35 but only paid P20 (Ate Kamille shouldered the P15 so she would pay P50 instead). Cardio exercise for 15-25 minutes then strength exercises and lastly, ab exercises before leaving. I felt some "gym rust" since it\'s been awhile I get to use the equipments.</p><p>The Pampanga escapade, as I call it, didn\'t stop there. We took a short rest at home then went to SM Clark. I get to watch Avengers: Age of Ultron finally! The best scene was when Ultron\'s army attacked the Avengers. They\'re just on an empty ruin fending themselves. After watching, we rode a jeep going to Didi\'s Pizza. We ordered the Combination Pizza, where cheese, salami, mushroom, pepperoni and sausage toppings are all in 1 pizza. So delicious! Our last stop is at a bar just across the street. Inside, the place is so beautiful! There was a live band, who is on their last set. The girls wore super shorts and their legs whiter than the searchlight. Hahaha!</p><p>Finally, we went home. We\'re going back to Baguio tomorrow as well. The karting will probably happen soon. We\'re just unlucky that the bad weather occurred on the day of the outing.</p>',
+            'description' => '<p>We made it to Ate Kamille\'s house here in Pampanga last night. Before that, we rode a van designated for Dagupan to check on Ate Collen and along with their friend, we had a spectacular view of the seaside somewhere in Bonuan. Then me and Ate Kamille headed for Tarlac to have the long-planned karting. Sadly, it rained hard and karting is unavailable due to the wet tracks. Well, that sucks. So we just went to Pampanga.</p><p>I\'ve never been here ever. Before heading to their house, Ate Kamille showed me where "The Walking Street" is. At least now I know why there are a lot of foreigners in here. Hahaha! Then she showed me where the original Sisig was made. It\'s an ordinary carinderia owned by "Aling Lucing", who invented the legendary Sisig meal. Sadly, she passed away. The store is just a few blocks from Ate Kamille\'s house (they also own a sari-sari store).</p><p>We woke up in time for lunch. It\'s not that hot here in Pampanga thankfully. We went to Robinsons Angeles to play at Tom\'s World. It\'s like Quantum but tokens cost P4 instead of P6. Ate Kamille nearly lost her phone inside the premises. We were asking around if they found a phone. I still had to text Ate Collen to inform her about it and before I could send the message, an honest kid in green shirt approached her and handed the phone. It fell on the seat she was at. She said she nearly had a "heart attack" because she felt so scared on what transpired. She thanked his dad and his siblings for having such an honest son. She bought tokens to give it to the kid but sadly, they left.</p><p>Ate Kamille still have 2 tokens left. We transferred to the other Tom\'s World of the mall. There were more people out there. We played ice hockey. I lost to her at the score of 1-2. Afterwards, we went home as our next stop is on the gym.</p><p>The gym is Shoulders & Boulders. The walk-in fee is P35 but only paid P20 (Ate Kamille shouldered the P15 so she would pay P50 instead). Cardio exercise for 15-25 minutes then strength exercises and lastly, ab exercises before leaving. I felt some "gym rust" since it\'s been awhile I get to use the equipments.</p><p>The Pampanga escapade, as I call it, didn\'t stop there. We took a short rest at home then went to SM Clark. I get to watch Avengers: Age of Ultron finally! The best scene was when Ultron\'s army attacked the Avengers. They\'re just on an empty ruin fending themselves. After watching, we rode a jeep going to Didi\'s Pizza. We ordered the Combination Pizza, where cheese, salami, mushroom, pepperoni and sausage toppings are all in 1 pizza. So delicious! Our last stop is at a bar just across the street. Inside, the place is so beautiful! There was a live band, who is on their last set. The girls wore super shorts and their legs whiter than the searchlight. Hahaha!</p><p>Finally, we went home. We\'re going back to Baguio tomorrow as well. The karting will probably happen soon. We\'re just unlucky that the bad weather occurred on the day of the outing.</p>',
             'created_at' => Carbon::parse('May 8, 2015 00:00:00')->format('Y-m-d H:i:s'),
             'date_published' => '2015-05-05',
         ]);
@@ -769,7 +769,7 @@ class PostSeeder extends Seeder
         Post::create([
             'category_id' => 3,
             'user_id' => 1,
-            'title' => 'Poem #9',
+            'title' => 'Poem #5',
             'description' => '<p style="text-align:center;">"Gamer Girl"</p>
             <p style="text-align:left;">I.</p>
                 <p style="margin-left:2em;">I had this awesome dream one day</p>
@@ -798,7 +798,7 @@ class PostSeeder extends Seeder
         Post::create([
             'category_id' => 3,
             'user_id' => 1,
-            'title' => 'Poem #10',
+            'title' => 'Poem #6',
             'description' => '<p style="text-align:center;">"Sisig Lord"</p>
             <p style="text-align:left;">I.</p>
                 <p style="margin-left:2em;">When I first tasted you</p>
@@ -827,7 +827,7 @@ class PostSeeder extends Seeder
         Post::create([
             'category_id' => 3,
             'user_id' => 1,
-            'title' => 'Poem #11',
+            'title' => 'Poem #7',
             'description' => '<p style="text-align:center;">"There Is No One Else"</p>
             <p style="text-align:left;">I.</p>
                 <p style="margin-left:2em;">You brought me to this world unknown to me</p>
@@ -857,7 +857,7 @@ class PostSeeder extends Seeder
         Post::create([
             'category_id' => 3,
             'user_id' => 1,
-            'title' => 'Poem #12',
+            'title' => 'Poem #8',
             'description' => '<p style="text-align:center;">"Wings"</p>
             <p style="text-align:left;">I.</p>
                 <p style="margin-left:2em;">A common misconception about wings</p>
@@ -886,7 +886,7 @@ class PostSeeder extends Seeder
         Post::create([
             'category_id' => 3,
             'user_id' => 1,
-            'title' => 'Poem #13',
+            'title' => 'Poem #9',
             'description' => '<p style="text-align:center;">"The Calling"</p>
             <p style="text-align:left;">I.</p>
                 <p style="margin-left:2em;">We will rise from the ashes</p>
@@ -940,7 +940,7 @@ class PostSeeder extends Seeder
         Post::create([
             'category_id' => 3,
             'user_id' => 1,
-            'title' => 'Poem #14',
+            'title' => 'Poem #10',
             'description' => '<p style="text-align:center;">"Invisibility"</p>
             <p style="text-align:left;">I.</p>
                 <p style="margin-left:2em;">Imagine being the unknown</p>
@@ -969,7 +969,7 @@ class PostSeeder extends Seeder
         Post::create([
             'category_id' => 3,
             'user_id' => 1,
-            'title' => 'Poem #15',
+            'title' => 'Poem #11',
             'description' => '<p style="text-align:center;">"No Internet Is Such A Dull Day"</p>
             <p style="text-align:left;">I.</p>
                 <p style="margin-left:2em;">The internet is the source of everything</p>
@@ -1240,7 +1240,7 @@ class PostSeeder extends Seeder
             'category_id' => 2,
             'user_id' => 1,
             'title' => 'Sweaty and Smelly',
-            'description' => '<p>Me and Billy took a ride from a Trancoville jeep in front of Baguio Cathedral going to Chopping Burgh. I ordered Say Cheese with fries worth P162 and Coke Light for P30. After having lunch, I accompanied Billy in Altitude gym at Mount Crest Hotel. We walked all the way going there. Then walked again to Burnham Park and finally back to UC. It was an exhausting yet fun walk. I was seating because of that.</p><p>I attended my Firewalls and Network Security &amp; ECON 1 classes full of sweat. I didn\'t realized I smell this bad. I was even wearing the 3/4 sweatshirt that Ate Kamille gave me. Finally, I went home. I couldn\'t stand my own stench so I changed my clothes immediately. I played Digimon Story: Cyber Sleuth in the PS4 for the rest of the night.</p><p>Ate Kamille came into the house and needed help in fixing her slow browsing issue on her laptop. Things I did included disabling unnecessary startup services, uninstalled unused programs and installed Google Chrome. None of these worked until I looked it up on the internet. It suggested to untick the option "Use hardware accelerator" in Google Chrome settings. It finally worked!</p>',
+            'description' => '<p>Me and Billy took a ride from a Trancoville jeep in front of Baguio Cathedral going to Chopping Burgh. I ordered Say Cheese with fries worth P162 and Coke Light for P30. After having lunch, I accompanied Billy in Altitude gym at Mount Crest Hotel. We walked all the way going there. Then walked again to Burnham Park and finally back to UC. It was an exhausting yet fun walk. I was seating because of that.</p><p>I attended my Firewalls and Network Security & ECON 1 classes full of sweat. I didn\'t realized I smell this bad. I was even wearing the 3/4 sweatshirt that Ate Kamille gave me. Finally, I went home. I couldn\'t stand my own stench so I changed my clothes immediately. I played Digimon Story: Cyber Sleuth in the PS4 for the rest of the night.</p><p>Ate Kamille came into the house and needed help in fixing her slow browsing issue on her laptop. Things I did included disabling unnecessary startup services, uninstalled unused programs and installed Google Chrome. None of these worked until I looked it up on the internet. It suggested to untick the option "Use hardware accelerator" in Google Chrome settings. It finally worked!</p>',
             'created_at' => Carbon::parse('May 11, 2016 00:00:00')->format('Y-m-d H:i:s'),
             'date_published' => '2016-03-22',
         ]);
@@ -1257,7 +1257,7 @@ class PostSeeder extends Seeder
         Post::create([
             'category_id' => 3,
             'user_id' => 1,
-            'title' => 'Poem #16',
+            'title' => 'Poem #12',
             'description' => '<p style="text-align:center;">"Kahinaan"</p>
             <p style="text-align:left;">I.</p>
                 <p style="margin-left:2em;">Sa isang silid, napansin ko itong dalaga</p>
@@ -1287,7 +1287,7 @@ class PostSeeder extends Seeder
         Post::create([
             'category_id' => 3,
             'user_id' => 1,
-            'title' => 'Poem #17',
+            'title' => 'Poem #13',
             'description' => '<p style="text-align:center;">"Deep Blue Ocean"</p>
             <p style="text-align:left;">I.</p>
                 <p style="margin-left:2em;">I looked far to the deep blue ocean</p>
@@ -1620,7 +1620,7 @@ class PostSeeder extends Seeder
             'title' => 'CSI Season 13 Marathon',
             'description' => '<p>Watched CSI Season 13 on iflix.com</p>
             <ul>
-                <li>11/11/17: Episodes 1- 3</li>
+                <li>11/11/17: Episodes 1 - 3</li>
                 <li>11/13/17: 4 - 9</li>
                 <li>11/14/17: 10 - 11</li>
                 <li>11/16/17: 12 - 14</li>
@@ -1715,7 +1715,7 @@ class PostSeeder extends Seeder
                 <li>September 4, 2018 - P150 (camo wallet - night market with Alyza)</li>
                 <li>September 18, 2018 - P350 (dark camo bomber jacket - night market with Alyza)</li>
                 <li>December 19, 2018 - P1,530 (Tribal green camo sando + Sweettooth shirt for 799 - Tribal from SM Baguio)</li>
-                <li>March 10, 2019 - P150 (Q&amp;Q camo watch - Session in Bloom with Alyza)</li>
+                <li>March 10, 2019 - P150 (Q&Q camo watch - Session in Bloom with Alyza)</li>
             </ul>
             <p><em>NOTE: Published date is based on my scrap notes of when I started listing them down.</em></p>',
             'created_at' => Carbon::parse('April 2, 2019 00:00:00')->format('Y-m-d H:i:s'),
@@ -1953,6 +1953,20 @@ class PostSeeder extends Seeder
         Post::create([
             'category_id' => 5,
             'user_id' => 1,
+            'title' => 'The Witcher Season 1 Marathon',
+            'description' => '<p>Watched The Witcher Season 1 on netflix.com</p>
+            <ul>
+                <li>4/9/21: Episode 1</li>
+                <li>4/10/21: 2 - 5</li>
+                <li>4/11/21: 6 - 8 (finale)</li>
+            </ul>',
+            'created_at' => Carbon::parse('January 15, 2025 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2021-04-11',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
             'title' => 'The Big Bang Theory Season 3 Marathon',
             'description' => '<p>Watched The Big Bang Theory Season 3 on netflix.com</p>
             <ul>
@@ -1962,21 +1976,7 @@ class PostSeeder extends Seeder
                 <li>5/28/21: 19 - 23 (finale)</li>
             </ul>',
             'created_at' => Carbon::parse('January 15, 2025 00:00:00')->format('Y-m-d H:i:s'),
-            'date_published' => '2025-01-15',
-        ]);
-
-        Post::create([
-            'category_id' => 5,
-            'user_id' => 1,
-            'title' => 'The Witcher Season 1 Marathon',
-            'description' => '<p>Watched The Witcher Season 1 on netflix.com</p>
-            <ul>
-                <li>4/9/21: Episode 1</li>
-                <li>4/10/21: 2 - 5</li>
-                <li>4/11/21: 6 - 8 (finale)</li>
-            </ul>',
-            'created_at' => Carbon::parse('January 15, 2025 00:00:00')->format('Y-m-d H:i:s'),
-            'date_published' => '2025-01-15',
+            'date_published' => '2021-05-28',
         ]);
 
         Post::create([
@@ -1991,7 +1991,7 @@ class PostSeeder extends Seeder
                 <li>6/9/21: 22 - 24 (finale)</li>
             </ul>',
             'created_at' => Carbon::parse('January 15, 2025 00:00:00')->format('Y-m-d H:i:s'),
-            'date_published' => '2025-01-15',
+            'date_published' => '2021-06-09',
         ]);
 
         Post::create([
@@ -2006,7 +2006,7 @@ class PostSeeder extends Seeder
                 <li>6/20/21: 20 - 24 (finale)</li>
             </ul>',
             'created_at' => Carbon::parse('January 15, 2025 00:00:00')->format('Y-m-d H:i:s'),
-            'date_published' => '2025-01-15',
+            'date_published' => '2021-06-20',
         ]);
 
         Post::create([
@@ -2021,7 +2021,7 @@ class PostSeeder extends Seeder
                 <li>6/24/21: 20 - 24 (finale)</li>
             </ul>',
             'created_at' => Carbon::parse('January 15, 2025 00:00:00')->format('Y-m-d H:i:s'),
-            'date_published' => '2025-01-15',
+            'date_published' => '2021-06-24',
         ]);
 
         Post::create([
@@ -2038,7 +2038,386 @@ class PostSeeder extends Seeder
                 <li>10/4/21: 21 - 24 (finale)</li>
             </ul>',
             'created_at' => Carbon::parse('January 15, 2025 00:00:00')->format('Y-m-d H:i:s'),
-            'date_published' => '2025-01-15',
+            'date_published' => '2021-10-04',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => 'Money Heist Season 4 Marathon',
+            'description' => '<p>Watched Money Heist Season 4 on netflix.com</p>
+            <ul>
+                <li>4/3/20: Episodes 1 - 8 (finale)</li>
+            </ul>
+            <p>I was considering not putting this in as I have watched the prior seasons on CD back in Malabon but seeing that I didn\'t start watching CSI from the 1st season in Netflix, it would be best to include this series in as well.</p>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2020-04-03',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => 'Resident Evil: Infinite Darkness Season 1 Marathon',
+            'description' => '<p>Watched Resident Evil: Infinite Darkness Season 1 on netflix.com</p>
+            <ul>
+                <li>7/8/21: Episodes 1 - 4 (finale)</li>
+            </ul>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2021-07-08',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => 'Arcane Season 1 Marathon',
+            'description' => '<p>Watched Arcane Season 1 on netflix.com</p>
+            <ul>
+                <li>11/12/21: Episodes 1 - 2</li>
+                <li>11/20/21: 3 - 6</li>
+                <li>12/1/21: 7 - 9 (finale)</li>
+            </ul>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2021-12-01',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => 'The Witcher Season 2 Marathon',
+            'description' => '<p>Watched The Witcher Season 2 on netflix.com</p>
+            <ul>
+                <li>12/20/21: Episode 1</li>
+                <li>12/26/21: 2 - 8 (finale)</li>
+            </ul>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2021-12-26',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => 'Manifest Season 1 Marathon',
+            'description' => '<p>Watched Manifest Season 1 on netflix.com</p>
+            <ul>
+                <li>1/2/22: Episodes 1 - 4</li>
+                <li>1/3/22: 5 - 9</li>
+                <li>1/9/22: 10 - 16 (finale)</li>
+            </ul>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2022-01-09',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => 'Manifest Season 2 Marathon',
+            'description' => '<p>Watched Manifest Season 2 on netflix.com</p>
+            <ul>
+                <li>1/9/22: Episodes 1 - 6</li>
+                <li>1/10/22: 7 - 13 (finale)</li>
+            </ul>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2022-01-10',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => 'Manifest Season 3 Marathon',
+            'description' => '<p>Watched Manifest Season 3 on netflix.com</p>
+            <ul>
+                <li>1/16/22: Episodes 1 - 7</li>
+                <li>1/23/22: 8 - 13 (finale)</li>
+            </ul>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2022-01-23',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => 'Ganglands Season 1 Marathon',
+            'description' => '<p>Watched Ganglands Season 1 on netflix.com</p>
+            <ul>
+                <li>4/24/22: Episodes 1 - 2</li>
+                <li>5/2/22: 3 - 6 (finale)</li>
+            </ul>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2022-05-02',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => 'The Big Bang Theory Season 8 Marathon',
+            'description' => '<p>Watched The Big Bang Theory Season 8 on netflix.com</p>
+            <ul>
+                <li>10/4/21: Episodes 1 - 3</li>
+                <li>10/10/21: 4 - 11</li>
+                <li>12/9/21: 12 - 13</li>
+                <li>5/3/22: 14 - 15</li>
+                <li>5/4/22: 16 - 21</li>
+                <li>5/7/22: 22 - 24 (finale)</li>
+            </ul>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2022-05-07',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => 'Resident Evil Season 1 Marathon',
+            'description' => '<p>Watched Resident Evil Season 1 on netflix.com</p>
+            <ul>
+                <li>7/30/22: Episodes 1 - 8 (finale)</li>
+            </ul>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2022-07-30',
+        ]);
+
+        Post::create([
+            'category_id' => 6,
+            'user_id' => 1,
+            'title' => 'GTA San Andreas Blender Modding',
+            'description' => '<p>Some notes on how to add tunable parts to a car.</p><h2>Useful Links</h2><ul><li>carmods.dat: <a target="_blank" rel="noopener noreferrer nofollow" href="https://wiki.multitheftauto.com/wiki/Vehicle_Upgrades"><u>https://wiki.multitheftauto.com/wiki/Vehicle_Upgrades</u></a></li><li>carcols.dat: <a target="_blank" rel="noopener noreferrer nofollow" href="https://gta.fandom.com/wiki/Carcols.dat/GTASA"><u>https://gta.fandom.com/wiki/Carcols.dat/GTASA</u></a></li><li>Free IDs for GTA SA: <a target="_blank" rel="noopener noreferrer nofollow" href="https://gist.github.com/JuniorDjjr/a6096af530835a6411799ecf86126740"><u>https://gist.github.com/JuniorDjjr/a6096af530835a6411799ecf86126740</u></a></li></ul><h2>Mod parts identifiers</h2><p>When opening the .dff file in Blender and you use the ug_ values, the car is moddable. Following is the name of the dummy parts that correspond to the tuning part:</p><ul><li><p>ug_bonnet: Hood</p></li><li><p>ug_lights: Lights</p></li><li><p>ug_spoiler: Spoilers</p></li><li><p>ug_bonnet_left and ug_bonnet_right: Vents</p></li><li><p>ug_nitro: Nitrous</p></li><li><p>ug_roof: Roofs</p></li><li><p>ug_wing_left and ug_wing_right: Side Skirts</p></li><li><p>exhaust: Exhausts <em>(untested yet)</em></p></li></ul><h2>How to add objects</h2><p>For example, to add spoilers to a car mod, use the object name "ug_spoiler". In Object Properties -> Relations -> Parent, choose "boot_dummy".</p><p></p><p>bonnet_dummy:</p><ul><li><p>ug_bonnet</p></li><li><p>ug_bonnet_left</p></li><li><p>ug_bonnet_right</p></li></ul><p></p><p>boot_dummy:</p><ul><li><p>ug_spoiler</p></li></ul><p></p><p>chassis_dummy:</p><ul><li><p>ug_lights</p></li><li><p>ug_nitro</p></li><li><p>ug_roof</p></li><li><p>ug_wing_left</p></li><li><p>ug_wing_right</p></li></ul><p></p><p>parent relation (whatever the parent of chassis_dummy is):</p><ul><li><p>exhaust</p></li></ul><h2>What to do after adding the new cars</h2><ul><li><p>After adding new IDs, you must increase the limit in Fastman Limit Adjuster\'s <strong>fastman92limitAdjuster_GTASA.ini file</strong> (you must always add + 1 from your last custom ID to prevent errors, eg. if your last custom ID ended with 3141, your config must be 3142): <strong>Count of killable model IDs = ?</strong></p></li><li><p><strong>carcols.dat</strong> - definition of colors (maximum of 7 colors only)</p></li><li><p><strong>cargrp.dat</strong> - defines where the car should appear in traffic</p></li><li><p><strong>carmods.dat</strong> - parts that can be applied to this car (WARNING: do not just apply any tunable parts here, this must be checked in Blender for correct dummy parts because an incorrect tunable part will crash the game when the car spawns in traffic. Refer to the Mod Parts identifiers section)</p></li><li><p><strong>handling.cfg</strong> - controls handling</p></li><li><p><strong>vehicles.ide</strong> - definition of car</p></li><li><p><strong>gtasa_vehicleAudioSettings.cfg</strong> - controls the sounds of the car engine/acceleration/deceleration etc. (I recommend doing a copy paste of a line from an existing car)</p><p></p></li></ul><h2>Sample *.txt file</h2><p>For example, if your custom car is named sabregt, name the file as <strong>sabregt.txt</strong>:</p><p></p><p><u>#carcols.dat</u></p><pre><code>sabregt, 0,0, 0,8, 36,0, 25,25, 121,121, 79,8, 6,0, 123,73</code></pre><p><u>#carmods.dat</u></p><pre><code>sabregt, nto_b_l, nto_b_s, nto_b_tw, rf_b_sc_r, spl_b_bab_m, spl_b_bbb_m, spl_b_mab_m, spl_b_bar_m, spl_b_bar_m, spl_b_bbr_l, spl_b_bbr_m, spl_b_mar_m</code></pre><p><u>#handling.cfg</u></p><pre><code>SABREGT        1400.0    2200.0   2.2    0.0 0.1 -0.2  75  0.70 0.9  0.5  	5 200.0 30.0 10.0 4 P 	11.0  0.45 0 30.0  	1.4  0.14  3.0   0.28 -0.15 0.5  0.3		0.25 0.60 35000 	40000800	0			1  1	19</code></pre><p><u>#vehicles.ide</u></p><pre><code>3136,		sabregt,		sabregt,		car,		SABREGT,		SABREGT,		null,		normal,		1,		0,		2ff0,		-1,		0.7,		0.7,		0</code></pre>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2022-08-02',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => 'Manifest Season 4 Part 1 Marathon',
+            'description' => '<p>Watched Manifest Season 4 Part 1 on netflix.com</p>
+            <ul>
+                <li>11/5/22: Episodes 1 - 6</li>
+                <li>11/6/22: 7 - 10 (finale)</li>
+            </ul>
+            <p>This is a two-part season.</p>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2022-11-06',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => 'Warrior Nun Season 2 Marathon',
+            'description' => '<p>Watched Warrior Nun Season 2 on netflix.com</p>
+            <ul>
+                <li>12/2/22: Episodes 1 - 5</li>
+                <li>12/3/22: 6 - 8 (finale)</li>
+            </ul>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2022-12-03',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => 'Money Heist: Korea - Joint Economic Area Season 1 Marathon',
+            'description' => '<p>Watched Money Heist: Korea - Joint Economic Area Season 1 on netflix.com</p>
+            <ul>
+                <li>1/8/23: Episodes 1 - 6</li>
+                <li>1/9/23: 7 - 12 (finale)</li>
+            </ul>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2023-01-09',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => 'The Big Bang Theory Season 9 Marathon',
+            'description' => '<p>Watched The Big Bang Theory Season 9 on netflix.com</p>
+            <ul>
+                <li>5/7/22: Episodes 1 - 4</li>
+                <li>5/15/22: 5 - 10</li>
+                <li>5/16/22: 11 - 14</li>
+                <li>5/17/22: 15 - 18</li>
+                <li>1/28/23: 19 - 20</li>
+                <li>1/31/23: 21 - 24 (finale)</li>
+            </ul>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2023-01-31',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => 'The Night Agent Season 1 Marathon',
+            'description' => '<p>Watched The Night Agent Season 1 on netflix.com</p>
+            <ul>
+                <li>3/27/23: Episodes 1 - 5</li>
+                <li>3/29/23: 6 - 7</li>
+                <li>3/30/23: 8 - 10 (finale)</li>
+            </ul>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2023-03-30',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => 'Wrong Side of the Tracks Season 1 Marathon',
+            'description' => '<p>Watched Wrong Side of the Tracks Season 1 on netflix.com</p>
+            <ul>
+                <li>4/5/23: Episode 1</li>
+                <li>4/7/23: 2 - 3</li>
+                <li>4/8/23: 4 - 6</li>
+                <li>4/9/23: 7 - 8 (finale)</li>
+            </ul>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2023-04-09',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => 'Wrong Side of the Tracks Season 2 Marathon',
+            'description' => '<p>Watched Wrong Side of the Tracks Season 2 on netflix.com</p>
+            <ul>
+                <li>4/27/23: Episodes 1 - 2</li>
+                <li>5/12/23: 3 - 4</li>
+                <li>5/14/23: 5 - 8 (finale)</li>
+            </ul>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2023-05-14',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => '1899 Season 1 Marathon',
+            'description' => '<p>Watched 1899 Season 1 on netflix.com</p>
+            <ul>
+                <li>5/25/23: Episodes 1 - 3</li>
+                <li>5/26/23: 4 - 8 (finale)</li>
+            </ul>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2023-05-26',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => 'Manifest Season 4 Part 2 Marathon',
+            'description' => '<p>Watched Manifest Season 4 Part 2 on netflix.com</p>
+            <ul>
+                <li>6/2/23: Episodes 11 - 15</li>
+                <li>6/4/23: 16 - 20 (finale)</li>
+            </ul>
+            <p>This is a two-part season.</p>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2023-06-04',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => 'Designated Survivor Season 1 Marathon',
+            'description' => '<p>Watched Designated Survivor Season 1 on netflix.com</p>
+            <ul>
+                <li>6/8/23: Episodes 1 - 3</li>
+                <li>6/9/23: 4 - 8</li>
+                <li>6/10/23: 9 - 15</li>
+                <li>6/13/23: 16 - 21 (finale)</li>
+            </ul>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2023-06-13',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => 'Designated Survivor Season 2 Marathon',
+            'description' => '<p>Watched Designated Survivor Season 2 on netflix.com</p>
+            <ul>
+                <li>6/17/23: Episodes 1 - 4</li>
+                <li>6/20/23: 5 - 8</li>
+                <li>6/21/23: 9</li>
+                <li>7/6/23: 10 - 13</li>
+                <li>7/8/23: 14 - 17</li>
+                <li>7/16/23: 18 - 21</li>
+                <li>7/18/23: 22 (finale)</li>
+            </ul>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2023-07-18',
+        ]);
+
+        Post::create([
+            'category_id' => 5,
+            'user_id' => 1,
+            'title' => 'Designated Survivor Season 3 Marathon',
+            'description' => '<p>Watched Designated Survivor Season 3 on netflix.com</p>
+            <ul>
+                <li>7/18/23: Episodes 1 - 2</li>
+                <li>7/23/23: 3 - 5</li>
+                <li>7/24/23: 6</li>
+                <li>8/25/23: 7 - 10 (finale)</li>
+            </ul>',
+            'created_at' => Carbon::parse('May 18, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2023-07-18',
+        ]);
+
+        Post::create([
+            'category_id' => 1,
+            'user_id' => 1,
+            'title' => 'Beach Recommendations',
+            'description' => '<p>I told my parents that I\'ll be left behind as I have a friend who needs me. They opted to drop me off at our meetup place in Mcdo Assumption branch. Mama requested me to buy cigarettes and gave me P210. They left.</p><p>Vi accompanied me to the place she was waiting me at. She happens to be with 2 other friends who are both women. They requested help on what resort offers the best price rates for their 2 nights group outing. They\'re going to a resort in Pangasinan and I thought that it\'s too far so I suggested that they try San Luis Del Mar Resort in Bauang, La Union since it\'s a lot nearer. Anyway, me and Vi are supposed to drink but the plans were cancelled due to their group outing.</p><p>I went to 7-11 to buy 3 packs of Marlboro Gold for Mama, Daddy, and Patrick. Apparently, one pack costs P84 each and I added money as what Mama gave me is not enough. I went home and she gave me P50 for my troubles. Still worth it.</p><p><em>NOTE: This was in my Google Docs, not in my Journal Entries notebook.</em></p>',
+            'created_at' => Carbon::parse('May 19, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2017-09-02',
+        ]);
+
+        Post::create([
+            'category_id' => 1,
+            'user_id' => 1,
+            'title' => 'First Stint at Hiking: Mt. Yangbew',
+            'description' => '<p>Woke up at 5:54 AM for an early hiking with Alvin but it seemed that it wouldn\'t push through because we woke up late. We agreed to meet up at Starbucks Session Road branch at 5:30 AM. Later in the day, he urged me to continue with the hiking. After eating baconsilog at Tatay\'s house for breakfast, I cleaned and organized my room. For the first time ever, my desktop and mini refrigerator swapped places in the room. My desktop is now slanted beside my shoe rack then I tied a rope to keep the extension cord intact and plugged it into where the ref\'s cable is plugged too.</p><p>Alvin chatted to inform me about the hiking. We met up at 3:30 PM at the same place so I took a bath and dressed up. I wore a blue hoodie, white tops and gray pants. Due to some misunderstandings with Alyza not letting me in the hiking endeavor, I persisted on going and left home late. I brought my water with me. Adding insult to injury, there was a queue for the jeep terminal and the jeeps took too long to arrive. Alvin urged me to just get a cab and drop off to Tawang, where we will hike in Mt. Yangbew. A jeep arrived just in the nick of time. Phew! We took a cab to Tawang and the driver dropped us off to the entrance. Realizing we need to get a ticket at the city hall when we talked to a female local, we had to ride another jeep. The city hall is situated at such a place that it looks like a residential building (doesn\'t look like a city hall at first glance). Apparently, it rests up far on the north. Inside the city hall, we are greeted by a female official. We paid P30 for our ticket to Mt. Yangbew. We walked all the way going to the entrance (that was only a warmup).</p><p>It was a long climb to the peak of the mountain. Climbing up steep rocks and stairs, we got sweaty in the first 5 minutes and was also slippery. We hiked for approximately 25 minutes. Upon reaching the top, we are greeted by another group of locals who offers tickets as well (for those who missed out tickets on the city hall). The peak was a grandeur view of the whole La Trinidad. It was amazing, cool, and fantastic! Reaching the peak was like removing all our sweat because you achieved the experience of hiking to a high mountain. We had photo ops and stayed there before sunset. At 5:20 pm, we climbed back down.</p><p>We took a jeepney ride to KM 4 La Trinidad. It was a P10 fare. We strolled into a nearby mall, and to my surprise, they have a Tiong San branch here in La Trinidad. I accompanied Alvin to Greenwich as he will buy pizza for his boardmates then we parted ways. He got a cab first followed by me. I asked to be dropped off at Baguio Centermall and walked to my jeep terminal then went home.</p><p><em>NOTE: This was in my Google Docs, not in my Journal Entries notebook.</em></p>',
+            'created_at' => Carbon::parse('May 19, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2018-01-14',
+        ]);
+
+        Post::create([
+            'category_id' => 1,
+            'user_id' => 1,
+            'title' => 'A Brief CrossFire Return',
+            'description' => '<p>I had a brief return in playing CrossFire. Well, it hasn\'t changed much, besides the addition of a lot of servers. I had to stop playing since it was full of errors, everytime I change my weaponry or exchange my gun to a dropped gun on the ground, the game would exit. I stopped and will just return soon.</p><p>I also installed Open Broadcaster Software (OBS). I\'ve tested a couple of recordings as well as using a standalone mic called Genius MIC-01A (I haven\'t used it in a couple of years). It\'s Mama\'s mic, by the way.</p><p><em>NOTE: This was in my Google Docs, not in my Journal Entries notebook.</em></p>',
+            'created_at' => Carbon::parse('May 19, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2018-01-30',
+        ]);
+
+        Post::create([
+            'category_id' => 1,
+            'user_id' => 1,
+            'title' => 'League of Legends or League of Losing?',
+            'description' => '<p>Sunday morning. A rest day before work for the week starts again tomorrow. It\'s quiet outside. Looks like Tatay left somewhere as their vehicle is not around.</p><p>Played LOL after nearly 5 months of inactivity. No I wasn\'t retiring, I was just busy at work. My last game was at May 21, using Veigar in a losing effort with a score of 3/8/13.</p><p>I returned playing today, and used Shen to victory with a score of 5/5/15. That didn\'t stop there, as I have played 11 more games, making it 12 games for today. I used Amumu on the last game on a losing effort with a score of 7/8/15. It was 6 wins and 6 losses though. I took a rest for awhile though and bought 2 siopao from Baliwag just across the street. Looks like I\'m not retiring yet. Hahaha!</p><p><em>NOTE: This was in my Google Docs, not in my Journal Entries notebook.</em></p>',
+            'created_at' => Carbon::parse('May 19, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2018-10-14',
+        ]);
+
+        Post::create([
+            'category_id' => 1,
+            'user_id' => 1,
+            'title' => 'A Fun, Fulfilling Day',
+            'description' => '<p>What a busy day this is! Today, I was supposed to watch a live WWE Smackdown episode, only to find out it streamed already. I was surprised as it usually streams 8 AM Philippine time in Netflix, only to find out that the episode aired in Italy and when I checked the current time against the Philippine time, it\'s already 2 AM Saturday. Well, at least I got to wake up early nonetheless. I washed my clothes with the washing machine including Abee\'s pink pajamas with holes on it! Hahaha. I\'ve cleared up all my socks and underwears from the humper so that\'s done and dusted. Some shorts and the black-and-red blanket is still on the humper and requires washing so I\'ll leave that for next time. Before putting them on the washing machine, I played a few League of Legends games in ARAM. I used Senna on the first game and won with a score of 11/12/37 (well, at least we won hahaha).</p><p>Next, I decided to place the 80cm LED light that I purchased from Shopee months ago. This is the only time I opened its container, though I\'ve previously unpacked the parcel to take photos and a video for the Shopee coins. Can\'t let those coins go to waste! I had it charged as per the instructions and placed it under the loft bed. I had to count the number of planks the loft bed has, which turned out to be 7, because I wanted to put it on the middle so it covers a lot of space for its lumination. Abee purchased a smaller LED light for me last year as a gift but I wanted a longer one to cover more space under the loft as it\'s too dark with that turned on. For now, I kept the light to where it is and currently undecided where to transfer it. Two is better than one.</p><p>I also started packing some clothes and shorts that I\'ll be bringing for me and Abee\'s June 2026 Indonesia trip. I started picking clothes and shorts that I plan to wear for sleeping. I haven\'t picked any underwears or socks yet. Weeks ago, I am currently planning to bring the white Nike shoes I bought in our Vietnam trip last December 2025 though I may change my mind soon. So far, I believe 9 clothes will suffice (8 to be placed on the suitcase with the last being worn on the day we travel to Manila, then to Indonesia). Haven\'t decided the number of socks yet but shouldn\'t really need 9 pairs, in my opinion.</p><p>I finished watching the full gameplay of <a href="https://www.youtube.com/watch?v=VbxqFmKRcsE">007: First Light by MKIceAndFire in YouTube</a>. This game has taken storm with generally positive reviews from gamers, particularly the beach scene involving a character named Theresa Lorca in a hot, red bikini. Interestingly, the beach scene takes place in Vietnam. Oh well, cavemen have started swooning over her. Hahaha. I do love the gameplay and I really plan to buy this. Checking my Steam funds, I have enough to buy the game. Currently, I have P2,967.80 and the Standard Edition costs P2,200 while the Deluxe Edition costs P2,500. I\'ll get the Standard Edition as the Deluxe Edition is purely cosmetics which doesn\'t really add value to the entire gameplay other than making items look cooler than the regular ones.</p><p>For my CR, I temporarily fixed some brown PVC panels being shifted out of position and looks like it\'s gonna fall out. I discovered this last night during a call with Abee and she said I check it today as it\'s late to check it at the dead of the night. I kinda don\'t like how the white background is bulging out of the brown foreground PVC panels. I wanted to move it further so that the colors are uniformed but I guess I\'m stucked with this small annoyance for now. At least I fixed it today. I sent a message to my mom to request help from Kuya JR, one of a few people who helped renovate my CR last year, to check it out as well as fix the heater (I have been taking a bath with cold water lately). I also attached the white shelf inside the CR. Just like the 80cm LED light, it\'s been sitting ducks on top of the loft bed and today I\'ve also decided to use them so to clear up the space on the loft. Unlike the light, the shelf already has adhesive stickers on it - it only needed to be placed somewhere. I had to fix it a little bit as I decided to remove the metal bar underneath as I won\'t be using them.</p>',
+            'created_at' => Carbon::parse('May 30, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2026-05-30',
+        ]);
+        Post::create([
+            'category_id' => 1,
+            'user_id' => 1,
+            'title' => 'Independence Day or Labor Day?',
+            'description' => '<p>Today is June 12, a national holiday in the Philippines where we celebrate the country\'s independence to our captors. This holiday is also respected on my current employment, Machship that employees are not rendered to work. With that, I worked today and one of my Filipino colleagues, Marvin, is off but the good news is that it\'s a double pay and that it is such a sweet, sweet money! I did a lot of things today at work. Fixed a cube rounding issue for a New Zealand carrier, Fliway. Optimized input data being sent to Limber for another New Zealand carrier, Team Global Express. Continued working on the initial layout for a Dangerous Goods Summary Paperwork for Bunnings. Checked the issue on sending HTTP requests to Bustle as we cannot manifest consignments properly. Is this really my independence or just a day full of context switching from carrier to carrier? Nonetheless, I did those things and enjoyed.</p><p>Workers from a furniture company called Decoforge came in today. Sir Gerald and Sir Ronnie painted the blue borders on my window using white paint to match the gray fluted panels that was installed 2 days ago, June 10. The panels were initially inspected by Sir Gerald only last week, June 5. On that day, I fetched him near the San Vicente jeep terminal as he thought the house was there so I walked going down and we went back to the house to do an initial inspection of the wall. He gave out the estimate panels needed as well as the materials that will be covered. Materials were bought on June 9, which included a P800 delivery fee however, it was not Sir Gerald who delivered the materials but rather two other people from Decoforge did. Then on June 10, Sir Ronnie came in with Sir Gerald and they worked. The panels covered the leftmost wall of my room where my sole window resides. All the stuff that\'s on that wall were removed and had to be relocated to which I will dedicate a day I will relocate them somewhere else. Initially, I only wanted to have the panels installed but upon seeing that the blue borders on the window didn\'t match the gray panels, I kindly asked them to have that painted as well. Just like on June 10, they also bought the materials themselves which included the ash gray paint, sandpaper, and a 2-inch paintbrush. Looks good. My L-shaped table had to move slightly farther as it was positioned near the window so there\'s a slight space issue when maneuvering around my room. I bought them 2 buy 1 take 1 Double Chicken time each for both of them as I wasn\'t able to feed them when they installed the panels due to how busy I was at work. Anyway, they finished the job and started at around 9:46 AM and ended by 3:50 PM. Was told to wait until 6 PM to completely dry up the paint. Looks so good! Dream come true!</p><p>Besides workers on our house, Tita Vina had some guys working on the CCTV installation in the compound. They bought 5 CCTVs that were installed strategically - one is below the stairs going to our house, second is on Mama Cathy\'s transient, third is located outside between Tita Vina\'s house and Tatay\'s kitchen, fourth is installed outside Tita Carol\'s house, and finally the fifth is installed on top of the garage that overlooks people going into the compound. Tita Vina called me for my IT expertise and wanted to show me with one of the workers who helped installed the CCTV on how it works. Turns out that the control room for the CCTV is located in Noel\'s room but I believe it\'ll be there temporarily since he\'s not home yet and is overseas. Anyway, I got a tutorial on how to operate the CCTV. The guy showed me cool things such as the ability to save recordings until 15 days, a 1TB storage of media, the ability to manage using the mobile app, transferring of media using the USB, among other things. I have never operated the CCTV before but having this knowledge will help protect the compound against unwanted visitors or those that cause trouble.</p>',
+            'created_at' => Carbon::parse('June 12, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2026-06-12',
+        ]);
+        Post::create([
+            'category_id' => 1,
+            'user_id' => 1,
+            'title' => 'Sevens of July',
+            'description' => '<p>Watched Casino Royale tonight in Netflix. This is the 1st film from the 007 franchise that\'s currently available in Netflix to watch - the other 4 films in the order of release are: Quantum of Solace, Skyfall, Spectre, and No Time to Die. I never watched these films before and I was so amazed with the runtime of 2 hours and 24 minutes for Casino Royale though I\'ve heard of a few games from the franchise such as GoldenEye 007 (I saw clips of it on YouTube hahaha but haven\'t played it). I wasn\'t able to finish the entire film and I stopped at the part where Vesper Lynd (played by Eva Green) and James Bond (played by Daniel Craig) were having a conversation just shy of 30 minutes before the film ends as I had to talk to Abee in Instagram in which the call duration lasted for 1:10:28. I can just watch the rest of the film in the coming days as I didn\'t have enough time tonight. Recently, I bought 007: First Light in Steam last June 27 but I haven\'t finished the game yet though I\'ve started it the same day I bought it and just like the films, this is also the 1st 007 game I played. Talk about firsts!</p><p>I also played Hitman Absolution in Steam a little earlier prior to watching Casino Royale. I have finished all obtainable achievements to 100% and this game was developed by IO Interactive, the same developers of 007: First Light. Not a coincidence out there because I purchased both of these games last June 27 in Steam. 007: First Light and Hitman Absolution are the 1st games I played from their respective franchises. A fun fact about this game: I watched clips of it in YouTube years ago just out of curiosity and I kind of know the story then so I was already familiar by the time I played it.</p><p>In other sevens of today, I bought a Coke Zero vanilla flavor at a 7-11 branch in San Vicente. I am not entirely sure if the walk would\'ve taken me 7 minutes to get there from the house but it would be interesting to know! What I do know is walking from home to Baguio Medical Center would take at least 7 minutes. The strenuous and steep walk of the slope in the highway is the most challenging part of the route. Especially now that I got fatter, it\'s more challenging for me to get up to a flat walking surface without catching my breath a few times.</p>',
+            'created_at' => Carbon::parse('July 7, 2026 00:00:00')->format('Y-m-d H:i:s'),
+            'date_published' => '2026-07-07',
         ]);
     }
 }
