@@ -11,6 +11,12 @@
 > - **Public-page tags render as rounded badges** — each comma-separated tag becomes a
 >   `rounded-full` pill inside a `flex flex-wrap gap-2` container (plus `m-0.5` per badge); games
 >   with no tags show an italic "No tags" placeholder.
+> - **Client-side sortable table (Alpine).** The public table sorts by **Game**, **Date Completed**,
+>   and **Tags** — clicking a header toggles ascending/descending with an arrow indicator. Rows are
+>   embedded via `@js()` into an inline `x-data` sorter and re-rendered with `x-for` (no vite/config
+>   change; survives `wire:navigate`). Game sorts alphabetically, Date by ISO value; **Tags** groups
+>   by presence (ascending = tagged first, descending = untagged first) then orders tagged games by
+>   the first tag's starting letter.
 > - **Filament tag suggestions** mirror `SoldItemResource`: the `TagsInput` suggests existing tags
 >   pulled from all records, and the admin table renders `tags` as badges.
 >
@@ -32,8 +38,9 @@
 > **Verified:** `vendor/bin/pest` green (2/2, run on isolated in-memory SQLite so the MySQL dev DB
 > was untouched). Migration applied and 80 rows seeded. `route:list` shows all four routes (public
 > + 3 Filament admin). Loaded `/archive/steam-achievements` (HTTP 200) and confirmed the table
-> loops all 80 games in file order and multi-tag rows render two distinct rounded badges.
-> `vendor/bin/pint` clean.
+> loops all 80 games, multi-tag rows render distinct rounded badges, and each sortable column sorts
+> correctly in both directions (including the Tags presence-then-first-tag rule) with no console
+> errors. `vendor/bin/pint` clean.
 
 ## Context
 
@@ -95,15 +102,18 @@ Parsing rules applied to the source text file:
 ## Livewire component + view
 
 `app/Livewire/Archive/ListSteamAchievement.php` — minimal full-page component in the same
-namespace/style as [Archive](app/Livewire/Archive/Archive.php), passing `SteamAchievement::all()`
-to the view.
+namespace/style as [Archive](app/Livewire/Archive/Archive.php). Maps each record into a
+sort-ready shape for the view: a sortable ISO `date_completed` plus a `date_completed_display`
+string, and `tags` pre-split into a `tags_array` for the badge loop and tag sort.
 
 `resources/views/livewire/archive/list-steam-achievement.blade.php` — follows the outer shell used
 by every archive view (`x-slot name="nav_menu"` + `x-navigation-menu`, `x-slot name="header"`,
-`max-w-7xl` wrapper). A responsive table wrapped in `overflow-x-auto`, `@forelse` over the records
-with columns **#, Game, Date Completed, Tags, Notes**. The Tags cell splits the comma-separated
-string and renders each tag as a `rounded-full` badge (`flex flex-wrap gap-2`, `m-0.5` per badge);
-empty tags/notes show an italic placeholder.
+`max-w-7xl` wrapper). A responsive table wrapped in `overflow-x-auto`, driven by an inline Alpine
+`x-data` sorter (rows embedded via `@js()`, re-rendered with `x-for`) with columns
+**#, Game, Date Completed, Tags, Notes**. Clicking the Game/Date Completed/Tags headers sorts that
+column and toggles asc/desc (arrow indicator). The Tags cell renders each tag as a `rounded-full`
+badge (`flex flex-wrap gap-2`, `m-0.5` per badge); empty tags/notes show an italic placeholder. See
+the outcome banner for the exact Tags sort rule.
 
 ## Route
 
