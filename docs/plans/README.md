@@ -11,6 +11,8 @@ how it was verified.
 
 - [laravel-13-upgrade.md](laravel-13-upgrade.md) — Laravel 12 → 13 upgrade (executed 2026-07-12 as
   a three-way Laravel 13 + Filament 5 + Livewire 4 upgrade).
+- [steam-achievements.md](steam-achievements.md) — Steam Achievements table, model, seeder,
+  Livewire `/archive` page & Filament resource (executed 2026-07-12).
 
 ## Conventions
 

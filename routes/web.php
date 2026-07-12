@@ -3,6 +3,7 @@
 use App\Livewire\AboutMe;
 use App\Livewire\Archive\Archive;
 use App\Livewire\Archive\ListSoldItem;
+use App\Livewire\Archive\ListSteamAchievement;
 use App\Livewire\Archive\StaticDroppingAreas;
 use App\Livewire\Archive\StaticGameScreenshots;
 use App\Livewire\Blog\Blog;
@@ -14,14 +15,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', Homepage::class)->name('home');
 Route::get('/about-me', AboutMe::class)->name('about_me');
-Route::group(['prefix' => 'archive', 'as' => 'archive.'], function() {
+Route::group(['prefix' => 'archive', 'as' => 'archive.'], function () {
     Route::get('/', Archive::class)->name('index');
     Route::get('/sold-items', ListSoldItem::class)->name('sold-items.list');
+    Route::get('/steam-achievements', ListSteamAchievement::class)->name('steam-achievements.list');
     Route::get('/static-dropping-areas', StaticDroppingAreas::class)->name('dropping-areas.static');
     Route::get('/static-game-screenshots', StaticGameScreenshots::class)->name('game-screenshots.static');
 });
 
-Route::group(['prefix' => 'blog', 'as' => 'blog.'], function() {
+Route::group(['prefix' => 'blog', 'as' => 'blog.'], function () {
     Route::get('/', Blog::class)->name('index');
     Route::get('/{id}-{slug}', DetailPost::class)->name('post.detail');
     Route::get('/categories/{slug}/posts', ListCategoryPost::class)->name('categories.post.list');
