@@ -38,7 +38,7 @@ return [
     |
     */
 
-    'layout' => 'livewire.app-layout',
+    'component_layout' => 'livewire.app-layout',
 
     /*
     |---------------------------------------------------------------------------
@@ -50,7 +50,7 @@ return [
     |
     */
 
-    'lazy_placeholder' => null,
+    'component_placeholder' => null,
 
     /*
     |---------------------------------------------------------------------------
@@ -157,4 +157,7 @@ return [
     */
 
     'pagination_theme' => 'tailwind',
+
+    // Now defaults to true (was false in v3)
+    'smart_wire_keys' => false,
 ];
