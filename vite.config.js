@@ -9,6 +9,7 @@ export default defineConfig({
                 'resources/css/filament/admin/tailwind-theme.css',
                 'resources/js/app.js',
                 'resources/js/skeleton-loading.js',
+                'resources/js/sold-items-chart.js',
             ],
             refresh: true,
         }),
