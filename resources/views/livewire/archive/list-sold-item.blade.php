@@ -10,6 +10,94 @@
             - Toggle whether the sold items have notes or not
     --}}
 
+    {{-- Sold Items Summary (whole collection; independent of the filters below) --}}
+    @if (($summary['total_items'] ?? 0) > 0)
+        <div class="mb-8" x-data="{ open: true }">
+            <div class="flex items-center justify-between px-2 py-4 bg-gray-300 dark:bg-gray-700">
+                <h2 class="text-xl text-gray-800 dark:text-gray-200">Sold Items Summary</h2>
+
+                <button
+                    type="button"
+                    x-on:click="open = !open"
+                    x-bind:aria-expanded="open"
+                    x-bind:aria-label="open ? 'Hide summary' : 'Show summary'"
+                    class="p-1 text-gray-800 transition-colors border border-gray-500 cursor-pointer dark:text-gray-200 dark:border-gray-400 hover:bg-gray-400 dark:hover:bg-gray-600"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="2"
+                        stroke="currentColor"
+                        class="transition-transform duration-300 size-5"
+                        x-bind:class="open ? 'rotate-180' : ''"
+                        aria-hidden="true"
+                    >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="grid transition-all duration-500 ease-in-out" x-bind:class="open ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'">
+                <div class="overflow-hidden">
+            <div class="grid grid-cols-1 gap-3 mt-4 sm:grid-cols-2 lg:grid-cols-4">
+                <x-stat-card label="Total items sold" :value="number_format($summary['total_items'])" />
+                <x-stat-card label="Total transactions" :value="number_format($summary['total_transactions'])" />
+                <x-stat-card label="Total number of years" :value="number_format($summary['total_years'])" />
+                <x-stat-card label="Unique brands" :value="number_format($summary['unique_brands'])" />
+
+                <x-stat-card label="Top 3 brands">
+                    <ol class="text-sm list-decimal list-inside">
+                        @foreach ($summary['top_brands'] as $brand => $brand_count)
+                            <li class="truncate" title="{{ $brand }} ({{ $brand_count }})">{{ $brand }} <span class="text-gray-500 dark:text-gray-400">({{ $brand_count }})</span></li>
+                        @endforeach
+                    </ol>
+                </x-stat-card>
+
+                @foreach ([
+                    'top_types' => 'Most common types',
+                    'top_sell_locations' => 'Top 3 sell method locations',
+                    'top_pay_locations' => 'Top 3 payment method locations',
+                ] as $rank_key => $rank_label)
+                    <x-stat-card :label="$rank_label">
+                        @if (count($summary[$rank_key]))
+                            <ol class="text-sm list-decimal list-inside">
+                                @foreach ($summary[$rank_key] as $rank_name => $rank_count)
+                                    <li class="truncate" title="{{ $rank_name }} ({{ $rank_count }})">{{ $rank_name }} <span class="text-gray-500 dark:text-gray-400">({{ $rank_count }})</span></li>
+                                @endforeach
+                            </ol>
+                        @else
+                            <p class="text-sm italic text-gray-500 dark:text-gray-400">None</p>
+                        @endif
+                    </x-stat-card>
+                @endforeach
+            </div>
+
+            <div class="grid grid-cols-1 gap-4 mt-6 lg:grid-cols-2">
+                @foreach ([
+                    'total_items' => 'Total sold items per year',
+                    'total_month' => 'Total sold items per month',
+                    'total_price' => 'Total price per year',
+                    'avg_price' => 'Average price per year',
+                    'top_brand' => 'Top selling brand each year',
+                    'top_item' => 'Top selling item each year',
+                    'tx_year' => 'Total transactions per year',
+                    'tx_month' => 'Total transactions per month',
+                ] as $chart_key => $chart_title)
+                    <div class="p-4 bg-gray-200 rounded-lg shadow dark:bg-gray-800">
+                        <h3 class="mb-3 text-lg font-semibold text-gray-800 dark:text-gray-200">{{ $chart_title }}</h3>
+
+                        <div wire:ignore class="relative w-full h-64">
+                            <canvas id="sold-items-chart-{{ $chart_key }}" data-chart="{{ json_encode($summary['charts'][$chart_key]) }}"></canvas>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+                </div>
+            </div>
+        </div>
+    @endif
+
     <div>
         <div>
             <h2 class="px-2 py-4 text-xl text-gray-800 bg-gray-300 dark:bg-gray-700 dark:text-gray-200">Search Archives</h2>
@@ -146,12 +234,28 @@
             }"
             class="my-6"
         >
-            <div class="flex items-center justify-between mb-2">
+            <div class="flex flex-col gap-2 mb-2 md:flex-row md:items-center md:justify-between">
                 <h2 class="text-2xl font-bold tracking-tight text-gray-800 dark:text-gray-200">Sold Items</h2>
 
-                {{-- View toggle --}}
-                <div class="flex items-center py-2">
-                    <p class="px-2 text-gray-800 dark:text-gray-200">Toggle view</p>
+                <div class="flex flex-wrap items-center gap-x-4">
+                    {{-- Sort control --}}
+                    <div class="flex flex-wrap items-center gap-1 py-2">
+                        <p class="px-2 text-gray-800 dark:text-gray-200">Sort by</p>
+
+                        @foreach (['date_sold' => 'Date', 'price' => 'Price', 'name' => 'Name'] as $sort_option => $sort_label)
+                            <button
+                                wire:click="apply_sort('{{ $sort_option }}')"
+                                class="px-2 py-1 text-sm border transition-colors {{ $sort_field === $sort_option ? 'text-blue-500 border-blue-500 dark:text-blue-300 dark:border-blue-300' : 'text-gray-800 border-gray-300 dark:border-gray-600 dark:text-gray-200 hover:text-blue-800 dark:hover:text-blue-200' }}"
+                                title="Sort by {{ $sort_label }}"
+                            >
+                                {{ $sort_label }}@if ($sort_field === $sort_option)<span aria-hidden="true">{{ $sort_direction === 'asc' ? ' ↑' : ' ↓' }}</span>@endif
+                            </button>
+                        @endforeach
+                    </div>
+
+                    {{-- View toggle --}}
+                    <div class="flex items-center py-2">
+                        <p class="px-2 text-gray-800 dark:text-gray-200">Toggle view</p>
 
                     {{-- Table icon --}}
                     <button
@@ -190,6 +294,7 @@
                             <rect x="4.5" y="11" width="10.5" height="2" rx="0.5" fill="currentColor" />
                         </svg>
                     </button>
+                    </div>
                 </div>
             </div>
 
@@ -266,7 +371,7 @@
 
                         <div class="flex flex-col mt-4">
                             <div class="flex justify-between gap-2">
-                                <h3 class="text-lg text-gray-800 grow shrink basis-0 dark:text-gray-200 md:truncate" title="{{ $sold_item->item_name }}">{{ $sold_item->item_name }}</h3>
+                                <h3 class="text-lg text-gray-800 grow shrink basis-0 dark:text-gray-200 md:truncate" title="{{ $sold_item->item_name }}">{{ $sold_item->item_name }}@if (str_contains(strtolower($sold_item->tags ?? ''), 'hot item')) <span class="text-base leading-none" title="Has more than 10 inquiries!">&#128293;</span>@endif</h3>
                                 <p class="text-lg text-gray-800 justify-self-end dark:text-gray-200" title="Price">&#8369; {{ $sold_item->price }}</p>
                             </div>
 
@@ -277,17 +382,17 @@
 
                             <div class="flex justify-between gap-2">
                                 <p class="text-sm text-gray-500 dark:text-gray-400" title="Condition">{{ $sold_item->condition }}</p>
-                                <p class="text-sm justify-self-end text-gray-500 max-w-full dark:text-gray-400 md:truncate md:max-w-[200px] {{ !$sold_item->tags ? 'italic' : '' }}" title="{{ $sold_item->tags }}">{{ $sold_item->tags ? $sold_item->tags : 'No tags' }}</p>
+                                <p class="text-sm justify-self-end text-gray-500 max-w-full dark:text-gray-400 md:truncate md:max-w-50 {{ !$sold_item->tags ? 'italic' : '' }}" title="{{ $sold_item->tags }}">{{ $sold_item->tags ? $sold_item->tags : 'No tags' }}</p>
                             </div>
 
                             <div class="flex justify-between gap-2">
                                 <p class="text-sm text-gray-500 dark:text-gray-400" title="Pay method">{{ $sold_item->pay_method->method }}</p>
-                                <p class="text-sm justify-self-end text-gray-500 max-w-full dark:text-gray-400 md:truncate md:max-w-[200px]" title="Remittance location">{{ $sold_item->pay_method->remittance_location }}</p>
+                                <p class="text-sm justify-self-end text-gray-500 max-w-full dark:text-gray-400 md:truncate md:max-w-50" title="Remittance location">{{ $sold_item->pay_method->remittance_location }}</p>
                             </div>
 
                             <div class="flex justify-between gap-2">
                                 <p class="text-sm text-gray-500 dark:text-gray-400" title="Sell method">{{ $sold_item->sell_method->method }}</p>
-                                <p class="text-sm justify-self-end text-gray-500 max-w-full dark:text-gray-400 md:truncate md:max-w-[200px]" title="Sell location">{{ $sold_item->sell_method->location }}</p>
+                                <p class="text-sm justify-self-end text-gray-500 max-w-full dark:text-gray-400 md:truncate md:max-w-50" title="Sell location">{{ $sold_item->sell_method->location }}</p>
                             </div>
                         </div>
                     </div>
@@ -346,7 +451,7 @@
                         </div>
 
                         <div class="w-full flex flex-col gap-0.5">
-                            <h3 class="text-lg text-gray-800 border-b border-b-gray-500 dark:border-b-gray-400 dark:text-gray-200 md:truncate" title="{{ $sold_item->item_name }}">{{ $sold_item->item_name }}</h3>
+                            <h3 class="text-lg text-gray-800 border-b border-b-gray-500 dark:border-b-gray-400 dark:text-gray-200 md:truncate" title="{{ $sold_item->item_name }}">{{ $sold_item->item_name }}@if (str_contains(strtolower($sold_item->tags ?? ''), 'hot item')) <span class="text-base leading-none" title="Hot item">&#128293;</span>@endif</h3>
 
                             <p class="text-sm text-gray-500 dark:text-gray-400">
                                 <span title="Price">&#8369; {{ $sold_item->price }}</span>
@@ -363,9 +468,6 @@
                                 <p class="text-sm justify-self-end text-gray-500 max-w-full dark:text-gray-400 {{ !$sold_item->tags ? 'italic' : '' }}" title="{{ $sold_item->tags }}">{{ $sold_item->tags ? $sold_item->tags : 'No tags' }}</p>
                             </p>
                         </div>
-
-                        {{-- TODO: FOR ITEMS WITH MORE THAN 10 INQUIRIES (TO IMPLEMENT TAG FIRST AND AN IF-LOGIC TO ONLY SHOW THIS IF THE TAG EXISTS ON THE ITEM) --}}
-                        {{-- <span class="flex items-center text-base leading-none">⭐🔥</span> --}}
                     </div>
                 @empty
                     <p class="col-span-1 px-2 text-red-800 dark:text-red-200 md:col-span-2 xl:col-span-3">No sold items found for this filter. Please adjust your filters.</p>
@@ -381,5 +483,5 @@
 
 {{-- Custom scripts --}}
 @push('scripts')
-    @vite('resources/js/skeleton-loading.js')
+    @vite(['resources/js/skeleton-loading.js', 'resources/js/sold-items-chart.js'])
 @endpush

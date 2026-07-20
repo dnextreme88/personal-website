@@ -13,6 +13,8 @@ how it was verified.
   a three-way Laravel 13 + Filament 5 + Livewire 4 upgrade).
 - [steam-achievements.md](steam-achievements.md) — Steam Achievements table, model, seeder,
   Livewire `/archive` page & Filament resource (executed 2026-07-12).
+- [sold-items-enhancements.md](sold-items-enhancements.md) — Sold Items page summary stats, server-side
+  sorting, hot-item badge & Chart.js sales chart (executed 2026-07-19).
 
 ## Conventions
 
