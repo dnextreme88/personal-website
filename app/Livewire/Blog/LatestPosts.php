@@ -12,7 +12,7 @@ class LatestPosts extends Component
 
     public function render()
     {
-        $this->latest_posts = Post::latest('date_published')->take(3)
+        $this->latest_posts = Post::published()->latest('date_published')->take(3)
             ->get();
 
         return view('livewire.blog.latest-posts');

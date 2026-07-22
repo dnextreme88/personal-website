@@ -19,9 +19,37 @@ class DetailPost extends Component
 
     public function render()
     {
-        $this->post = Post::where('id', $this->id)->where('slug', $this->slug)
+        $this->post = Post::published()->where('id', $this->id)->where('slug', $this->slug)
+            ->firstOrFail();
+
+        $related = Post::published()->whereIn('id', $this->post->related_post_ids)
+            ->orderBy('title')
+            ->get();
+
+        $previous = Post::published()
+            ->where(fn ($query) => $query
+                ->where('date_published', '<', $this->post->date_published)
+                ->orWhere(fn ($tie) => $tie
+                    ->where('date_published', $this->post->date_published)
+                    ->where('id', '<', $this->post->id)))
+            ->orderBy('date_published', 'DESC')
+            ->orderBy('id', 'DESC')
             ->first();
 
-        return view('livewire.blog.detail-post');
+        $next = Post::published()
+            ->where(fn ($query) => $query
+                ->where('date_published', '>', $this->post->date_published)
+                ->orWhere(fn ($tie) => $tie
+                    ->where('date_published', $this->post->date_published)
+                    ->where('id', '>', $this->post->id)))
+            ->orderBy('date_published', 'ASC')
+            ->orderBy('id', 'ASC')
+            ->first();
+
+        return view('livewire.blog.detail-post', [
+            'related' => $related,
+            'previous' => $previous,
+            'next' => $next,
+        ]);
     }
 }

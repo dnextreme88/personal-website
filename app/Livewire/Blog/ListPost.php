@@ -16,7 +16,6 @@ class ListPost extends Component
     public $date_published;
     public ?string $search_query = null;
     public bool $is_filtered = false;
-
     protected $listeners = ['showed-posts-by-date' => 'dispatch_show_posts_by_date'];
 
     public function dispatch_show_posts_by_date($data) // Dispatched from another component and to be shown on this component
@@ -44,7 +43,7 @@ class ListPost extends Component
     {
         $this->search_query = trim($this->search_query);
 
-        $posts = Post::query();
+        $posts = Post::published();
 
         if ($this->date_published) {
             $posts = $posts->where('date_published', $this->date_published);

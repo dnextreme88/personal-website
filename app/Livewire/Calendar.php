@@ -78,7 +78,7 @@ class Calendar extends Component
     public function render()
     {
         $this->current_month_year = Carbon::create($this->current_year, $this->current_month, 1)->format('F Y');
-        $this->unique_dates = Post::select(['date_published'])->pluck('date_published')->unique();
+        $this->unique_dates = Post::published()->select(['date_published'])->pluck('date_published')->unique();
 
         return view('livewire.calendar');
     }

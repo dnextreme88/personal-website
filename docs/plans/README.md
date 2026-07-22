@@ -14,7 +14,9 @@ how it was verified.
 - [steam-achievements.md](steam-achievements.md) — Steam Achievements table, model, seeder,
   Livewire `/archive` page & Filament resource (executed 2026-07-12).
 - [sold-items-enhancements.md](sold-items-enhancements.md) — Sold Items page summary stats, server-side
-  sorting, hot-item badge & Chart.js sales chart (executed 2026-07-19).
+  sorting, hot-item badge & Chart.js sales chart (executed 2026-07-20).
+- [blog-enhancements.md](blog-enhancements.md) — Blog draft/publish status, curated related posts,
+  reading-time badge, prev/next navigation & admin tabs (executed 2026-07-22).
 
 ## Conventions
 

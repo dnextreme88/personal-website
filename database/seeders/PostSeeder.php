@@ -2,9 +2,8 @@
 
 namespace Database\Seeders;
 
-use Carbon\Carbon;
 use App\Models\Blog\Post;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 
 class PostSeeder extends Seeder
@@ -2419,5 +2418,36 @@ class PostSeeder extends Seeder
             'created_at' => Carbon::parse('July 7, 2026 00:00:00')->format('Y-m-d H:i:s'),
             'date_published' => '2026-07-07',
         ]);
+
+        // Explicitly curated related posts (bidirectional).
+        Post::find(3)->syncRelatedPosts([4, 5, 8]);
+
+        // Posts 32–35 are all related to one another (full mesh).
+        $mutual = [32, 33, 34, 35];
+
+        foreach ($mutual as $id) {
+            Post::find($id)?->syncRelatedPosts($mutual);
+        }
+
+        // Relate every season of the same TV marathon show (category 5) to one another.
+        // Titles follow "<Show> Season <n> Marathon" (a few carry a "Part n"); the show name is
+        // whatever precedes " Season <n>". A show with only a single season gets no relations.
+        Post::where('category_id', 5)->get()
+            ->groupBy(function (Post $post) {
+                preg_match('/^(.+?) Season \d+.*Marathon$/', $post->title, $matches);
+
+                return $matches[1] ?? null;
+            })
+            ->each(function ($seasons, $show) {
+                if (empty($show) || $seasons->count() < 2) {
+                    return;
+                }
+
+                $ids = $seasons->pluck('id')->all();
+
+                foreach ($seasons as $season) {
+                    $season->syncRelatedPosts($ids);
+                }
+            });
     }
 }
