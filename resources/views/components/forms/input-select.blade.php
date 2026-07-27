@@ -15,7 +15,7 @@
         <div class="relative">
             <select
                 @if ($wire_model) wire:model="{{ $wire_model }}" @endif
-                class="w-full py-2 px-3 pr-8 leading-tight bg-white border border-gray-500 rounded-none shadow appearance-none focus:outline-none"
+                class="cyber-input w-full pr-8 leading-tight shadow appearance-none"
             >
                 @if ($elements)
                     <option value="">SHOW ALL</option>
@@ -57,17 +57,19 @@
             class="relative"
         >
             <button
-                type="button"
                 x-on:mousedown="openChoices = !openChoices"
-                class="w-full h-[42px] py-2 px-3 pr-8 leading-tight bg-white border border-gray-500 rounded-none shadow appearance-none focus:outline-none cursor-pointer transition-colors duration-200 hover:border-gray-700 focus:border-gray-700 text-left"
+                {{-- `!` (important) so the open-state cyan wins over the base border the .cyber-input selector now provides --}}
+                {{-- :class="openChoices ? 'border-cyan-400!' : ''" --}}
+                type="button"
+                class="w-full h-10.5 pr-8 leading-tight shadow appearance-none cursor-pointer text-left cyber-input"
             >
-                <span x-text="selected.label" class="block truncate"></span>
+                <span x-text="selected.label" class="block truncate text-gray-800 dark:text-gray-200"></span>
             </button>
 
             {{-- Custom arrow --}}
             <div
                 :class="{ 'rotate-180': openChoices }"
-                class="pointer-events-none absolute right-3 flex items-center text-gray-500 -translate-y-1/2 top-[50%] transition-transform duration-200"
+                class="pointer-events-none absolute right-3 flex items-center -translate-y-1/2 top-[50%] transition-transform duration-200 text-neon-magenta"
             >
                 <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                     <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>

@@ -7,7 +7,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-1">
         <div class="mx-auto mt-8 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-12 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-            <section class="relative isolate flex flex-col justify-end rounded-2xl bg-gray-900 px-8 pt-80 pb-8 sm:pt-48 lg:pt-50 lg:px-4 dark:bg-gray-800 hover:scale-110 transition [transition:scale_0.25s,translate_2s,opacity_3s]">
+            <section class="card-square relative isolate flex flex-col justify-end rounded-2xl bg-gray-900 px-8 pt-80 pb-8 sm:pt-48 lg:pt-50 lg:px-4 dark:bg-gray-800 hover:scale-110 transition [transition:scale_0.25s,translate_2s,opacity_3s]">
                 <a wire:navigate href="{{ route('archive.sold-items.list') }}">
                     <img
                         src="{{ asset('/images/archive/bg-list-sold-item.webp') }}"
@@ -25,7 +25,7 @@
                 </a>
             </section>
 
-            <section class="relative isolate flex flex-col justify-end rounded-2xl bg-gray-900 px-8 pt-80 pb-8 sm:pt-48 lg:pt-50 lg:px-4 dark:bg-gray-800 hover:scale-110 transition [transition:scale_0.25s,translate_2s,opacity_3s]">
+            <section class="card-square relative isolate flex flex-col justify-end rounded-2xl bg-gray-900 px-8 pt-80 pb-8 sm:pt-48 lg:pt-50 lg:px-4 dark:bg-gray-800 hover:scale-110 transition [transition:scale_0.25s,translate_2s,opacity_3s]">
                 <a wire:navigate href="{{ route('archive.steam-achievements.list') }}">
                     <img
                         src="{{ asset('/images/archive/bg-list-steam-achievement.webp') }}"
@@ -43,7 +43,7 @@
                 </a>
             </section>
 
-            <section class="relative isolate flex flex-col justify-end rounded-2xl bg-gray-900 px-8 pt-80 pb-8 sm:pt-48 lg:pt-50 lg:px-4 dark:bg-gray-800 hover:scale-110 transition [transition:scale_0.25s,translate_2s,opacity_3s]">
+            <section class="card-square relative isolate flex flex-col justify-end rounded-2xl bg-gray-900 px-8 pt-80 pb-8 sm:pt-48 lg:pt-50 lg:px-4 dark:bg-gray-800 hover:scale-110 transition [transition:scale_0.25s,translate_2s,opacity_3s]">
                 <a wire:navigate href="{{ route('archive.game-screenshots.static') }}">
                     <img
                         src="{{ asset('/images/archive/bg-static-game-screenshots.webp') }}"
@@ -61,7 +61,7 @@
                 </a>
             </section>
 
-            <section class="relative isolate flex flex-col justify-end rounded-2xl bg-gray-900 px-8 pt-80 pb-8 sm:pt-48 lg:pt-50 lg:px-4 dark:bg-gray-800 hover:scale-110 transition [transition:scale_0.25s,translate_2s,opacity_3s]">
+            <section class="card-square relative isolate flex flex-col justify-end rounded-2xl bg-gray-900 px-8 pt-80 pb-8 sm:pt-48 lg:pt-50 lg:px-4 dark:bg-gray-800 hover:scale-110 transition [transition:scale_0.25s,translate_2s,opacity_3s]">
                 <a wire:navigate href="{{ route('archive.dropping-areas.static') }}">
                     <img
                         src="{{ asset('/images/archive/bg-static-dropping-areas.webp') }}"

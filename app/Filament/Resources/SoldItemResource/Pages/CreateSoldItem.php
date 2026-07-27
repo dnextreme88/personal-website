@@ -3,9 +3,9 @@
 namespace App\Filament\Resources\SoldItemResource\Pages;
 
 use App\Filament\Resources\SoldItemResource;
-use App\Models\SoldItem;
 use App\Models\PayMethod;
 use App\Models\SellMethod;
+use App\Models\SoldItem;
 use Filament\Resources\Pages\CreateRecord;
 
 class CreateSoldItem extends CreateRecord
@@ -25,9 +25,9 @@ class CreateSoldItem extends CreateRecord
         // Otherwise, just increment the sequence (e.g. 2026_06 → 2026_07).
         // We use date_sold's year instead of the system year to handle
         // backdated/forward-dated entries correctly.
-        $next_transaction_id = (int)$year < (int)$sold_year
+        $next_transaction_id = (int) $year < (int) $sold_year
             ? $sold_year . '_01'
-            : $year . '_' . str_pad((int)$sequence + 1, 2, '0', STR_PAD_LEFT);
+            : $year . '_' . str_pad((int) $sequence + 1, 2, '0', STR_PAD_LEFT);
 
         $payment_method = PayMethod::create([
             'method' => $data['pay_method_name'],

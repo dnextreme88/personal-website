@@ -1,16 +1,17 @@
 @props([
     'loader_color_bg' => 'fill-gray-200',
     'loader_color_spin' => 'fill-gray-200',
+    'show_text' => true,
+    'size' => '10',
     'target' => null,
     'text' => 'Loading...',
-    'text_color' => 'text-gray-400 dark:text-gray-500',
-    'showText' => true,
-    'size' => '10',
+    'text_classes' => null,
+    'text_color' => 'text-neon-cyan',
 ])
 
 <div {{ $attributes->merge(['class' => 'flex justify-center items-center']) }}>
-    <svg class="inline-block align-middle animate-spin h-{{ $size }} w-{{ $size }}" width="512px" height="512px" viewBox="0 0 24 24" fill="#0f72ba" x="0" y="0" role="img" xmlns="http://www.w3.org/2000/svg">
-        <g fill="#0f72ba">
+    <svg class="inline-block align-middle animate-spin h-{{ $size }} w-{{ $size }}" width="512px" height="512px" viewBox="0 0 24 24" fill="#00f0ff" x="0" y="0" role="img" xmlns="http://www.w3.org/2000/svg">
+        <g fill="#00f0ff">
             {{-- Ring background --}}
             <path class="{{ $loader_color_bg }}" opacity=".35" d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,19a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z" />
             {{-- Ring that spins --}}
@@ -18,7 +19,7 @@
         </g>
     </svg>
 
-    @if ($showText)
-        <span class="ms-2 {{ $text_color }}">{{ $text }}</span>
+    @if ($show_text)
+        <span class="ms-2 font-loader blinking-cursor {{ $text_color }} {{ $text_classes }}">{{ $text }}</span>
     @endif
 </div>

@@ -2,7 +2,6 @@
 
 namespace App\Models\Blog;
 
-use App\Models\Blog\Post;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Str;

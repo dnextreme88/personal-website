@@ -11,7 +11,6 @@ use App\Models\PayMethod;
 use App\Models\SellMethod;
 use App\Models\SoldItem;
 use Carbon\Carbon;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class SoldItemSeeder extends Seeder
@@ -322,6 +321,9 @@ class SoldItemSeeder extends Seeder
             ['method' => PaymentMethods::CASH_ON_HAND, 'remittance_location' => 'Abee\'s House'],
             ['method' => PaymentMethods::REMITTANCE->value, 'remittance_location' => Remittances::GCASH->value],
             ['method' => PaymentMethods::REMITTANCE->value, 'remittance_location' => Remittances::GCASH->value],
+            ['method' => PaymentMethods::DROPPING_AREA_CASHOUT, 'remittance_location' => DroppingAreas::MABINI_SHOPPING_CENTER_ROOM_203->value],
+            ['method' => PaymentMethods::DROPPING_AREA_CASHOUT, 'remittance_location' => DroppingAreas::MABINI_SHOPPING_CENTER_ROOM_203->value],
+            ['method' => PaymentMethods::CASH_ON_HAND->value, 'remittance_location' => 'KFC (Lower Session Road branch)'],
         ]);
 
         SellMethod::insert([
@@ -625,6 +627,9 @@ class SoldItemSeeder extends Seeder
             ['method' => SellMethods::DROPPING->value, 'location' => DroppingAreas::MABINI_SHOPPING_CENTER_ROOM_203->value],
             ['method' => SellMethods::SHIPMENT->value, 'location' => ShipmentLocations::JRS->value],
             ['method' => SellMethods::SHIPMENT->value, 'location' => ShipmentLocations::LBC->value],
+            ['method' => SellMethods::DROPPING->value, 'location' => DroppingAreas::MABINI_SHOPPING_CENTER_ROOM_203->value],
+            ['method' => SellMethods::DROPPING->value, 'location' => DroppingAreas::MABINI_SHOPPING_CENTER_ROOM_203->value],
+            ['method' => SellMethods::MEETUP->value, 'location' => 'KFC (Lower Session Road branch)'],
         ]);
 
         SoldItem::insert([
@@ -5725,6 +5730,57 @@ class SoldItemSeeder extends Seeder
                 'tags' => 'australia,computer related,sold same item',
                 'notes' => 'Originally dropped on Mabini Shopping Center Room 203 on 3/26 however was not claimed. Item pulled out on 5/8. Payment sent through GCash on 4/28 by new buyer. Received payment on 5/11.',
                 'image_location' => 'sold-items/2026/sony3-1.jpg',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'pay_method_id' => 301,
+                'sell_method_id' => 301,
+                'transaction_id' => '2026_07',
+                'brand' => 'Permit',
+                'name' => null,
+                'type' => 'Polo',
+                'price' => 150,
+                'condition' => 'used',
+                'size' => 'M',
+                'date_sold' => '2026-07-21',
+                'tags' => null,
+                'notes' => 'Buyer picked up on 7/21. Received payment on 7/22.',
+                'image_location' => 'sold-items/2026/permit1-1.jpg',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'pay_method_id' => 302,
+                'sell_method_id' => 302,
+                'transaction_id' => '2026_07',
+                'brand' => 'Minions',
+                'name' => null,
+                'type' => 'Toy',
+                'price' => 50,
+                'condition' => 'used',
+                'size' => 'N/A',
+                'date_sold' => '2026-07-21',
+                'tags' => 'freebies',
+                'notes' => 'Buyer picked up on 7/21. Received payment on 7/22.',
+                'image_location' => 'sold-items/2026/minions1-1.jpg',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'pay_method_id' => 303,
+                'sell_method_id' => 303,
+                'transaction_id' => '2026_08',
+                'brand' => 'T-Wolf',
+                'name' => 'V1 Colorful Light',
+                'type' => 'Mouse',
+                'price' => 200,
+                'condition' => 'new',
+                'size' => 'N/A',
+                'date_sold' => '2026-07-24',
+                'tags' => 'computer related,sold with case',
+                'notes' => null,
+                'image_location' => 'sold-items/2026/t-wolf1-1.jpg',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],

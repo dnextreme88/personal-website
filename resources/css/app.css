@@ -5,6 +5,23 @@
 @source '../../app/Filament/';
 @source '../../resources/views/filament';
 
+/* Font trial — maps each picked typeface to a Tailwind utility (font-heading, font-subtext, font-loader, font-bridge) */
+@theme {
+    --font-heading: 'Audiowide', ui-sans-serif, system-ui, sans-serif;
+    --font-text: 'Exo 2', ui-sans-serif, system-ui, sans-serif;
+    --font-subtext: 'Chakra Petch', ui-sans-serif, system-ui, sans-serif;
+    --font-loader: 'JetBrains Mono', ui-monospace, 'Cascadia Code', monospace;
+    /* currently unused */
+    --font-bridge: 'Space Mono', ui-monospace, monospace;
+
+    /* Cyberpunk neon accents — layered over the existing blue/indigo/purple base */
+    --color-neon-cyan: #00f0ff;
+    --color-neon-magenta: #ff00e5;
+    --color-neon-purple: #9d4edd;
+    --color-neon-cyan-dim: #0891a3;
+    --color-neon-magenta-dim: #a3008f;
+}
+
 /*
   The default border color has changed to `currentcolor` in Tailwind CSS v4,
   so we've added these compatibility styles to make sure everything still
@@ -39,6 +56,31 @@
 @layer utilities {
     .h-25-vh {
         height: 25vh;
+    }
+
+    /* Shared focus/hover treatment for text-like form inputs (input-text,
+       input-datalist, input-select) so they behave uniformly. Kept in the
+       utilities layer so its :hover/:focus rules out-specify each input's own
+       base `border-*` colour. */
+    .cyber-input {
+        @apply py-2;
+        @apply px-3;
+        @apply rounded-none;
+        @apply bg-gray-200;
+        @apply dark:bg-gray-800;
+        @apply text-gray-800;
+        @apply dark:text-gray-200;
+        @apply hover:border-cyan-800;
+        @apply dark:hover:border-cyan-200;
+        @apply border;
+        @apply border-gray-800;
+        @apply dark:border-gray-200;
+        @apply focus:outline-2;
+        @apply focus:-outline-offset-2;
+        @apply focus:border-cyan-400;
+        @apply focus:outline-cyan-400;
+        @apply transition;
+        @apply duration-200;
     }
 
     .h-50-vh {
@@ -91,6 +133,21 @@
         @apply tracking-widest;
     }
 
+    /* Font trial — specs list: labels in Chakra Petch (UI), values in JetBrains Mono (code) */
+    .specs-list>div:nth-child(odd) {
+        font-family: var(--font-text);
+    }
+
+    .specs-list>div:nth-child(even) {
+        font-family: var(--font-subtext);
+    }
+
+    /* Terminal readout — neon prompt prefix on each spec value */
+    .specs-list>div:nth-child(even)::before {
+        content: '> ';
+        color: var(--color-neon-magenta);
+    }
+
     .border-tracer {
         stroke-dasharray: 176;
         stroke-dashoffset: 176;
@@ -134,12 +191,13 @@
     }
 
     .skeleton-loader {
-        background: #7489b6;
+        background: linear-gradient(90deg, #0f1b33 0%, #16324f 50%, #0f1b33 100%);
+        background-size: 200% 100%;
         animation: shimmer 1.5s linear infinite;
     }
 
     .skeleton-loader-lg {
-        background: linear-gradient(to right, #7489b6 0%, #ddd 50%, #7489b6 25%);
+        background: linear-gradient(to right, #0f1b33 0%, rgba(0, 240, 255, 0.35) 50%, #0f1b33 25%);
         background-size: 200% 100%;
         animation: shimmer 1.5s linear infinite;
     }
@@ -189,5 +247,570 @@
         50% {
             background-position: 100%;
         }
+    }
+
+    /* ── Cyberpunk neon layer ─────────────────────────────────────────
+       Reusable primitives: glow, notch, neon border, scanlines, grid,
+       glitch, flicker and terminal cursor. Adopted by the cyber-* Blade
+       components and the homepage hero. Motion is disabled further down
+       under prefers-reduced-motion. */
+
+    .text-glow {
+        text-shadow:
+            0 0 5px rgba(0, 240, 255, 0.7),
+            0 0 15px rgba(0, 240, 255, 0.5),
+            0 0 30px rgba(0, 240, 255, 0.3);
+    }
+
+    .text-glow-magenta {
+        text-shadow:
+            0 0 5px rgba(255, 0, 229, 0.7),
+            0 0 15px rgba(255, 0, 229, 0.5),
+            0 0 30px rgba(255, 0, 229, 0.3);
+    }
+
+    .neon-border {
+        border: 1px solid var(--color-neon-cyan);
+        box-shadow:
+            0 0 5px rgba(0, 240, 255, 0.5),
+            inset 0 0 5px rgba(0, 240, 255, 0.25);
+        transition: box-shadow 300ms ease, border-color 300ms ease;
+    }
+
+    .neon-border:hover {
+        border-color: var(--color-neon-magenta);
+        box-shadow:
+            0 0 12px rgba(0, 240, 255, 0.8),
+            0 0 24px rgba(255, 0, 229, 0.4),
+            inset 0 0 10px rgba(0, 240, 255, 0.4);
+    }
+
+    .clip-notch {
+        clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+    }
+
+    /* Outer glow wrapper — filter follows the notched child silhouette
+       (a box-shadow on the clipped element itself would be clipped away). */
+    .btn-call-to-action {
+        filter: drop-shadow(0 0 3px rgba(0, 240, 255, 0.5));
+        transition: filter 300ms ease, transform 120ms ease;
+    }
+
+    .btn-call-to-action:hover {
+        filter:
+            drop-shadow(0 0 8px rgba(0, 240, 255, 0.9)) drop-shadow(0 0 16px rgba(255, 0, 229, 0.5));
+    }
+
+    /* Desktop-only press: the CTA depresses when clicked. Gated on a fine
+       hover-capable pointer so taps on touch devices show no press state. */
+    @media (hover: hover) and (pointer: fine) {
+        .btn-call-to-action:active {
+            transform: translateY(2px) scale(0.97);
+            filter: drop-shadow(0 0 4px rgba(0, 240, 255, 0.6));
+        }
+    }
+
+    /* Submit button */
+    .btn-submit {
+        transition: transform 120ms ease;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        .btn-submit:active {
+            transform: translateY(2px) scale(0.97);
+        }
+    }
+
+    /* Hover sweep — a one-shot animation (not a transition) so the band sweeps
+       all the way across to the right only while hovering in
+    */
+    .btn-submit-sweep {
+        transform: translateX(-100%);
+    }
+
+    @keyframes btn-submit-sweep {
+        from {
+            transform: translateX(-100%);
+        }
+
+        to {
+            transform: translateX(100%);
+        }
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        .btn-submit:hover .btn-submit-sweep {
+            animation: btn-submit-sweep 1.25s ease;
+        }
+    }
+
+    /* Clear button */
+    .btn-clear {
+        transition: transform 120ms ease;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        .btn-clear:active {
+            transform: translateY(2px) scale(0.97);
+        }
+    }
+
+    /* Nav / inline link — animated neon underline that sweeps in on hover. */
+    .cyber-link {
+        position: relative;
+        transition: color 200ms ease, text-shadow 200ms ease;
+    }
+
+    .cyber-link::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 100%;
+        height: 2px;
+        background: #0e7490;
+        box-shadow: 0 0 4px rgba(14, 116, 144, 0.5);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 250ms ease;
+    }
+
+    .cyber-link:hover::after,
+    .cyber-link:focus-visible::after {
+        transform: scaleX(1);
+    }
+
+    /* Light mode: a deeper cyan so the hover doesn't blow out on light
+       backgrounds. Dark mode keeps the full neon glow. */
+    .cyber-link:hover {
+        color: #0e7490;
+        text-shadow: 0 0 6px rgba(14, 116, 144, 0.35);
+    }
+
+    .dark .cyber-link::after {
+        background: var(--color-neon-cyan);
+        box-shadow: 0 0 6px var(--color-neon-cyan), 0 0 12px var(--color-neon-cyan);
+    }
+
+    .dark .cyber-link:hover {
+        color: var(--color-neon-cyan);
+        text-shadow: 0 0 8px rgba(0, 240, 255, 0.6);
+    }
+
+    /* HUD frame — targeting-reticle corner brackets + neon glow on hover.
+       Add `.hud-frame` to a positioned container and drop <x-hud-corners /> in. */
+    .hud-frame {
+        transition: box-shadow 300ms ease;
+    }
+
+    .hud-frame:hover {
+        box-shadow:
+            0 0 12px rgba(0, 240, 255, 0.4),
+            0 0 24px rgba(157, 78, 221, 0.25);
+    }
+
+    .hud-corner {
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        color: var(--color-neon-cyan);
+        border-color: currentcolor;
+        opacity: 0;
+        pointer-events: none;
+        z-index: 10;
+        /* Start collapsed near the centre; the slight delay lets the card's
+           scale kick in first, so the brackets "open outward" just after. */
+        transition:
+            opacity 300ms ease 120ms,
+            transform 400ms cubic-bezier(0.2, 0.85, 0.25, 1) 120ms,
+            box-shadow 300ms ease;
+    }
+
+    .hud-corner-magenta {
+        color: var(--color-neon-magenta);
+    }
+
+    .hud-corner-tl {
+        top: 8px;
+        left: 8px;
+        border-top: 2px solid;
+        border-left: 2px solid;
+        transform: translate(26px, 26px) scale(0.4);
+    }
+
+    .hud-corner-tr {
+        top: 8px;
+        right: 8px;
+        border-top: 2px solid;
+        border-right: 2px solid;
+        transform: translate(-26px, 26px) scale(0.4);
+    }
+
+    .hud-corner-bl {
+        bottom: 8px;
+        left: 8px;
+        border-bottom: 2px solid;
+        border-left: 2px solid;
+        transform: translate(26px, -26px) scale(0.4);
+    }
+
+    .hud-corner-br {
+        bottom: 8px;
+        right: 8px;
+        border-bottom: 2px solid;
+        border-right: 2px solid;
+        transform: translate(-26px, -26px) scale(0.4);
+    }
+
+    /* Corners spring out on hover — triggered by an ancestor `.hud-frame`
+       (e.g. stat cards) or `.group` (blog cards, which drive their own scale
+       transition and can't carry hud-frame without clobbering it). */
+    .hud-frame:hover .hud-corner,
+    .group:hover .hud-corner {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+        box-shadow: 0 0 8px currentcolor;
+    }
+
+    /* Layered neon card frame — a cyan→magenta gradient border with an outer
+       cyan glow and inner darkening (the attached "stacked" sample card).
+       The gradient sits in a masked ::before so only the border shows. */
+    .card-square {
+        position: relative;
+        /* Punchier dual-colour glow so the card feels lively. Light mode gets
+           the stronger values here (neon washes out on a light page); dark mode
+           is toned down just below since it already reads vividly. */
+        box-shadow:
+            0 0 30px rgba(0, 240, 255, 0.45),
+            inset 0 0 50px rgba(0, 0, 0, 0.55);
+    }
+
+    .dark .card-square {
+        box-shadow:
+            0 0 30px rgba(0, 240, 255, 0.3),
+            0 0 60px rgba(255, 0, 229, 0.2),
+            inset 0 0 50px rgba(0, 0, 0, 0.55);
+    }
+
+    .card-square::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 20;
+        border-radius: inherit;
+        padding: 2px;
+        pointer-events: none;
+        background: linear-gradient(135deg,
+                var(--color-neon-cyan),
+                var(--color-neon-magenta));
+        /* OLD */
+        /*
+        background: linear-gradient(135deg,
+                var(--color-neon-cyan),
+                transparent 40%,
+                transparent 60%,
+                var(--color-neon-magenta));
+        */
+        -webkit-mask:
+            linear-gradient(#000 0 0) content-box,
+            linear-gradient(#000 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        opacity: 1;
+        transition: opacity 350ms ease;
+    }
+
+    .dark .card-square::before {
+        opacity: 0.85;
+    }
+
+    .card-square:hover::before {
+        opacity: 1;
+    }
+
+    /* card-rectangle — just the cyan/magenta gradient border from .card-square
+       (no glow or inner shadow), for wider blocks like the prev/next post
+       buttons. Same border, only the element's proportions differ. */
+    .card-rectangle {
+        position: relative;
+    }
+
+    .card-rectangle::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 20;
+        border-radius: inherit;
+        padding: 2px;
+        pointer-events: none;
+        background: linear-gradient(135deg,
+                var(--color-neon-cyan),
+                var(--color-neon-magenta));
+        -webkit-mask:
+            linear-gradient(#000 0 0) content-box,
+            linear-gradient(#000 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        opacity: 0.85;
+        transition: opacity 350ms ease;
+    }
+
+    .card-rectangle:hover::before {
+        opacity: 1;
+    }
+
+    /* CRT scanlines: a hard 1px hairline every 3px. Dark lines read on the
+       light theme; the dark theme switches to faint cyan lines so they stay
+       visible on a near-black background (one mode-agnostic colour washes out).
+       Tune the line alpha up/down for a stronger/subtler effect. */
+    .scanline-overlay {
+        pointer-events: none;
+        background: repeating-linear-gradient(to bottom,
+                transparent 0px,
+                transparent 2px,
+                rgba(0, 0, 0, 0.10) 2px,
+                rgba(0, 0, 0, 0.10) 3px);
+    }
+
+    .dark .scanline-overlay {
+        background: repeating-linear-gradient(to bottom,
+                transparent 0px,
+                transparent 2px,
+                rgba(0, 240, 255, 0.09) 2px,
+                rgba(0, 240, 255, 0.09) 3px);
+    }
+
+    .cyber-grid {
+        background-image:
+            linear-gradient(rgba(0, 240, 255, 0.12) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0, 240, 255, 0.12) 1px, transparent 1px);
+        background-size: 40px 40px;
+    }
+
+    .animate-grid-drift {
+        animation: grid-drift 3s linear infinite;
+    }
+
+    @keyframes grid-drift {
+        from {
+            background-position: 0 0;
+        }
+
+        to {
+            background-position: 0 40px;
+        }
+    }
+
+    .animate-flicker {
+        animation: flicker 5s linear infinite;
+    }
+
+    @keyframes flicker {
+
+        0%,
+        19%,
+        21%,
+        23%,
+        25%,
+        54%,
+        56%,
+        100% {
+            opacity: 1;
+            text-shadow:
+                0 0 5px rgba(0, 240, 255, 0.8),
+                0 0 15px rgba(0, 240, 255, 0.5),
+                0 0 30px rgba(157, 78, 221, 0.4);
+        }
+
+        20%,
+        24%,
+        55% {
+            opacity: 0.55;
+            text-shadow: none;
+        }
+    }
+
+    /* Hero "Welcome" — rises in, then flickers like a neon sign after a beat.
+       Mirrors the sample's [animation:rise .9s .5s, neonFlicker 4s 1.6s]. */
+    .hero-flicker {
+        opacity: 0;
+        animation: rise 0.9s 0.5s forwards, flicker 4s 1.6s infinite;
+    }
+
+    @keyframes rise {
+        from {
+            opacity: 0;
+            transform: translateY(26px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .glitch {
+        position: relative;
+        display: inline-block;
+    }
+
+    .glitch::before,
+    .glitch::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        pointer-events: none;
+        opacity: 0.85;
+    }
+
+    .glitch::before {
+        left: 1px;
+        text-shadow: -2px 0 var(--color-neon-cyan);
+    }
+
+    .glitch::after {
+        left: -1px;
+        text-shadow: 2px 0 var(--color-neon-cyan);
+    }
+
+    /* Only animate once the element is in view (tailwindcss-intersect drops the
+       [no-intersect] attribute when it scrolls in), and at a slower, calmer pace. */
+    .glitch:not([no-intersect])::before {
+        animation: glitch-top 7s infinite linear alternate-reverse;
+    }
+
+    .glitch:not([no-intersect])::after {
+        animation: glitch-bottom 8s infinite linear alternate-reverse;
+    }
+
+    @keyframes glitch-top {
+        0% {
+            clip-path: inset(20% 0 60% 0);
+        }
+
+        20% {
+            clip-path: inset(10% 0 85% 0);
+        }
+
+        40% {
+            clip-path: inset(50% 0 30% 0);
+        }
+
+        60% {
+            clip-path: inset(70% 0 10% 0);
+        }
+
+        80% {
+            clip-path: inset(30% 0 55% 0);
+        }
+
+        100% {
+            clip-path: inset(80% 0 5% 0);
+        }
+    }
+
+    @keyframes glitch-bottom {
+        0% {
+            clip-path: inset(65% 0 15% 0);
+        }
+
+        20% {
+            clip-path: inset(40% 0 45% 0);
+        }
+
+        40% {
+            clip-path: inset(15% 0 75% 0);
+        }
+
+        60% {
+            clip-path: inset(55% 0 30% 0);
+        }
+
+        80% {
+            clip-path: inset(25% 0 60% 0);
+        }
+
+        100% {
+            clip-path: inset(5% 0 85% 0);
+        }
+    }
+
+    .blinking-cursor::after {
+        content: '_';
+        margin-left: 2px;
+        color: var(--color-neon-cyan);
+        animation: cursor-blink 1s step-end infinite;
+    }
+
+    @keyframes cursor-blink {
+
+        0%,
+        100% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0;
+        }
+    }
+
+    .animate-cyber-scan {
+        animation: cyber-scan 1.2s ease-in-out infinite;
+    }
+
+    @keyframes cyber-scan {
+        0% {
+            transform: translateY(-120%);
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        100% {
+            transform: translateY(120%);
+            opacity: 0;
+        }
+    }
+
+    /* Opt-in zebra striping for <x-clipped-table striped>. The colour comes
+       from the --clipped-table-stripe var the component sets inline. */
+    .clipped-table--striped tbody tr:nth-child(even) {
+        background-color: var(--clipped-table-stripe, rgba(0, 240, 255, 0.06));
+    }
+}
+
+/* Accessibility: honour reduced-motion by stilling every animated effect
+   and dropping the decorative glitch/cursor layers. Static glow remains. */
+@media (prefers-reduced-motion: reduce) {
+
+    .animate-flicker,
+    .animate-grid-drift,
+    .animate-shimmering-gradient,
+    .animate-cyber-scan,
+    .skeleton-loader,
+    .skeleton-loader-lg,
+    [class*="animate-"] {
+        animation: none !important;
+    }
+
+    .glitch::before,
+    .glitch::after,
+    .blinking-cursor::after {
+        display: none !important;
+    }
+
+    /* hero-flicker starts hidden and reveals via animation — keep it visible. */
+    .hero-flicker {
+        animation: none !important;
+        opacity: 1 !important;
+    }
+
+    /* HUD corners: snap in on hover with no travel. */
+    .hud-corner {
+        transition: none !important;
     }
 }

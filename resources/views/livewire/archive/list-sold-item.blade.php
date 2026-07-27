@@ -13,15 +13,19 @@
     {{-- Sold Items Summary (whole collection; independent of the filters below) --}}
     @if (($summary['total_items'] ?? 0) > 0)
         <div class="mb-8" x-data="{ open: true }">
-            <div class="flex items-center justify-between px-2 py-4 bg-gray-300 dark:bg-gray-700">
-                <h2 class="text-xl text-gray-800 dark:text-gray-200">Sold Items Summary</h2>
+            <div
+                x-on:click="open = !open"
+                class="flex items-center justify-between py-4 cursor-pointer"
+            >
+                <h2 class="text-glow text-4xl tracking-tight text-pretty text-gray-800 sm:text-5xl dark:text-gray-200 font-heading">Sold Items Summary</h2>
+                {{-- <h2 class="text-xl text-gray-800 dark:text-gray-200">Sold Items Summary</h2> --}}
 
                 <button
                     type="button"
-                    x-on:click="open = !open"
+                    {{-- x-on:click="open = !open" --}}
                     x-bind:aria-expanded="open"
-                    x-bind:aria-label="open ? 'Hide summary' : 'Show summary'"
-                    class="p-1 text-gray-800 transition-colors border border-gray-500 cursor-pointer dark:text-gray-200 dark:border-gray-400 hover:bg-gray-400 dark:hover:bg-gray-600"
+                    x-bind:aria-label="open ? 'Hide sold items summary section' : 'Show sold items summary section'"
+                    class="p-1 text-neon-magenta transition-colors cursor-pointer"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -46,15 +50,8 @@
                 <x-stat-card label="Total number of years" :value="number_format($summary['total_years'])" />
                 <x-stat-card label="Unique brands" :value="number_format($summary['unique_brands'])" />
 
-                <x-stat-card label="Top 3 brands">
-                    <ol class="text-sm list-decimal list-inside">
-                        @foreach ($summary['top_brands'] as $brand => $brand_count)
-                            <li class="truncate" title="{{ $brand }} ({{ $brand_count }})">{{ $brand }} <span class="text-gray-500 dark:text-gray-400">({{ $brand_count }})</span></li>
-                        @endforeach
-                    </ol>
-                </x-stat-card>
-
                 @foreach ([
+                    'top_brands' => 'Top 3 brands',
                     'top_types' => 'Most common types',
                     'top_sell_locations' => 'Top 3 sell method locations',
                     'top_pay_locations' => 'Top 3 payment method locations',
@@ -84,7 +81,7 @@
                     'tx_year' => 'Total transactions per year',
                     'tx_month' => 'Total transactions per month',
                 ] as $chart_key => $chart_title)
-                    <div class="p-4 bg-gray-200 rounded-lg shadow dark:bg-gray-800">
+                    <div class="p-4 bg-gray-200 rounded-lg shadow dark:bg-gray-800 card-rectangle">
                         <h3 class="mb-3 text-lg font-semibold text-gray-800 dark:text-gray-200">{{ $chart_title }}</h3>
 
                         <div wire:ignore class="relative w-full h-64">
@@ -100,7 +97,8 @@
 
     <div>
         <div>
-            <h2 class="px-2 py-4 text-xl text-gray-800 bg-gray-300 dark:bg-gray-700 dark:text-gray-200">Search Archives</h2>
+            <h2 class="text-glow text-4xl tracking-tight text-pretty text-gray-800 sm:text-5xl dark:text-gray-200 mb-5 font-heading">Search Items</h2>
+            {{-- <h2 class="px-2 py-4 text-xl text-gray-800 bg-gray-300 dark:bg-gray-700 dark:text-gray-200">Search items</h2> --}}
 
             <form
                 {{-- Initialize the filters array for each sub-component --}}
@@ -108,10 +106,10 @@
                 {{-- Capture values from the sub-components (x-forms.input-select etc.) --}}
                 x-on:filter-changed.window="filters[$event.detail.key] = $event.detail.value"
                 x-on:form-reset.window="filters = {}"
-                wire:submit="search_archives"
+                wire:submit="search_sold_items"
                 class="flex flex-col justify-between gap-6 px-6 py-4 bg-gray-200 border-b-2 border-b-gray-400 dark:border-b-gray-200 md:gap-8 dark:bg-gray-800"
             >
-                <x-forms.input-text class="md:mx-6 lg:mx-12" for="search_query" placeholder_text="Type a name of an item..." title_text="Search archives" />
+                <x-forms.input-text class="md:mx-6 lg:mx-12" for="search_query" placeholder_text="Type a name of an item..." title_text="Search sold items" />
 
                 <label class="py-2 text-2xl text-gray-800 dark:text-gray-200">Advanced Filters</label>
 
@@ -176,10 +174,10 @@
                         <label class="text-gray-600 dark:text-gray-200 me-2">Filter by tags</label>
                         <span
                             x-on:click="clearTags"
-                            class="w-fit mt-2 text-sm text-blue-500 dark:text-blue-300 hover:cursor-pointer hover:underline"
+                            class="w-fit mt-2 text-sm text-cyan-600 dark:text-cyan-200 hover:cursor-pointer hover:underline font-subtext"
                             title="Clear selected tags"
                         >
-                                Clear tags
+                            Clear tags
                         </span>
 
                         <ul class="flex flex-wrap gap-2 mt-4 list-none">
@@ -187,7 +185,7 @@
                                 <li
                                     x-bind:class="{'bg-gray-300 dark:bg-gray-500 text-gray-800 dark:text-gray-200': selectedTags.includes('{{ $tag }}'), 'text-gray-800 dark:text-gray-200': !selectedTags.includes('{{ $tag }}')}"
                                     x-on:click="addToTags('{{ $tag }}')"
-                                    class="px-2 py-1 transition-colors duration-200 border-2 border-gray-800 rounded-xl hover:cursor-pointer dark:border-gray-200"
+                                    class="px-2 py-1 transition-colors duration-200 border-2 border-gray-800 rounded-xl hover:cursor-pointer dark:border-gray-200 font-subtext"
                                 >
                                     {{ $tag }}
                                 </li>
@@ -197,31 +195,28 @@
                 </div>
 
                 <div class="flex justify-center gap-3">
-                    <input
-                        wire:click="reset_archives_form"
-                        value="Clear Form"
-                        type="button"
-                        class="px-4 py-2 text-gray-800 transition duration-300 bg-red-300 cursor-pointer dark:bg-red-600 dark:text-gray-200 hover:bg-red-500 dark:hover:bg-red-700 hover:text-gray-100 dark:hover:text-gray-200"
-                    />
-
-                    <button
-                        x-on:click.prevent="$wire.call('search_archives', filters)"
-                        class="px-4 py-2 text-gray-800 transition duration-300 bg-green-300 cursor-pointer min-w-[130px] dark:bg-green-600 dark:text-gray-200 hover:bg-green-500 dark:hover:bg-green-700 hover:text-gray-100 dark:hover:text-gray-200"
+                    <x-forms.button-clear
+                        bevels="tl bl"
+                        wire:click="reset_sold_items_form"
                         type="button"
                     >
-                        <span wire:loading.flex wire:target="search_archives">
+                        Clear Form
+                    </x-forms.button-clear>
+
+                    <x-forms.button-submit bevels="tr br" x-on:click.prevent="$wire.call('search_sold_items', filters)" class="min-w-40">
+                        <span wire:loading.flex wire:target="search_sold_items">
                             <x-loading-indicator
-                                :loader_color_bg="'fill-gray-200'"
-                                :loader_color_spin="'fill-gray-200'"
-                                :showText="true"
+                                :loader_color_bg="'fill-gray-200 dark:fill-gray-800'"
+                                :loader_color_spin="'fill-gray-200 dark:fill-gray-800'"
+                                :show_text="true"
                                 :size="4"
                                 :text="'Searching'"
-                                :text_color="'text-white'"
+                                :text_color="'text-gray-200 dark:text-gray-800'"
                             />
                         </span>
 
-                        <span wire:loading.remove wire:target="search_archives">Search</span>
-                    </button>
+                        <span wire:loading.remove wire:target="search_sold_items">Search</span>
+                    </x-forms.button-submit>
                 </div>
             </form>
         </div>
@@ -235,7 +230,8 @@
             class="my-6"
         >
             <div class="flex flex-col gap-2 mb-2 md:flex-row md:items-center md:justify-between">
-                <h2 class="text-2xl font-bold tracking-tight text-gray-800 dark:text-gray-200">Sold Items</h2>
+                <h2 class="text-glow text-4xl tracking-tight text-pretty text-gray-800 sm:text-5xl dark:text-gray-200 font-heading">Sold Items</h2>
+                {{-- <h2 class="text-2xl font-bold tracking-tight text-gray-800 dark:text-gray-200">Sold Items</h2> --}}
 
                 <div class="flex flex-wrap items-center gap-x-4">
                     {{-- Sort control --}}
@@ -245,10 +241,13 @@
                         @foreach (['date_sold' => 'Date', 'price' => 'Price', 'name' => 'Name'] as $sort_option => $sort_label)
                             <button
                                 wire:click="apply_sort('{{ $sort_option }}')"
-                                class="px-2 py-1 text-sm border transition-colors {{ $sort_field === $sort_option ? 'text-blue-500 border-blue-500 dark:text-blue-300 dark:border-blue-300' : 'text-gray-800 border-gray-300 dark:border-gray-600 dark:text-gray-200 hover:text-blue-800 dark:hover:text-blue-200' }}"
+                                class="px-2 py-1 text-sm border transition-colors {{ $sort_field === $sort_option ? 'text-cyan-600 border-cyan-600 dark:text-cyan-300 dark:border-cyan-300' : 'text-gray-800 border-gray-300 dark:border-gray-600 dark:text-gray-200 hover:text-cyan-800 dark:hover:text-cyan-200' }}"
                                 title="Sort by {{ $sort_label }}"
                             >
-                                {{ $sort_label }}@if ($sort_field === $sort_option)<span aria-hidden="true">{{ $sort_direction === 'asc' ? ' ↑' : ' ↓' }}</span>@endif
+                                {{ $sort_label }}
+                                @if ($sort_field === $sort_option)
+                                    <span class="text-neon-magenta" aria-hidden="true">{{ $sort_direction === 'asc' ? ' ↑' : ' ↓' }}</span>
+                                @endif
                             </button>
                         @endforeach
                     </div>
@@ -260,9 +259,9 @@
                     {{-- Table icon --}}
                     <button
                         x-on:click="loading = true; $dispatch('view-changed'); setTimeout(() => { view = 'table'; loading = false; }, 500)"
-                        x-bind:class="view === 'table' ? 'text-blue-500 dark:text-blue-300' : 'text-black dark:text-gray-400 dark:hover:text-blue-200 hover:text-blue-800'"
+                        x-bind:class="view === 'table' ? 'text-cyan-600 border-cyan-600 dark:text-cyan-300 dark:border-cyan-300' : 'text-gray-800 border-gray-300 dark:border-gray-600 dark:text-gray-200 hover:text-cyan-800 dark:hover:text-cyan-200'"
                         x-bind:disabled="view === 'table' || loading"
-                        class="p-1.5 border border-gray-300 dark:border-gray-600 transition-colors"
+                        class="px-2 py-1 border transition-colors"
                         title="Toggle table view"
                     >
                         <svg class="size-5" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Toggle table view">
@@ -279,9 +278,9 @@
                     {{-- List icon --}}
                     <button
                         x-on:click="loading = true; $dispatch('view-changed'); setTimeout(() => { view = 'list'; loading = false; }, 500)"
-                        x-bind:class="view === 'list' ? 'text-blue-500 dark:text-blue-300' : 'text-black dark:text-gray-400 dark:hover:text-blue-200 hover:text-blue-800'"
+                        x-bind:class="view === 'list' ? 'text-cyan-600 border-cyan-600 dark:text-cyan-300 dark:border-cyan-300' : 'text-gray-800 border-gray-300 dark:border-gray-600 dark:text-gray-200 hover:text-cyan-800 dark:hover:text-cyan-200'"
                         x-bind:disabled="view === 'list' || loading"
-                        class="p-1.5 border border-gray-300 dark:border-gray-600 transition-colors"
+                        class="px-2 py-1 border transition-colors"
                         title="Toggle list view"
                     >
                         <svg class="size-5" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Toggle list view">
@@ -306,7 +305,7 @@
                 <x-loading-indicator
                     :loader_color_bg="'fill-gray-800 dark:fill-gray-200'"
                     :loader_color_spin="'fill-gray-800 dark:fill-gray-200'"
-                    :showText="true"
+                    :show_text="true"
                     :size="4"
                     :text="'Changing view...'"
                     :text_color="'text-gray-800 dark:text-gray-200'"
@@ -321,15 +320,15 @@
                 x-transition:enter="transition ease-out duration-300"
                 x-transition:enter-start="opacity-0 translate-y-5"
                 x-transition:enter-end="opacity-100 translate-y-0"
-                class="grid grid-cols-1 mt-6 gap-x-6 gap-y-10 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-8 min-h-[200px]"
+                class="grid grid-cols-1 mt-6 gap-x-6 gap-y-10 md:grid-cols-2 xl:grid-cols-3 xl:gap-x-8 min-h-50"
             >
-                @forelse ($sold_items as $sold_item)
+                @forelse ($sold_items as $val => $sold_item)
                     <div>
                         {{-- id is used to identify the element being lazy loaded --}}
                         <div
                             x-data="skeletonLoader()"
                             @destroyed="destroy()"
-                            class="relative h-80 w-full xl:w-[384px]"
+                            class="relative h-80 w-full xl:w-[384px] transition duration-300 rounded-md hover:scale-105 card-square"
                             id="sold-item-{{ $sold_item->id }}"
                         >
                             <!-- Skeleton Loader -->
@@ -342,12 +341,13 @@
                             >
                                 <div class="mb-4 size-full text-center text-3xl content-center">
                                     <x-loading-indicator
-                                        :loader_color_bg="'fill-gray-200'"
-                                        :loader_color_spin="'fill-gray-200'"
-                                        :showText="true"
+                                        :loader_color_bg="'border-neon-cyan'"
+                                        :loader_color_spin="'border-neon-cyan'"
+                                        :show_text="true"
                                         :size="4"
                                         :text="'Loading...'"
-                                        :text_color="'text-white'"
+                                        :text_classes="'text-xl tracking-widest'"
+                                        :text_color="'text-neon-cyan'"
                                     />
                                 </div>
                             </div>
@@ -359,7 +359,7 @@
                                 x-transition:enter-start="opacity-0"
                                 x-transition:enter-end="opacity-100"
                                 src="{{ $sold_item->image_location ? asset('/storage/' .$sold_item->image_location) : asset('/images/no-image-available-placeholder-1920x1080-transparent.svg') }}"
-                                class="object-cover transition duration-300 bg-transparent rounded-md aspect-square group-hover:opacity-75 w-full max-h-80 lg:aspect-auto hover:scale-105"
+                                class="object-cover transition duration-300 bg-transparent rounded-md aspect-square group-hover:opacity-75 w-full max-h-80 lg:aspect-auto"
                                 @php
                                     $image_text = $sold_item->image_location ? 'Image of ' .$sold_item->item_name : 'No image found for ' .$sold_item->item_name;
                                 @endphp
@@ -427,7 +427,7 @@
                                     <x-loading-indicator
                                         :loader_color_bg="'fill-gray-200'"
                                         :loader_color_spin="'fill-gray-200'"
-                                        :showText="false"
+                                        :show_text="false"
                                         :size="4"
                                     />
                                 </div>
@@ -454,17 +454,17 @@
                             <h3 class="text-lg text-gray-800 border-b border-b-gray-500 dark:border-b-gray-400 dark:text-gray-200 md:truncate" title="{{ $sold_item->item_name }}">{{ $sold_item->item_name }}@if (str_contains(strtolower($sold_item->tags ?? ''), 'hot item')) <span class="text-base leading-none" title="Hot item">&#128293;</span>@endif</h3>
 
                             <p class="text-sm text-gray-500 dark:text-gray-400">
-                                <span title="Price">&#8369; {{ $sold_item->price }}</span>
+                                <span class="font-subtext" title="Price">&#8369; {{ $sold_item->price }}</span>
                                 <span class="px-1 text-gray-500 dark:text-gray-400">&nbsp;·&nbsp;</span>
-                                <span title="Date sold">{{ Carbon\Carbon::parse($sold_item->date_sold)->format('M d, Y') }}</span>
+                                <span class="font-subtext" title="Date sold">{{ Carbon\Carbon::parse($sold_item->date_sold)->format('M d, Y') }}</span>
                                 <span class="px-1 text-gray-500 dark:text-gray-400">&nbsp;·&nbsp;</span>
-                                <span title="Size">{{ $sold_item->size }}</span>
+                                <span class="font-subtext" title="Size">{{ $sold_item->size }}</span>
                                 <span class="px-1 text-gray-500 dark:text-gray-400">&nbsp;·&nbsp;</span>
-                                <span title="Condition">{{ $sold_item->condition }}</span>
+                                <span class="font-subtext" title="Condition">{{ $sold_item->condition }}</span>
                                 <span class="px-1 text-gray-500 dark:text-gray-400">&nbsp;·&nbsp;</span>
-                                <span title="Pay method">{{ $sold_item->pay_method->method }}: <span title="Remittance location">{{ $sold_item->pay_method->remittance_location }}</span></span>
+                                <span class="font-subtext" title="Pay method">{{ $sold_item->pay_method->method }}: <span class="font-subtext" title="Remittance location">{{ $sold_item->pay_method->remittance_location }}</span></span>
                                 <span class="px-1 text-gray-500 dark:text-gray-400">&nbsp;·&nbsp;</span>
-                                <span title="Sell method">{{ $sold_item->sell_method->method }}: <span title="Sell location">{{ $sold_item->sell_method->location }}</span></span>
+                                <span class="font-subtext" title="Sell method">{{ $sold_item->sell_method->method }}: <span class="font-subtext" title="Sell location">{{ $sold_item->sell_method->location }}</span></span>
                                 <p class="text-sm justify-self-end text-gray-500 max-w-full dark:text-gray-400 {{ !$sold_item->tags ? 'italic' : '' }}" title="{{ $sold_item->tags }}">{{ $sold_item->tags ? $sold_item->tags : 'No tags' }}</p>
                             </p>
                         </div>

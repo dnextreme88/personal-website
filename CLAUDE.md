@@ -31,7 +31,19 @@ Personal website on the **TALL stack** (Tailwind, Alpine, Laravel, Livewire) wit
 
 ## Conventions
 
+### Design
+
+- **Dark mode**: IMPORTANT — any change to styles, UI, etc. must always account for both dark mode and non-dark mode. Dark mode classes are prefixed with `dark:`. If there are doubts or you have suggestions, always ask the user first — do not implement without clarifying.
+- **Fonts**: When making changes related to styles, use the following font classes based on their use-case scenarios
+    * `font-heading` - headings only from `<h1>` to `<h6>`.
+    * `font-text` - `<label>` elements or regular text that does not fit anywhere. No need to add this as a class if it does not fall to the other criterias (it should automatically inherit from the base layout).
+    * `font-subtext` - text preceding a sibling regular text set by `font-text`. If there are doubts or you have suggestions, always ask the user first — do not implement without clarifying.
+    * `font-loader` - `<button>` elements.
+- **Reusable components**: reuse existing Blade components (in `resources/views/components`) when possible instead of repeating similar styles, to keep styles uniform across the site.
+
+### Miscellaneous
+
 - **Formatting** is enforced by Pint's custom ruleset in [pint.json](pint.json) (Laravel preset + tweaks like `concat_space: false` and blank line before control statements). Run `vendor/bin/pint` before committing.
-- **Tests** use Pest — all tests in this suite are written with Pest. `RefreshDatabase` is commented out in [tests/Pest.php](tests/Pest.php), so DB-touching tests must opt in deliberately. When you change a file, run the relevant tests (`vendor/bin/pest`); if no test covers the change, write one before finishing.
 - **Git**: feature branches follow `type/YYYYMMDD-description` (e.g. `enhancements/20260519-blog`, `chore/20260404-...`, `feature/...`). Commit subjects are lowercase and imperative (`add`, `fix`, `refactor`, `update`), and the first line must stay within 100 characters (it is the only part shown in summaries). PRs merge to `master`.
 - **Pull requests**: always assign the repo owner [dnextreme88](https://github.com/dnextreme88) to every PR you create (e.g. `gh pr create --assignee dnextreme88`), so they don't have to self-assign afterward.
+- **Tests** use Pest — all tests in this suite are written with Pest. `RefreshDatabase` is commented out in [tests/Pest.php](tests/Pest.php), so DB-touching tests must opt in deliberately. When you change a file, run the relevant tests (`vendor/bin/pest`); if no test covers the change, write one before finishing.

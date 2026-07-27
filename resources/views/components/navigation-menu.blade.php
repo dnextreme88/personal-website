@@ -23,13 +23,20 @@
                     </x-slot>
                 </x-dark-mode-toggle>
 
-                <a wire:navigate class="text-gray-900 transition duration-100 dark:text-gray-100 hover:text-blue-800 dark:hover:text-blue-200 hover:scale-105" href="{{ route('about_me') }}">About Me</a>
+                <a wire:navigate class="cyber-link font-subtext text-sm font-semibold uppercase tracking-wider text-gray-900 dark:text-gray-100" href="{{ route('about_me') }}">About Me</a>
 
-                <a wire:navigate class="text-gray-900 transition duration-100 dark:text-gray-100 hover:text-blue-800 dark:hover:text-blue-200 hover:scale-105" href="{{ route('archive.index') }}">Archives</a>
+                <a wire:navigate class="cyber-link font-subtext text-sm font-semibold uppercase tracking-wider text-gray-900 dark:text-gray-100" href="{{ route('archive.index') }}">Archives</a>
 
-                <a wire:navigate class="text-gray-900 transition duration-100 dark:text-gray-100 hover:text-blue-800 dark:hover:text-blue-200 hover:scale-105" href="{{ route('blog.index') }}">Blog</a>
+                <a wire:navigate class="cyber-link font-subtext text-sm font-semibold uppercase tracking-wider text-gray-900 dark:text-gray-100" href="{{ route('blog.index') }}">Blog</a>
 
-                <x-button-contact-me />
+                <x-button-call-to-action
+                    :href="route('contact-me')"
+                    variant="magenta"
+                    surface_class="bg-gradient-blue animate-shimmering-gradient bg-size-[800%_800%]"
+                    aria-label="Contact Me link"
+                >
+                    Contact Me
+                </x-button-call-to-action>
             </div>
 
             {{-- Hamburger to open Responsive Navigation Menu --}}
@@ -75,7 +82,14 @@
         </div>
 
         <div class="pt-2 pb-3 ps-3 pe-4 sm:hidden">
-            <x-button-contact-me />
+            <x-button-call-to-action
+                :href="route('contact-me')"
+                variant="magenta"
+                surface_class="bg-gradient-blue animate-shimmering-gradient bg-size-[800%_800%]"
+                aria-label="Contact Me link"
+            >
+                Contact Me
+            </x-button-call-to-action>
         </div>
     </div>
 </div>

@@ -13,8 +13,7 @@ class StaticGameScreenshots extends Component
     {
         $game_screenshots_path = 'images/game-screenshots';
         $path = public_path($game_screenshots_path);
-        $images = collect(File::allFiles($path))->filter(fn($file) =>
-            in_array($file->getExtension(), ['webp'])
+        $images = collect(File::allFiles($path))->filter(fn ($file) => in_array($file->getExtension(), ['webp'])
         );
 
         foreach ($images as $image) {

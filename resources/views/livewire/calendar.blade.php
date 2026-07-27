@@ -1,16 +1,16 @@
 <div class="mb-8 md:mb-0 md:h-[350px] lg:h-[425px]">
-    <div class="p-4 mt-4 mb-2 bg-gray-300/50 dark:bg-gray-600/50 shadow-2 shadow-md shadow-gray-500 rounded-md">
+    <div class="p-4 mt-4 mb-2 bg-gray-200/50 dark:bg-gray-600/50 shadow-2 shadow-md shadow-gray-500 rounded-md">
         <div class="flex justify-between items-center mb-4">
-            <button wire:click="switch_to_previous_month" class="text-xl px-2 py-1 transition duration-200 text-blue-800 dark:text-blue-200 hover:text-gray-200 dark:hover:text-blue-400 hover:bg-blue-800" title="Go to previous month" aria-label="Go to previous month">&larr;</button>
+            <button wire:click="switch_to_previous_month" class="text-xl px-2 py-1 transition duration-200 text-fuchsia-800 dark:text-fuchsia-200 hover:text-gray-200 dark:hover:text-fuchsia-400 hover:bg-fuchsia-800" title="Go to previous month" aria-label="Go to previous month">&larr;</button>
 
             <h2 class="text-gray-800 dark:text-gray-200 font-semibold text-lg">{{ $current_month_year }}</h2>
 
-            <button wire:click="switch_to_next_month" class="text-xl px-2 py-1 transition duration-200 text-blue-800 dark:text-blue-200 hover:text-gray-200 dark:hover:text-blue-400 hover:bg-blue-800" title="Go to next month" aria-label="Go to next month">&rarr;</button>
+            <button wire:click="switch_to_next_month" class="text-xl px-2 py-1 transition duration-200 text-fuchsia-800 dark:text-fuchsia-200 hover:text-gray-200 dark:hover:text-fuchsia-400 hover:bg-fuchsia-800" title="Go to next month" aria-label="Go to next month">&rarr;</button>
         </div>
 
         <div class="grid grid-cols-7 gap-2 text-center">
             @foreach (['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'] as $day)
-                <div class="text-gray-800 dark:text-gray-200 font-semibold md:text-sm">{{ $day }}</div>
+                <div class="text-gray-800 dark:text-gray-200 font-semibold md:text-sm font-subtext">{{ $day }}</div>
             @endforeach
 
             {{-- Show previous month's days --}}
@@ -27,7 +27,7 @@
                 @endphp
 
                 <div
-                    class="group relative cursor-pointer p-1 xx md:p-0 lg:p-2
+                    class="group relative cursor-pointer p-1 md:p-0 lg:p-2
                         @if ($is_current_date)
                             font-bold text-gray-800 dark:text-gray-200 bg-gray-300 dark:bg-gray-600
 
@@ -35,7 +35,7 @@
                                 border border-gray-600 dark:border-gray-300
                             @endif
                         @elseif ($is_date_have_posts)
-                            font-bold text-blue-800 dark:text-blue-200
+                            font-bold text-cyan-800 dark:text-cyan-200
 
                             @if ($selected_date == $carbon_instance->format('Y-m-d'))
                                 border bg-gray-300 dark:bg-gray-600 border-gray-600 dark:border-gray-300
@@ -59,7 +59,7 @@
                     --}}
                     @if (!($selected_date == '' && $is_current_date) && $selected_date != $carbon_instance->format('Y-m-d') && $is_date_have_posts)
                         <svg class="absolute inset-0 w-full h-full pointer-events-none overflow-visible" viewBox="0 0 44 44">
-                            <rect class="border-tracer fill-none stroke-gray-600 dark:stroke-gray-300 stroke-[1.5]" x="0.75" y="0.75" width="42.5" height="42.5" rx="3.25" />
+                            <rect class="border-tracer fill-none stroke-cyan-600 dark:stroke-cyan-300 stroke-[1.5]" x="0.75" y="0.75" width="42.5" height="42.5" rx="3.25" />
                         </svg>
                     @endif
                     {{ $carbon_instance->day }}

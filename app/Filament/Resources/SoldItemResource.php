@@ -2,14 +2,6 @@
 
 namespace App\Filament\Resources;
 
-use BackedEnum;
-use Filament\Schemas\Schema;
-use Filament\Schemas\Components\Section;
-use Filament\Schemas\Components\Utilities\Get;
-use Filament\Actions\EditAction;
-use App\Filament\Resources\SoldItemResource\Pages\ListSoldItems;
-use App\Filament\Resources\SoldItemResource\Pages\CreateSoldItem;
-use App\Filament\Resources\SoldItemResource\Pages\EditSoldItem;
 use App\Enums\Conditions;
 use App\Enums\DroppingAreas;
 use App\Enums\PaymentMethods;
@@ -17,10 +9,15 @@ use App\Enums\Remittances;
 use App\Enums\SellMethods;
 use App\Enums\ShipmentLocations;
 use App\Enums\Sizes;
+use App\Filament\Resources\SoldItemResource\Pages\CreateSoldItem;
+use App\Filament\Resources\SoldItemResource\Pages\EditSoldItem;
+use App\Filament\Resources\SoldItemResource\Pages\ListSoldItems;
 use App\Models\PayMethod;
 use App\Models\SellMethod;
 use App\Models\SoldItem;
+use BackedEnum;
 use Carbon\Carbon;
+use Filament\Actions\EditAction;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
@@ -28,6 +25,9 @@ use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\Resource;
+use Filament\Schemas\Components\Section;
+use Filament\Schemas\Components\Utilities\Get;
+use Filament\Schemas\Schema;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
@@ -49,11 +49,10 @@ class SoldItemResource extends Resource
                 Section::make('Item Details')
                     ->schema([
                         TextInput::make('brand')
-                            ->datalist(fn (): Collection =>
-                                SoldItem::all()->pluck('brand')
-                                    ->unique()
-                                    ->sort()
-                                    ->values()
+                            ->datalist(fn (): Collection => SoldItem::all()->pluck('brand')
+                                ->unique()
+                                ->sort()
+                                ->values()
                             )
                             ->helperText('If an item does not have any brand, simply put "Generic" and give it a tag of "unbranded"')
                             ->maxLength(64)
@@ -64,11 +63,10 @@ class SoldItemResource extends Resource
                             ->maxLength(128)
                             ->minLength(2),
                         TextInput::make('type')
-                            ->datalist(fn (): Collection =>
-                                SoldItem::all()->pluck('type')
-                                    ->unique()
-                                    ->sort()
-                                    ->values()
+                            ->datalist(fn (): Collection => SoldItem::all()->pluck('type')
+                                ->unique()
+                                ->sort()
+                                ->values()
                             )
                             ->maxLength(64)
                             ->minLength(2)
@@ -141,11 +139,10 @@ class SoldItemResource extends Resource
                             ->options(PaymentMethods::class)
                             ->required(),
                         TextInput::make('pay_method_location')
-                            ->datalist(fn (): Collection =>
-                                PayMethod::getMethod(PaymentMethods::CASH_ON_HAND)->pluck('remittance_location')
-                                    ->unique()
-                                    ->sort()
-                                    ->values()
+                            ->datalist(fn (): Collection => PayMethod::getMethod(PaymentMethods::CASH_ON_HAND)->pluck('remittance_location')
+                                ->unique()
+                                ->sort()
+                                ->values()
                             )
                             ->label('Location')
                             ->maxLength(128)
@@ -171,11 +168,10 @@ class SoldItemResource extends Resource
                             ->options(SellMethods::class)
                             ->required(),
                         TextInput::make('sell_method_location')
-                            ->datalist(fn (): Collection =>
-                                SellMethod::getMethod(SellMethods::MEETUP)->pluck('location')
-                                    ->unique()
-                                    ->sort()
-                                    ->values()
+                            ->datalist(fn (): Collection => SellMethod::getMethod(SellMethods::MEETUP)->pluck('location')
+                                ->unique()
+                                ->sort()
+                                ->values()
                             )
                             ->label('Meetup Location')
                             ->maxLength(128)
@@ -238,10 +234,9 @@ class SoldItemResource extends Resource
             ])
             ->filters([
                 SelectFilter::make('brand')
-                    ->options(fn (): Collection =>
-                        SoldItem::all()->pluck('brand', 'brand')
-                            ->unique()
-                            ->sort()
+                    ->options(fn (): Collection => SoldItem::all()->pluck('brand', 'brand')
+                        ->unique()
+                        ->sort()
                     )
                     ->query(function (Builder $query, array $data) {
                         if (!empty($data['value'])) {
@@ -249,10 +244,9 @@ class SoldItemResource extends Resource
                         }
                     }),
                 SelectFilter::make('type')
-                    ->options(fn (): Collection =>
-                        SoldItem::all()->pluck('type', 'type')
-                            ->unique()
-                            ->sort()
+                    ->options(fn (): Collection => SoldItem::all()->pluck('type', 'type')
+                        ->unique()
+                        ->sort()
                     )
                     ->query(function (Builder $query, array $data) {
                         if (!empty($data['value'])) {

@@ -13,8 +13,7 @@ class StaticDroppingAreas extends Component
     {
         $dropping_areas_path = 'images/dropping-areas';
         $path = public_path($dropping_areas_path);
-        $images = collect(File::allFiles($path))->filter(fn($file) =>
-            in_array($file->getExtension(), ['webp'])
+        $images = collect(File::allFiles($path))->filter(fn ($file) => in_array($file->getExtension(), ['webp'])
         );
 
         foreach ($images as $image) {
