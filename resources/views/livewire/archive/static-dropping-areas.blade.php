@@ -14,7 +14,7 @@
 
         <div class="mx-auto mt-8 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-12 lg:mx-0 lg:max-w-none lg:grid-cols-3">
             @forelse ($dropping_areas as $dropping_area)
-                <figure class="overflow-hidden rounded-lg bg-gray-200/50 outline outline-gray-300/30 shadow-sm dark:divide-white/10 dark:bg-gray-800/50 dark:shadow-none dark:outline dark:-outline-offset-1 dark:outline-white/30">
+                <figure class="overflow-hidden rounded-lg bg-gray-200/50 outline outline-gray-300/30 shadow-sm dark:divide-white/10 dark:bg-gray-800/50 dark:shadow-none dark:outline dark:-outline-offset-1 dark:outline-white/30 card-rectangle">
                     <div class="relative px-3 py-5">
                         <img
                             x-on:click="imagePreviewSrc = '{{ $dropping_area['url'] }}'; isImagePreviewModalOpen = true"

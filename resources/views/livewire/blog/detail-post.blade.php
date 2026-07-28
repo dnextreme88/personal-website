@@ -22,17 +22,31 @@
 
         <div class="my-12 md:my-6 grid grid-cols-1 md:grid-cols-2 gap-8">
             @if ($previous)
-                <a wire:navigate href="{{ route('blog.post.detail', ['id' => $previous->id, 'slug' => $previous->slug]) }}" class="card-rectangle group block rounded-lg p-4 transition duration-200 hover:bg-gray-200 dark:hover:bg-gray-800 md:col-start-1">
-                    <span class="flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-gray-800 dark:text-gray-200 font-subtext">&larr; Previous</span>
-                    <span class="mt-2 block text-lg font-semibold text-cyan-900 dark:text-cyan-200 group-hover:text-cyan-700 dark:group-hover:text-cyan-100">{{ $previous->title }}</span>
-                </a>
+                <x-button-next-previous
+                    as="a"
+                    wire:navigate
+                    href="{{ route('blog.post.detail', ['id' => $previous->id, 'slug' => $previous->slug]) }}"
+                    class="rounded-lg md:col-start-1"
+                    text="&larr; Previous"
+                    :subtext="$previous->title"
+                    show_subtext="true"
+                    title="Read previous blog post"
+                    aria-label="Read previous blog post"
+                />
             @endif
 
             @if ($next)
-                <a wire:navigate href="{{ route('blog.post.detail', ['id' => $next->id, 'slug' => $next->slug]) }}" class="card-rectangle group block rounded-lg p-4 transition duration-200 hover:bg-gray-200 dark:hover:bg-gray-800 md:col-start-2 md:text-right">
-                    <span class="flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-gray-800 dark:text-gray-200 font-subtext md:justify-end">Next &rarr;</span>
-                    <span class="mt-2 block text-lg font-semibold text-cyan-900 dark:text-cyan-200 group-hover:text-cyan-700 dark:group-hover:text-cyan-100">{{ $next->title }}</span>
-                </a>
+                <x-button-next-previous
+                    as="a"
+                    wire:navigate
+                    href="{{ route('blog.post.detail', ['id' => $next->id, 'slug' => $next->slug]) }}"
+                    class="rounded-lg md:col-start-2 md:text-right"
+                    text="Next &rarr;"
+                    :subtext="$next->title"
+                    show_subtext="true"
+                    title="Read next blog post"
+                    aria-label="Read next blog post"
+                />
             @endif
         </div>
 

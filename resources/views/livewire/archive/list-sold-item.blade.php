@@ -18,7 +18,6 @@
                 class="flex items-center justify-between py-4 cursor-pointer"
             >
                 <h2 class="text-glow text-4xl tracking-tight text-pretty text-gray-800 sm:text-5xl dark:text-gray-200 font-heading">Sold Items Summary</h2>
-                {{-- <h2 class="text-xl text-gray-800 dark:text-gray-200">Sold Items Summary</h2> --}}
 
                 <button
                     type="button"
@@ -98,7 +97,6 @@
     <div>
         <div>
             <h2 class="text-glow text-4xl tracking-tight text-pretty text-gray-800 sm:text-5xl dark:text-gray-200 mb-5 font-heading">Search Items</h2>
-            {{-- <h2 class="px-2 py-4 text-xl text-gray-800 bg-gray-300 dark:bg-gray-700 dark:text-gray-200">Search items</h2> --}}
 
             <form
                 {{-- Initialize the filters array for each sub-component --}}
@@ -107,7 +105,7 @@
                 x-on:filter-changed.window="filters[$event.detail.key] = $event.detail.value"
                 x-on:form-reset.window="filters = {}"
                 wire:submit="search_sold_items"
-                class="flex flex-col justify-between gap-6 px-6 py-4 bg-gray-200 border-b-2 border-b-gray-400 dark:border-b-gray-200 md:gap-8 dark:bg-gray-800"
+                class="flex flex-col justify-between gap-6 px-6 py-4 bg-gray-200 md:gap-8 dark:bg-gray-800 card-rectangle"
             >
                 <x-forms.input-text class="md:mx-6 lg:mx-12" for="search_query" placeholder_text="Type a name of an item..." title_text="Search sold items" />
 
@@ -182,10 +180,14 @@
 
                         <ul class="flex flex-wrap gap-2 mt-4 list-none">
                             @foreach ($tags as $tag)
+                                {{-- TODO: ADD A NEW COMPONENT FOR ROUND BADGES --}}
                                 <li
-                                    x-bind:class="{'bg-gray-300 dark:bg-gray-500 text-gray-800 dark:text-gray-200': selectedTags.includes('{{ $tag }}'), 'text-gray-800 dark:text-gray-200': !selectedTags.includes('{{ $tag }}')}"
+                                    x-bind:class="{
+                                        'text-cyan-800 dark:text-cyan-200 bg-cyan-200 dark:bg-cyan-800 border-cyan-800 dark:border-cyan-200': selectedTags.includes('{{ $tag }}'),
+                                        'text-gray-800 dark:text-gray-200 border-gray-800 dark:border-gray-200 hover:bg-gray-300 dark:hover:bg-gray-500': !selectedTags.includes('{{ $tag }}')
+                                    }"
                                     x-on:click="addToTags('{{ $tag }}')"
-                                    class="px-2 py-1 transition-colors duration-200 border-2 border-gray-800 rounded-xl hover:cursor-pointer dark:border-gray-200 font-subtext"
+                                    class="px-2 py-1 transition-colors duration-200 border-2 rounded-xl hover:cursor-pointer font-subtext"
                                 >
                                     {{ $tag }}
                                 </li>
@@ -215,7 +217,7 @@
                             />
                         </span>
 
-                        <span wire:loading.remove wire:target="search_sold_items">Search</span>
+                        <span wire:loading.remove wire:target="search_sold_items" class="font-loader">Search</span>
                     </x-forms.button-submit>
                 </div>
             </form>
@@ -241,7 +243,13 @@
                         @foreach (['date_sold' => 'Date', 'price' => 'Price', 'name' => 'Name'] as $sort_option => $sort_label)
                             <button
                                 wire:click="apply_sort('{{ $sort_option }}')"
-                                class="px-2 py-1 text-sm border transition-colors {{ $sort_field === $sort_option ? 'text-cyan-600 border-cyan-600 dark:text-cyan-300 dark:border-cyan-300' : 'text-gray-800 border-gray-300 dark:border-gray-600 dark:text-gray-200 hover:text-cyan-800 dark:hover:text-cyan-200' }}"
+                                class="
+                                    px-2 py-1 text-sm border transition-colors
+                                    {{ $sort_field === $sort_option
+                                    ? 'text-cyan-800 dark:text-cyan-200 border-cyan-700 dark:border-cyan-300'
+                                    : 'text-gray-800 dark:text-gray-200 hover:text-cyan-800 dark:hover:text-cyan-200 border-gray-300 dark:border-gray-600 hover:border-cyan-700 dark:hover:border-cyan-300 cursor-pointer'
+                                    }}
+                                "
                                 title="Sort by {{ $sort_label }}"
                             >
                                 {{ $sort_label }}
@@ -259,7 +267,10 @@
                     {{-- Table icon --}}
                     <button
                         x-on:click="loading = true; $dispatch('view-changed'); setTimeout(() => { view = 'table'; loading = false; }, 500)"
-                        x-bind:class="view === 'table' ? 'text-cyan-600 border-cyan-600 dark:text-cyan-300 dark:border-cyan-300' : 'text-gray-800 border-gray-300 dark:border-gray-600 dark:text-gray-200 hover:text-cyan-800 dark:hover:text-cyan-200'"
+                        x-bind:class="view === 'table'
+                            ? 'text-cyan-600 border-cyan-600 dark:text-cyan-300 dark:border-cyan-300'
+                            : 'text-gray-800 dark:text-gray-200 hover:text-cyan-800 dark:hover:text-cyan-200 border-gray-300 dark:border-gray-600 hover:border-cyan-700 dark:hover:border-cyan-300 cursor-pointer'
+                        "
                         x-bind:disabled="view === 'table' || loading"
                         class="px-2 py-1 border transition-colors"
                         title="Toggle table view"
@@ -278,7 +289,10 @@
                     {{-- List icon --}}
                     <button
                         x-on:click="loading = true; $dispatch('view-changed'); setTimeout(() => { view = 'list'; loading = false; }, 500)"
-                        x-bind:class="view === 'list' ? 'text-cyan-600 border-cyan-600 dark:text-cyan-300 dark:border-cyan-300' : 'text-gray-800 border-gray-300 dark:border-gray-600 dark:text-gray-200 hover:text-cyan-800 dark:hover:text-cyan-200'"
+                        x-bind:class="view === 'list'
+                            ? 'text-cyan-600 border-cyan-600 dark:text-cyan-300 dark:border-cyan-300'
+                            : 'text-gray-800 dark:text-gray-200 hover:text-cyan-800 dark:hover:text-cyan-200 border-gray-300 dark:border-gray-600 hover:border-cyan-700 dark:hover:border-cyan-300 cursor-pointer'
+                        "
                         x-bind:disabled="view === 'list' || loading"
                         class="px-2 py-1 border transition-colors"
                         title="Toggle list view"

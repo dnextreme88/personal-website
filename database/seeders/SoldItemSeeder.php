@@ -324,6 +324,7 @@ class SoldItemSeeder extends Seeder
             ['method' => PaymentMethods::DROPPING_AREA_CASHOUT, 'remittance_location' => DroppingAreas::MABINI_SHOPPING_CENTER_ROOM_203->value],
             ['method' => PaymentMethods::DROPPING_AREA_CASHOUT, 'remittance_location' => DroppingAreas::MABINI_SHOPPING_CENTER_ROOM_203->value],
             ['method' => PaymentMethods::CASH_ON_HAND->value, 'remittance_location' => 'KFC (Lower Session Road branch)'],
+            ['method' => PaymentMethods::REMITTANCE->value, 'remittance_location' => Remittances::GCASH->value],
         ]);
 
         SellMethod::insert([
@@ -630,6 +631,7 @@ class SoldItemSeeder extends Seeder
             ['method' => SellMethods::DROPPING->value, 'location' => DroppingAreas::MABINI_SHOPPING_CENTER_ROOM_203->value],
             ['method' => SellMethods::DROPPING->value, 'location' => DroppingAreas::MABINI_SHOPPING_CENTER_ROOM_203->value],
             ['method' => SellMethods::MEETUP->value, 'location' => 'KFC (Lower Session Road branch)'],
+            ['method' => SellMethods::SHIPMENT->value, 'location' => ShipmentLocations::J_AND_T_EXPRESS->value],
         ]);
 
         SoldItem::insert([
@@ -5781,6 +5783,23 @@ class SoldItemSeeder extends Seeder
                 'tags' => 'computer related,sold with case',
                 'notes' => null,
                 'image_location' => 'sold-items/2026/t-wolf1-1.jpg',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'pay_method_id' => 304,
+                'sell_method_id' => 304,
+                'transaction_id' => '2026_09',
+                'brand' => 'Toy Story',
+                'name' => 'Emperor Zurg',
+                'type' => 'Toy',
+                'price' => 150,
+                'condition' => 'new',
+                'size' => 'N/A',
+                'date_sold' => '2026-07-28',
+                'tags' => null,
+                'notes' => 'Payment sent through GCash on 7/28. Received payment on 7/28.',
+                'image_location' => 'sold-items/2026/toy-story2-1.jpg',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],

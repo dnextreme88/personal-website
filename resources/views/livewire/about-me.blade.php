@@ -8,30 +8,30 @@
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <!-- LEFT SIDE (Intro, Skills, Education, Trainings) -->
         <div class="space-y-10 lg:col-span-1">
-            <section class="bg-gray-200 dark:bg-gray-800 p-8 rounded-lg shadow-lg shadow-gray-600 lg:shadow-none">
+            <section class="bg-gray-200 dark:bg-gray-800 p-8 rounded-lg shadow-lg shadow-gray-600 lg:shadow-none card-rectangle">
                 <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-8 lg:mb-10">Jeanne Kevin T. Decena</h2>
 
                 <p class="text-gray-700 dark:text-gray-300 leading-relaxed italic">An experienced full-stack developer specializing in AlpineJs, Laravel, Livewire, and Tailwind (TALL stack). Experienced in API development, UX improvements, and modernizing legacy systems.</p>
             </section>
 
             <section>
-                <h3 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Soft Skills</h3>
+                <h2 class="text-glow text-2xl tracking-tight text-pretty text-gray-800 sm:text-5xl lg:text-3xl dark:text-gray-200 mb-5 font-heading">Soft Skills</h2>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <span class="rounded-xl p-3 text-center text-gray-800 dark:text-gray-200 bg-gray-300 dark:bg-gray-600/25">Efficient critical thinker</span>
-                    <span class="rounded-xl p-3 text-center text-gray-800 dark:text-gray-200 bg-gray-300 dark:bg-gray-600/25">High work ethics and standards</span>
-                    <span class="rounded-xl p-3 text-center text-gray-800 dark:text-gray-200 bg-gray-300 dark:bg-gray-600/25">Motivates on extreme circumstances</span>
-                    <span class="rounded-xl p-3 text-center text-gray-800 dark:text-gray-200 bg-gray-300 dark:bg-gray-600/25">Reliable turnaround</span>
-                    <span class="rounded-xl p-3 text-center text-gray-800 dark:text-gray-200 bg-gray-300 dark:bg-gray-600/25">Open to learning new skills</span>
-                    <span class="rounded-xl p-3 text-center text-gray-800 dark:text-gray-200 bg-gray-300 dark:bg-gray-600/25">Works on pressure</span>
-                    <span class="rounded-xl p-3 text-center text-gray-800 dark:text-gray-200 bg-gray-300 dark:bg-gray-600/25">Works under minimal supervision</span>
+                    <span class="rounded-xl p-3 text-center text-gray-800 dark:text-gray-200 bg-gray-300 dark:bg-gray-600/25 card-rectangle">Efficient critical thinker</span>
+                    <span class="rounded-xl p-3 text-center text-gray-800 dark:text-gray-200 bg-gray-300 dark:bg-gray-600/25 card-rectangle">High work ethics and standards</span>
+                    <span class="rounded-xl p-3 text-center text-gray-800 dark:text-gray-200 bg-gray-300 dark:bg-gray-600/25 card-rectangle">Motivates on extreme circumstances</span>
+                    <span class="rounded-xl p-3 text-center text-gray-800 dark:text-gray-200 bg-gray-300 dark:bg-gray-600/25 card-rectangle">Reliable turnaround</span>
+                    <span class="rounded-xl p-3 text-center text-gray-800 dark:text-gray-200 bg-gray-300 dark:bg-gray-600/25 card-rectangle">Open to learning new skills</span>
+                    <span class="rounded-xl p-3 text-center text-gray-800 dark:text-gray-200 bg-gray-300 dark:bg-gray-600/25 card-rectangle">Works on pressure</span>
+                    <span class="rounded-xl p-3 text-center text-gray-800 dark:text-gray-200 bg-gray-300 dark:bg-gray-600/25 card-rectangle">Works under minimal supervision</span>
                 </div>
             </section>
 
             <section>
-                <h3 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Education</h3>
+                <h2 class="text-glow text-2xl tracking-tight text-pretty text-gray-800 sm:text-5xl lg:text-3xl dark:text-gray-200 mb-5 font-heading">Education</h2>
 
-                <div class="bg-gray-200 dark:bg-gray-800 p-6 rounded-lg shadow space-y-2">
+                <div class="bg-gray-200 dark:bg-gray-800 p-6 rounded-lg shadow space-y-2 card-rectangle">
                     <p class="font-semibold text-gray-700 dark:text-gray-200">BS Information Technology</p>
                     <p class="text-gray-600 dark:text-gray-400">University of the Cordilleras • 2017</p>
 
@@ -48,9 +48,9 @@
             </section>
 
             <section>
-                <h3 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Extra Curricular / Trainings</h3>
+                <h2 class="text-glow text-2xl tracking-tight text-pretty text-gray-800 sm:text-5xl lg:text-3xl dark:text-gray-200 mb-5 font-heading">Extra Curricular / Trainings</h2>
 
-                <div class="bg-gray-200 dark:bg-gray-800 p-6 rounded-lg shadow space-y-3">
+                <div class="bg-gray-200 dark:bg-gray-800 p-6 rounded-lg shadow space-y-3 card-rectangle">
                     <div>
                         <h2 class="font-semibold text-2xl mb-2 text-gray-800 dark:text-gray-200 lg:text-base">Building a Website with Node.js and Express.js (3 hours)</h2>
                         <h3 class="text-base mb-2 text-gray-600 dark:text-gray-400">LinkedIn Certification • August 18, 2021</h3>
@@ -118,7 +118,7 @@
         <!-- RIGHT SIDE (Work Experience, References) -->
         <div class="space-y-10 lg:col-span-2">
             <section>
-                <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4">Work Experience</h3>
+                <h2 class="text-glow text-2xl tracking-tight text-pretty text-gray-800 sm:text-5xl lg:text-3xl dark:text-gray-200 mb-5 font-heading">Work Experience</h2>
 
                 <div class="space-y-6">
                     <x-work-experience
@@ -263,9 +263,9 @@
             </section>
 
             <section>
-                <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4">Character References</h3>
+                <h2 class="text-glow text-2xl tracking-tight text-pretty text-gray-800 sm:text-5xl lg:text-3xl dark:text-gray-200 mb-5 font-heading">Character References</h2>
 
-                <div class="bg-gray-200 dark:bg-gray-800 p-6 rounded-lg shadow">
+                <div class="bg-gray-200 dark:bg-gray-800 p-6 rounded-lg shadow card-rectangle">
                     <p class="text-gray-700 dark:text-gray-300 leading-relaxed">Character references will be provided upon request.</p>
                 </div>
             </section>

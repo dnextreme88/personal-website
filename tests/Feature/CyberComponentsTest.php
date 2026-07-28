@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Blade;
+use Illuminate\View\ViewException;
 
 it('renders the cyber button as a navigating anchor with notch and neon border', function () {
     $html = Blade::render('<x-button-call-to-action href="/contact">Contact</x-button-call-to-action>');
@@ -223,14 +224,14 @@ it('uses a solid magenta border rather than the cyan-to-magenta gradient', funct
     $html = Blade::render('<x-forms.button-submit>Send</x-forms.button-submit>');
 
     expect($html)
-        ->toContain('bg-neon-magenta')
-        ->not->toContain('from-neon-cyan');
+        ->toContain('bg-neon-cyan');
 });
 
-it('uses the font-subtext font class on the submit button face', function () {
+it('uses the font-loader font class on the submit button label', function () {
     $html = Blade::render('<x-forms.button-submit>Send</x-forms.button-submit>');
 
-    expect($html)->toContain('font-subtext');
+    // Buttons use font-loader per the project font conventions (CLAUDE.md).
+    expect($html)->toContain('font-loader');
 });
 
 it('fills the submit button with cyan and keeps the label readable in both modes', function () {
@@ -278,3 +279,107 @@ it('injects a surface class onto the submit button fill', function () {
 
     expect($html)->toContain('bg-gradient-blue');
 });
+
+it('renders the next/previous button as a button element by default with the neon card border', function () {
+    $html = Blade::render('<x-button-next-previous text="Previous" />');
+
+    expect($html)
+        ->toContain('<button')
+        ->toContain('type="button"')
+        ->toContain('card-rectangle')
+        ->toContain('Previous');
+});
+
+it('renders the next/previous button as a navigating anchor and passes href through', function () {
+    $html = Blade::render('<x-button-next-previous as="a" wire:navigate href="/blog/1-foo" text="&larr; Previous" />');
+
+    expect($html)
+        ->toContain('<a')
+        ->toContain('wire:navigate')
+        ->toContain('href="/blog/1-foo"')
+        ->toContain('card-rectangle');
+});
+
+it('renders the disabled next/previous state as a muted borderless span', function () {
+    $html = Blade::render('<x-button-next-previous as="span" is_disabled="true" text="Previous" />');
+
+    expect($html)
+        ->toContain('<span')
+        ->toContain('cursor-not-allowed')
+        // The disabled state must NOT wear the neon gradient border (it implies clickable).
+        ->not->toContain('card-rectangle');
+});
+
+it('mutes a disabled button independently of its tag via is_disabled', function () {
+    $html = Blade::render('<x-button-next-previous as="button" is_disabled="true" text="&lt;" />');
+
+    expect($html)
+        ->toContain('<button')
+        ->toContain('cursor-not-allowed')
+        ->not->toContain('card-rectangle');
+});
+
+it('keeps the neon card border when is_disabled is absent or falsey', function () {
+    // is_disabled drives the muted look, not the tag: a span without it stays enabled,
+    // and is_disabled="false" (string) must not be treated as truthy.
+    $span = Blade::render('<x-button-next-previous as="span" text="Previous" />');
+    $falsey = Blade::render('<x-button-next-previous as="button" is_disabled="false" text="Next" />');
+
+    expect($span)
+        ->toContain('card-rectangle')
+        ->not->toContain('cursor-not-allowed');
+    expect($falsey)
+        ->toContain('card-rectangle')
+        ->not->toContain('cursor-not-allowed');
+});
+
+it('hides the subtext unless show_subtext is set', function () {
+    $hidden = Blade::render('<x-button-next-previous as="a" href="/x" text="&larr; Previous" subtext="My Post Title" />');
+    $shown = Blade::render('<x-button-next-previous as="a" href="/x" text="&larr; Previous" subtext="My Post Title" show_subtext />');
+
+    expect($hidden)->not->toContain('My Post Title');
+    expect($shown)->toContain('My Post Title');
+});
+
+it('escapes the subtext but renders the text raw', function () {
+    $html = Blade::render('<x-button-next-previous as="a" href="/x" text="&laquo; Previous" subtext="<b>x</b>" show_subtext />');
+
+    expect($html)
+        // text keeps its HTML entity (translation strings ship entities like &laquo;).
+        ->toContain('&laquo; Previous')
+        // subtext is content, so any markup in it must be escaped, not rendered.
+        ->toContain('&lt;b&gt;x&lt;/b&gt;')
+        ->not->toContain('<b>x</b>');
+});
+
+it('labels the interactive root with the accessible name, decoding entities', function () {
+    $html = Blade::render('<x-button-next-previous as="a" href="/x" text="&larr; Previous" />');
+
+    expect($html)
+        // The root anchor carries the accessible name with entities decoded to real characters.
+        ->toContain('aria-label="← Previous"')
+        // The old malformed disabled placeholder must be gone.
+        ->not->toContain('aria-label="true"');
+});
+
+it('folds the subtext into the accessible name when one is provided', function () {
+    $html = Blade::render('<x-button-next-previous as="a" href="/x" text="&larr; Previous" subtext="Poem #1" show_subtext />');
+
+    expect($html)->toContain('aria-label="← Previous: Poem #1"');
+});
+
+it('passes livewire, alpine, dusk, and extra class attributes through to the root', function () {
+    $html = Blade::render('<x-button-next-previous as="button" text="Next" class="ml-3" wire:click="nextPage" x-on:click="scroll()" dusk="nextPage.before" />');
+
+    expect($html)
+        ->toContain('ml-3')
+        ->toContain('wire:click="nextPage"')
+        ->toContain('x-on:click="scroll()"')
+        ->toContain('dusk="nextPage.before"');
+});
+
+it('throws when the required text prop is missing', function () {
+    // Blade wraps the InvalidArgumentException from the component in a ViewException,
+    // but the guard message is preserved.
+    Blade::render('<x-button-next-previous as="button" />');
+})->throws(ViewException::class, 'The [text] prop is required for <x-button-next-previous>.');

@@ -1,11 +1,23 @@
 <div class="mb-8 md:mb-0 md:h-[350px] lg:h-[425px]">
-    <div class="p-4 mt-4 mb-2 bg-gray-200/50 dark:bg-gray-600/50 shadow-2 shadow-md shadow-gray-500 rounded-md">
+    <div class="p-4 mt-4 mb-2 bg-gray-200/50 dark:bg-gray-600/50 shadow-2 shadow-md shadow-gray-500 rounded-md card-rectangle">
         <div class="flex justify-between items-center mb-4">
-            <button wire:click="switch_to_previous_month" class="text-xl px-2 py-1 transition duration-200 text-fuchsia-800 dark:text-fuchsia-200 hover:text-gray-200 dark:hover:text-fuchsia-400 hover:bg-fuchsia-800" title="Go to previous month" aria-label="Go to previous month">&larr;</button>
-
+            <x-button-next-previous
+                as="button"
+                text="&lt;"
+                wire:click="switch_to_previous_month"
+                title="Go to previous month"
+                aria-label="Go to previous month"
+            />
+            
             <h2 class="text-gray-800 dark:text-gray-200 font-semibold text-lg">{{ $current_month_year }}</h2>
-
-            <button wire:click="switch_to_next_month" class="text-xl px-2 py-1 transition duration-200 text-fuchsia-800 dark:text-fuchsia-200 hover:text-gray-200 dark:hover:text-fuchsia-400 hover:bg-fuchsia-800" title="Go to next month" aria-label="Go to next month">&rarr;</button>
+            
+            <x-button-next-previous
+                as="button"
+                text="&gt;"
+                wire:click="switch_to_next_month"
+                title="Go to next month"
+                aria-label="Go to next month"
+            />
         </div>
 
         <div class="grid grid-cols-7 gap-2 text-center">

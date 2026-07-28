@@ -472,69 +472,18 @@
         box-shadow: 0 0 8px currentcolor;
     }
 
-    /* Layered neon card frame — a cyan→magenta gradient border with an outer
-       cyan glow and inner darkening (the attached "stacked" sample card).
-       The gradient sits in a masked ::before so only the border shows. */
-    .card-square {
-        position: relative;
-        /* Punchier dual-colour glow so the card feels lively. Light mode gets
-           the stronger values here (neon washes out on a light page); dark mode
-           is toned down just below since it already reads vividly. */
-        box-shadow:
-            0 0 30px rgba(0, 240, 255, 0.45),
-            inset 0 0 50px rgba(0, 0, 0, 0.55);
-    }
-
-    .dark .card-square {
-        box-shadow:
-            0 0 30px rgba(0, 240, 255, 0.3),
-            0 0 60px rgba(255, 0, 229, 0.2),
-            inset 0 0 50px rgba(0, 0, 0, 0.55);
-    }
-
-    .card-square::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        z-index: 20;
-        border-radius: inherit;
-        padding: 2px;
-        pointer-events: none;
-        background: linear-gradient(135deg,
-                var(--color-neon-cyan),
-                var(--color-neon-magenta));
-        /* OLD */
-        /*
-        background: linear-gradient(135deg,
-                var(--color-neon-cyan),
-                transparent 40%,
-                transparent 60%,
-                var(--color-neon-magenta));
-        */
-        -webkit-mask:
-            linear-gradient(#000 0 0) content-box,
-            linear-gradient(#000 0 0);
-        -webkit-mask-composite: xor;
-        mask-composite: exclude;
-        opacity: 1;
-        transition: opacity 350ms ease;
-    }
-
-    .dark .card-square::before {
-        opacity: 0.85;
-    }
-
-    .card-square:hover::before {
-        opacity: 1;
-    }
-
-    /* card-rectangle — just the cyan/magenta gradient border from .card-square
-       (no glow or inner shadow), for wider blocks like the prev/next post
-       buttons. Same border, only the element's proportions differ. */
+    /* Layered neon card frame — a masked cyan→magenta gradient border shared by
+       both variants. .card-square layers an outer glow + inner darkening on top
+       (for the dark image/hero cards); .card-rectangle is the border alone (for
+       content blocks on light surfaces). The gradient lives in a masked ::before
+       so only the border shows. Naming is historical — neither controls shape
+       (both inherit border-radius); the real difference is glow vs. no-glow. */
+    .card-square,
     .card-rectangle {
         position: relative;
     }
 
+    .card-square::before,
     .card-rectangle::before {
         content: '';
         position: absolute;
@@ -551,12 +500,42 @@
             linear-gradient(#000 0 0);
         -webkit-mask-composite: xor;
         mask-composite: exclude;
-        opacity: 0.85;
+        /* Resting border strength. .card-rectangle keeps 0.85 in both modes;
+           .card-square is bumped to full in light mode just below. */
+        @apply opacity-85;
         transition: opacity 350ms ease;
     }
 
+    /* .card-square's resting border is fuller in light mode (neon washes out on a
+       light page), toned back to 0.85 in dark to match .card-rectangle. */
+    .card-square::before {
+        opacity: 1;
+    }
+
+    .dark .card-square::before {
+        @apply opacity-85;
+    }
+
+    /* Both variants brighten their border to full on hover. */
+    .card-square:hover::before,
     .card-rectangle:hover::before {
         opacity: 1;
+    }
+
+    /* Glow + inner darkening — .card-square only. Light mode gets the punchier
+       values; dark mode is toned down and adds a magenta cast since neon already
+       reads vividly there. */
+    .card-square {
+        box-shadow:
+            0 0 30px rgba(0, 240, 255, 0.45),
+            inset 0 0 50px rgba(0, 0, 0, 0.55);
+    }
+
+    .dark .card-square {
+        box-shadow:
+            0 0 30px rgba(0, 240, 255, 0.3),
+            0 0 60px rgba(255, 0, 229, 0.2),
+            inset 0 0 50px rgba(0, 0, 0, 0.55);
     }
 
     /* CRT scanlines: a hard 1px hairline every 3px. Dark lines read on the
@@ -662,7 +641,7 @@
         left: 0;
         width: 100%;
         pointer-events: none;
-        opacity: 0.85;
+        @apply opacity-85;
     }
 
     .glitch::before {

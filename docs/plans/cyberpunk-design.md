@@ -187,6 +187,61 @@
 > `.cyber-input`'s snake_case `surface_class`-style fragility means any future *kebab* `surface-class`
 > usage would silently break again — a camelCase prop would be more robust but the linter reverts it.
 
+> ## 🔧 REFINED 2026-07-28 (round 4) — unified prev/next component, card-rectangle rollout, control recolour
+>
+> Consolidated the previous/next navigation into one reusable component, rolled the neon border out
+> across the remaining content surfaces, and harmonised the last controls still on the old accent.
+>
+> - **New `x-button-next-previous` component** ([button-next-previous.blade.php](../../resources/views/components/button-next-previous.blade.php)) —
+>   one prev/next control carrying the `.card-rectangle` gradient border, replacing three hand-rolled
+>   markups: the Livewire pagination bar ([tailwind.blade.php](../../resources/views/vendor/livewire/tailwind.blade.php),
+>   both the mobile prev/next **and** the desktop `<`/`>` pager arrows), the blog prev/next post links
+>   ([detail-post.blade.php](../../resources/views/livewire/blog/detail-post.blade.php)), and the
+>   calendar month stepper ([calendar.blade.php](../../resources/views/livewire/calendar.blade.php)).
+>   Props: `as` (`a`|`button`|`span`, chosen explicitly so one component serves nav links, Livewire
+>   buttons, and disabled endpoints); `text` (required, rendered **raw** so translation/arrow entities
+>   like `&laquo;`/`&larr;` survive); `subtext` + `show_subtext` (the blog cards' post-title second
+>   line, escaped); and `is_disabled` (muted/borderless look, orthogonal to the tag so a disabled
+>   *button* — the pager on the first/last page — can be muted too). All other attributes
+>   (`href`/`wire:navigate`/`wire:click`/`x-on:click`/`wire:loading`/`dusk`/extra classes) pass through
+>   via `$attributes->merge`. **Accessibility:** the interactive root gets an `aria-label` built from the
+>   decoded text (`&larr; Previous` → "← Previous") with the subtext folded in when shown
+>   ("← Previous: Poem #1"). Removed the orphan `button-previous.blade.php` it supersedes.
+> - **`.card-square` / `.card-rectangle` consolidated** ([app.css](../../resources/css/app.css)) — the
+>   two variants duplicated ~20 lines of the masked-gradient `::before`; merged into a single shared
+>   `.card-square, .card-rectangle::before` block with the glow + inner-shadow scoped to `.card-square`
+>   only. Behaviour-preserving (verified in both modes): square = full-opacity border in light + glow;
+>   rectangle = `0.85` border, no glow; both → `1` on hover. Dropped the dead commented-out "OLD" gradient.
+> - **`.card-rectangle` rolled out site-wide** — the neon border now frames the about-me cards + soft-skill
+>   pills ([about-me.blade.php](../../resources/views/livewire/about-me.blade.php)), the work-experience
+>   card ([work-experience.blade.php](../../resources/views/components/work-experience.blade.php)), the
+>   dropping-areas & game-screenshots figures, the calendar wrapper, and the sold-items search form.
+>   about-me's section `<h3>`s were also promoted to glowing `text-glow`/`font-heading` `<h2>`s.
+> - **Last controls harmonised** ([list-sold-item.blade.php](../../resources/views/livewire/archive/list-sold-item.blade.php)) —
+>   the sold-items sort + table/list view-toggle buttons moved onto the unified cyan hover/border
+>   treatment (advances the round-2 "sold-items still on the pre-cyberpunk accent" item); tag filter
+>   pills gained a cyan selected state. Steam-achievement + sold-item tag pills were restyled to bordered
+>   neutral badges, each flagged with `TODO: ADD A NEW COMPONENT FOR ROUND BADGES`.
+> - **`x-forms.button-submit` polish** ([button-submit.blade.php](../../resources/views/components/forms/button-submit.blade.php)) —
+>   face border magenta→cyan; the label now uses `font-loader` (button font per CLAUDE.md). Search
+>   labels in list-post/list-sold-item wrap in `font-loader`; [list-post.blade.php](../../resources/views/livewire/blog/list-post.blade.php)
+>   also dropped a large commented-out legacy search button and switched its loader to the neon spinner.
+> - **Seed data** — added a Toy Story "Emperor Zurg" sold item exercising the `REMITTANCE`/GCash +
+>   `SHIPMENT`/J&T enums ([SoldItemSeeder.php](../../database/seeders/SoldItemSeeder.php)).
+>
+> **Added:** `resources/views/components/button-next-previous.blade.php` (+ its tests in
+> `CyberComponentsTest.php`). **Removed:** `resources/views/components/button-previous.blade.php`.
+>
+> **Verified:** `npm run build` clean; `vendor/bin/pest --filter=CyberComponents` green (41 tests, which
+> also clears the previously-failing `neon-border` CTA assertion from round 3); live DOM/CSSOM checks —
+> prev/next gradient border with a right-aligned "Next", disabled endpoints muted, pagination `wire:click`
+> still advancing pages, decoded `aria-label`s, and the card consolidation matching the pre-refactor
+> computed styles in light + dark.
+>
+> **Still open:** the `TODO: ADD A NEW COMPONENT FOR ROUND BADGES` markers (steam-achievement + sold-item
+> tag pills) — a shared badge component isn't extracted yet. `x-clipped-table`'s managed-header/sort
+> still has a single consumer.
+
 ## Context
 
 The portfolio already leaned cyber-retro (Audiowide / Chakra Petch / JetBrains Mono / Space Mono
