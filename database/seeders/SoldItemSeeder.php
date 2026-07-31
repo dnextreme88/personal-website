@@ -325,6 +325,7 @@ class SoldItemSeeder extends Seeder
             ['method' => PaymentMethods::DROPPING_AREA_CASHOUT, 'remittance_location' => DroppingAreas::MABINI_SHOPPING_CENTER_ROOM_203->value],
             ['method' => PaymentMethods::CASH_ON_HAND->value, 'remittance_location' => 'KFC (Lower Session Road branch)'],
             ['method' => PaymentMethods::REMITTANCE->value, 'remittance_location' => Remittances::GCASH->value],
+            ['method' => PaymentMethods::REMITTANCE->value, 'remittance_location' => Remittances::GCASH->value],
         ]);
 
         SellMethod::insert([
@@ -631,6 +632,7 @@ class SoldItemSeeder extends Seeder
             ['method' => SellMethods::DROPPING->value, 'location' => DroppingAreas::MABINI_SHOPPING_CENTER_ROOM_203->value],
             ['method' => SellMethods::DROPPING->value, 'location' => DroppingAreas::MABINI_SHOPPING_CENTER_ROOM_203->value],
             ['method' => SellMethods::MEETUP->value, 'location' => 'KFC (Lower Session Road branch)'],
+            ['method' => SellMethods::SHIPMENT->value, 'location' => ShipmentLocations::J_AND_T_EXPRESS->value],
             ['method' => SellMethods::SHIPMENT->value, 'location' => ShipmentLocations::J_AND_T_EXPRESS->value],
         ]);
 
@@ -5800,6 +5802,23 @@ class SoldItemSeeder extends Seeder
                 'tags' => null,
                 'notes' => 'Payment sent through GCash on 7/28. Received payment on 7/28.',
                 'image_location' => 'sold-items/2026/toy-story2-1.jpg',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'pay_method_id' => 305,
+                'sell_method_id' => 305,
+                'transaction_id' => '2026_10',
+                'brand' => 'Toy Story',
+                'name' => 'Hamm',
+                'type' => 'Toy',
+                'price' => 200,
+                'condition' => 'new',
+                'size' => 'N/A',
+                'date_sold' => '2026-07-31',
+                'tags' => null,
+                'notes' => 'Payment sent through GCash on 7/30. Received payment on 7/31.',
+                'image_location' => 'sold-items/2026/toy-story3-1.jpg',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
