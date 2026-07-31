@@ -33,8 +33,7 @@
                             <template x-if="row.tags">
                                 <div class="flex flex-wrap gap-2">
                                     <template x-for="(tag, tagIndex) in row.tags_array" :key="tagIndex">
-                                        {{-- TODO: ADD A NEW COMPONENT FOR ROUND BADGES --}}
-                                        <span class="text-gray-800 dark:text-gray-200 border-gray-800 dark:border-gray-200 px-2 py-1 border-2 rounded-xl text-sm font-subtext" x-text="tag"></span>
+                                        <x-badge x-text="tag" />
                                     </template>
                                 </div>
                             </template>

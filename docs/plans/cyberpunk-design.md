@@ -242,6 +242,65 @@
 > tag pills) — a shared badge component isn't extracted yet. `x-clipped-table`'s managed-header/sort
 > still has a single consumer.
 
+> ## 🔧 REFINED 2026-08-01 (round 5) — badge component, image skeletons, reticle cursor, glitch 404
+>
+> Four new additions pushing the aesthetic further, all honouring light+dark and `prefers-reduced-motion`:
+>
+> - **New `x-badge` component** ([badge.blade.php](../../resources/views/components/badge.blade.php)) — a
+>   reusable rounded pill closing **both** `TODO: ADD A NEW COMPONENT FOR ROUND BADGES` markers. Props:
+>   `as` (span|li|…), `variant` (`neutral` default | `cyan` | `magenta` | `none`), `interactive`. The
+>   `cyan`/`magenta` variants add a static neon glow (`.badge-neon-cyan`/`.badge-neon-magenta` in
+>   [app.css](../../resources/css/app.css) — box+text-shadow only, so reduced-motion safe); `neutral`
+>   keeps the readable grey pill; `none` bakes **no** colours so a caller can drive them. Adopted at both
+>   sites: the steam-achievements tags ([list-steam-achievement.blade.php](../../resources/views/livewire/archive/list-steam-achievement.blade.php),
+>   `<x-badge x-text="tag" />`, neutral/static) and the sold-items tag **filter**
+>   ([list-sold-item.blade.php](../../resources/views/livewire/archive/list-sold-item.blade.php),
+>   `as="li" variant="none" interactive` with the existing Alpine `x-bind:class` selected/unselected sets
+>   preserved verbatim — the component contributes structure only, avoiding the Tailwind class-conflict
+>   fragility of baking colours under a reactive toggle).
+> - **Image skeletons on Game Screenshots + Dropping Areas**
+>   ([static-game-screenshots.blade.php](../../resources/views/livewire/archive/static-game-screenshots.blade.php),
+>   [static-dropping-areas.blade.php](../../resources/views/livewire/archive/static-dropping-areas.blade.php)) —
+>   reused the Sold Items pattern (`skeletonLoader()` Alpine data in
+>   [skeleton-loading.js](../../resources/js/skeleton-loading.js) + `<x-loading-indicator>` + `skeleton-loader-lg`
+>   shimmer). Each `<img>` is wrapped in an `x-data="skeletonLoader()"` div, the neon-cyan loader shows via
+>   `x-show="!isLoaded"`, and the image fades in (`x-show="isLoaded"` + `opacity` enter transition) once its
+>   IntersectionObserver fires after the lazy load. The modal-preview click handler and corner ↗ button are
+>   preserved. Both pages `@push('scripts')` the shared `skeleton-loading.js`.
+> - **Cyber reticle cursor** ([cyber-cursor.js](../../resources/js/cyber-cursor.js), imported by
+>   [app.js](../../resources/js/app.js)) — a neon crosshair (`.cyber-reticle` in app.css: cyan ring + centre
+>   dot + glow) that **trails** the real pointer via a lerped `transform`, expanding and recolouring to
+>   magenta over interactive elements (`.is-hover`). The native arrow is **kept** (never `cursor:none`), so
+>   it can't break click targets. Guarded: created only on a fine pointer **and** when reduced-motion is off;
+>   otherwise nothing is added and the native cursor is untouched. Because `wire:navigate` swaps the `<body>`
+>   (stripping this dynamically-appended element, which isn't in any page's server HTML), init is idempotent
+>   on **DOM presence** rather than a boolean flag: the element + its `document`-level listeners are built
+>   once (listeners survive the swap), and every `livewire:navigated` re-appends the element if it's no
+>   longer connected — so exactly one reticle persists across SPA navigation.
+> - **Standalone glitchy 404** ([errors/404.blade.php](../../resources/views/errors/404.blade.php)) — a
+>   self-contained full-screen page (does **not** use the Livewire app-layout/nav/footer). An inline head
+>   script applies the saved theme (`localStorage['kevinPortfolioIsDarkMode']`) before paint so it matches
+>   the site; a big `.glitch` "404" (`data-text="404"`, animates immediately), a `text-glow-magenta`
+>   "Signal Lost", a drifting `cyber-grid` backdrop, the `<x-scanline-overlay>`, and a neon
+>   `<x-button-call-to-action href="/">` return-home CTA (its `wire:navigate` is inert without Livewire;
+>   the `href` does a normal load).
+>
+> **Added:** `resources/views/components/badge.blade.php`, `resources/js/cyber-cursor.js`,
+> `resources/views/errors/404.blade.php` (+ 5 badge tests in `CyberComponentsTest.php`).
+>
+> **Verified:** `vendor/bin/pint` clean; `npm run build` clean; `vendor/bin/pest --filter=CyberComponents`
+> green (**46** tests). Live DOM/CSSOM checks on `:8000` in a fine-pointer session — reticle created on
+> `<body>` at `z-index:9999` and persisting across navigation; 24/8 skeleton wrappers on the two archive
+> pages each wired `x-show="isLoaded"` + enter-transition over a lazy `<img>` with the loader spinner; 24
+> sold-items tag `<li>` badges with the Alpine toggle bindings passing through; and the 404 served with a
+> real **HTTP 404** carrying every marker (glitch/Signal Lost/CTA/scanline/grid).
+>
+> **Verification caveats:** the headless preview pane doesn't composite frames, so rAF-driven
+> `x-transition`/`x-show` reveals and the reticle trail don't animate there and screenshots time out — the
+> skeleton→image reveal was confirmed by asserting the wiring (`x-show`/transition attributes, loader
+> present) rather than a visual frame; and the browser tool refuses to *navigate* to a 404 status, so the
+> 404 was confirmed via a direct HTTP fetch. Both animate normally in a real displayed browser.
+
 ## Context
 
 The portfolio already leaned cyber-retro (Audiowide / Chakra Petch / JetBrains Mono / Space Mono

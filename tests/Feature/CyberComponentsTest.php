@@ -383,3 +383,56 @@ it('throws when the required text prop is missing', function () {
     // but the guard message is preserved.
     Blade::render('<x-button-next-previous as="button" />');
 })->throws(ViewException::class, 'The [text] prop is required for <x-button-next-previous>.');
+
+it('renders the badge as a neutral span pill by default', function () {
+    $html = Blade::render('<x-badge>hot item</x-badge>');
+
+    expect($html)
+        ->toContain('<span')
+        ->toContain('rounded-xl')
+        ->toContain('font-subtext')
+        // Neutral variant: readable bordered grey, no neon glow class.
+        ->toContain('border-gray-800 dark:border-gray-200')
+        ->not->toContain('badge-neon')
+        ->toContain('hot item');
+});
+
+it('renders the neon cyan and magenta badge variants with their glow class', function () {
+    $cyan = Blade::render('<x-badge variant="cyan">on</x-badge>');
+    $magenta = Blade::render('<x-badge variant="magenta">off</x-badge>');
+
+    expect($cyan)
+        ->toContain('badge-neon-cyan')
+        ->toContain('border-cyan-700 dark:border-cyan-300');
+    expect($magenta)
+        ->toContain('badge-neon-magenta')
+        ->toContain('border-fuchsia-700 dark:border-fuchsia-300');
+});
+
+it('bakes no colours for the none variant so the caller can drive them', function () {
+    $html = Blade::render('<x-badge variant="none">tag</x-badge>');
+
+    expect($html)
+        ->toContain('rounded-xl')
+        // Structure only: no baked text/border colour utilities, no glow.
+        ->not->toContain('badge-neon')
+        ->not->toContain('border-gray-800')
+        ->not->toContain('text-gray-800');
+});
+
+it('renders the badge with a custom tag and the interactive affordance', function () {
+    $html = Blade::render('<x-badge as="li" interactive>tag</x-badge>');
+
+    expect($html)
+        ->toContain('<li')
+        ->toContain('hover:cursor-pointer');
+});
+
+it('passes alpine and extra attributes through to the badge root', function () {
+    $html = Blade::render('<x-badge as="li" variant="none" x-on:click="pick()" x-bind:class="cls" class="mt-2">tag</x-badge>');
+
+    expect($html)
+        ->toContain('x-on:click="pick()"')
+        ->toContain('x-bind:class="cls"')
+        ->toContain('mt-2');
+});

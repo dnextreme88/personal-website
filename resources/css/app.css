@@ -760,6 +760,68 @@
     .clipped-table--striped tbody tr:nth-child(even) {
         background-color: var(--clipped-table-stripe, rgba(0, 240, 255, 0.06));
     }
+
+    /* Neon badge glow — used by <x-badge variant="cyan|magenta">. Static
+       shadows only (no animation), so they're already reduced-motion safe. */
+    .badge-neon-cyan {
+        box-shadow: 0 0 4px rgba(0, 240, 255, 0.35), inset 0 0 4px rgba(0, 240, 255, 0.15);
+        text-shadow: 0 0 6px rgba(0, 240, 255, 0.5);
+    }
+
+    .badge-neon-magenta {
+        box-shadow: 0 0 4px rgba(255, 0, 229, 0.35), inset 0 0 4px rgba(255, 0, 229, 0.15);
+        text-shadow: 0 0 6px rgba(255, 0, 229, 0.5);
+    }
+
+    /* Cyber reticle — decorative crosshair that trails the mouse (cyber-cursor.js).
+       Positioned by JS via transform; centred on the pointer with a negative
+       margin. pointer-events:none so it never intercepts clicks. */
+    .cyber-reticle {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 22px;
+        height: 22px;
+        margin: -11px 0 0 -11px;
+        border: 1.5px solid var(--color-neon-cyan);
+        border-radius: 9999px;
+        box-shadow: 0 0 6px var(--color-neon-cyan), inset 0 0 4px rgba(0, 240, 255, 0.4);
+        pointer-events: none;
+        opacity: 0;
+        z-index: 9999;
+        transition: width 0.18s ease, height 0.18s ease, margin 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, opacity 0.2s ease;
+    }
+
+    /* Centre dot. */
+    .cyber-reticle::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 2px;
+        height: 2px;
+        margin: -1px 0 0 -1px;
+        border-radius: 9999px;
+        background: var(--color-neon-cyan);
+        box-shadow: 0 0 4px var(--color-neon-cyan);
+    }
+
+    .cyber-reticle.is-visible {
+        opacity: 1;
+    }
+
+    .cyber-reticle.is-hover {
+        width: 40px;
+        height: 40px;
+        margin: -20px 0 0 -20px;
+        border-color: var(--color-neon-magenta);
+        box-shadow: 0 0 10px var(--color-neon-magenta), inset 0 0 6px rgba(255, 0, 229, 0.4);
+    }
+
+    .cyber-reticle.is-hover::before {
+        background: var(--color-neon-magenta);
+        box-shadow: 0 0 4px var(--color-neon-magenta);
+    }
 }
 
 /* Accessibility: honour reduced-motion by stilling every animated effect
@@ -790,6 +852,12 @@
 
     /* HUD corners: snap in on hover with no travel. */
     .hud-corner {
+        transition: none !important;
+    }
+
+    /* Reticle is not created under reduced motion (cyber-cursor.js bails), but
+       null out its transition too in case it's ever forced on. */
+    .cyber-reticle {
         transition: none !important;
     }
 }

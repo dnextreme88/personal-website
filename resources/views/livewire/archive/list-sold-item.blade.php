@@ -180,17 +180,18 @@
 
                         <ul class="flex flex-wrap gap-2 mt-4 list-none">
                             @foreach ($tags as $tag)
-                                {{-- TODO: ADD A NEW COMPONENT FOR ROUND BADGES --}}
-                                <li
+                                <x-badge
+                                    as="li"
+                                    variant="none"
+                                    interactive
                                     x-bind:class="{
                                         'text-cyan-800 dark:text-cyan-200 bg-cyan-200 dark:bg-cyan-800 border-cyan-800 dark:border-cyan-200': selectedTags.includes('{{ $tag }}'),
                                         'text-gray-800 dark:text-gray-200 border-gray-800 dark:border-gray-200 hover:bg-gray-300 dark:hover:bg-gray-500': !selectedTags.includes('{{ $tag }}')
                                     }"
                                     x-on:click="addToTags('{{ $tag }}')"
-                                    class="px-2 py-1 transition-colors duration-200 border-2 rounded-xl hover:cursor-pointer font-subtext"
                                 >
                                     {{ $tag }}
-                                </li>
+                                </x-badge>
                             @endforeach
                         </ul>
                     </div>
