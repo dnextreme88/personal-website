@@ -220,11 +220,11 @@ it('honours a caller-supplied type without duplicating the attribute', function 
         ->and(substr_count($html, 'type='))->toBe(1);
 });
 
-it('uses a solid magenta border rather than the cyan-to-magenta gradient', function () {
+it('uses a solid green border rather than the cyan-to-magenta gradient', function () {
     $html = Blade::render('<x-forms.button-submit>Send</x-forms.button-submit>');
 
     expect($html)
-        ->toContain('bg-neon-cyan');
+        ->toContain('bg-green-500');
 });
 
 it('uses the font-loader font class on the submit button label', function () {
@@ -234,12 +234,12 @@ it('uses the font-loader font class on the submit button label', function () {
     expect($html)->toContain('font-loader');
 });
 
-it('fills the submit button with cyan and keeps the label readable in both modes', function () {
+it('fills the submit button with green and keeps the label readable in both modes', function () {
     $html = Blade::render('<x-forms.button-submit>Send</x-forms.button-submit>');
 
     expect($html)
-        // Cyan fill: dark cyan in light mode, light cyan in dark mode.
-        ->toContain('bg-cyan-800 dark:bg-cyan-200')
+        // Green fill: dark green in light mode, light green in dark mode.
+        ->toContain('bg-green-800 dark:bg-green-200')
         // Label stays white on the dark fill, flips to dark on the light fill.
         ->toContain('text-white dark:text-gray-900');
 });

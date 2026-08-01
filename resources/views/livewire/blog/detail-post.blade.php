@@ -65,7 +65,7 @@
             </div>
         @endif
 
-        <div class="border-t border-t-gray-400 flex items-start gap-2 mt-2 py-2">
+        <div class="border-t border-t-neon-magenta flex items-start gap-2 mt-2 py-2">
             <span aria-hidden="true" class="text-fuchsia-800 dark:text-fuchsia-200">&larr;</span>
             <a wire:navigate class="text-cyan-800 dark:text-cyan-200 hover:text-cyan-600 dark:hover:text-cyan-400" href="{{ route('blog.index') }}">Back to Blog</a>
         </div>

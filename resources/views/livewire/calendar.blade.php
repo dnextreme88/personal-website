@@ -39,15 +39,11 @@
                 @endphp
 
                 <div
-                    class="group relative cursor-pointer p-1 md:p-0 lg:p-2
+                    class="group relative p-1 md:p-0 lg:p-2
                         @if ($is_current_date)
-                            font-bold text-gray-800 dark:text-gray-200 bg-gray-300 dark:bg-gray-600
-
-                            @if (($selected_date && $selected_date == $carbon_instance->format('Y-m-d')) || (!$selected_date && $is_date_have_posts))
-                                border border-gray-600 dark:border-gray-300
-                            @endif
+                            font-bold text-gray-800 dark:text-gray-200
                         @elseif ($is_date_have_posts)
-                            font-bold text-cyan-800 dark:text-cyan-200
+                            cursor-pointer font-bold text-cyan-800 dark:text-cyan-200
 
                             @if ($selected_date == $carbon_instance->format('Y-m-d'))
                                 border bg-gray-300 dark:bg-gray-600 border-gray-600 dark:border-gray-300
@@ -64,13 +60,16 @@
                     @endif
                 >
                     {{--
-                    Show the border tracer animation if:
-                        - The date has posts, AND
-                        - It is not the current date while no date is selected, AND
-                        - It is not the currently selected date
+                    Current day → a neon-magenta marching-ants border (always shown, it
+                    replaces the old card-rectangle highlight). Otherwise, show the cyan
+                    hover border-tracer on any non-selected date that has posts.
                     --}}
-                    @if (!($selected_date == '' && $is_current_date) && $selected_date != $carbon_instance->format('Y-m-d') && $is_date_have_posts)
-                        <svg class="absolute inset-0 w-full h-full pointer-events-none overflow-visible" viewBox="0 0 44 44">
+                    @if ($is_current_date)
+                        <svg class="absolute inset-0 w-full h-full overflow-visible" viewBox="0 0 44 44">
+                            <rect class="marching-border fill-none stroke-neon-magenta stroke-[1.5]" x="0.75" y="0.75" width="42.5" height="42.5" rx="3.25" pathLength="100" />
+                        </svg>
+                    @elseif ($selected_date != $carbon_instance->format('Y-m-d') && $is_date_have_posts)
+                        <svg class="absolute inset-0 w-full h-full overflow-visible" viewBox="0 0 44 44">
                             <rect class="border-tracer fill-none stroke-cyan-600 dark:stroke-cyan-300 stroke-[1.5]" x="0.75" y="0.75" width="42.5" height="42.5" rx="3.25" />
                         </svg>
                     @endif

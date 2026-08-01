@@ -56,7 +56,7 @@
 
 <button
     type="{{ $attributes->get('type', $type) }}"
-    {{ $attributes->except('type')->merge(['class' => 'btn-clear group relative inline-block leading-none']) }}
+    {{ $attributes->except('type')->merge(['class' => 'btn-clear group relative inline-block leading-none cursor-pointer']) }}
 >
     <span
         class="relative flex items-center justify-center overflow-hidden px-5 py-2.5 text-sm font-semibold uppercase tracking-widest text-white dark:text-gray-800 font-loader"
@@ -67,10 +67,10 @@
              so only a thin red band shows as a border that follows the clip path,
              diagonals included.
              REF: https://stackoverflow.com/a/70238234 --}}
-        <span aria-hidden="true" class="pointer-events-none absolute inset-0 bg-red-800 dark:bg-red-200"></span>
+        <span aria-hidden="true" class="absolute inset-0 bg-red-800 dark:bg-red-200"></span>
 
         {{-- Fill — inset by the 2px border width, re-clipped to the same shape. --}}
-        <span aria-hidden="true" class="pointer-events-none absolute inset-0.5 bg-red-800 dark:bg-red-200 {{ $surface_class }}" style="clip-path: {{ $clip_path }};"></span>
+        <span aria-hidden="true" class="absolute inset-0.5 bg-red-800 dark:bg-red-200 {{ $surface_class }}" style="clip-path: {{ $clip_path }};"></span>
 
         <span class="relative z-10">{{ $slot }}</span>
     </span>

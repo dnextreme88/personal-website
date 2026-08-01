@@ -158,6 +158,21 @@
         stroke-dashoffset: 0;
     }
 
+    /* Marching-ants border — a continuously looping dashed outline (like Excel's
+       "running" copy marquee), in neon magenta. Used on the calendar's current-day
+       cell. Pair with pathLength="100" on the <rect> so exactly 10 dashes fit and
+       the loop is seamless (no seam where the pattern wraps). */
+    .marching-border {
+        stroke-dasharray: 5 5;
+        animation: marching-border 0.6s linear infinite;
+    }
+
+    @keyframes marching-border {
+        to {
+            stroke-dashoffset: -10;
+        }
+    }
+
     .bg-gradient-blue {
         background-image: linear-gradient(120deg,
                 #1e2b4a,
@@ -832,6 +847,7 @@
     .animate-grid-drift,
     .animate-shimmering-gradient,
     .animate-cyber-scan,
+    .marching-border,
     .skeleton-loader,
     .skeleton-loader-lg,
     [class*="animate-"] {
