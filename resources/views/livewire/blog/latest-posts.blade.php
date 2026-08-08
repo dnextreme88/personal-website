@@ -24,7 +24,9 @@
             }
         @endphp
 
-        <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pt-80 pb-8 sm:pt-48 lg:pt-50 lg:px-4 dark:bg-gray-800 hover:scale-110 translate-y-32 opacity-0 intersect-once intersect:translate-y-0 intersect:opacity-100 intersect:delay-{{ $transition_delay }} transition [transition:scale_0.25s,translate_2s,opacity_3s]">
+        <article class="card-square group relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pt-80 pb-8 sm:pt-48 lg:pt-50 lg:px-4 dark:bg-gray-800 hover:scale-110 translate-y-32 opacity-0 intersect-once intersect:translate-y-0 intersect:opacity-100 intersect:delay-{{ $transition_delay }} transition [transition:scale_0.25s,translate_2s,opacity_3s]">
+            <x-hud-corners />
+
             {{-- NOTE: Stock images --}}
             {{-- <img src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80" class="absolute inset-0 -z-10 size-full object-cover" /> --}}
             {{-- <img src="https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3270&q=80" class="absolute inset-0 -z-10 size-full object-cover" /> --}}

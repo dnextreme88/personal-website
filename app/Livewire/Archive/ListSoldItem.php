@@ -62,7 +62,7 @@ class ListSoldItem extends Component
         $this->dispatch('filtered-sold-items');
     }
 
-    public function reset_archives_form()
+    public function reset_sold_items_form()
     {
         $this->reset([
             'is_filtered',
@@ -81,7 +81,7 @@ class ListSoldItem extends Component
         $this->dispatch('form-reset');
     }
 
-    public function search_archives(array $filters = [])
+    public function search_sold_items(array $filters = [])
     {
         $this->archive_brands_choice = $filters['archive_brands_choice'] ?? '';
         $this->archive_types_choice = $filters['archive_types_choice'] ?? '';

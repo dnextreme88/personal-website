@@ -27,8 +27,17 @@ function formatValue(value, money) {
 
 function buildConfig(spec) {
   const isDark = document.documentElement.classList.contains('dark');
-  const axisColor = isDark ? '#e5e7eb' : '#374151';
-  const gridColor = isDark ? '#374151' : '#e5e7eb';
+
+  // ─── Chart colours — edit these hex codes to restyle the charts ─────────
+  // Values read `isDark ? <dark-mode value> : <light-mode value>`. Keep the
+  // light-mode text a DARK colour and the dark-mode text a LIGHT colour so the
+  // labels stay readable against each background. (Using a light colour in the
+  // light-mode slot is what makes the labels invisible.)
+  const axisColor = isDark ? '#e5e7eb' : '#374151'; // axis tick labels (years / amounts)
+  const gridColor = isDark ? '#374151' : '#e5e7eb'; // horizontal grid lines
+  const barFill = '#7dd3fc'; // bar fill — sky-300
+  const barBorder = '#0ea5e9'; // bar outline — sky-500
+  // ────────────────────────────────────────────────────────────────────────
 
   return {
     type: spec.type || 'bar',
@@ -37,8 +46,8 @@ function buildConfig(spec) {
       datasets: [
         {
           data: spec.data,
-          borderColor: '#0ea5e9', // sky-500
-          backgroundColor: '#7dd3fc', // sky-300 (light blue)
+          borderColor: barBorder,
+          backgroundColor: barFill,
           borderWidth: 1,
         },
       ],
@@ -100,6 +109,21 @@ function initChart(canvas) {
 function initAll() {
   document.querySelectorAll('canvas[data-chart]').forEach(initChart);
 }
+
+// The theme toggle only adds/removes `.dark` on <html> and fires no event, so a
+// chart built in one mode keeps its colours after switching (e.g. dark-mode's
+// light text left on a light background, rendering labels invisible). Watch the
+// class and rebuild only when the dark state actually flips.
+let wasDark = document.documentElement.classList.contains('dark');
+
+new MutationObserver(() => {
+  const isDark = document.documentElement.classList.contains('dark');
+
+  if (isDark !== wasDark) {
+    wasDark = isDark;
+    initAll();
+  }
+}).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
 
 // Fires on the initial load and on every wire:navigate transition.
 document.addEventListener('livewire:navigated', initAll);

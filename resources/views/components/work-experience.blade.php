@@ -6,7 +6,7 @@
     'tech_stacks' => [],
 ])
 
-<div class="bg-gray-200 dark:bg-gray-800 p-6 rounded-lg shadow">
+<div class="bg-gray-200 dark:bg-gray-800 p-6 rounded-lg shadow card-rectangle">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-2">
         <h2 class="col-span-2 font-semibold text-2xl mb-2 text-gray-800 dark:text-gray-200 lg:text-base">{{ $employment }}</h2>
 

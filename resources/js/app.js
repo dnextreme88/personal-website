@@ -1,6 +1,9 @@
 import './bootstrap';
 import '../../vendor/masmerise/livewire-toaster/resources/js';
 import { Observer } from 'tailwindcss-intersect';
+import './cyber-text';
+import './typewriter';
+import './cyber-cursor';
 
 // REF: https://livewire.laravel.com/docs/navigate#dont-rely-on-domcontentloaded
 document.addEventListener('livewire:navigated', () => {

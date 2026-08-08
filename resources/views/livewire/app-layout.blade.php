@@ -16,6 +16,11 @@
         <link rel="preconnect" href="https://fonts.bunny.net" />
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
+        {{-- Font trial: Audiowide (headings), Chakra Petch (UI labels), JetBrains Mono (code), Space Mono (bridge) --}}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Chakra+Petch:wght@400;500;600;700&family=Exo+2:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
         {{-- Styles --}}
         @filamentStyles
         @livewireStyles
@@ -25,13 +30,13 @@
         @stack('scripts')
     </head>
 
-    <body x-data="window.darkModeSwitcher()" x-init="init" x-bind:class="{ 'dark': switchOn }" class="font-sans antialiased">
+    <body x-data="window.darkModeSwitcher()" x-init="init" x-bind:class="{ 'dark': switchOn }" class="font-text antialiased">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
             {{-- Page Navigation --}}
             @if (isset($nav_menu))
                 <div class="h-8 bg-gray-100 dark:bg-gray-600">&nbsp;</div>
 
-                <nav class="bg-gray-100 dark:bg-gray-600 top-0 sticky z-1">{{ $nav_menu }}</nav>
+                <nav class="bg-gray-100 dark:bg-gray-600 top-0 sticky z-99">{{ $nav_menu }}</nav>
             @endif
 
             {{-- Page Heading --}}
@@ -48,6 +53,9 @@
                 <footer class="mt-8 sm:mt-16">{{ $footer }}</footer>
             @endif
         </div>
+
+        {{-- Cyberpunk CRT scanline overlay (site-wide, non-interactive) --}}
+        <x-scanline-overlay />
 
         {{-- Scripts --}}
         @filamentScripts

@@ -25,7 +25,7 @@
         class="relative inline-flex h-5 py-0.5 focus:outline-none rounded-full w-9"
         type="button"
     >
-        <span x-bind:class="{'translate-x-[18px]': switchOn, 'translate-x-0.5': !switchOn}" class="h-4 w-4 duration-200 ease-in-out bg-white rounded-full shadow-md"></span>
+        <span x-bind:class="{'translate-x-4.5': switchOn, 'translate-x-0.5': !switchOn}" class="h-4 w-4 duration-200 ease-in-out bg-white rounded-full shadow-md"></span>
     </button>
 
     @if (isset($right_side))

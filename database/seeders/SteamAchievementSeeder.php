@@ -657,6 +657,14 @@ class SteamAchievementSeeder extends Seeder
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
+            [
+                'game_name' => '007 First Light',
+                'tags' => 'good review',
+                'date_completed' => '2026-08-02',
+                'notes' => null,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
         ]);
     }
 }

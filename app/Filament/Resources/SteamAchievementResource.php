@@ -7,7 +7,6 @@ use App\Filament\Resources\SteamAchievementResource\Pages\EditSteamAchievement;
 use App\Filament\Resources\SteamAchievementResource\Pages\ListSteamAchievements;
 use App\Models\SteamAchievement;
 use BackedEnum;
-use Illuminate\Support\Str;
 use Filament\Actions\EditAction;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\TagsInput;
@@ -18,6 +17,7 @@ use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Illuminate\Support\Str;
 
 class SteamAchievementResource extends Resource
 {

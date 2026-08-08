@@ -13,6 +13,5 @@ class ContactMe extends Model
         'company',
         'message',
     ];
-
     protected $table = 'contact_me';
 }

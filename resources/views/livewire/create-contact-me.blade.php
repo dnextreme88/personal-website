@@ -70,7 +70,8 @@
                                 <div class="mt-3">
                                     <textarea
                                         wire:model="message"
-                                        class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-blue-400 resize-none" placeholder="Please enter your message here"
+                                        class="block w-full rounded-md px-3.5 py-2 text-gray-800 dark:text-gray-200 bg-gray-200 dark:bg-gray-800 outline-1 placeholder:text-gray-400 resize-none cyber-input"
+                                        placeholder="Please enter your message here"
                                         maxlength="255"
                                         rows="5"
                                         aria-describedby="message-description"
@@ -83,23 +84,20 @@
                         </div>
 
                         <div class="flex justify-end mt-10 lg:mt-16">
-                            <button
-                                class="rounded-md bg-green-600 dark:bg-green-500 min-w-[130px] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-green-500 dark:hover:bg-green-700 focus-visible:outline transition duration-300"
-                                type="submit"
-                            >
+                            <x-forms.button-submit bevels="tr br">
                                 <span wire:loading.flex wire:target="create_contact_me" class="justify-self-center">
                                     <x-loading-indicator
-                                        :loader_color_bg="'fill-gray-200'"
-                                        :loader_color_spin="'fill-gray-200'"
-                                        :showText="true"
+                                        :loader_color_bg="'fill-gray-200 dark:fill-gray-800'"
+                                        :loader_color_spin="'fill-gray-200 dark:fill-gray-800'"
+                                        :show_text="true"
                                         :size="4"
                                         :text="'Sending'"
-                                        :text_color="'text-white'"
+                                        :text_color="'text-white dark:text-gray-900'"
                                     />
                                 </span>
 
-                                <span wire:loading.remove wire:target="create_contact_me">Send message</span>
-                            </button>
+                                <span wire:loading.remove wire:target="create_contact_me" class="font-loader">Send message</span>
+                            </x-forms.button-submit>
                         </div>
                     </form>
                 </div>

@@ -17,6 +17,9 @@ how it was verified.
   sorting, hot-item badge & Chart.js sales chart (executed 2026-07-20).
 - [blog-enhancements.md](blog-enhancements.md) — Blog draft/publish status, curated related posts,
   reading-time badge, prev/next navigation & admin tabs (executed 2026-07-22).
+- [cyberpunk-design.md](cyberpunk-design.md) — Site-wide cyberpunk/retro-futuristic design layer:
+  neon glow, glitch/typewriter/decode text, HUD-framed cards, scanline + grid ambient & cyber
+  loaders (executed 2026-07-25).
 
 ## Conventions
 
