@@ -44,33 +44,31 @@
                             <p class="blinking-cursor mt-8 mb-6 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8 sm:pb-16 lg:max-w-none dark:text-gray-400 transition duration-2000 opacity-0 intersect-once intersect-half intersect:opacity-100 delay-500" data-typewriter data-typewriter-once data-typewriter-speed="30">My name is Jeanne Kevin T. Decena and welcome to my personal website! Here you can find all the goodies I've been doing in my life - from my blog and to my portfolio. Feel free to look around! If you need some web development professional, look no further and contact me right away!</p>
                         </div>
 
-                        <div class="mt-14 flex justify-end gap-8 flex-col sm:flex-row sm:justify-start sm:pl-2 md:mt-10 md:pl-10 lg:mt-0 lg:pl-0">
-                            <div class="mx-auto sm:ml-auto w-44 flex-none space-y-8 pt-32 sm:pt-80 lg:order-last lg:pt-66 xl:order-0">
-                                <div class="relative">
+                        <div class="mt-14 flex justify-end gap-8 flex-col md:flex-row sm:justify-start sm:pl-2 md:mt-10 md:pl-10 lg:mt-0 lg:pl-0">
+                            <div class="mx-auto sm:ml-auto w-44 flex-none space-y-8 pt-32 md:pt-80 lg:pt-74">
+                                <div class="relative rounded-xl card-rectangle">
                                     <img src="{{ asset('/images/homepage-1.webp') }}" class="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5 hover:scale-110 -translate-x-32 opacity-0 intersect-once intersect:translate-x-0 intersect:opacity-100" style="transition: scale 0.25s, translate 2s, opacity 3s 200ms;" />
-                                    <div class="absolute inset-0"></div>
                                 </div>
                             </div>
 
-                            <div class="mx-auto sm:mr-auto w-44 flex-none space-y-8 sm:pt-52 lg:pt-16">
-                                <div class="relative">
+                            <div class="mx-auto sm:mr-auto w-44 flex-none space-y-8 md:pt-52 lg:pt-40">
+                                <div class="relative rounded-xl card-rectangle">
                                     <img src="{{ asset('/images/homepage-2.webp') }}" class="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5 hover:scale-110 -translate-x-32 opacity-0 intersect-once intersect:translate-x-0 intersect:opacity-100" style="transition: scale 0.25s, translate 2s, opacity 3s 400ms;" />
-                                    <div class="absolute inset-0"></div>
                                 </div>
-                                <div class="relative">
+                                <div class="relative rounded-xl card-rectangle">
                                     <img src="{{ asset('/images/homepage-3.webp') }}" class="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5 hover:scale-110 -translate-x-32 opacity-0 intersect-once intersect:translate-x-0 intersect:opacity-100" style="transition: scale 0.25s, translate 2s, opacity 3s 600ms;" />
-                                    <div class="absolute inset-0"></div>
                                 </div>
                             </div>
 
-                            <div class="mx-auto w-44 flex-none space-y-8 lg:pt-36 xl:pt-0">
-                                <div class="relative">
+                            <div class="mx-auto w-44 flex-none space-y-8 lg:pt-0">
+                                <div class="relative rounded-xl card-rectangle">
                                     <img src="{{ asset('/images/homepage-4.webp') }}" class="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5 hover:scale-110 -translate-x-32 opacity-0 intersect-once intersect:translate-x-0 intersect:opacity-100" style="transition: scale 0.25s, translate 2s, opacity 3s 800ms;" />
-                                    <div class="absolute inset-0"></div>
                                 </div>
-                                <div class="relative">
+                                <div class="relative rounded-xl card-rectangle">
                                     <img src="{{ asset('/images/homepage-5.webp') }}" class="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5 hover:scale-110 -translate-x-32 opacity-0 intersect-once intersect:translate-x-0 intersect:opacity-100" style="transition: scale 0.25s, translate 2s, opacity 3s 1000ms;" />
-                                    <div class="absolute inset-0"></div>
+                                </div>
+                                <div class="relative rounded-xl card-rectangle">
+                                    <img src="{{ asset('/images/homepage-6.webp') }}" class="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5 hover:scale-110 -translate-x-32 opacity-0 intersect-once intersect:translate-x-0 intersect:opacity-100" style="transition: scale 0.25s, translate 2s, opacity 3s 1000ms;" />
                                 </div>
                             </div>
                         </div>
@@ -241,8 +239,8 @@
 
                         <div class="mt-14 hidden lg:flex justify-end gap-8 sm:flex-row sm:-mt-10 sm:justify-start sm:pl-2 md:pl-16 lg:mt-0 lg:pl-0">
                             <div class="space-y-8 pt-32 sm:pt-48 lg:pt-32">
-                                <div class="relative">
-                                    <img src="{{ asset('/images/homepage-6.webp') }}" class="aspect-square w-full rounded-xl bg-gray-900/5 shadow-lg dark:bg-gray-700/5 hover:scale-110 -translate-x-32 opacity-0 intersect-once intersect:translate-x-0 intersect:opacity-100" style="transition: scale 0.25s, translate 2s, opacity 3s 200ms;" />
+                                <div class="relative rounded-xl card-rectangle">
+                                    <img src="{{ asset('/images/homepage-7.webp') }}" class="aspect-square w-full rounded-xl bg-gray-900/5 shadow-lg dark:bg-gray-700/5 hover:scale-110 -translate-x-32 opacity-0 intersect-once intersect:translate-x-0 intersect:opacity-100" style="transition: scale 0.25s, translate 2s, opacity 3s 200ms;" />
                                     <div class="absolute inset-0"></div>
                                 </div>
                             </div>

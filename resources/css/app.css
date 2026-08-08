@@ -537,6 +537,16 @@
         opacity: 1;
     }
 
+    /* Keep the neon border in sync with an image that fades in on scroll. When the
+       card wraps an intersect image, tailwindcss-intersect toggles [no-intersect]
+       on that image while it's off-screen; hide the border until the image has
+       intersected so the two appear together instead of the border floating in
+       early. Scoped via :has() to wrappers holding such an image, so plain
+       .card-rectangle users (buttons, stat cards) are untouched. */
+    .card-rectangle:has(> img[no-intersect])::before {
+        opacity: 0;
+    }
+
     /* Glow + inner darkening — .card-square only. Light mode gets the punchier
        values; dark mode is toned down and adds a magenta cast since neon already
        reads vividly there. */
