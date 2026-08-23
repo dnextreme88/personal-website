@@ -20,6 +20,9 @@ how it was verified.
 - [20260725-cyberpunk-design.md](20260725-cyberpunk-design.md) — Site-wide cyberpunk/retro-futuristic design layer:
   neon glow, glitch/typewriter/decode text, HUD-framed cards, scanline + grid ambient & cyber
   loaders (executed **2026-07-25**).
+- [20260822-on-demand-release-script.md](20260822-on-demand-release-script.md) — On-demand `create-release.sh`
+  that tags `V{major}.{minor}` (Manila-day rollover) and publishes a GitHub Release listing PRs
+  merged since the last release (executed **2026-08-22**).
 
 ## Conventions
 
