@@ -2,6 +2,7 @@
 
 use App\Livewire\AboutMe;
 use App\Livewire\Archive\Archive;
+use App\Livewire\Archive\DetailSoldItem;
 use App\Livewire\Archive\ListSoldItem;
 use App\Livewire\Archive\ListSteamAchievement;
 use App\Livewire\Archive\StaticDroppingAreas;
@@ -18,6 +19,9 @@ Route::get('/about-me', AboutMe::class)->name('about_me');
 Route::group(['prefix' => 'archive', 'as' => 'archive.'], function () {
     Route::get('/', Archive::class)->name('index');
     Route::get('/sold-items', ListSoldItem::class)->name('sold-items.list');
+    Route::get('/sold-items/{id}-{brand}-{type}', DetailSoldItem::class)
+        ->name('sold-items.detail')
+        ->whereNumber('id');
     Route::get('/steam-achievements', ListSteamAchievement::class)->name('steam-achievements.list');
     Route::get('/static-dropping-areas', StaticDroppingAreas::class)->name('dropping-areas.static');
     Route::get('/static-game-screenshots', StaticGameScreenshots::class)->name('game-screenshots.static');

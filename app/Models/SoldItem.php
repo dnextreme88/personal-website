@@ -18,6 +18,7 @@ class SoldItem extends Model
         'price',
         'condition',
         'size',
+        'description',
         'date_sold',
         'tags',
         'notes',

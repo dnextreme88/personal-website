@@ -85,6 +85,10 @@ class SoldItemResource extends Resource
                             ->helperText('Sizes usually apply to anything that have scales, size tags, or some form of measurement eg. shirts, toy cars etc.')
                             ->maxLength(32)
                             ->required(),
+                        Textarea::make('description')
+                            ->autosize()
+                            ->columnSpanFull()
+                            ->nullable(),
                         DatePicker::make('date_sold')
                             ->beforeOrEqual('today')
                             ->helperText('Format: MM/DD/YYYY. Will be saved as YYYY-MM-DD in the DB')
