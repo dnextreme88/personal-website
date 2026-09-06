@@ -61,7 +61,12 @@
 
             <div>
                 <p class="text-sm text-gray-600 dark:text-gray-400 font-subtext">Description</p>
-                <p class="text-lg text-gray-800 dark:text-gray-200 {{ !$sold_item->description ? 'italic' : '' }}">{{ $sold_item->description ? $sold_item->description : 'No description' }}</p>
+
+                @if ($sold_item->description)
+                    <div class="text-lg text-gray-800 dark:text-gray-200 prose prose-xl lg:prose-lg dark:prose-invert max-w-none prose-sold-items-desc">{!! Markdown::parse($sold_item->description) !!}</div>
+                @else
+                    <p class="text-lg italic text-gray-800 dark:text-gray-200">No description</p>
+                @endif
             </div>
         </div>
 

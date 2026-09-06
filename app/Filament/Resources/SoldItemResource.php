@@ -20,6 +20,7 @@ use Carbon\Carbon;
 use Filament\Actions\EditAction;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\Textarea;
@@ -85,9 +86,22 @@ class SoldItemResource extends Resource
                             ->helperText('Sizes usually apply to anything that have scales, size tags, or some form of measurement eg. shirts, toy cars etc.')
                             ->maxLength(32)
                             ->required(),
-                        Textarea::make('description')
-                            ->autosize()
+                        MarkdownEditor::make('description')
                             ->columnSpanFull()
+                            ->default(<<<'MARKDOWN'
+                                ⭐ Last Price: P??? (omit if there are none)
+
+                                Dimensions (omit if there are none, this only applies to items that can be measured eg. clothes, pants etc.):
+                                * ⚡Length: ? centimeters/inches
+                                * ⚡Width: ? centimeters/inches
+
+                                Details:
+                                * ⚡(sorted alphabetically, first line, add more as needed, omit if there are none)
+
+                                ❗Issue: (omit if there are none)
+
+                                🎯 RFS: (omit if there are none)
+                                MARKDOWN)
                             ->nullable(),
                         DatePicker::make('date_sold')
                             ->beforeOrEqual('today')
