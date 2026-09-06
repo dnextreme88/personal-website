@@ -719,7 +719,11 @@ class SoldItemSeeder extends Seeder
                 'price' => 70,
                 'condition' => 'new',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => '⭐ Each item costs P20 each (P70 if buying all)
+
+Details:
+* ⚡Cases intact, never opened
+* ⚡Contains the following: Avengers-themed Outdoor Science Kit, Superman-themed Mini Notebook, Superman-themed Mobile Pouch, and Star Wars-themed Notepad with GID stickers and tattoo',
                 'date_sold' => '2015-02-19',
                 'tags' => 'collectibles,sold as set,sold with case',
                 'notes' => null,
@@ -737,7 +741,8 @@ class SoldItemSeeder extends Seeder
                 'price' => 200,
                 'condition' => 'used',
                 'size' => 'XL',
-                'description' => null,
+                'description' => 'Details:
+* ⚡Has 2 extra buttons at the bottom of the polo when unbuttoned',
                 'date_sold' => '2015-02-20',
                 'tags' => null,
                 'notes' => null,
@@ -791,7 +796,7 @@ class SoldItemSeeder extends Seeder
                 'price' => 200,
                 'condition' => 'used',
                 'size' => 'XXL',
-                'description' => null,
+                'description' => '❗Issue: One of the buttons was torn',
                 'date_sold' => '2015-06-25',
                 'tags' => null,
                 'notes' => null,
@@ -845,7 +850,9 @@ class SoldItemSeeder extends Seeder
                 'price' => 250,
                 'condition' => 'used',
                 'size' => 'L',
-                'description' => null,
+                'description' => '⭐ Last Price: P250
+
+⭐ The camouflage is part of the shirt and not a two-toned shirt',
                 'date_sold' => '2015-07-23',
                 'tags' => 'camouflage pattern,received as gift',
                 'notes' => null,
@@ -863,7 +870,7 @@ class SoldItemSeeder extends Seeder
                 'price' => 150,
                 'condition' => 'used',
                 'size' => 'XL',
-                'description' => null,
+                'description' => '⭐ Last Price: P150',
                 'date_sold' => '2015-07-23',
                 'tags' => null,
                 'notes' => null,
@@ -881,7 +888,7 @@ class SoldItemSeeder extends Seeder
                 'price' => 200,
                 'condition' => 'used',
                 'size' => 'XL',
-                'description' => null,
+                'description' => '⭐ Last Price: P200',
                 'date_sold' => '2015-07-23',
                 'tags' => null,
                 'notes' => null,
@@ -953,7 +960,7 @@ class SoldItemSeeder extends Seeder
                 'price' => 300,
                 'condition' => 'new',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => '⭐ Last Price: P200',
                 'date_sold' => '2015-12-17',
                 'tags' => 'sold with case',
                 'notes' => 'Received payment on 12/18.',
@@ -971,7 +978,9 @@ class SoldItemSeeder extends Seeder
                 'price' => 250,
                 'condition' => 'used',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => '⭐ Last Price: P250
+
+❗Issue: One of the pages was removed but not torn',
                 'date_sold' => '2016-01-24',
                 'tags' => 'educational',
                 'notes' => 'Received payment on 1/23.',
@@ -1079,7 +1088,12 @@ class SoldItemSeeder extends Seeder
                 'price' => 500,
                 'condition' => 'new',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => '⭐ Each item costs P200 each (P400 if buying all)
+
+Details:
+* ⚡Cases intact, never opened
+* ⚡Contains the following: Argentina emblem, Brazil emblem, and Germany emblem
+* ⚡Worthy collectible for sports fans',
                 'date_sold' => '2016-05-17',
                 'tags' => 'collectibles,sold as set,sold with case',
                 'notes' => 'Received payment on 5/17.',
@@ -1097,7 +1111,7 @@ class SoldItemSeeder extends Seeder
                 'price' => 350,
                 'condition' => 'new',
                 'size' => 'XXL',
-                'description' => null,
+                'description' => '⭐ Last Price: P250',
                 'date_sold' => '2016-06-01',
                 'tags' => null,
                 'notes' => 'Received payment from Buyer through Palawan Express on 5/31, missing receipt.',
@@ -1241,7 +1255,10 @@ class SoldItemSeeder extends Seeder
                 'price' => 50,
                 'condition' => 'new',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => '⭐ Last Price: P50
+
+Details:
+* ⚡Independence Day-themed keychain. Made in colorful beads varying in colors of the Philippine Flag: blue, red, yellow, and white',
                 'date_sold' => '2017-01-03',
                 'tags' => 'female buyer,freebies',
                 'notes' => null,
@@ -1259,7 +1276,7 @@ class SoldItemSeeder extends Seeder
                 'price' => 350,
                 'condition' => 'used',
                 'size' => 'XL',
-                'description' => null,
+                'description' => '⭐ Last Price: P250',
                 'date_sold' => '2017-01-03',
                 'tags' => null,
                 'notes' => 'Received payment on 1/3.',
@@ -1277,7 +1294,9 @@ class SoldItemSeeder extends Seeder
                 'price' => 350,
                 'condition' => 'healthy',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => 'Details:
+* ⚡1-month old plus kitten born on January 15, 2017. The kitten got his color from the father, as the mother is of hybrid colors
+* ⚡No vaccination and not yet de-wormed',
                 'date_sold' => '2017-03-04',
                 'tags' => 'animals,female buyer',
                 'notes' => 'Not dewormed/vaccinated.',
@@ -1331,7 +1350,7 @@ class SoldItemSeeder extends Seeder
                 'price' => 350,
                 'condition' => 'new',
                 'size' => 'M or L',
-                'description' => null,
+                'description' => '⭐ Last Price: P250',
                 'date_sold' => '2017-06-10',
                 'tags' => null,
                 'notes' => 'Received payment on 6/9.',
@@ -1349,7 +1368,7 @@ class SoldItemSeeder extends Seeder
                 'price' => 200,
                 'condition' => 'new',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => '⭐ Last Price: P200',
                 'date_sold' => '2017-06-24',
                 'tags' => 'australia,computer related,sold with case',
                 'notes' => null,
@@ -1529,7 +1548,9 @@ class SoldItemSeeder extends Seeder
                 'price' => 1200,
                 'condition' => 'new',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => '⭐ Last Price: P1,200
+
+❗Issue: B button and DOWN D-Pad buttons needs to be slightly tapped harder to work',
                 'date_sold' => '2017-10-18',
                 'tags' => 'australia',
                 'notes' => null,
@@ -1565,7 +1586,8 @@ class SoldItemSeeder extends Seeder
                 'price' => 900,
                 'condition' => 'new',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => 'Details:
+* ⚡Does not come with films and batteries',
                 'date_sold' => '2017-11-07',
                 'tags' => 'female buyer,hot item',
                 'notes' => 'Received payment on 11/7.',
@@ -1583,7 +1605,10 @@ class SoldItemSeeder extends Seeder
                 'price' => 400,
                 'condition' => 'used',
                 'size' => '12 US',
-                'description' => null,
+                'description' => 'Details:
+* ⚡Original SRP: P2,495
+
+❗Issue: Minor flaws on its midsoles due to wear and tear',
                 'date_sold' => '2017-12-02',
                 'tags' => null,
                 'notes' => null,
@@ -1637,7 +1662,7 @@ class SoldItemSeeder extends Seeder
                 'price' => 220,
                 'condition' => 'used',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => '⭐ Last Price: P120',
                 'date_sold' => '2018-01-24',
                 'tags' => 'collectibles',
                 'notes' => 'Received payment on 1/24.',
@@ -1727,7 +1752,8 @@ class SoldItemSeeder extends Seeder
                 'price' => 250,
                 'condition' => 'used',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => 'Details:
+* ⚡This memory stick is only compatible for desktop computers',
                 'date_sold' => '2018-07-05',
                 'tags' => 'computer related',
                 'notes' => null,
@@ -1745,7 +1771,10 @@ class SoldItemSeeder extends Seeder
                 'price' => 350,
                 'condition' => 'new',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => '⭐ Last Price: P250
+
+Details:
+* ⚡This book was originally bought at a Scholastica book fair way back elementary days',
                 'date_sold' => '2018-07-09',
                 'tags' => 'female buyer',
                 'notes' => 'Received payment on 7/9.',
@@ -1871,7 +1900,8 @@ class SoldItemSeeder extends Seeder
                 'price' => 250,
                 'condition' => 'used',
                 'size' => 'L',
-                'description' => null,
+                'description' => 'Details:
+* ⚡Bottom portion was trimmed by 3 inches years ago',
                 'date_sold' => '2018-10-13',
                 'tags' => 'worn as house clothes',
                 'notes' => 'Received payment from Buyer through Palawan Express on 10/13, missing receipt.',
@@ -2015,7 +2045,7 @@ class SoldItemSeeder extends Seeder
                 'price' => 400,
                 'condition' => 'used',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => '❗Issue: Cracked screen, flickering screen, low battery lifespan, and sensitive to touch. This is sold for disassembly purposes only',
                 'date_sold' => '2019-04-09',
                 'tags' => 'hot item,received as gift',
                 'notes' => null,
@@ -2123,7 +2153,8 @@ class SoldItemSeeder extends Seeder
                 'price' => 500,
                 'condition' => 'new',
                 'size' => 'XL',
-                'description' => null,
+                'description' => 'Details:
+* ⚡Contains original tags',
                 'date_sold' => '2019-05-25',
                 'tags' => 'australia',
                 'notes' => null,
@@ -2141,7 +2172,9 @@ class SoldItemSeeder extends Seeder
                 'price' => 350,
                 'condition' => 'used',
                 'size' => 'L',
-                'description' => null,
+                'description' => '⭐ Last Price: P250
+
+❗Issue: Right pocket is slightly torn',
                 'date_sold' => '2019-08-10',
                 'tags' => 'night market haul',
                 'notes' => 'Received payment on 8/10.',
@@ -2195,7 +2228,13 @@ class SoldItemSeeder extends Seeder
                 'price' => 3700,
                 'condition' => 'new',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => 'Details:
+* ⚡Authentic gaming headset for PC, PS4, Mac, Mobile phones, XBox 1, Nintendo Switch and VR
+* ⚡Comes with 2 microphone jacks (1 jack contains two ends for connecting to the headset and the other to the device such as phone or controller)
+* ⚡Detachable noise cancellation microphone
+* ⚡Ergonomic foam for ease and comfort
+* ⚡Inline audio control
+* ⚡User manual with detailed setup and instructions',
                 'date_sold' => '2019-09-16',
                 'tags' => 'computer related,sold with case',
                 'notes' => 'Received payment on 9/16.',
@@ -2303,7 +2342,19 @@ class SoldItemSeeder extends Seeder
                 'price' => 2300,
                 'condition' => 'used',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => 'Details:
+* ⚡CPU: HyperX DDR2 4GB RAM
+* ⚡GPU: NVIDIA GeForce GT 630
+* ⚡HDD: Local Disk Drives C: (75.4 GB), D: (76.6 GB)
+* ⚡Motherboard: EMAXX
+* ⚡Operating System: Windows 10 Pro 32-bit (Build 17134)
+* ⚡Power supply: Cougar ST 500 500W
+* ⚡Processor: AMD Athlon II X2 245 ~2.9GHz
+* ⚡Comes with a free Genius mouse. Can play modern games such as League of Legends, PUBG, CS:GO (medium settings) and other older games
+
+❗Issue: GPU fan sometimes need to be manually spun. Always check the orange fan if using programs that consume a lot of RAM, such as playing video games as it will automatically restart
+
+🎯 RFS: Need funds to buy a better computer',
                 'date_sold' => '2019-11-07',
                 'tags' => 'computer related,female buyer,sold as set',
                 'notes' => null,
@@ -2357,7 +2408,8 @@ class SoldItemSeeder extends Seeder
                 'price' => 800,
                 'condition' => 'new',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => 'Details:
+* ⚡This memory stick is only compatible for desktop computers',
                 'date_sold' => '2020-03-14',
                 'tags' => 'computer related,hot item,marketplace haul',
                 'notes' => null,
@@ -2411,7 +2463,11 @@ class SoldItemSeeder extends Seeder
                 'price' => 200,
                 'condition' => 'used',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => 'Details:
+* ⚡Good speakers to use the Noise Cancellation effect found on the Speaker settings when plugged
+* ⚡This speakers is only compatible for desktop computers
+
+❗Issue: Has a very small hole on the left speakers that is barely noticeable',
                 'date_sold' => '2020-06-27',
                 'tags' => 'computer related',
                 'notes' => null,
@@ -2429,7 +2485,9 @@ class SoldItemSeeder extends Seeder
                 'price' => 150,
                 'condition' => 'used',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => 'Details:
+* ⚡Adjustable microphone head
+* ⚡This mic is only compatible for desktop computers',
                 'date_sold' => '2020-07-02',
                 'tags' => 'computer related,female buyer',
                 'notes' => null,
@@ -2447,7 +2505,9 @@ class SoldItemSeeder extends Seeder
                 'price' => 150,
                 'condition' => 'used',
                 'size' => 'XL or XXL',
-                'description' => null,
+                'description' => '⭐ Last Price: P150
+
+❗Issue: Slightly faded logo. A small hole can also be found on the collar',
                 'date_sold' => '2020-07-05',
                 'tags' => 'hot item,worn as house clothes',
                 'notes' => null,
@@ -2465,7 +2525,10 @@ class SoldItemSeeder extends Seeder
                 'price' => 1300,
                 'condition' => 'new',
                 'size' => '15.6 inches',
-                'description' => null,
+                'description' => 'Details:
+* ⚡Aspect Ratio: 16:9
+* ⚡Includes a HDMI-to-VGA converter
+* ⚡Maximum Resolution: 1366 x 768',
                 'date_sold' => '2020-08-01',
                 'tags' => 'computer related,female buyer,marketplace haul',
                 'notes' => null,
@@ -2483,7 +2546,12 @@ class SoldItemSeeder extends Seeder
                 'price' => 300,
                 'condition' => 'new',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => 'Details:
+* ⚡Ergonomic foam
+* ⚡Has a headset hook
+* ⚡Inline volume control
+* ⚡Lightweight and can be worn behind the neck due to its great length
+* ⚡Perfect headset for online classes. Commonly used for Skype and other messaging apps',
                 'date_sold' => '2020-08-17',
                 'tags' => 'computer related,female buyer,hot item,sold with case',
                 'notes' => null,
@@ -2663,7 +2731,7 @@ class SoldItemSeeder extends Seeder
                 'price' => 150,
                 'condition' => 'used',
                 'size' => 'XL',
-                'description' => null,
+                'description' => '❗Issue: Slight creasing on gold prints from front and back graphics',
                 'date_sold' => '2020-10-12',
                 'tags' => 'female buyer,received as gift',
                 'notes' => null,
@@ -2699,7 +2767,8 @@ class SoldItemSeeder extends Seeder
                 'price' => 200,
                 'condition' => 'new',
                 'size' => 'XXL',
-                'description' => null,
+                'description' => 'Details:
+* ⚡Contains original tags',
                 'date_sold' => '2020-11-23',
                 'tags' => 'australia',
                 'notes' => null,
@@ -2735,7 +2804,7 @@ class SoldItemSeeder extends Seeder
                 'price' => 300,
                 'condition' => 'new',
                 'size' => 'XL',
-                'description' => null,
+                'description' => '⭐ Last Price: P300',
                 'date_sold' => '2020-12-18',
                 'tags' => 'australia',
                 'notes' => null,
@@ -2753,7 +2822,8 @@ class SoldItemSeeder extends Seeder
                 'price' => 250,
                 'condition' => 'new',
                 'size' => 'L',
-                'description' => null,
+                'description' => 'Details:
+* ⚡Contains original tags',
                 'date_sold' => '2020-12-29',
                 'tags' => 'australia',
                 'notes' => null,
@@ -2761,6 +2831,7 @@ class SoldItemSeeder extends Seeder
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
+            // TODO: years 2021 - 2024 whose descriptions are not yet filled
             [
                 'pay_method_id' => 119,
                 'sell_method_id' => 119,
@@ -5471,7 +5542,7 @@ class SoldItemSeeder extends Seeder
                 'price' => 250,
                 'condition' => 'new',
                 'size' => 'L',
-                'description' => null,
+                'description' => '⭐ Last Price: P250',
                 'date_sold' => '2025-01-06',
                 'tags' => 'australia',
                 'notes' => 'Shipped via J&T. Payment sent through GCash on 1/5. Received payment on 1/9.',
@@ -5525,7 +5596,9 @@ class SoldItemSeeder extends Seeder
                 'price' => 250,
                 'condition' => 'used',
                 'size' => '1/24 scale',
-                'description' => null,
+                'description' => '⭐ Last Price: P250
+
+❗Issue: Slight discoloration on the mirrors and roof',
                 'date_sold' => '2025-01-22',
                 'tags' => 'marketplace haul',
                 'notes' => 'Payment sent through GCash on 1/22. Received payment on 2/13.',
@@ -5579,7 +5652,7 @@ class SoldItemSeeder extends Seeder
                 'price' => 100,
                 'condition' => 'used',
                 'size' => 'L',
-                'description' => null,
+                'description' => '❗Issue: Small pinhole found at the back of the polo',
                 'date_sold' => '2025-04-21',
                 'tags' => 'australia',
                 'notes' => 'Buyer picked up on 4/21. Received payment on 4/22.',
@@ -5597,7 +5670,15 @@ class SoldItemSeeder extends Seeder
                 'price' => 500,
                 'condition' => 'new',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => '⭐ Last Price: P500
+
+Details:
+* ⚡Adjustable stand
+* ⚡Built-in mic
+* ⚡Plug-and-play. No installation of other programs required
+* ⚡Resolution: extends up to 1920x1080 (1080p)
+* ⚡Supports modern OS: Windows 7, Windows 8, Windows 10, Windows 11, Mac OS, Linux
+* ⚡USB 2.0 interface',
                 'date_sold' => '2025-04-21',
                 'tags' => 'computer related,sold with case',
                 'notes' => null,
@@ -5633,7 +5714,11 @@ class SoldItemSeeder extends Seeder
                 'price' => 500,
                 'condition' => 'new',
                 'size' => 'XL',
-                'description' => null,
+                'description' => '⭐ Last Price: P250
+
+Dimensions:
+* ⚡Length: 28.75 inches
+* ⚡Width: 20 inches',
                 'date_sold' => '2025-05-05',
                 'tags' => null,
                 'notes' => 'Buyer picked up on 5/6. Received payment on 5/7.',
@@ -5687,7 +5772,13 @@ class SoldItemSeeder extends Seeder
                 'price' => 200,
                 'condition' => 'new',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => '⭐ Last Price: P200
+
+Details:
+* ⚡How this works: you must hold and press the power button located below the speaker. Wait for it to light up
+* ⚡Get a device like your mobile phone near it
+* ⚡Connect to it with bluetooth. The name would be RUBI Wireless Speaker. For example, if you connect it to your phone, any sound coming from your phone will be heard from the speakers itself
+* ⚡Will come with extra chargers',
                 'date_sold' => '2025-07-20',
                 'tags' => 'australia,female buyer,sold to friend',
                 'notes' => 'Sold to Abee.',
@@ -5741,7 +5832,14 @@ class SoldItemSeeder extends Seeder
                 'price' => 550,
                 'condition' => 'new',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => '⭐ Last Price: P500
+
+Details:
+* ⚡Comes with an easy-to-read manual in all supported languages
+* ⚡Easy volume control
+* ⚡Has RGB backlighting
+
+🎯 RFS: Need funds so I can buy a new speaker',
                 'date_sold' => '2025-09-09',
                 'tags' => 'computer related,hot item,sold with case',
                 'notes' => null,
@@ -5759,7 +5857,17 @@ class SoldItemSeeder extends Seeder
                 'price' => 1000,
                 'condition' => 'used',
                 'size' => '23.8 inches',
-                'description' => null,
+                'description' => '⭐ Last Price: P1,000
+
+Details:
+* ⚡Features an audio jack (though I never tried using it)
+* ⚡Features RGB backlighting at the back
+* ⚡Includes an HDMI port and VGA port
+* ⚡IPS monitor at 165hz
+
+❗Issue: White artifacts on the edge of screen, only visible when looking at the monitor while standing up.
+
+🎯 RFS: Need funds so I can buy a bigger monitor',
                 'date_sold' => '2025-09-21',
                 'tags' => 'computer related,female buyer,sold same item,sold to friend',
                 'notes' => 'P1,000 initially paid through meetup. Sold to Meiganne.',
@@ -5831,7 +5939,7 @@ class SoldItemSeeder extends Seeder
                 'price' => 250,
                 'condition' => 'used',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => '🎯 RFS: Toy is small for my collection of Pixar characters',
                 'date_sold' => '2025-12-01',
                 'tags' => null,
                 'notes' => 'Payment sent through GCash on 12/4. Received payment on 12/7.',
@@ -5867,7 +5975,17 @@ class SoldItemSeeder extends Seeder
                 'price' => 1000,
                 'condition' => 'used',
                 'size' => '23.8 inches',
-                'description' => null,
+                'description' => '⭐ Last Price: P1,000
+
+Details:
+* ⚡Features an audio jack (though I never tried using it)
+* ⚡Features RGB backlighting at the back
+* ⚡Includes an HDMI port and VGA port
+* ⚡IPS monitor at 165hz
+
+❗Issue: White artifacts on the edge of screen, only visible when looking at the monitor while standing up.
+
+🎯 RFS: Need funds so I can buy a bigger monitor',
                 'date_sold' => '2025-12-12',
                 'tags' => 'computer related,sold same item,sold with case',
                 'notes' => 'Sold the same item as the item sold on 9/21 but to a different buyer and has original manual.',
@@ -5885,7 +6003,7 @@ class SoldItemSeeder extends Seeder
                 'price' => 200,
                 'condition' => 'used',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => '❗Issue: Minor creasing on the CS GO logo. This can still be removed by scratching on it. One of the zippers came off and could use a repair',
                 'date_sold' => '2026-01-19',
                 'tags' => 'gaming related,limited edition',
                 'notes' => 'Buyer picked up on 1/19. Received payment on 1/27.',
@@ -5921,7 +6039,13 @@ class SoldItemSeeder extends Seeder
                 'price' => 150,
                 'condition' => 'new',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => 'Details:
+* ⚡Charging is done on the right ear pad. Remove the right ear pad slowly then carefully plug the included cable
+* ⚡Includes charger. You can search the instructions online
+* ⚡Plug-and-play
+* ⚡Uses a Type-C cable
+
+🎯 RFS: Decluttering of unused items',
                 'date_sold' => '2026-01-19',
                 'tags' => 'australia,computer related',
                 'notes' => 'Payment sent through GCash on 1/19. Received payment on 1/21.',
@@ -5975,7 +6099,12 @@ class SoldItemSeeder extends Seeder
                 'price' => 200,
                 'condition' => 'used',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => 'Details:
+* ⚡Comes with instructions and spare parts
+
+❗Issue: Minor dents on butt part
+
+🎯 RFS: Toy decluttering',
                 'date_sold' => '2026-01-25',
                 'tags' => 'sold with case',
                 'notes' => 'Payment sent through GCash on 1/24. Received payment on 1/27 and I sent the cash-out to Abee instead of the pharmacy.',
@@ -5992,8 +6121,14 @@ class SoldItemSeeder extends Seeder
                 'type' => 'Drink Dispenser',
                 'price' => 200,
                 'condition' => 'used',
-                'size' => '3L',
-                'description' => null,
+                'size' => '3.8L',
+                'description' => 'Details:
+* ⚡128oz or around 3.8L
+* ⚡Can easily be carried around
+* ⚡Mini nozzle can be cleaned
+* ⚡Perfect for a solo person storing his/her water without having to refill every single time
+
+🎯 RFS: Decluttering of unused items',
                 'date_sold' => '2026-03-25',
                 'tags' => 'australia,helped by friend',
                 'notes' => 'Abee helped post the item. Buyer picked up on 3/28. Received payment on 4/1 from Abee as she cashed out on 3/29.',
@@ -6011,7 +6146,20 @@ class SoldItemSeeder extends Seeder
                 'price' => 350,
                 'condition' => 'used',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => '⭐ Last Price: P350
+
+⭐ Router credentials have been reset already
+
+⭐ Will include its power supply
+
+Details:
+* ⚡300Mbps wireless transmission rate is ideal for basic work
+* ⚡Compatible with IPv6, MW301R allows you to enjoy IPv6 services provided by ISP and visit IPv6 websites
+* ⚡Intuitive webpage guides you through the setup process in minutes
+* ⚡Provides 3-step installation
+* ⚡Two 5dBi antennas provides broad wireless coverage
+
+🎯 RFS: Decluttering of unused items',
                 'date_sold' => '2026-04-27',
                 'tags' => 'computer related',
                 'notes' => 'Payment sent through GCash on 4/28. Received payment on 5/10.',
@@ -6029,7 +6177,21 @@ class SoldItemSeeder extends Seeder
                 'price' => 350,
                 'condition' => 'used',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => '⭐ Sold the same unit a few years ago
+
+Details:
+* ⚡Applicable to phones and desktop computers
+* ⚡Battery Life:  80H (alkaline Battery) 40H (Manganese battery)
+* ⚡Cable Plug: Gold-plated L-shaped Stereo Mini
+* ⚡Cord: OFC Y type
+* ⚡Cord Length: 1.2m
+* ⚡Frequency Response: 30Hz-20,000Hz
+* ⚡Power Handling Capacity: 50 mW
+* ⚡Power Source / Battery Type: Size AAA x1
+* ⚡Sensitivity: Power ON 95 dB/mW , OFF 98dB/mW
+* ⚡Weight (Without Cord): 170g (not including cable)
+
+❗Issue: Ear foams are slightly creasing',
                 'date_sold' => '2026-05-09',
                 'tags' => 'australia,computer related,sold same item',
                 'notes' => 'Originally dropped on Mabini Shopping Center Room 203 on 3/26 however was not claimed. Item pulled out on 5/8. Payment sent through GCash on 4/28 by new buyer. Received payment on 5/11.',
@@ -6047,7 +6209,16 @@ class SoldItemSeeder extends Seeder
                 'price' => 150,
                 'condition' => 'used',
                 'size' => 'M',
-                'description' => null,
+                'description' => 'Dimensions:
+**Body**:
+* ⚡Length: 72.4 centimeters
+* ⚡Width: 57 centimeters
+
+**Sleeves**:
+* ⚡Length: 53 centimeters
+* ⚡Width: 24.2 centimeters
+
+🎯 RFS: Wardrobe decluttering',
                 'date_sold' => '2026-07-21',
                 'tags' => null,
                 'notes' => 'Buyer picked up on 7/21. Received payment on 7/22.',
@@ -6065,7 +6236,9 @@ class SoldItemSeeder extends Seeder
                 'price' => 50,
                 'condition' => 'used',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => '⭐ Last Price: P50
+
+🎯 RFS: Toy decluttering',
                 'date_sold' => '2026-07-21',
                 'tags' => 'freebies',
                 'notes' => 'Buyer picked up on 7/21. Received payment on 7/22.',
@@ -6083,7 +6256,10 @@ class SoldItemSeeder extends Seeder
                 'price' => 200,
                 'condition' => 'new',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => '⭐ Last Price: P200
+
+Details:
+* ⚡Mouse works and illuminates perfectly!',
                 'date_sold' => '2026-07-24',
                 'tags' => 'computer related,sold with case',
                 'notes' => null,
@@ -6101,7 +6277,12 @@ class SoldItemSeeder extends Seeder
                 'price' => 150,
                 'condition' => 'new',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => '⭐ Last Price: P100
+
+Details:
+* ⚡Has wheels underneath the toy
+
+🎯 RFS: Toy is small for my collection of Pixar characters',
                 'date_sold' => '2026-07-28',
                 'tags' => 'hot item',
                 'notes' => 'Payment sent through GCash on 7/28. Received payment on 7/28.',
@@ -6119,7 +6300,19 @@ class SoldItemSeeder extends Seeder
                 'price' => 200,
                 'condition' => 'new',
                 'size' => 'N/A',
-                'description' => 'this is a test',
+                'description' => '⭐ Last Price: P150
+
+Dimensions:
+* ⚡Height: 4 inches
+* ⚡Length: 7 inches
+* ⚡Width: 4 inches
+
+Details:
+* ⚡Minor paints on surface. Unsure if it can be removed with acetone
+* ⚡Piggy bank-style toy
+* ⚡Pink in color, not yellowish
+
+🎯 RFS: Toy decluttering',
                 'date_sold' => '2026-07-31',
                 'tags' => null,
                 'notes' => 'Payment sent through GCash on 7/30. Received payment on 7/31.',
