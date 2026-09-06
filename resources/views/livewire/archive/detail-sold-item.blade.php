@@ -60,6 +60,11 @@
             </div>
 
             <div>
+                <p class="text-sm text-gray-600 dark:text-gray-400 font-subtext">Notes</p>
+                <p class="text-lg text-gray-800 dark:text-gray-200 {{ !$sold_item->notes ? 'italic' : '' }}">{{ $sold_item->notes ? $sold_item->notes : 'No notes' }}</p>
+            </div>
+
+            <div>
                 <p class="text-sm text-gray-600 dark:text-gray-400 font-subtext">Description</p>
 
                 @if ($sold_item->description)
