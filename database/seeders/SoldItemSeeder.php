@@ -4444,7 +4444,19 @@ Details:
                 'price' => 250,
                 'condition' => 'used',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => 'Details:
+* ⚡Applicable to phones and desktop computers
+* ⚡Battery Life:  80H (alkaline Battery) 40H (Manganese battery)
+* ⚡Cable Plug: Gold-plated L-shaped Stereo Mini
+* ⚡Cord: OFC Y type
+* ⚡Cord Length: 1.2m
+* ⚡Frequency Response: 30Hz-20,000Hz
+* ⚡Power Handling Capacity: 50 mW
+* ⚡Power Source / Battery Type: Size AAA x1
+* ⚡Sensitivity: Power ON 95 dB/mW , OFF 98dB/mW
+* ⚡Weight (Without Cord): 170g (not including cable)
+
+❗Issue: Ear foams are slightly creasing',
                 'date_sold' => '2023-08-13',
                 'tags' => 'australia,computer related,hot item,sold same item,sold with case',
                 'notes' => null,
@@ -4732,7 +4744,10 @@ Details:
                 'price' => 2500,
                 'condition' => 'new',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => 'Details:
+* ⚡Comes with instructions, wired cable, and custom camouflaged cover
+
+🎯 RFS: Will be buying an XBox Series X controller',
                 'date_sold' => '2024-01-01',
                 'tags' => 'camouflage pattern,gaming related,marketplace haul,sold with case',
                 'notes' => null,
@@ -4750,7 +4765,11 @@ Details:
                 'price' => 500,
                 'condition' => 'used',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => '⭐ Last Price: P500
+
+❗Issue: Defective. Battery has to be manually inserted at the back as I had a hard time putting it
+
+🎯 RFS: Too many phones that I don\'t need',
                 'date_sold' => '2024-01-03',
                 'tags' => 'australia',
                 'notes' => 'Shipped via J&T. Payment sent through GCash on 12/31. Received payment on 1/4.',
@@ -4768,7 +4787,16 @@ Details:
                 'price' => 100,
                 'condition' => 'used',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => 'Details:
+* ⚡Last supported iOS version: 7.1.2
+* ⚡No passcode
+* ⚡Release date: June 4, 2010
+* ⚡Requires open line capabilities to be used again
+* ⚡Unit only. Charger is not included
+
+❗Issue: Home button needs to be pressed slightly harder to work. Orange phone cover is slightly damaged
+
+🎯 RFS: Too many phones that I don\'t need',
                 'date_sold' => '2024-01-05',
                 'tags' => 'australia,hot item',
                 'notes' => null,
@@ -4786,7 +4814,9 @@ Details:
                 'price' => 250,
                 'condition' => 'used',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => '❗Issue: Defective. This phone is for disassembly purposes now. Doesn\'t charge the phone when using old iPhone cables
+
+🎯 RFS: Too many phones that I don\'t need',
                 'date_sold' => '2024-01-13',
                 'tags' => 'australia,hot item',
                 'notes' => null,
@@ -4804,7 +4834,9 @@ Details:
                 'price' => 100,
                 'condition' => 'used',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => '❗Issue: Defective. This phone is for disassembly purposes now
+
+🎯 RFS: Too many phones that I don\'t need',
                 'date_sold' => '2024-01-14',
                 'tags' => 'australia,female buyer,hot item',
                 'notes' => null,
@@ -4822,7 +4854,9 @@ Details:
                 'price' => 100,
                 'condition' => 'used',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => '❗Issue: Defective. This phone is for disassembly purposes now
+
+🎯 RFS: Too many phones that I don\'t need',
                 'date_sold' => '2024-01-22',
                 'tags' => 'australia',
                 'notes' => null,
@@ -4840,7 +4874,15 @@ Details:
                 'price' => 250,
                 'condition' => 'used',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => '⭐ Last Price: P250
+
+Details:
+* ⚡Camera features: Rear camera 80KP, 5x digital zoom
+* ⚡Internal memory: 43MB
+* ⚡MicroSD cards is not supported in this phone
+* ⚡Phone will only work with the Telstra network in Australia, with no Optus/Vodafone support. Will work with all 2G networks and 3G 850 networks if used internationally
+* ⚡Release date: March 2019
+* ⚡SIM card size: standard size / 2FF sim card',
                 'date_sold' => '2024-01-29',
                 'tags' => 'australia,female buyer',
                 'notes' => null,
@@ -4876,7 +4918,13 @@ Details:
                 'price' => 200,
                 'condition' => 'used',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => '⭐ Last Price: P200
+
+Details:
+* ⚡Will be using a box of a different Casio calculator model as I cannot find the original box
+* ⚡Working despite years of inactive usage
+
+🎯 RFS: Unused and for decluttering purposes',
                 'date_sold' => '2024-02-04',
                 'tags' => 'educational',
                 'notes' => null,
@@ -4894,7 +4942,11 @@ Details:
                 'price' => 3800,
                 'condition' => 'new',
                 'size' => '2.5 feet x 2 feet',
-                'description' => null,
+                'description' => 'Details:
+* ⚡Cut to shape as it was customized
+* ⚡Good to display on a room
+* ⚡Originally ordered for P7,500 a few months ago
+* ⚡Type: Neon on Acrylic',
                 'date_sold' => '2024-02-18',
                 'tags' => 'customized,female buyer,marketplace haul,unbranded',
                 'notes' => 'Initial P3,500 balance originally paid on June 21, 2023 and final P3,500 balance paid on July 6, 2023. Item received on July 12, 2023.',
@@ -4912,7 +4964,20 @@ Details:
                 'price' => 200,
                 'condition' => 'used',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => 'Details:
+* ⚡Colored LED will light when it dances. Colors will be in red, blue, green, and orange
+* ⚡Compatibility: computer, laptop, and phones
+* ⚡Model: SY-555
+* ⚡Not bluetooth
+* ⚡Operating voltage: DC5V~4.5V
+* ⚡Output power: 3Wx2
+* ⚡Port type: USB A male to mini 5 pin 3.55mm audio joint
+* ⚡Sound quality is mid
+* ⚡Standard USB power plug, no battery power supply
+* ⚡Water can be refilled. There\'s a guide for this online
+* ⚡Weight: 274g
+* ⚡Wire length: 1.2m
+* ⚡Working current: 500 ~ 100mA',
                 'date_sold' => '2024-02-19',
                 'tags' => 'australia,computer related,sold with case',
                 'notes' => null,
@@ -4930,7 +4995,8 @@ Details:
                 'price' => 200,
                 'condition' => 'new',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => 'Details:
+* ⚡Thermal paste remained unused as I ordered this in Shopee last December 2023',
                 'date_sold' => '2024-03-16',
                 'tags' => 'computer related,freebies',
                 'notes' => null,
@@ -4948,7 +5014,10 @@ Details:
                 'price' => 250,
                 'condition' => 'new',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => '⭐ Last Price: P250
+
+Details:
+* ⚡Part of a limited set between the Oreo and Pookemon collaboration. A total of 12 cards can be collected',
                 'date_sold' => '2024-04-19',
                 'tags' => 'collectibles,female buyer,freebies,limited edition,sold as set',
                 'notes' => 'Shipped via J&T. Payment sent through GCash on 4/18. Received payment on 4/19.',
@@ -4966,7 +5035,7 @@ Details:
                 'price' => 300,
                 'condition' => 'new',
                 'size' => '34 or 36',
-                'description' => null,
+                'description' => '⭐ Last Price: P300',
                 'date_sold' => '2024-05-03',
                 'tags' => 'australia',
                 'notes' => null,
@@ -4984,7 +5053,7 @@ Details:
                 'price' => 300,
                 'condition' => 'new',
                 'size' => '34 or 36',
-                'description' => null,
+                'description' => '⭐ Last Price: P300',
                 'date_sold' => '2024-05-03',
                 'tags' => 'australia',
                 'notes' => null,
@@ -5002,7 +5071,7 @@ Details:
                 'price' => 400,
                 'condition' => 'new',
                 'size' => '34',
-                'description' => null,
+                'description' => '⭐ Last Price: P300',
                 'date_sold' => '2024-05-03',
                 'tags' => 'australia',
                 'notes' => null,
@@ -5020,9 +5089,23 @@ Details:
                 'price' => 250,
                 'condition' => 'new',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => 'Details:
+* ⚡Adjustable RGB modes by pressing the RGB button on top of one of the speakers (tap to switch between 6 different modes)
+* ⚡Bluetooth version: 5.0
+* ⚡Driver unit: 45mm
+* ⚡Frequency response: 20Hz - 16kHz
+* ⚡Impedance: 4 ohms
+* ⚡Input interface: 3.5mm + USB
+* ⚡Integrated speaker and USB cable on the beanie
+* ⚡Output power: 5W * 2
+* ⚡Speaker sensitivity: 90dB
+* ⚡Spectrum mode: 6
+* ⚡Total harmonic distortion: < 5%
+* ⚡Usual SRP is between P1,100 to P1,300
+* ⚡Volume control at the side of the beanie
+* ⚡Working temperature: -40 degrees Celsius to 85 degrees Celsius',
                 'date_sold' => '2024-05-05',
-                'tags' => 'australia',
+                'tags' => 'australia,sold with case',
                 'notes' => 'Buyer picked up on 5/6. Payment picked up on 5/8.',
                 'image_location' => 'sold-items/2024/caterpillar1-1.jpg',
                 'created_at' => Carbon::now(),
@@ -5038,7 +5121,11 @@ Details:
                 'price' => 300,
                 'condition' => 'used',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => '⭐ Last Price: P300
+
+Details:
+* ⚡Customizable macros, RGB backlighting, and DPI settings with RAKK Alti software. Search this in Google because the download is available on a Google Drive link
+* ⚡Two variants exist for this model. This is the BVR (Blue-Violet-Red) mouse. The other one is RGY (Red-Green-Yellow)',
                 'date_sold' => '2024-05-06',
                 'tags' => 'computer related,marketplace haul',
                 'notes' => null,
@@ -5056,7 +5143,11 @@ Details:
                 'price' => 500,
                 'condition' => 'new',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => 'Details:
+* ⚡Comes with manual and instructions
+* ⚡Toggleable RGB modes using the button found on top of one of the speakers
+
+🎯 RFS: Wanted to buy a different speakers',
                 'date_sold' => '2024-05-23',
                 'tags' => 'computer related,sold with case',
                 'notes' => null,
@@ -5074,7 +5165,8 @@ Details:
                 'price' => 200,
                 'condition' => 'new',
                 'size' => 'M',
-                'description' => null,
+                'description' => 'Details:
+* ⚡Comes with original tag as I bought this at SM Baguio. Original price is P599',
                 'date_sold' => '2024-06-05',
                 'tags' => 'camouflage pattern',
                 'notes' => null,
@@ -5092,7 +5184,7 @@ Details:
                 'price' => 200,
                 'condition' => 'used',
                 'size' => 'L',
-                'description' => null,
+                'description' => '⭐ Last Price: P200',
                 'date_sold' => '2024-06-07',
                 'tags' => 'australia',
                 'notes' => null,
@@ -5110,7 +5202,13 @@ Details:
                 'price' => 250,
                 'condition' => 'new',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => '⭐ Last Price: P250
+
+Details:
+* ⚡Non-RGB F120 fans that came from my NZXT H7 Flow chassis
+* ⚡Will use a box from my recently bought RGB F120 Core fans as this does not have its own box
+
+🎯 RFS: Extra fans that I don\'t need',
                 'date_sold' => '2024-06-10',
                 'tags' => 'computer related,freebies,sold as set',
                 'notes' => null,
@@ -5127,8 +5225,11 @@ Details:
                 'type' => 'Cable',
                 'price' => 200,
                 'condition' => 'new',
-                'size' => 'N/A',
-                'description' => null,
+                'size' => '30 meters',
+                'description' => 'Details:
+* ⚡Features a shiny, gold-plated plug
+
+🎯 RFS: Cable I bought was way too long',
                 'date_sold' => '2024-06-22',
                 'tags' => 'computer related',
                 'notes' => null,
@@ -5146,7 +5247,9 @@ Details:
                 'price' => 200,
                 'condition' => 'new',
                 'size' => 'XL',
-                'description' => null,
+                'description' => 'Dimensions:
+* ⚡Length: 27.95 inches
+* ⚡Width: 21.89 inches',
                 'date_sold' => '2024-07-08',
                 'tags' => 'australia,hot item',
                 'notes' => null,
@@ -5164,7 +5267,11 @@ Details:
                 'price' => 200,
                 'condition' => 'new',
                 'size' => 'XL',
-                'description' => null,
+                'description' => 'Dimensions:
+* ⚡Length: 28.15 inches
+* ⚡Width: 20.47 inches
+
+❗Issue: Slightly faded size label. Not sure as that\'s how it already looked like',
                 'date_sold' => '2024-07-09',
                 'tags' => 'australia,female buyer',
                 'notes' => null,
@@ -5182,7 +5289,11 @@ Details:
                 'price' => 300,
                 'condition' => 'new',
                 'size' => 'L',
-                'description' => null,
+                'description' => '⭐ Last Price: P250
+
+Dimensions:
+* ⚡Length: 30.47 inches
+* ⚡Width: 22.95 inches',
                 'date_sold' => '2024-07-12',
                 'tags' => 'australia,hot item',
                 'notes' => null,
@@ -5200,7 +5311,11 @@ Details:
                 'price' => 150,
                 'condition' => 'used',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => '⭐ Last Price: P150
+
+❗Issue: Box was damaged but the mug is in great condition
+
+🎯 RFS: Got the exact same mug from Mama. This mug is from my brother who didn\'t want to use it',
                 'date_sold' => '2024-07-27',
                 'tags' => 'australia,female buyer,freebies,sold to friend,sold with case',
                 'notes' => 'Sold to Abee. Payment sent through GCash on 7/27. Received payment on 8/7.',
@@ -5218,7 +5333,9 @@ Details:
                 'price' => 150,
                 'condition' => 'new',
                 'size' => 'M',
-                'description' => null,
+                'description' => 'Dimensions:
+* ⚡Length: 29.76 inches
+* ⚡Width: 21.57 inches',
                 'date_sold' => '2024-08-06',
                 'tags' => 'australia',
                 'notes' => null,
@@ -5254,7 +5371,9 @@ Details:
                 'price' => 250,
                 'condition' => 'new',
                 'size' => '32 oz',
-                'description' => null,
+                'description' => '❗Issue: Slight dirt at the base of the bottle
+
+🎯 RFS: Not a fan of tumblers',
                 'date_sold' => '2024-08-08',
                 'tags' => 'bought from friend,hot item',
                 'notes' => null,
@@ -5290,7 +5409,19 @@ Details:
                 'price' => 900,
                 'condition' => 'new',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => 'Dimensions:
+* ⚡Height: 135 millimeters
+* ⚡Length: 380 millimeters
+* ⚡Width: 35 millimeters
+
+Details:
+* ⚡Comes with a keycap remover at the back
+* ⚡Customizable keys, macros, and RGB lighting with RAKK Ilis software. Search this in Google because the download is available on a Google Drive link
+* ⚡Detachable outer base of the keyboard
+* ⚡Number of keys: 96
+* ⚡Uses a braided and wired Type-C USB cable
+
+🎯 RFS: Need to buy a new keyboard',
                 'date_sold' => '2024-08-20',
                 'tags' => 'computer related,marketplace haul',
                 'notes' => null,
@@ -5308,7 +5439,18 @@ Details:
                 'price' => 350,
                 'condition' => 'used',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => '⭐ Last Price: P350
+
+Details:
+* ⚡Comes with instructions
+* ⚡One button to rule it all: toggle between 7 RGB modes and turn it off on a single button. The RGB button is located on the left side when facing the logo
+* ⚡Plug-and-play. No software needed
+* ⚡Rubber base, anti-slip surface
+* ⚡Uses Type-C USB cable
+
+❗Issue: Box was partly damaged when I first received it.
+
+🎯 RFS: Bought a better gaming pad',
                 'date_sold' => '2024-08-31',
                 'tags' => 'received as gift,sold with case',
                 'notes' => 'Payment sent through GCash on 8/31. Received payment on 9/2.',
@@ -5326,7 +5468,10 @@ Details:
                 'price' => 500,
                 'condition' => 'new',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => 'Details:
+* ⚡Adjustable head
+* ⚡Comes with instructions
+* ⚡Easy switch knob found on the back. Toggle between High, Medium, Low and Off modes',
                 'date_sold' => '2024-09-04',
                 'tags' => 'hot item,received as gift,sold with case',
                 'notes' => null,
@@ -5344,7 +5489,7 @@ Details:
                 'price' => 200,
                 'condition' => 'new',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => '🎯 RFS: Too many sunglasses',
                 'date_sold' => '2024-09-16',
                 'tags' => 'australia,female buyer',
                 'notes' => 'Payment sent through GCash on 9/16. Received payment on 9/17.',
@@ -5362,7 +5507,9 @@ Details:
                 'price' => 250,
                 'condition' => 'new',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => '❗Issue: Minor dents on specs but it\'s not that obvious
+
+🎯 RFS: Too many sunglasses',
                 'date_sold' => '2024-09-17',
                 'tags' => 'australia',
                 'notes' => 'Dropped in Buyer\'s Pines Arcade Theater dropping area. Payment picked up on Buyer\'s dropping area.',
@@ -5380,7 +5527,11 @@ Details:
                 'price' => 100,
                 'condition' => 'used',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => 'Details:
+* ⚡Comes with a strap
+* ⚡Rotatable lamp for a few degrees
+
+❗Issue: Battery seems corroded inside',
                 'date_sold' => '2024-09-17',
                 'tags' => 'australia',
                 'notes' => 'Dropped in Buyer\'s Pines Arcade Theater dropping area. Payment picked up on Buyer\'s dropping area.',
@@ -5398,7 +5549,9 @@ Details:
                 'price' => 200,
                 'condition' => 'used',
                 'size' => '10 US or 11 US',
-                'description' => null,
+                'description' => '❗Issue: Right boot has slight discoloration of pink color
+
+🎯 RFS: I don\'t have a thing for furry shoes',
                 'date_sold' => '2024-09-23',
                 'tags' => 'australia,hot item',
                 'notes' => null,
@@ -5416,7 +5569,9 @@ Details:
                 'price' => 150,
                 'condition' => 'used',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => '❗Issue: Slightly burnt at the end of the glasses and the nose protector
+
+🎯 RFS: Too many sunglasses',
                 'date_sold' => '2024-09-25',
                 'tags' => 'australia,hot item',
                 'notes' => null,
@@ -5434,7 +5589,13 @@ Details:
                 'price' => 250,
                 'condition' => 'new',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => 'Details:
+* ⚡Allows switching between USB mode or just Bluetooth
+* ⚡Comes with extra cables
+* ⚡Removable top cover
+* ⚡Sleek design
+
+🎯 RFS: Not gonna used it as I have an extra speaker for my computer',
                 'date_sold' => '2024-10-14',
                 'tags' => 'australia',
                 'notes' => null,
@@ -5470,7 +5631,7 @@ Details:
                 'price' => 300,
                 'condition' => 'used',
                 'size' => 'N/A',
-                'description' => null,
+                'description' => '❗Issue: No sounds coming from the left earphones. Right earphones does have sounds and works well. It also has no mic jack',
                 'date_sold' => '2024-11-05',
                 'tags' => 'australia,computer related',
                 'notes' => null,
@@ -5865,7 +6026,7 @@ Details:
 * ⚡Includes an HDMI port and VGA port
 * ⚡IPS monitor at 165hz
 
-❗Issue: White artifacts on the edge of screen, only visible when looking at the monitor while standing up.
+❗Issue: White artifacts on the edge of screen, only visible when looking at the monitor while standing up
 
 🎯 RFS: Need funds so I can buy a bigger monitor',
                 'date_sold' => '2025-09-21',
@@ -5983,7 +6144,7 @@ Details:
 * ⚡Includes an HDMI port and VGA port
 * ⚡IPS monitor at 165hz
 
-❗Issue: White artifacts on the edge of screen, only visible when looking at the monitor while standing up.
+❗Issue: White artifacts on the edge of screen, only visible when looking at the monitor while standing up
 
 🎯 RFS: Need funds so I can buy a bigger monitor',
                 'date_sold' => '2025-12-12',
