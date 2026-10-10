@@ -337,9 +337,20 @@ class ListSoldItem extends Component
     #[On('filtered-sold-items')]
     public function render()
     {
-        $sold_items = $this->build_query()
-            ->orderBy($this->sort_field, $this->sort_direction)
-            ->paginate(18);
+        $query = $this->build_query();
+
+        if ($this->sort_field === 'name') {
+            // Match the item_name label: brand, then name, then type. A null name falls back to type.
+            $direction = $this->sort_direction === 'asc' ? 'asc' : 'desc';
+
+            $query->orderBy('brand', $direction)
+                ->orderByRaw("COALESCE(NULLIF(name, ''), type) {$direction}")
+                ->orderBy('type', $direction);
+        } else {
+            $query->orderBy($this->sort_field, $this->sort_direction);
+        }
+
+        $sold_items = $query->paginate(18);
 
         return view('livewire.archive.list-sold-item', ['sold_items' => $sold_items]);
     }

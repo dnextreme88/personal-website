@@ -442,7 +442,7 @@
                                 x-transition:leave="transition ease-in duration-500"
                                 x-transition:leave-start="opacity-100"
                                 x-transition:leave-end="opacity-0"
-                                class="absolute inset-0 rounded-md *:bg-transparent skeleton-loader"
+                                class="absolute inset-0 rounded-md *:bg-transparent skeleton-loader h-20"
                             >
                                 <div class="mb-4 size-full text-center text-3xl content-center">
                                     <x-loading-indicator

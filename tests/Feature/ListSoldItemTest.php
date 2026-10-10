@@ -46,7 +46,7 @@ it('summarizes the whole collection regardless of the active filter', function (
     createSoldItem(['brand' => 'Nike']);
 
     $component = Livewire::test(ListSoldItem::class)
-        ->call('search_archives', ['archive_brands_choice' => 'Ecko']);
+        ->call('search_sold_items', ['archive_brands_choice' => 'Ecko']);
 
     // Summary stays global (all 3 items) even though the results are filtered to 2.
     $summary = $component->get('summary');
@@ -158,6 +158,24 @@ it('sorts results by price and toggles direction on repeat', function () {
         ->call('apply_sort', 'price')
         ->assertSet('sort_direction', 'asc')
         ->assertViewHas('sold_items', fn ($items) => (int) $items->first()->price === 10);
+});
+
+it('sorts results by brand, then name, then type when sorting by name', function () {
+    createSoldItem(['brand' => 'Nike', 'name' => 'Zeta', 'type' => 'Shirt']);
+    createSoldItem(['brand' => 'Adidas', 'name' => 'Beta', 'type' => 'Shoe']);
+    createSoldItem(['brand' => 'Nike', 'name' => null, 'type' => 'Cap']); // no name → sorts by type
+    createSoldItem(['brand' => 'Nike', 'name' => 'Alpha', 'type' => 'Pants']);
+    createSoldItem(['brand' => 'Nike', 'name' => 'Alpha', 'type' => 'Jacket']);
+
+    $expected = ['Adidas Beta Shoe', 'Nike Alpha Jacket', 'Nike Alpha Pants', 'Nike  Cap', 'Nike Zeta Shirt'];
+
+    Livewire::test(ListSoldItem::class)
+        ->call('apply_sort', 'name')
+        ->assertSet('sort_direction', 'asc')
+        ->assertViewHas('sold_items', fn ($items) => $items->pluck('item_name')->all() === $expected)
+        ->call('apply_sort', 'name')
+        ->assertSet('sort_direction', 'desc')
+        ->assertViewHas('sold_items', fn ($items) => $items->pluck('item_name')->all() === array_reverse($expected));
 });
 
 it('ignores sort requests for non-whitelisted fields', function () {
