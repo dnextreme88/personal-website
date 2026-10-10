@@ -8,10 +8,12 @@
 >   `asc` / `desc` before it goes into `orderByRaw`.
 > - **Tests**: one case added to `tests/Feature/ListSoldItemTest.php` (brand → name → type order,
 >   null name falls back to type, asc and desc).
-> - **Not done**: the existing test "summarizes the whole collection regardless of the active
->   filter" fails on `master` before this change. It calls `search_archives`, but the method is
->   `search_sold_items`. That fix is out of scope.
-> - **Verification**: `vendor/bin/pest tests/Feature/ListSoldItemTest.php` (new test passes),
+> - **Test fix**: the existing test "summarizes the whole collection regardless of the active
+>   filter" failed on `master`. It called `search_archives`, but the method is
+>   `search_sold_items`. The test now calls `search_sold_items`.
+> - **View**: the list-view skeleton loader in `list-sold-item.blade.php` gets `h-20`, to match
+>   the height of the list-view image.
+> - **Verification**: `vendor/bin/pest tests/Feature/ListSoldItemTest.php` (all 15 pass),
 >   `vendor/bin/pint`, `migrate:fresh --seed`, and a browser preview of the "Name" sort.
 
 ## Context

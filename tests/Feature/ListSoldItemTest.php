@@ -46,7 +46,7 @@ it('summarizes the whole collection regardless of the active filter', function (
     createSoldItem(['brand' => 'Nike']);
 
     $component = Livewire::test(ListSoldItem::class)
-        ->call('search_archives', ['archive_brands_choice' => 'Ecko']);
+        ->call('search_sold_items', ['archive_brands_choice' => 'Ecko']);
 
     // Summary stays global (all 3 items) even though the results are filtered to 2.
     $summary = $component->get('summary');
