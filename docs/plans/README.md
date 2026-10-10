@@ -26,6 +26,8 @@ how it was verified.
 - [20260906-sold-item-detail-pages.md](20260906-sold-item-detail-pages.md) — Sold Item detail subpages at
   `/archive/sold-items/{id}-{brand}-{type}`, a new `description` field, and list-card links to the
   detail page (executed **2026-09-06**).
+- [20261010-sold-items-name-sort.md](20261010-sold-items-name-sort.md) — Sold Items "Name" sort
+  orders by brand, then name, then type (null name falls back to type) (executed **2026-10-10**).
 
 ## Conventions
 
