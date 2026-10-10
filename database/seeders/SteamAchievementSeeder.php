@@ -665,6 +665,14 @@ class SteamAchievementSeeder extends Seeder
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
+            [
+                'game_name' => 'Steelrising',
+                'tags' => 'good review',
+                'date_completed' => '2026-09-05',
+                'notes' => null,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
         ]);
     }
 }

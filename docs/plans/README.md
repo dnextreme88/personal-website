@@ -23,6 +23,9 @@ how it was verified.
 - [20260822-on-demand-release-script.md](20260822-on-demand-release-script.md) — On-demand `create-release.sh`
   that tags `V{major}.{minor}` (Manila-day rollover) and publishes a GitHub Release listing PRs
   merged since the last release (executed **2026-08-22**).
+- [20260906-sold-item-detail-pages.md](20260906-sold-item-detail-pages.md) — Sold Item detail subpages at
+  `/archive/sold-items/{id}-{brand}-{type}`, a new `description` field, and list-card links to the
+  detail page (executed **2026-09-06**).
 
 ## Conventions
 

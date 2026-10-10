@@ -181,3 +181,35 @@ it('hides the hot item badge when no item is tagged hot item', function () {
     Livewire::test(ListSoldItem::class)
         ->assertDontSeeHtml('title="Hot item"');
 });
+
+it('renders the detail page for a sold item', function () {
+    $item = createSoldItem(['brand' => 'Ecko', 'type' => 'Pants']);
+
+    $url = route('archive.sold-items.detail', [
+        'id' => $item->id,
+        'brand' => str($item->brand)->slug(),
+        'type' => str($item->type)->slug(),
+    ]);
+
+    $this->get($url)
+        ->assertStatus(200)
+        ->assertSee($item->item_name);
+});
+
+it('returns 404 for a sold item id that does not exist', function () {
+    $this->get(route('archive.sold-items.detail', [
+        'id' => 999,
+        'brand' => 'nope',
+        'type' => 'nope',
+    ]))->assertStatus(404);
+});
+
+it('shows the description on the detail page when set', function () {
+    $item = createSoldItem(['description' => 'A rare vintage find.']);
+
+    $this->get(route('archive.sold-items.detail', [
+        'id' => $item->id,
+        'brand' => str($item->brand)->slug(),
+        'type' => str($item->type)->slug(),
+    ]))->assertSee('A rare vintage find.');
+});

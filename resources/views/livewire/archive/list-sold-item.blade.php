@@ -368,25 +368,31 @@
                             </div>
 
                             <!-- Actual Content -->
-                            <img
+                            <a
+                                wire:navigate
                                 x-show="isLoaded"
-                                x-transition:enter="transition ease-out duration-500"
-                                x-transition:enter-start="opacity-0"
-                                x-transition:enter-end="opacity-100"
-                                src="{{ $sold_item->image_location ? asset('/storage/' .$sold_item->image_location) : asset('/images/no-image-available-placeholder-1920x1080-transparent.svg') }}"
-                                class="object-cover transition duration-300 bg-transparent rounded-md aspect-square group-hover:opacity-75 w-full max-h-80 lg:aspect-auto"
-                                @php
-                                    $image_text = $sold_item->image_location ? 'Image of ' .$sold_item->item_name : 'No image found for ' .$sold_item->item_name;
-                                @endphp
-                                alt="{{ $image_text }}"
-                                title="{{ $image_text }}"
-                                loading="lazy"
-                            />
+                                href="{{ route('archive.sold-items.detail', ['id' => $sold_item->id, 'brand' => str($sold_item->brand)->slug(), 'type' => str($sold_item->type)->slug()]) }}"
+                                title="View details of {{ $sold_item->item_name }}"
+                            >
+                                <img
+                                    x-transition:enter="transition ease-out duration-500"
+                                    x-transition:enter-start="opacity-0"
+                                    x-transition:enter-end="opacity-100"
+                                    src="{{ $sold_item->image_location ? asset('/storage/' .$sold_item->image_location) : asset('/images/no-image-available-placeholder-1920x1080-transparent.svg') }}"
+                                    class="object-cover transition duration-300 bg-transparent rounded-md aspect-square group-hover:opacity-75 w-full max-h-80 lg:aspect-auto"
+                                    @php
+                                        $image_text = $sold_item->image_location ? 'Image of ' .$sold_item->item_name : 'No image found for ' .$sold_item->item_name;
+                                    @endphp
+                                    alt="{{ $image_text }}"
+                                    title="{{ $image_text }}"
+                                    loading="lazy"
+                                />
+                            </a>
                         </div>
 
                         <div class="flex flex-col mt-4">
                             <div class="flex justify-between gap-2">
-                                <h3 class="text-lg text-gray-800 grow shrink basis-0 dark:text-gray-200 md:truncate" title="{{ $sold_item->item_name }}">{{ $sold_item->item_name }}@if (str_contains(strtolower($sold_item->tags ?? ''), 'hot item')) <span class="text-base leading-none" title="Has more than 10 inquiries!">&#128293;</span>@endif</h3>
+                                <h3 class="text-lg text-gray-800 grow shrink basis-0 dark:text-gray-200 md:truncate" title="{{ $sold_item->item_name }}"><a wire:navigate class="transition duration-200 hover:text-cyan-800 dark:hover:text-cyan-200 hover:underline" href="{{ route('archive.sold-items.detail', ['id' => $sold_item->id, 'brand' => str($sold_item->brand)->slug(), 'type' => str($sold_item->type)->slug()]) }}">{{ $sold_item->item_name }}</a>@if (str_contains(strtolower($sold_item->tags ?? ''), 'hot item')) <span class="text-base leading-none" title="Has more than 10 inquiries!">&#128293;</span>@endif</h3>
                                 <p class="text-lg text-gray-800 justify-self-end dark:text-gray-200" title="Price">&#8369; {{ $sold_item->price }}</p>
                             </div>
 
@@ -449,24 +455,30 @@
                             </div>
 
                             <!-- Actual Content -->
-                            <img
+                            <a
+                                wire:navigate
                                 x-show="isLoaded"
-                                x-transition:enter="transition ease-out duration-500"
-                                x-transition:enter-start="opacity-0"
-                                x-transition:enter-end="opacity-100"
-                                src="{{ $sold_item->image_location ? asset('/storage/' .$sold_item->image_location) : asset('/images/no-image-available-placeholder-1920x1080-transparent.svg') }}"
-                                class="object-cover transition duration-300 bg-transparent rounded-md aspect-square group-hover:opacity-75 w-full h-20 lg:aspect-auto hover:scale-105"
-                                @php
-                                    $image_text = $sold_item->image_location ? 'Image of ' .$sold_item->item_name : 'No image found for ' .$sold_item->item_name;
-                                @endphp
-                                alt="{{ $image_text }}"
-                                title="{{ $image_text }}"
-                                loading="lazy"
-                            />
+                                href="{{ route('archive.sold-items.detail', ['id' => $sold_item->id, 'brand' => str($sold_item->brand)->slug(), 'type' => str($sold_item->type)->slug()]) }}"
+                                title="View details of {{ $sold_item->item_name }}"
+                            >
+                                <img
+                                    x-transition:enter="transition ease-out duration-500"
+                                    x-transition:enter-start="opacity-0"
+                                    x-transition:enter-end="opacity-100"
+                                    src="{{ $sold_item->image_location ? asset('/storage/' .$sold_item->image_location) : asset('/images/no-image-available-placeholder-1920x1080-transparent.svg') }}"
+                                    class="object-cover transition duration-300 bg-transparent rounded-md aspect-square group-hover:opacity-75 w-full h-20 lg:aspect-auto hover:scale-105"
+                                    @php
+                                        $image_text = $sold_item->image_location ? 'Image of ' .$sold_item->item_name : 'No image found for ' .$sold_item->item_name;
+                                    @endphp
+                                    alt="{{ $image_text }}"
+                                    title="{{ $image_text }}"
+                                    loading="lazy"
+                                />
+                            </a>
                         </div>
 
                         <div class="w-full flex flex-col gap-0.5">
-                            <h3 class="text-lg text-gray-800 border-b border-b-gray-500 dark:border-b-gray-400 dark:text-gray-200 md:truncate" title="{{ $sold_item->item_name }}">{{ $sold_item->item_name }}@if (str_contains(strtolower($sold_item->tags ?? ''), 'hot item')) <span class="text-base leading-none" title="Hot item">&#128293;</span>@endif</h3>
+                            <h3 class="text-lg text-gray-800 border-b border-b-gray-500 dark:border-b-gray-400 dark:text-gray-200 md:truncate" title="{{ $sold_item->item_name }}"><a wire:navigate class="transition duration-200 hover:text-cyan-800 dark:hover:text-cyan-200 hover:underline" href="{{ route('archive.sold-items.detail', ['id' => $sold_item->id, 'brand' => str($sold_item->brand)->slug(), 'type' => str($sold_item->type)->slug()]) }}">{{ $sold_item->item_name }}</a>@if (str_contains(strtolower($sold_item->tags ?? ''), 'hot item')) <span class="text-base leading-none" title="Hot item">&#128293;</span>@endif</h3>
 
                             <p class="text-sm text-gray-500 dark:text-gray-400">
                                 <span class="font-subtext" title="Price">&#8369; {{ $sold_item->price }}</span>
