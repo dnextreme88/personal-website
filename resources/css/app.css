@@ -554,6 +554,47 @@
         box-shadow: 0 0 4px var(--color-neon-magenta);
     }
 
+    /* Game screenshots filmstrip thumbnails. Hovering the strip dims every thumb
+       except the hovered and the active one; the hovered thumb lifts. The active
+       thumb (aria-current, set by game-screenshots-gallery.js) gets a neon ring —
+       a deeper, softer cyan in light mode, full neon in dark. */
+    .filmstrip {
+        scrollbar-width: thin;
+        scrollbar-color: rgba(14, 116, 144, 0.5) transparent;
+    }
+
+    .dark .filmstrip {
+        scrollbar-color: rgba(0, 240, 255, 0.4) transparent;
+    }
+
+    .filmstrip-thumb {
+        transition: transform 200ms ease, filter 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+    }
+
+    .filmstrip:hover .filmstrip-thumb {
+        filter: brightness(0.5) saturate(0.6);
+    }
+
+    .filmstrip .filmstrip-thumb:hover,
+    .filmstrip .filmstrip-thumb[aria-current="true"] {
+        filter: none;
+    }
+
+    .filmstrip .filmstrip-thumb:hover {
+        transform: translateY(-3px) scale(1.06);
+        z-index: 1;
+    }
+
+    .filmstrip-thumb[aria-current="true"] {
+        border-color: #0e7490;
+        box-shadow: 0 0 0 1px #0e7490, 0 0 10px rgba(14, 116, 144, 0.45);
+    }
+
+    .dark .filmstrip-thumb[aria-current="true"] {
+        border-color: var(--color-neon-cyan);
+        box-shadow: 0 0 0 1px var(--color-neon-cyan), 0 0 16px rgba(0, 240, 255, 0.55);
+    }
+
     /* Sold item detail description. Strips the prose list bullets and the wide
        list padding, then gives each item a small first-line indent. Pair it with
        the prose classes on the same element. */
@@ -580,5 +621,14 @@
        null out its transition too in case it's ever forced on. */
     .cyber-reticle {
         transition: none !important;
+    }
+
+    /* Filmstrip thumbs: keep the dim/active states, drop the lift and easing. */
+    .filmstrip-thumb {
+        transition: none !important;
+    }
+
+    .filmstrip .filmstrip-thumb:hover {
+        transform: none;
     }
 }

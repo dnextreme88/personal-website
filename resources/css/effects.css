@@ -319,6 +319,117 @@
         }
     }
 
+    /* Game screenshots glitch swap — on each image change the frame gets .is-glitching
+       for ~340ms (game-screenshots-gallery.js). The image tears into offset slices while
+       a cyan and a magenta copy flicker beside it, then everything settles. */
+    .screenshot-ghost {
+        position: absolute;
+        inset: 0;
+        z-index: 5;
+        pointer-events: none;
+        opacity: 0;
+        mix-blend-mode: screen;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .screenshot-ghost-cyan {
+        filter: sepia(1) hue-rotate(140deg) saturate(7);
+    }
+
+    .screenshot-ghost-magenta {
+        filter: sepia(1) hue-rotate(255deg) saturate(7);
+    }
+
+    .screenshot-frame.is-glitching .screenshot-frame-image {
+        animation: screenshot-glitch 340ms steps(1) both;
+    }
+
+    .screenshot-frame.is-glitching .screenshot-ghost-cyan {
+        animation: screenshot-ghost-cyan 340ms steps(1) both;
+    }
+
+    .screenshot-frame.is-glitching .screenshot-ghost-magenta {
+        animation: screenshot-ghost-magenta 340ms steps(1) both;
+    }
+
+    @keyframes screenshot-glitch {
+        0% {
+            clip-path: inset(0 0 62% 0);
+            transform: translateX(-10px);
+        }
+
+        20% {
+            clip-path: inset(38% 0 22% 0);
+            transform: translateX(8px);
+        }
+
+        40% {
+            clip-path: inset(8% 0 70% 0);
+            transform: translateX(-5px);
+        }
+
+        60% {
+            clip-path: inset(68% 0 4% 0);
+            transform: translateX(4px);
+        }
+
+        80% {
+            clip-path: inset(0);
+            transform: translateX(-2px);
+        }
+
+        100% {
+            clip-path: inset(0);
+            transform: none;
+        }
+    }
+
+    @keyframes screenshot-ghost-cyan {
+        0% {
+            opacity: 0.85;
+            transform: translateX(-14px);
+            clip-path: inset(14% 0 56% 0);
+        }
+
+        33% {
+            transform: translateX(10px);
+            clip-path: inset(60% 0 12% 0);
+        }
+
+        66% {
+            transform: translateX(-6px);
+            clip-path: inset(32% 0 40% 0);
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+
+    @keyframes screenshot-ghost-magenta {
+        0% {
+            opacity: 0.85;
+            transform: translateX(14px);
+            clip-path: inset(48% 0 24% 0);
+        }
+
+        33% {
+            transform: translateX(-9px);
+            clip-path: inset(6% 0 74% 0);
+        }
+
+        66% {
+            transform: translateX(5px);
+            clip-path: inset(70% 0 8% 0);
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+
     .animate-cyber-scan {
         animation: cyber-scan 1.2s ease-in-out infinite;
     }
@@ -354,12 +465,14 @@
     .skeleton-loader-lg,
     .card-square-reflection::after,
     .btn-submit-sweep,
+    .screenshot-frame-image,
     [class*="animate-"] {
         animation: none !important;
     }
 
     .glitch::before,
     .glitch::after,
+    .screenshot-ghost,
     .blinking-cursor::after {
         display: none !important;
     }
