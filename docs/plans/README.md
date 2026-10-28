@@ -28,6 +28,8 @@ how it was verified.
   detail page (executed **2026-09-06**).
 - [20261010-sold-items-name-sort.md](20261010-sold-items-name-sort.md) — Sold Items "Name" sort
   orders by brand, then name, then type (null name falls back to type) (executed **2026-10-10**).
+- [20261011-css-effects-split.md](20261011-css-effects-split.md) — CSS split phase 1: keyframe
+  animations move from `app.css` to `resources/css/effects.css` (executed **2026-10-11**).
 
 ## Conventions
 

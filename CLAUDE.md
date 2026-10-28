@@ -39,6 +39,7 @@ Personal website on the **TALL stack** (Tailwind, Alpine, Laravel, Livewire) wit
     * `font-text` - `<label>` elements or regular text that does not fit anywhere. No need to add this as a class if it does not fall to the other criterias (it should automatically inherit from the base layout).
     * `font-subtext` - text preceding a sibling regular text set by `font-text`. If there are doubts or you have suggestions, always ask the user first — do not implement without clarifying.
     * `font-loader` - `<button>` elements.
+- **Animations**: keyframe animations (`@keyframes` and the classes that use them) live in [resources/css/effects.css](resources/css/effects.css), which `app.css` imports. Do not add them to `app.css`. Hover/press transitions stay in `app.css` for now.
 - **Reusable components**: reuse existing Blade components (in `resources/views/components`) when possible instead of repeating similar styles, to keep styles uniform across the site.
 
 ### Miscellaneous

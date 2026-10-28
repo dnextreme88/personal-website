@@ -1,0 +1,372 @@
+/* Keyframe-driven effects (animations) for the site. Imported by app.css.
+   Hover/press transitions still live in app.css. Motion is stilled under
+   prefers-reduced-motion at the end of this file. */
+
+@layer utilities {
+
+    /* Marching-ants border — a continuously looping dashed outline (like Excel's
+       "running" copy marquee), in neon magenta. Used on the calendar's current-day
+       cell. Pair with pathLength="100" on the <rect> so exactly 10 dashes fit and
+       the loop is seamless (no seam where the pattern wraps). */
+    .marching-border {
+        stroke-dasharray: 5 5;
+        animation: marching-border 0.6s linear infinite;
+    }
+
+    @keyframes marching-border {
+        to {
+            stroke-dashoffset: -10;
+        }
+    }
+
+    /* Pairs with the static .bg-gradient-blue background in app.css. */
+    .animate-shimmering-gradient {
+        animation: shimmering-gradient 8s linear infinite;
+    }
+
+    @keyframes shimmering-gradient {
+        0% {
+            background-position: -100% 0;
+        }
+
+        100% {
+            background-position: 100% 0;
+        }
+    }
+
+    .skeleton-loader {
+        background: linear-gradient(90deg, #0f1b33 0%, #16324f 50%, #0f1b33 100%);
+        background-size: 200% 100%;
+        animation: shimmer 1.5s linear infinite;
+    }
+
+    .skeleton-loader-lg {
+        background: linear-gradient(to right, #0f1b33 0%, rgba(0, 240, 255, 0.35) 50%, #0f1b33 25%);
+        background-size: 200% 100%;
+        animation: shimmer 1.5s linear infinite;
+    }
+
+    /* Shimmer Animation Effect */
+    @keyframes shimmer {
+        0% {
+            background-position: -200% 0;
+        }
+
+        100% {
+            background-position: 200% 0;
+        }
+    }
+
+    .gradient-gray-1 {
+        background-size: 300% 300%;
+        animation: animated-gradient 7s ease infinite;
+        @apply from-gray-100;
+        @apply via-gray-900;
+        @apply to-blue-300;
+    }
+
+    .gradient-gray-2 {
+        background-size: 300% 300%;
+        animation: animated-gradient 7s ease infinite;
+        @apply from-gray-300/50;
+        @apply via-gray-600/75;
+        @apply to-blue-600;
+    }
+
+    .gradient-gray-3 {
+        background-size: 300% 300%;
+        animation: animated-gradient 7s ease infinite;
+        @apply from-gray-500/75;
+        @apply via-gray-300/50;
+        @apply to-blue-900;
+    }
+
+    @keyframes animated-gradient {
+
+        0%,
+        100% {
+            background-position: 0%;
+        }
+
+        50% {
+            background-position: 100%;
+        }
+    }
+
+    /* Hover sweep — a one-shot animation (not a transition) so the band sweeps
+       all the way across to the right only while hovering in. The button's own
+       press state (.btn-submit) stays in app.css.
+    */
+    .btn-submit-sweep {
+        transform: translateX(-100%);
+    }
+
+    @keyframes btn-submit-sweep {
+        from {
+            transform: translateX(-100%);
+        }
+
+        to {
+            transform: translateX(100%);
+        }
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        .btn-submit:hover .btn-submit-sweep {
+            animation: btn-submit-sweep 1.25s ease;
+        }
+    }
+
+    /* overflow-clip, not overflow-hidden: the sheen parks at translate 100%, which
+       doubles the scroll width. A hidden-overflow box is still scrollable, so
+       scrollIntoView or link focus could shift the card's content sideways. */
+    .card-square-reflection {
+        @apply relative;
+        @apply overflow-clip;
+    }
+
+    /* Reflection — a light sheen that sweeps across the card on a loop. The
+       sweep takes the first 30% of each cycle; the sheen then waits off the
+       right edge until the next cycle, so it reads as a periodic glint. */
+    .card-square-reflection::after {
+        content: '';
+        @apply absolute;
+        @apply inset-0;
+        pointer-events: none;
+        background: linear-gradient(115deg, #0000 40%, #ffffff40 50%, #0000 60%);
+        translate: -100% 0;
+        animation: shiny-reflection 3s ease-in-out infinite;
+    }
+
+    @keyframes shiny-reflection {
+        0% {
+            translate: -100% 0;
+        }
+
+        30%,
+        100% {
+            translate: 100% 0;
+        }
+    }
+
+    /* Pairs with the static .cyber-grid background in app.css. */
+    .animate-grid-drift {
+        animation: grid-drift 3s linear infinite;
+    }
+
+    @keyframes grid-drift {
+        from {
+            background-position: 0 0;
+        }
+
+        to {
+            background-position: 0 40px;
+        }
+    }
+
+    .animate-flicker {
+        animation: flicker 5s linear infinite;
+    }
+
+    @keyframes flicker {
+
+        0%,
+        19%,
+        21%,
+        23%,
+        25%,
+        54%,
+        56%,
+        100% {
+            opacity: 1;
+            text-shadow:
+                0 0 5px rgba(0, 240, 255, 0.8),
+                0 0 15px rgba(0, 240, 255, 0.5),
+                0 0 30px rgba(157, 78, 221, 0.4);
+        }
+
+        20%,
+        24%,
+        55% {
+            opacity: 0.55;
+            text-shadow: none;
+        }
+    }
+
+    /* Hero "Welcome" — rises in, then flickers like a neon sign after a beat.
+       Mirrors the sample's [animation:rise .9s .5s, neonFlicker 4s 1.6s]. */
+    .hero-flicker {
+        opacity: 0;
+        animation: rise 0.9s 0.5s forwards, flicker 4s 1.6s infinite;
+    }
+
+    @keyframes rise {
+        from {
+            opacity: 0;
+            transform: translateY(26px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .glitch {
+        position: relative;
+        display: inline-block;
+    }
+
+    .glitch::before,
+    .glitch::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        pointer-events: none;
+        @apply opacity-85;
+    }
+
+    .glitch::before {
+        left: 1px;
+        text-shadow: -2px 0 var(--color-neon-cyan);
+    }
+
+    .glitch::after {
+        left: -1px;
+        text-shadow: 2px 0 var(--color-neon-cyan);
+    }
+
+    /* Only animate once the element is in view (tailwindcss-intersect drops the
+       [no-intersect] attribute when it scrolls in), and at a slower, calmer pace. */
+    .glitch:not([no-intersect])::before {
+        animation: glitch-top 7s infinite linear alternate-reverse;
+    }
+
+    .glitch:not([no-intersect])::after {
+        animation: glitch-bottom 8s infinite linear alternate-reverse;
+    }
+
+    @keyframes glitch-top {
+        0% {
+            clip-path: inset(20% 0 60% 0);
+        }
+
+        20% {
+            clip-path: inset(10% 0 85% 0);
+        }
+
+        40% {
+            clip-path: inset(50% 0 30% 0);
+        }
+
+        60% {
+            clip-path: inset(70% 0 10% 0);
+        }
+
+        80% {
+            clip-path: inset(30% 0 55% 0);
+        }
+
+        100% {
+            clip-path: inset(80% 0 5% 0);
+        }
+    }
+
+    @keyframes glitch-bottom {
+        0% {
+            clip-path: inset(65% 0 15% 0);
+        }
+
+        20% {
+            clip-path: inset(40% 0 45% 0);
+        }
+
+        40% {
+            clip-path: inset(15% 0 75% 0);
+        }
+
+        60% {
+            clip-path: inset(55% 0 30% 0);
+        }
+
+        80% {
+            clip-path: inset(25% 0 60% 0);
+        }
+
+        100% {
+            clip-path: inset(5% 0 85% 0);
+        }
+    }
+
+    .blinking-cursor::after {
+        content: '_';
+        margin-left: 2px;
+        color: var(--color-neon-cyan);
+        animation: cursor-blink 1s step-end infinite;
+    }
+
+    @keyframes cursor-blink {
+
+        0%,
+        100% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0;
+        }
+    }
+
+    .animate-cyber-scan {
+        animation: cyber-scan 1.2s ease-in-out infinite;
+    }
+
+    @keyframes cyber-scan {
+        0% {
+            transform: translateY(-120%);
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        100% {
+            transform: translateY(120%);
+            opacity: 0;
+        }
+    }
+}
+
+/* Accessibility: honour reduced-motion by stilling every animated effect
+   and dropping the decorative glitch/cursor layers. Static glow remains.
+   Transition-only rules (HUD corners, reticle) are handled in app.css. */
+@media (prefers-reduced-motion: reduce) {
+
+    .animate-flicker,
+    .animate-grid-drift,
+    .animate-shimmering-gradient,
+    .animate-cyber-scan,
+    .marching-border,
+    .skeleton-loader,
+    .skeleton-loader-lg,
+    .card-square-reflection::after,
+    .btn-submit-sweep,
+    [class*="animate-"] {
+        animation: none !important;
+    }
+
+    .glitch::before,
+    .glitch::after,
+    .blinking-cursor::after {
+        display: none !important;
+    }
+
+    /* hero-flicker starts hidden and reveals via animation — keep it visible. */
+    .hero-flicker {
+        animation: none !important;
+        opacity: 1 !important;
+    }
+}
