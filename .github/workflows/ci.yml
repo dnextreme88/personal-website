@@ -61,6 +61,13 @@ jobs:
           key: composer-${{ hashFiles('composer.lock') }}
           restore-keys: composer-
 
+      # .gitignore excludes the whole /storage/ folder (it also holds the sold-item
+      # images), so a fresh checkout has none of Laravel's writable folders. Without
+      # storage/framework/views, `artisan package:discover` fails with
+      # "Please provide a valid cache path".
+      - name: Create Laravel storage folders
+        run: mkdir -p storage/app/public storage/framework/cache/data storage/framework/sessions storage/framework/testing storage/framework/views storage/logs
+
       - name: Install PHP dependencies
         run: composer install --no-interaction --no-progress --prefer-dist
 
