@@ -8,6 +8,7 @@ export default defineConfig({
                 'resources/css/app.css',
                 'resources/css/filament/admin/tailwind-theme.css',
                 'resources/js/app.js',
+                'resources/js/dropping-areas-route.js',
                 'resources/js/game-screenshots-gallery.js',
                 'resources/js/skeleton-loading.js',
                 'resources/js/sold-items-chart.js',

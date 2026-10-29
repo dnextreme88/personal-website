@@ -597,6 +597,87 @@
         box-shadow: 0 0 0 1px var(--color-neon-cyan), 0 0 16px rgba(0, 240, 255, 0.55);
     }
 
+    /* Dropping areas transit route. dropping-areas-route.js sets the fill height and
+       toggles .is-reached; the newest station has .is-current. The beacon pulses on the
+       current node are keyframes in effects.css. */
+    .route-rail-fill {
+        background: linear-gradient(#0891b2, #c026d3);
+        box-shadow: 0 0 8px rgba(8, 145, 178, 0.45);
+    }
+
+    .dark .route-rail-fill {
+        background: linear-gradient(var(--color-neon-cyan), var(--color-neon-magenta));
+        box-shadow: 0 0 12px rgba(0, 240, 255, 0.5);
+    }
+
+    .route-node {
+        border-color: var(--color-gray-300);
+        transition: border-color 300ms ease, box-shadow 300ms ease, background-color 300ms ease;
+    }
+
+    .dark .route-node {
+        border-color: var(--color-gray-700);
+    }
+
+    .route-station.is-reached .route-node {
+        border-color: #0891b2;
+        box-shadow: 0 0 10px rgba(8, 145, 178, 0.55);
+    }
+
+    .dark .route-station.is-reached .route-node {
+        border-color: var(--color-neon-cyan);
+        box-shadow: 0 0 12px rgba(0, 240, 255, 0.6);
+    }
+
+    .route-station.is-current .route-node,
+    .route-station.is-current.is-reached .route-node {
+        border-color: #c026d3;
+        background-color: #c026d3;
+        box-shadow: 0 0 12px rgba(192, 38, 211, 0.6);
+    }
+
+    .dark .route-station.is-current .route-node,
+    .dark .route-station.is-current.is-reached .route-node {
+        border-color: var(--color-neon-magenta);
+        background-color: var(--color-neon-magenta);
+        box-shadow: 0 0 14px rgba(255, 0, 229, 0.7);
+    }
+
+    .route-card {
+        transition: transform 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
+    }
+
+    .route-card:hover {
+        transform: translateY(-3px);
+        border-color: #0891b2;
+        box-shadow: 0 10px 28px -12px rgba(8, 145, 178, 0.6);
+    }
+
+    .dark .route-card:hover {
+        border-color: var(--color-neon-cyan);
+        box-shadow: 0 10px 28px -12px rgba(0, 240, 255, 0.6);
+    }
+
+    .route-station.is-current .route-card {
+        border-color: #c026d3;
+        box-shadow: 0 0 0 1px #c026d3, 0 0 24px -6px rgba(192, 38, 211, 0.6);
+    }
+
+    .dark .route-station.is-current .route-card {
+        border-color: var(--color-neon-magenta);
+        box-shadow: 0 0 0 1px var(--color-neon-magenta), 0 0 24px -6px rgba(255, 0, 229, 0.7);
+    }
+
+    /* Old stations stay grey until hover; the current station is always in colour */
+    .route-station:not(.is-current) .route-photo img {
+        filter: grayscale(0.85) brightness(0.85);
+        transition: filter 400ms ease;
+    }
+
+    .route-station:not(.is-current) .route-card:hover .route-photo img {
+        filter: none;
+    }
+
     /* Sold item detail description. Strips the prose list bullets and the wide
        list padding, then gives each item a small first-line indent. Pair it with
        the prose classes on the same element. */
@@ -631,6 +712,17 @@
     }
 
     .filmstrip .filmstrip-thumb:hover {
+        transform: none;
+    }
+
+    /* Dropping areas route: keep the lit, grey and hover states, drop the lift and easing. */
+    .route-node,
+    .route-card,
+    .route-station .route-photo img {
+        transition: none !important;
+    }
+
+    .route-card:hover {
         transform: none;
     }
 }

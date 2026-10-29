@@ -5,77 +5,103 @@
 
     <x-slot name="header">Dropping Areas</x-slot>
 
-    <div x-data="{
-            isImagePreviewModalOpen: false,
-            imagePreviewSrc: ''
-        }"
+    {{-- Transit route map: one station per dropping area, oldest first. The rail fills on scroll
+         (resources/js/dropping-areas-route.js); beacon keyframes in effects.css; station states in app.css. --}}
+    <div
+        x-data="droppingAreasRoute()"
+        x-on:scroll.window.passive="queueUpdate()"
+        x-on:resize.window="queueUpdate()"
     >
-        <p class="text-xl text-gray-500 dark:text-gray-300">A list of Dropping Areas over the years</p>
+        <p class="font-subtext text-xl text-gray-500 dark:text-gray-300">A list of Dropping Areas over the years</p>
 
-        <div class="mx-auto mt-8 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-12 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-            @forelse ($dropping_areas as $dropping_area)
-                <figure class="overflow-hidden rounded-lg bg-gray-200/50 outline outline-gray-300/30 shadow-sm dark:divide-white/10 dark:bg-gray-800/50 dark:shadow-none dark:outline dark:-outline-offset-1 dark:outline-white/30 card-rectangle">
-                    <div class="relative px-3 py-5">
-                        {{-- id identifies the element being lazy loaded --}}
-                        <div
-                            x-data="skeletonLoader()"
-                            @destroyed="destroy()"
-                            class="relative min-h-[300px]"
-                            id="dropping-area-{{ $loop->index }}"
-                        >
-                            <!-- Skeleton Loader -->
-                            <div
-                                x-show="!isLoaded"
-                                x-transition:leave="transition ease-in duration-500"
-                                x-transition:leave-start="opacity-100"
-                                x-transition:leave-end="opacity-0"
-                                class="absolute inset-0 *:bg-transparent skeleton-loader-lg"
-                            >
-                                <div class="content-center text-center size-full">
-                                    <x-loading-indicator
-                                        :loader_color_bg="'border-neon-cyan'"
-                                        :loader_color_spin="'border-neon-cyan'"
-                                        :show_text="true"
-                                        :size="4"
-                                        :text="'Loading...'"
-                                        :text_classes="'text-xl tracking-widest'"
-                                        :text_color="'text-neon-cyan'"
+        @if (count($stations) > 0)
+            <div class="relative mt-10 sm:mt-14">
+                {{-- Rail track and the scroll-driven fill. Left on a phone, centre on desktop. --}}
+                <div aria-hidden="true" class="absolute inset-y-0 left-[18px] w-1 bg-gray-300 dark:bg-gray-700 lg:left-[calc(50%-2px)]"></div>
+                <div x-ref="railFill" aria-hidden="true" class="route-rail-fill absolute top-0 left-[18px] w-1 h-0 lg:left-[calc(50%-2px)]"></div>
+
+                <ol x-ref="route" class="relative grid gap-16 py-2 lg:gap-22">
+                    @foreach ($stations as $station)
+                        @if ($station['is_transfer'])
+                            <li class="relative z-10 flex items-center gap-2.5 ml-1 font-loader text-xs tracking-widest uppercase text-fuchsia-700 dark:text-neon-magenta lg:justify-center lg:ml-0">
+                                <span aria-hidden="true" class="grid place-items-center size-8 shrink-0 text-sm rounded-full border-2 border-dashed border-current bg-gray-100 dark:bg-gray-900">&#x21C4;</span>
+                                Transfer &rarr; {{ $station['building'] }}
+                            </li>
+                        @endif
+
+                        <li @class([
+                            'route-station relative grid grid-cols-[40px_minmax(0,1fr)] gap-3.5 items-start lg:grid-cols-[minmax(0,1fr)_40px_minmax(0,1fr)]',
+                            'is-current' => $station['is_current'],
+                        ])>
+                            <span aria-hidden="true" class="route-node relative z-10 mt-6 ml-2 size-6 rounded-full border-[3px] bg-gray-100 dark:bg-gray-900 lg:col-start-2 lg:row-start-1 lg:mx-auto"></span>
+
+                            <article @class([
+                                'route-card relative grid grid-cols-1 bg-white border border-gray-300 dark:bg-gray-800/60 dark:border-gray-700 sm:grid-cols-[minmax(0,220px)_minmax(0,1fr)] lg:row-start-1',
+                                'lg:col-start-1' => $loop->odd,
+                                'lg:col-start-3' => $loop->even,
+                            ])>
+                                {{-- The whole card opens the preview: this button covers the card, above the photo and the text --}}
+                                <button
+                                    x-on:click="openPreview(@js($station['url']))"
+                                    type="button"
+                                    title="Open full preview"
+                                    aria-label="Open full preview: {{ $station['filename'] }}"
+                                    class="absolute inset-0 z-10 cursor-zoom-in focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-600 dark:focus-visible:outline-neon-cyan"
+                                ></button>
+
+                                {{-- On a phone the photo keeps a 4:3 shape; beside the text it stretches to the card's full height --}}
+                                <div class="route-photo relative aspect-4/3 overflow-clip bg-gray-950 sm:aspect-auto sm:min-h-40">
+                                    <img
+                                        src="{{ $station['url'] }}"
+                                        alt="{{ $station['filename'] }}"
+                                        loading="lazy"
+                                        class="absolute inset-0 size-full object-cover"
                                     />
                                 </div>
-                            </div>
 
-                            <!-- Actual Content -->
-                            <img
-                                x-show="isLoaded"
-                                x-transition:enter="transition ease-out duration-500"
-                                x-transition:enter-start="opacity-0"
-                                x-transition:enter-end="opacity-100"
-                                x-on:click="imagePreviewSrc = '{{ $dropping_area['url'] }}'; isImagePreviewModalOpen = true"
-                                src="{{ $dropping_area['url'] }}"
-                                class="inset-0 cursor-pointer object-cover size-full min-h-[300px] aspect-square lg:aspect-1"
-                                alt="{{ $dropping_area['filename'] }} background"
-                                title="{{ $dropping_area['filename'] }} background"
-                                loading="lazy"
-                                aria-label="{{ $dropping_area['filename'] }} background"
-                            />
-                        </div>
+                                <div class="grid content-start gap-2.5 min-w-0 px-4 py-3.5">
+                                    <div class="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
+                                        <span @class([
+                                            'font-loader text-2xl tracking-wider',
+                                            'text-fuchsia-700 dark:text-neon-magenta' => $station['is_current'],
+                                            'text-cyan-700 dark:text-neon-cyan' => !$station['is_current'],
+                                        ])>{{ $station['tag'] }}</span>
 
-                        <span
-                            x-on:click="imagePreviewSrc = '{{ $dropping_area['url'] }}'; isImagePreviewModalOpen = true"
-                            class="absolute cursor-pointer right-0 top-0 text-white text-4xl bg-gray-900/50 hover:bg-gray-500 transition duration-150 py-1 px-2 mx-3 my-5"
-                            title="Open full preview modal"
-                            aria-label="Open full preview modal"
-                        >
-                            &#x2197;
-                        </span>
-                    </div>
+                                        @if ($station['is_current'])
+                                            <x-badge variant="none" class="text-xs uppercase tracking-widest text-green-700 border-green-700 shadow-[0_0_4px_rgba(21,128,61,0.35)] dark:text-green-300 dark:border-green-400 dark:shadow-[0_0_6px_rgba(74,222,128,0.45)]">
+                                                <span aria-hidden="true" class="inline-block mr-1.5 size-2 rounded-full bg-current align-[1px]"></span>Current
+                                            </x-badge>
+                                        @else
+                                            <x-badge variant="none" class="text-xs uppercase tracking-widest text-gray-500 border-gray-400 dark:text-gray-400 dark:border-gray-600">Decommissioned</x-badge>
+                                        @endif
+                                    </div>
 
-                    <figcaption class="bg-gray-50 p-4 max-w-full md:truncate md:max-w-[100vw] text-gray-500 dark:text-gray-300 sm:px-6 dark:bg-gray-800" title="{{ $dropping_area['filename'] }}">{{ $dropping_area['filename'] }}</figcaption>
-                </figure>
-            @empty
-                <p class="col-span-1 px-2 text-red-800 dark:text-red-200 md:col-span-2 xl:col-span-3">There are no dropping areas.</p>
-            @endforelse
-        </div>
+                                    <h3 class="m-0 font-heading text-lg text-gray-900 dark:text-gray-100 text-balance">
+                                        {{ $station['building'] ?? $station['filename'] }}
+                                        @if ($station['unit'])
+                                            &middot; {{ $station['unit'] }}
+                                        @endif
+                                    </h3>
+
+                                    <dl class="grid grid-cols-[auto_minmax(0,1fr)] items-baseline gap-x-3.5 gap-y-1 m-0 text-sm">
+                                        <dt class="font-loader text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Hours</dt>
+                                        <dd class="m-0 text-gray-800 dark:text-gray-200">{{ $station['hours'] ?? '—' }}</dd>
+                                        <dt class="font-loader text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Date</dt>
+                                        <dd class="m-0 text-gray-800 dark:text-gray-200">{{ $station['date'] ?? '—' }}</dd>
+                                        @if ($station['note'])
+                                            <dt class="font-loader text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Note</dt>
+                                            <dd class="m-0 text-gray-800 dark:text-gray-200">{{ $station['note'] }}</dd>
+                                        @endif
+                                    </dl>
+                                </div>
+                            </article>
+                        </li>
+                    @endforeach
+                </ol>
+            </div>
+        @else
+            <p class="mt-8 px-2 text-red-800 dark:text-red-200">There are no dropping areas.</p>
+        @endif
 
         <x-modal-image-preview data-img-src="imagePreviewSrc" />
     </div>
@@ -83,5 +109,5 @@
 
 {{-- Custom scripts --}}
 @push('scripts')
-    @vite(['resources/js/skeleton-loading.js'])
+    @vite(['resources/js/dropping-areas-route.js'])
 @endpush

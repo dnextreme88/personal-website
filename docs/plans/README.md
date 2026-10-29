@@ -33,6 +33,9 @@ how it was verified.
 - [20261029-game-screenshots-filmstrip.md](20261029-game-screenshots-filmstrip.md) — Game Screenshots page as a
   filmstrip gallery: glitch swap, decoding HUD readout, neon thumbnails, progress rail, keyboard
   browsing and ambient glow (executed **2026-10-29**).
+- [20261029-dropping-areas-transit-route.md](20261029-dropping-areas-transit-route.md) — Dropping Areas page as a
+  transit route map: a scroll-filled rail, lit stations, a LIVE beacon on the newest location, greyed
+  decommissioned stations and transfer markers between buildings (executed **2026-10-29**).
 
 ## Conventions
 
