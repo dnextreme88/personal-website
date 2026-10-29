@@ -557,7 +557,7 @@
     /* Game screenshots filmstrip thumbnails. Hovering the strip dims every thumb
        except the hovered and the active one; the hovered thumb lifts. The active
        thumb (aria-current, set by game-screenshots-gallery.js) gets a neon ring —
-       a deeper, softer cyan in light mode, full neon in dark. */
+       a bright 2px cyan in light mode, full neon in dark. */
     .filmstrip {
         scrollbar-width: thin;
         scrollbar-color: rgba(14, 116, 144, 0.5) transparent;
@@ -585,9 +585,11 @@
         z-index: 1;
     }
 
+    /* Light mode: a brighter cyan, 2px ring — the thumbs themselves are dark, so the
+       site's usual deep light-mode cyan (#0e7490) disappears against them. */
     .filmstrip-thumb[aria-current="true"] {
-        border-color: #0e7490;
-        box-shadow: 0 0 0 1px #0e7490, 0 0 10px rgba(14, 116, 144, 0.45);
+        border-color: #06b6d4;
+        box-shadow: 0 0 0 2px #06b6d4, 0 0 14px rgba(6, 182, 212, 0.65);
     }
 
     .dark .filmstrip-thumb[aria-current="true"] {

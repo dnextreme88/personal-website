@@ -1,5 +1,5 @@
 // Alpine.js component for the game screenshots filmstrip: glitch swap between images,
-// a decoding HUD readout, a centred neon active thumbnail, a progress rail, and keyboard browsing.
+// a decoding HUD readout, a centred neon active thumbnail, and keyboard browsing.
 Alpine.data('gameScreenshotsGallery', (screenshots) => ({
   screenshots,
   index: 0,
@@ -24,10 +24,6 @@ Alpine.data('gameScreenshotsGallery', (screenshots) => ({
 
   get current() {
     return this.screenshots[this.index] ?? null;
-  },
-
-  get progress() {
-    return this.screenshots.length ? ((this.index + 1) / this.screenshots.length) * 100 : 0;
   },
 
   pad(n) {

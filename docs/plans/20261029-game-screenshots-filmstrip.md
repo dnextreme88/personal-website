@@ -5,6 +5,8 @@
 > a decoding HUD readout (index, game, and the date read from the filename), and an ambient glow,
 > over a thumbnail strip with a neon active thumbnail, a hover preview, and a progress rail.
 > Keyboard: Left/Right, Home/End. A click on the image still opens `<x-modal-image-preview>`.
+> - **Follow-up tweaks**: the progress rail is now one segment per screenshot, directly under the
+>   frame (seen = cyan, current = magenta glow), so it no longer looks like a second scrollbar.
 > - **Bug fixed**: `render()` no longer appends to a public property, so re-renders do not duplicate
 >   the list. `dateFromFilename()` is a new public static helper.
 > - **Fixes found while verifying**: the key handler now accepts non-element event targets; the

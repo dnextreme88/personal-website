@@ -102,6 +102,19 @@
                 </div>
             </div>
 
+            {{-- Progress rail: one segment per screenshot, directly under the frame so it reads as
+                 position, not as a second scrollbar. Seen = cyan, current = magenta glow, ahead = faint. --}}
+            <div aria-hidden="true" class="flex gap-0.5 px-1.5">
+                @foreach ($screenshots as $screenshot)
+                    <span
+                        x-bind:class="index === {{ $loop->index }}
+                            ? 'bg-fuchsia-600 dark:bg-neon-magenta shadow-[0_0_8px_rgba(192,38,211,0.6)] dark:shadow-[0_0_10px_rgba(255,0,229,0.8)]'
+                            : (index > {{ $loop->index }} ? 'bg-cyan-700 dark:bg-neon-cyan' : 'bg-cyan-800/15 dark:bg-neon-cyan/15')"
+                        class="h-1.5 flex-1 transition-colors duration-300"
+                    ></span>
+                @endforeach
+            </div>
+
             <p
                 x-text="current?.filename"
                 class="m-0 font-subtext text-sm text-gray-500 dark:text-gray-400 break-all"
@@ -135,15 +148,6 @@
                             <span class="absolute left-1 bottom-0.5 font-loader text-[11px] text-cyan-50 [text-shadow:0_0_4px_#000]">{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</span>
                         </button>
                     @endforeach
-                </div>
-
-                {{-- Progress rail --}}
-                <div aria-hidden="true" class="h-0.5 bg-cyan-800/20 dark:bg-neon-cyan/20">
-                    <div
-                        class="h-full bg-cyan-700 dark:bg-neon-cyan shadow-[0_0_8px_rgba(14,116,144,0.5)] dark:shadow-[0_0_8px_rgba(0,240,255,0.6)] transition-[width] duration-300"
-                        x-bind:style="{ width: progress + '%' }"
-                        style="width: {{ 100 / count($screenshots) }}%"
-                    ></div>
                 </div>
             </div>
 
