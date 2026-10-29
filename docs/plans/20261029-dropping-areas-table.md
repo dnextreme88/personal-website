@@ -15,10 +15,23 @@
 > **Known issue (open):** the image upload in Filament is broken. The owner commented out the
 > `FileUpload` field in the form and the `ImageColumn` in the table (marked `TODO: TO FIX LOGIC`).
 > Until the upload is fixed:
-> - Photos come from the seeder only.
-> - A new row cannot be created from the admin panel, because `image_path` is a required column.
-> - The test "creates a dropping area with an uploaded image from the admin panel" fails with a
->   `QueryException`. The other 8 tests in `StaticDroppingAreasTest` pass.
+> - Photos come from the seeder only. The seeded rows and their photos stay as they are.
+> - The admin panel still creates, edits and deletes rows, but it does not show or set `image_path`.
+>   An edit keeps the existing photo. A row created in the admin panel has no photo.
+> - `image_path` is nullable. A station without a photo shows its text only, at full width, with no preview.
+> - The test "creates a dropping area with an uploaded image from the admin panel" is commented out
+>   (same `TODO`). Tests cover a create without an image and an edit that keeps the existing image.
+>
+> **Follow-up (to fix later):** the `FileUpload` field, the `ImageColumn`, and the upload test stay
+> commented out until the image upload logic is fixed. When it is fixed:
+> 1. Uncomment the `FileUpload` field and the `ImageColumn` in `DroppingAreaResource` (`TODO: TO FIX LOGIC`).
+> 2. Uncomment the upload test in `StaticDroppingAreasTest`.
+> 3. Confirm that the admin panel shows the images. First check `APP_URL` (see the likely cause above).
+> 4. Decide whether `image_path` goes back to required.
+> - Likely cause of the broken image path in the admin panel: Filament builds the URL from the `public`
+>   disk, which uses `APP_URL` (`http://localhost`, no port). The dev server runs on a port, so the
+>   admin URL points to the wrong host. The public page uses `asset()`, which takes the request host,
+>   so its photos load. Not yet confirmed.
 
 ## Context
 
@@ -47,7 +60,7 @@ Decisions from the owner:
 | `opens_at` / `closes_at` | string, nullable | "Opens" and "Closes" rows, as written, eg. "Mondays - Saturdays 9:00 AM; Sundays 10:00 AM" |
 | `started_on` | date, nullable | "Date" row and the order |
 | `is_current` | boolean, default false | "Current" badge; off shows "Decommissioned" |
-| `image_path` | string | Photo, on the `public` disk |
+| `image_path` | string, nullable | Photo, on the `public` disk; no photo area when empty |
 | `created_at` / `updated_at` | timestamps | |
 
 ## Changes
@@ -56,7 +69,7 @@ Decisions from the owner:
 2. **Model** `App\Models\DroppingArea`:
    - `routeOrder()` scope: undated rows first (by `id`), then by `started_on`, then by `id`.
    - `opens_at` and `closes_at` are free text, because the hours change by day of the week.
-3. **Filament** `DroppingAreaResource` (list, create, edit):
+3. **Filament** `DroppingAreaResource` (list, create, edit; no image field for now, see the known issue):
    - Form: text inputs for `opens_at` and `closes_at`, a "Current" toggle, and a `FileUpload` to `public/dropping-areas`
      (commented out for now, see the known issue above).
    - Table: image (commented out for now), address, unit, opens, closes, start date, a "Current" boolean icon,
@@ -71,5 +84,5 @@ Decisions from the owner:
    The transfer marker shows the address. The "Hours" row is now an "Opens" row and a "Closes" row.
 7. **Tests** `StaticDroppingAreasTest` (with `RefreshDatabase`): page and empty state, hours text,
    route order and tags, more than one current station, transfer rule, Filament list, newest-first admin order,
-   and Filament create with a faked upload (fails while the upload is commented out).
+   and Filament create with a faked upload (commented out while the upload is commented out).
    After the tests, reseed the dev DB with `php artisan migrate:fresh --seed`.

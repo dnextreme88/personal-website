@@ -20,7 +20,7 @@ class StaticDroppingAreas extends Component
             'opens_at' => $dropping_area->opens_at,
             'closes_at' => $dropping_area->closes_at,
             'date' => $dropping_area->started_on?->format('Y-m-d'),
-            'url' => asset('storage/' .$dropping_area->image_path),
+            'url' => $dropping_area->image_path ? asset('storage/' .$dropping_area->image_path) : null,
             'is_current' => $dropping_area->is_current,
             // Only a known change of address is a transfer; an empty address is not
             'is_transfer' => $i > 0

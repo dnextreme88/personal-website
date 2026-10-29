@@ -36,28 +36,34 @@
                             <span aria-hidden="true" class="route-node relative z-10 mt-6 ml-2 size-6 rounded-full border-[3px] bg-gray-100 dark:bg-gray-900 lg:col-start-2 lg:row-start-1 lg:mx-auto"></span>
 
                             <article @class([
-                                'route-card relative grid grid-cols-1 bg-white border border-gray-300 dark:bg-gray-800/60 dark:border-gray-700 sm:grid-cols-[minmax(0,220px)_minmax(0,1fr)] lg:row-start-1',
+                                'route-card relative grid grid-cols-1 bg-white border border-gray-300 dark:bg-gray-800/60 dark:border-gray-700 lg:row-start-1',
+                                'sm:grid-cols-[minmax(0,220px)_minmax(0,1fr)]' => $station['url'],
                                 'lg:col-start-1' => $loop->odd,
                                 'lg:col-start-3' => $loop->even,
                             ])>
                                 {{-- The whole card opens the preview: this button covers the card, above the photo and the text --}}
-                                <button
-                                    x-on:click="openPreview(@js($station['url']))"
-                                    type="button"
-                                    title="Open full preview"
-                                    aria-label="Open full preview: {{ $station['tag'] }} {{ $station['unit'] }}"
-                                    class="absolute inset-0 z-10 cursor-zoom-in focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-600 dark:focus-visible:outline-neon-cyan"
-                                ></button>
+                                @if ($station['url'])
+                                    <button
+                                        x-on:click="openPreview(@js($station['url']))"
+                                        type="button"
+                                        title="Open full preview"
+                                        aria-label="Open full preview: {{ $station['tag'] }} {{ $station['unit'] }}"
+                                        class="absolute inset-0 z-10 cursor-zoom-in focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-600 dark:focus-visible:outline-neon-cyan"
+                                    ></button>
+                                @endif
 
-                                {{-- On a phone the photo keeps a 4:3 shape; beside the text it stretches to the card's full height --}}
-                                <div class="route-photo relative aspect-4/3 overflow-clip bg-gray-950 sm:aspect-auto sm:min-h-40">
-                                    <img
-                                        src="{{ $station['url'] }}"
-                                        alt="Dropping area {{ $station['tag'] }}: {{ $station['unit'] }}"
-                                        loading="lazy"
-                                        class="absolute inset-0 size-full object-cover"
-                                    />
-                                </div>
+                                {{-- On a phone the photo keeps a 4:3 shape; beside the text it stretches to the card's full height.
+                                     A station without a photo shows the text only, at full width --}}
+                                @if ($station['url'])
+                                    <div class="route-photo relative aspect-4/3 overflow-clip bg-gray-950 sm:aspect-auto sm:min-h-40">
+                                        <img
+                                            src="{{ $station['url'] }}"
+                                            alt="Dropping area {{ $station['tag'] }}: {{ $station['unit'] }}"
+                                            loading="lazy"
+                                            class="absolute inset-0 size-full object-cover"
+                                        />
+                                    </div>
+                                @endif
 
                                 <div class="grid content-start gap-2.5 min-w-0 px-4 py-3.5">
                                     <div class="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">

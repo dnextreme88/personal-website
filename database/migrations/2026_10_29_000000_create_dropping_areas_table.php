@@ -26,7 +26,8 @@ return new class extends Migration
                 ->nullable();
             $table->boolean('is_current')
                 ->default(false);
-            $table->string('image_path', 255);
+            $table->string('image_path', 255)
+                ->nullable();
             $table->timestamps();
         });
     }
