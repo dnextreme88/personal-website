@@ -23,7 +23,7 @@ Personal website on the **TALL stack** (Tailwind, Alpine, Laravel, Livewire) wit
 
 - **Routes** ([routes/web.php](routes/web.php)) are driven by full-page Livewire components. Route naming uses prefixed groups: `archive.*`, `blog.*` (e.g. `blog.post.detail` at `/blog/{id}-{slug}`).
 - **Livewire** components in `app/Livewire`, grouped under `Blog/` and `Archive/`, plus top-level ones (Homepage, AboutMe, CreateContactMe, Calendar).
-- **Filament** admin: resources in `app/Filament/Resources/*` (Post, Category, SoldItem), widgets in `app/Filament/Widgets`, panel config in [app/Providers/Filament/AdminPanelProvider.php](app/Providers/Filament/AdminPanelProvider.php).
+- **Filament** admin: resources in `app/Filament/Resources/*` (Post, Category, SoldItem, SteamAchievement, DroppingArea), widgets in `app/Filament/Widgets`, panel config in [app/Providers/Filament/AdminPanelProvider.php](app/Providers/Filament/AdminPanelProvider.php).
 - **Models** in `app/Models`; blog models namespaced under `app/Models/Blog` (Post, Category); shared traits in `app/Models/Traits`.
 - **Enums** in `app/Enums` (Conditions, DroppingAreas, PaymentMethods, etc.).
 - **Views**: Blade in `resources/views/{components,livewire,emails,vendor}`.

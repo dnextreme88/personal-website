@@ -17,15 +17,15 @@
         @if (count($stations) > 0)
             <div class="relative mt-10 sm:mt-14">
                 {{-- Rail track and the scroll-driven fill. Left on a phone, centre on desktop. --}}
-                <div aria-hidden="true" class="absolute inset-y-0 left-[18px] w-1 bg-gray-300 dark:bg-gray-700 lg:left-[calc(50%-2px)]"></div>
-                <div x-ref="railFill" aria-hidden="true" class="route-rail-fill absolute top-0 left-[18px] w-1 h-0 lg:left-[calc(50%-2px)]"></div>
+                <div aria-hidden="true" class="absolute inset-y-0 left-4.5 w-1 bg-gray-300 dark:bg-gray-700 lg:left-[calc(50%-2px)]"></div>
+                <div x-ref="railFill" aria-hidden="true" class="route-rail-fill absolute top-0 left-4.5 w-1 h-0 lg:left-[calc(50%-2px)]"></div>
 
-                <ol x-ref="route" class="relative grid gap-16 py-2 lg:gap-22">
+                <ol x-ref="route" class="relative grid gap-16 pt-60 pb-52 lg:gap-22">
                     @foreach ($stations as $station)
                         @if ($station['is_transfer'])
                             <li class="relative z-10 flex items-center gap-2.5 ml-1 font-loader text-xs tracking-widest uppercase text-fuchsia-700 dark:text-neon-magenta lg:justify-center lg:ml-0">
                                 <span aria-hidden="true" class="grid place-items-center size-8 shrink-0 text-sm rounded-full border-2 border-dashed border-current bg-gray-100 dark:bg-gray-900">&#x21C4;</span>
-                                Transfer &rarr; {{ $station['building'] }}
+                                Transfer &rarr; {{ $station['address'] }}
                             </li>
                         @endif
 
@@ -45,7 +45,7 @@
                                     x-on:click="openPreview(@js($station['url']))"
                                     type="button"
                                     title="Open full preview"
-                                    aria-label="Open full preview: {{ $station['filename'] }}"
+                                    aria-label="Open full preview: {{ $station['tag'] }} {{ $station['unit'] }}"
                                     class="absolute inset-0 z-10 cursor-zoom-in focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-600 dark:focus-visible:outline-neon-cyan"
                                 ></button>
 
@@ -53,7 +53,7 @@
                                 <div class="route-photo relative aspect-4/3 overflow-clip bg-gray-950 sm:aspect-auto sm:min-h-40">
                                     <img
                                         src="{{ $station['url'] }}"
-                                        alt="{{ $station['filename'] }}"
+                                        alt="Dropping area {{ $station['tag'] }}: {{ $station['unit'] }}"
                                         loading="lazy"
                                         class="absolute inset-0 size-full object-cover"
                                     />
@@ -77,15 +77,17 @@
                                     </div>
 
                                     <h3 class="m-0 font-heading text-lg text-gray-900 dark:text-gray-100 text-balance">
-                                        {{ $station['building'] ?? $station['filename'] }}
-                                        @if ($station['unit'])
-                                            &middot; {{ $station['unit'] }}
+                                        @if ($station['address'])
+                                            {{ $station['address'] }} &middot;
                                         @endif
+                                        {{ $station['unit'] }}
                                     </h3>
 
                                     <dl class="grid grid-cols-[auto_minmax(0,1fr)] items-baseline gap-x-3.5 gap-y-1 m-0 text-sm">
-                                        <dt class="font-loader text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Hours</dt>
-                                        <dd class="m-0 text-gray-800 dark:text-gray-200">{{ $station['hours'] ?? '—' }}</dd>
+                                        <dt class="font-loader text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Opens</dt>
+                                        <dd class="m-0 text-gray-800 dark:text-gray-200">{{ $station['opens_at'] ?? '—' }}</dd>
+                                        <dt class="font-loader text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Closes</dt>
+                                        <dd class="m-0 text-gray-800 dark:text-gray-200">{{ $station['closes_at'] ?? '—' }}</dd>
                                         <dt class="font-loader text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Date</dt>
                                         <dd class="m-0 text-gray-800 dark:text-gray-200">{{ $station['date'] ?? '—' }}</dd>
                                         @if ($station['note'])

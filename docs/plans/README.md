@@ -36,6 +36,9 @@ how it was verified.
 - [20261029-dropping-areas-transit-route.md](20261029-dropping-areas-transit-route.md) — Dropping Areas page as a
   transit route map: a scroll-filled rail, lit stations, a LIVE beacon on the newest location, greyed
   decommissioned stations and transfer markers between buildings (executed **2026-10-29**).
+- [20261029-dropping-areas-table.md](20261029-dropping-areas-table.md) — `dropping_areas` table and Filament
+  resource with image upload; the transit route page reads the table instead of the filenames, with free-text hours
+  and a per-row "Current" flag (executed **2026-10-29**).
 
 ## Conventions
 

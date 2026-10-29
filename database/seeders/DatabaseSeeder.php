@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             CategorySeeder::class,
+            DroppingAreaSeeder::class,
             PostSeeder::class,
             SoldItemSeeder::class,
             SteamAchievementSeeder::class,
