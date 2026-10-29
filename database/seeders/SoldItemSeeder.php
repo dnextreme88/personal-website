@@ -337,6 +337,7 @@ class SoldItemSeeder extends Seeder
             ['method' => PaymentMethods::REMITTANCE->value, 'remittance_location' => Remittances::GCASH->value],
             ['method' => PaymentMethods::REMITTANCE->value, 'remittance_location' => Remittances::LBC->value],
             ['method' => PaymentMethods::DROPPING_AREA_CASHOUT, 'remittance_location' => DroppingAreas::MABINI_SHOPPING_CENTER_ROOM_204->value],
+            ['method' => PaymentMethods::CASH_ON_HAND->value, 'remittance_location' => 'Baliwag (Camp 8 branch)'],
         ]);
 
         SellMethod::insert([
@@ -656,6 +657,7 @@ class SoldItemSeeder extends Seeder
             ['method' => SellMethods::SHIPMENT->value, 'location' => ShipmentLocations::J_AND_T_EXPRESS->value],
             ['method' => SellMethods::SHIPMENT->value, 'location' => ShipmentLocations::LBC->value],
             ['method' => SellMethods::DROPPING->value, 'location' => DroppingAreas::MABINI_SHOPPING_CENTER_ROOM_204->value],
+            ['method' => SellMethods::MEETUP->value, 'location' => 'Baliwag (Camp 8 branch)'],
         ]);
 
         SoldItem::insert([
@@ -6697,6 +6699,7 @@ Details:
                 'description' => '⭐ Last Price: P250
 
 Dimensions:
+
 **Body**:
 * ⚡Length: 78 centimeters
 * ⚡Width: 68.2 centimeters
@@ -6720,14 +6723,44 @@ Dimensions:
                 'brand' => 'Thruxton',
                 'name' => null,
                 'type' => 'Jacket',
-                'price' => 280,
+                'price' => 250,
                 'condition' => 'new',
                 'size' => 'M',
                 'description' => '🎯 RFS: Wardrobe decluttering',
                 'date_sold' => '2026-10-02',
-                'tags' => 'marketplace haul',
-                'notes' => 'Buyer picked up on 10/?. Received payment on 10/?.', // TODO: TO FILL UP
+                'tags' => 'helped by friend,marketplace haul',
+                'notes' => 'Abee helped post the item. Buyer picked up on 10/14. Received payment on 10/27.',
                 'image_location' => 'sold-items/2026/thruxton1-1.jpg',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'pay_method_id' => 317,
+                'sell_method_id' => 317,
+                'transaction_id' => '2026_14',
+                'brand' => 'Real Standard',
+                'name' => null,
+                'type' => 'Bomber Jacket',
+                'price' => 300,
+                'condition' => 'new',
+                'size' => 'XL',
+                'description' => '⭐ Last Price: P250
+
+Dimensions:
+
+**Body**:
+* ⚡Length: 67.1 centimeters
+* ⚡Width: 57.2 centimeters
+
+**Sleeves**:
+* ⚡Length: 59 centimeters
+* ⚡Width: 26.4 centimeters
+
+🎯 RFS: Wardrobe decluttering',
+                'date_sold' => '2026-10-28',
+                'tags' => 'helped by friend,marketplace haul',
+                'notes' => 'Abee helped post the item.',
+                'image_location' => 'sold-items/2026/real-standard1-1.jpg',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],

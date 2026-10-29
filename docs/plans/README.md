@@ -28,6 +28,17 @@ how it was verified.
   detail page (executed **2026-09-06**).
 - [20261010-sold-items-name-sort.md](20261010-sold-items-name-sort.md) — Sold Items "Name" sort
   orders by brand, then name, then type (null name falls back to type) (executed **2026-10-10**).
+- [20261011-css-effects-split.md](20261011-css-effects-split.md) — CSS split phase 1: keyframe
+  animations move from `app.css` to `resources/css/effects.css` (executed **2026-10-11**).
+- [20261029-game-screenshots-filmstrip.md](20261029-game-screenshots-filmstrip.md) — Game Screenshots page as a
+  filmstrip gallery: glitch swap, decoding HUD readout, neon thumbnails, progress rail, keyboard
+  browsing and ambient glow (executed **2026-10-29**).
+- [20261029-dropping-areas-transit-route.md](20261029-dropping-areas-transit-route.md) — Dropping Areas page as a
+  transit route map: a scroll-filled rail, lit stations, a LIVE beacon on the newest location, greyed
+  decommissioned stations and transfer markers between buildings (executed **2026-10-29**).
+- [20261029-dropping-areas-table.md](20261029-dropping-areas-table.md) — `dropping_areas` table and Filament
+  resource with image upload; the transit route page reads the table instead of the filenames, with free-text hours
+  and a per-row "Current" flag (executed **2026-10-29**).
 
 ## Conventions
 

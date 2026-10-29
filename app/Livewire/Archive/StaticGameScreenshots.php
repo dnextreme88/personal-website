@@ -7,23 +7,47 @@ use Livewire\Component;
 
 class StaticGameScreenshots extends Component
 {
-    public array $screenshots = [];
+    private const SCREENSHOTS_PATH = 'images/game-screenshots';
+
+    /**
+     * Read the first YYYYMMDD run in a screenshot filename (e.g. Crossfire20241115_0000.webp
+     * or 20220117-pentakill.webp) as a date. Returns null when there is none or it is not a real date.
+     */
+    public static function dateFromFilename(string $filename): ?string
+    {
+        if (!preg_match('/(20\d{2})(\d{2})(\d{2})/', $filename, $matches)) {
+            return null;
+        }
+
+        [, $year, $month, $day] = $matches;
+
+        return checkdate((int) $month, (int) $day, (int) $year) ? "{$year}-{$month}-{$day}" : null;
+    }
 
     public function render()
     {
-        $game_screenshots_path = 'images/game-screenshots';
-        $path = public_path($game_screenshots_path);
-        $images = collect(File::allFiles($path))->filter(fn ($file) => in_array($file->getExtension(), ['webp'])
-        );
+        // Built per render (not kept on a public property) so a re-render never duplicates the list
+        $screenshots = collect(File::allFiles(public_path(self::SCREENSHOTS_PATH)))
+            ->filter(fn ($file) => $file->getExtension() === 'webp')
+            ->map(function ($file) {
+                $relative_path = str_replace('\\', '/', $file->getRelativePathname());
+                $game = str_contains($relative_path, '/') ? explode('/', $relative_path)[0] : 'misc';
 
-        foreach ($images as $image) {
-            $this->screenshots[] = [
-                'filename' => $image->getFilename(),
-                // eg. http://example.com/images/game-screenshots/sub-directory/my-screenshot.webp
-                'url' => asset($game_screenshots_path. '/' .str_replace('\\', '/', $image->getRelativePathname()))
-            ];
-        }
+                return [
+                    'filename' => $file->getFilename(),
+                    // eg. http://example.com/images/game-screenshots/sub-directory/my-screenshot.webp
+                    'url' => asset(self::SCREENSHOTS_PATH.'/'.$relative_path),
+                    'game' => $game,
+                    'game_label' => strtoupper($game),
+                    'date' => self::dateFromFilename($file->getFilename()),
+                ];
+            })
+            ->sortBy([['game', 'asc'], ['filename', 'asc']])
+            ->values()
+            ->all();
 
-        return view('livewire.archive.static-game-screenshots');
+        return view('livewire.archive.static-game-screenshots', [
+            'screenshots' => $screenshots,
+        ]);
     }
 }

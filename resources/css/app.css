@@ -1,5 +1,7 @@
 @import 'tailwindcss';
 @import 'tailwindcss-intersect';
+/* Keyframe animations live in effects.css; Tailwind inlines it into this file at build time. */
+@import './effects.css';
 @plugin "@tailwindcss/typography";
 
 @source '../../app/Filament/';
@@ -158,21 +160,7 @@
         stroke-dashoffset: 0;
     }
 
-    /* Marching-ants border — a continuously looping dashed outline (like Excel's
-       "running" copy marquee), in neon magenta. Used on the calendar's current-day
-       cell. Pair with pathLength="100" on the <rect> so exactly 10 dashes fit and
-       the loop is seamless (no seam where the pattern wraps). */
-    .marching-border {
-        stroke-dasharray: 5 5;
-        animation: marching-border 0.6s linear infinite;
-    }
-
-    @keyframes marching-border {
-        to {
-            stroke-dashoffset: -10;
-        }
-    }
-
+    /* Static background; animate it with .animate-shimmering-gradient (effects.css). */
     .bg-gradient-blue {
         background-image: linear-gradient(120deg,
                 #1e2b4a,
@@ -191,84 +179,11 @@
                 #1e2b4a);
     }
 
-    .animate-shimmering-gradient {
-        animation: shimmering-gradient 8s linear infinite;
-    }
-
-    @keyframes shimmering-gradient {
-        0% {
-            background-position: -100% 0;
-        }
-
-        100% {
-            background-position: 100% 0;
-        }
-    }
-
-    .skeleton-loader {
-        background: linear-gradient(90deg, #0f1b33 0%, #16324f 50%, #0f1b33 100%);
-        background-size: 200% 100%;
-        animation: shimmer 1.5s linear infinite;
-    }
-
-    .skeleton-loader-lg {
-        background: linear-gradient(to right, #0f1b33 0%, rgba(0, 240, 255, 0.35) 50%, #0f1b33 25%);
-        background-size: 200% 100%;
-        animation: shimmer 1.5s linear infinite;
-    }
-
-    /* Shimmer Animation Effect */
-    @keyframes shimmer {
-        0% {
-            background-position: -200% 0;
-        }
-
-        100% {
-            background-position: 200% 0;
-        }
-    }
-
-    .gradient-gray-1 {
-        background-size: 300% 300%;
-        animation: animated-gradient 7s ease infinite;
-        @apply from-gray-100;
-        @apply via-gray-900;
-        @apply to-blue-300;
-    }
-
-    .gradient-gray-2 {
-        background-size: 300% 300%;
-        animation: animated-gradient 7s ease infinite;
-        @apply from-gray-300/50;
-        @apply via-gray-600/75;
-        @apply to-blue-600;
-    }
-
-    .gradient-gray-3 {
-        background-size: 300% 300%;
-        animation: animated-gradient 7s ease infinite;
-        @apply from-gray-500/75;
-        @apply via-gray-300/50;
-        @apply to-blue-900;
-    }
-
-    @keyframes animated-gradient {
-
-        0%,
-        100% {
-            background-position: 0%;
-        }
-
-        50% {
-            background-position: 100%;
-        }
-    }
-
     /* ── Cyberpunk neon layer ─────────────────────────────────────────
-       Reusable primitives: glow, notch, neon border, scanlines, grid,
-       glitch, flicker and terminal cursor. Adopted by the cyber-* Blade
-       components and the homepage hero. Motion is disabled further down
-       under prefers-reduced-motion. */
+       Reusable primitives: glow, notch, neon border, scanlines and grid.
+       The animated ones (glitch, flicker, terminal cursor, grid drift) live
+       in effects.css. Adopted by the cyber-* Blade components and the
+       homepage hero. Motion is disabled under prefers-reduced-motion. */
 
     .text-glow {
         text-shadow:
@@ -336,28 +251,7 @@
         }
     }
 
-    /* Hover sweep — a one-shot animation (not a transition) so the band sweeps
-       all the way across to the right only while hovering in
-    */
-    .btn-submit-sweep {
-        transform: translateX(-100%);
-    }
-
-    @keyframes btn-submit-sweep {
-        from {
-            transform: translateX(-100%);
-        }
-
-        to {
-            transform: translateX(100%);
-        }
-    }
-
-    @media (hover: hover) and (pointer: fine) {
-        .btn-submit:hover .btn-submit-sweep {
-            animation: btn-submit-sweep 1.25s ease;
-        }
-    }
+    /* The submit hover sweep (.btn-submit-sweep) lives in effects.css. */
 
     /* Clear button */
     .btn-clear {
@@ -584,200 +478,12 @@
                 rgba(0, 240, 255, 0.09) 3px);
     }
 
+    /* Static grid; animate it with .animate-grid-drift (effects.css). */
     .cyber-grid {
         background-image:
             linear-gradient(rgba(0, 240, 255, 0.12) 1px, transparent 1px),
             linear-gradient(90deg, rgba(0, 240, 255, 0.12) 1px, transparent 1px);
         background-size: 40px 40px;
-    }
-
-    .animate-grid-drift {
-        animation: grid-drift 3s linear infinite;
-    }
-
-    @keyframes grid-drift {
-        from {
-            background-position: 0 0;
-        }
-
-        to {
-            background-position: 0 40px;
-        }
-    }
-
-    .animate-flicker {
-        animation: flicker 5s linear infinite;
-    }
-
-    @keyframes flicker {
-
-        0%,
-        19%,
-        21%,
-        23%,
-        25%,
-        54%,
-        56%,
-        100% {
-            opacity: 1;
-            text-shadow:
-                0 0 5px rgba(0, 240, 255, 0.8),
-                0 0 15px rgba(0, 240, 255, 0.5),
-                0 0 30px rgba(157, 78, 221, 0.4);
-        }
-
-        20%,
-        24%,
-        55% {
-            opacity: 0.55;
-            text-shadow: none;
-        }
-    }
-
-    /* Hero "Welcome" — rises in, then flickers like a neon sign after a beat.
-       Mirrors the sample's [animation:rise .9s .5s, neonFlicker 4s 1.6s]. */
-    .hero-flicker {
-        opacity: 0;
-        animation: rise 0.9s 0.5s forwards, flicker 4s 1.6s infinite;
-    }
-
-    @keyframes rise {
-        from {
-            opacity: 0;
-            transform: translateY(26px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    .glitch {
-        position: relative;
-        display: inline-block;
-    }
-
-    .glitch::before,
-    .glitch::after {
-        content: attr(data-text);
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        pointer-events: none;
-        @apply opacity-85;
-    }
-
-    .glitch::before {
-        left: 1px;
-        text-shadow: -2px 0 var(--color-neon-cyan);
-    }
-
-    .glitch::after {
-        left: -1px;
-        text-shadow: 2px 0 var(--color-neon-cyan);
-    }
-
-    /* Only animate once the element is in view (tailwindcss-intersect drops the
-       [no-intersect] attribute when it scrolls in), and at a slower, calmer pace. */
-    .glitch:not([no-intersect])::before {
-        animation: glitch-top 7s infinite linear alternate-reverse;
-    }
-
-    .glitch:not([no-intersect])::after {
-        animation: glitch-bottom 8s infinite linear alternate-reverse;
-    }
-
-    @keyframes glitch-top {
-        0% {
-            clip-path: inset(20% 0 60% 0);
-        }
-
-        20% {
-            clip-path: inset(10% 0 85% 0);
-        }
-
-        40% {
-            clip-path: inset(50% 0 30% 0);
-        }
-
-        60% {
-            clip-path: inset(70% 0 10% 0);
-        }
-
-        80% {
-            clip-path: inset(30% 0 55% 0);
-        }
-
-        100% {
-            clip-path: inset(80% 0 5% 0);
-        }
-    }
-
-    @keyframes glitch-bottom {
-        0% {
-            clip-path: inset(65% 0 15% 0);
-        }
-
-        20% {
-            clip-path: inset(40% 0 45% 0);
-        }
-
-        40% {
-            clip-path: inset(15% 0 75% 0);
-        }
-
-        60% {
-            clip-path: inset(55% 0 30% 0);
-        }
-
-        80% {
-            clip-path: inset(25% 0 60% 0);
-        }
-
-        100% {
-            clip-path: inset(5% 0 85% 0);
-        }
-    }
-
-    .blinking-cursor::after {
-        content: '_';
-        margin-left: 2px;
-        color: var(--color-neon-cyan);
-        animation: cursor-blink 1s step-end infinite;
-    }
-
-    @keyframes cursor-blink {
-
-        0%,
-        100% {
-            opacity: 1;
-        }
-
-        50% {
-            opacity: 0;
-        }
-    }
-
-    .animate-cyber-scan {
-        animation: cyber-scan 1.2s ease-in-out infinite;
-    }
-
-    @keyframes cyber-scan {
-        0% {
-            transform: translateY(-120%);
-            opacity: 0;
-        }
-
-        50% {
-            opacity: 1;
-        }
-
-        100% {
-            transform: translateY(120%);
-            opacity: 0;
-        }
     }
 
     /* Opt-in zebra striping for <x-clipped-table striped>. The colour comes
@@ -848,6 +554,130 @@
         box-shadow: 0 0 4px var(--color-neon-magenta);
     }
 
+    /* Game screenshots filmstrip thumbnails. Hovering the strip dims every thumb
+       except the hovered and the active one; the hovered thumb lifts. The active
+       thumb (aria-current, set by game-screenshots-gallery.js) gets a neon ring —
+       a bright 2px cyan in light mode, full neon in dark. */
+    .filmstrip {
+        scrollbar-width: thin;
+        scrollbar-color: rgba(14, 116, 144, 0.5) transparent;
+    }
+
+    .dark .filmstrip {
+        scrollbar-color: rgba(0, 240, 255, 0.4) transparent;
+    }
+
+    .filmstrip-thumb {
+        transition: transform 200ms ease, filter 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+    }
+
+    .filmstrip:hover .filmstrip-thumb {
+        filter: brightness(0.5) saturate(0.6);
+    }
+
+    .filmstrip .filmstrip-thumb:hover,
+    .filmstrip .filmstrip-thumb[aria-current="true"] {
+        filter: none;
+    }
+
+    .filmstrip .filmstrip-thumb:hover {
+        transform: translateY(-3px) scale(1.06);
+        z-index: 1;
+    }
+
+    /* Light mode: a brighter cyan, 2px ring — the thumbs themselves are dark, so the
+       site's usual deep light-mode cyan (#0e7490) disappears against them. */
+    .filmstrip-thumb[aria-current="true"] {
+        border-color: #06b6d4;
+        box-shadow: 0 0 0 2px #06b6d4, 0 0 14px rgba(6, 182, 212, 0.65);
+    }
+
+    .dark .filmstrip-thumb[aria-current="true"] {
+        border-color: var(--color-neon-cyan);
+        box-shadow: 0 0 0 1px var(--color-neon-cyan), 0 0 16px rgba(0, 240, 255, 0.55);
+    }
+
+    /* Dropping areas transit route. dropping-areas-route.js sets the fill height and
+       toggles .is-reached; the newest station has .is-current. The beacon pulses on the
+       current node are keyframes in effects.css. */
+    .route-rail-fill {
+        background: linear-gradient(#0891b2, #c026d3);
+        box-shadow: 0 0 8px rgba(8, 145, 178, 0.45);
+    }
+
+    .dark .route-rail-fill {
+        background: linear-gradient(var(--color-neon-cyan), var(--color-neon-magenta));
+        box-shadow: 0 0 12px rgba(0, 240, 255, 0.5);
+    }
+
+    .route-node {
+        border-color: var(--color-gray-300);
+        transition: border-color 300ms ease, box-shadow 300ms ease, background-color 300ms ease;
+    }
+
+    .dark .route-node {
+        border-color: var(--color-gray-700);
+    }
+
+    .route-station.is-reached .route-node {
+        border-color: #0891b2;
+        box-shadow: 0 0 10px rgba(8, 145, 178, 0.55);
+    }
+
+    .dark .route-station.is-reached .route-node {
+        border-color: var(--color-neon-cyan);
+        box-shadow: 0 0 12px rgba(0, 240, 255, 0.6);
+    }
+
+    .route-station.is-current .route-node,
+    .route-station.is-current.is-reached .route-node {
+        border-color: #c026d3;
+        background-color: #c026d3;
+        box-shadow: 0 0 12px rgba(192, 38, 211, 0.6);
+    }
+
+    .dark .route-station.is-current .route-node,
+    .dark .route-station.is-current.is-reached .route-node {
+        border-color: var(--color-neon-magenta);
+        background-color: var(--color-neon-magenta);
+        box-shadow: 0 0 14px rgba(255, 0, 229, 0.7);
+    }
+
+    .route-card {
+        transition: transform 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
+    }
+
+    .route-card:hover {
+        transform: translateY(-3px);
+        border-color: #0891b2;
+        box-shadow: 0 10px 28px -12px rgba(8, 145, 178, 0.6);
+    }
+
+    .dark .route-card:hover {
+        border-color: var(--color-neon-cyan);
+        box-shadow: 0 10px 28px -12px rgba(0, 240, 255, 0.6);
+    }
+
+    .route-station.is-current .route-card {
+        border-color: #c026d3;
+        box-shadow: 0 0 0 1px #c026d3, 0 0 24px -6px rgba(192, 38, 211, 0.6);
+    }
+
+    .dark .route-station.is-current .route-card {
+        border-color: var(--color-neon-magenta);
+        box-shadow: 0 0 0 1px var(--color-neon-magenta), 0 0 24px -6px rgba(255, 0, 229, 0.7);
+    }
+
+    /* Old stations stay grey until hover; the current station is always in colour */
+    .route-station:not(.is-current) .route-photo img {
+        filter: grayscale(0.85) brightness(0.85);
+        transition: filter 400ms ease;
+    }
+
+    .route-station:not(.is-current) .route-card:hover .route-photo img {
+        filter: none;
+    }
+
     /* Sold item detail description. Strips the prose list bullets and the wide
        list padding, then gives each item a small first-line indent. Pair it with
        the prose classes on the same element. */
@@ -861,32 +691,9 @@
     }
 }
 
-/* Accessibility: honour reduced-motion by stilling every animated effect
-   and dropping the decorative glitch/cursor layers. Static glow remains. */
+/* Accessibility: honour reduced-motion for the transition-based effects in
+   this file. Keyframe animations are stilled in effects.css. */
 @media (prefers-reduced-motion: reduce) {
-
-    .animate-flicker,
-    .animate-grid-drift,
-    .animate-shimmering-gradient,
-    .animate-cyber-scan,
-    .marching-border,
-    .skeleton-loader,
-    .skeleton-loader-lg,
-    [class*="animate-"] {
-        animation: none !important;
-    }
-
-    .glitch::before,
-    .glitch::after,
-    .blinking-cursor::after {
-        display: none !important;
-    }
-
-    /* hero-flicker starts hidden and reveals via animation — keep it visible. */
-    .hero-flicker {
-        animation: none !important;
-        opacity: 1 !important;
-    }
 
     /* HUD corners: snap in on hover with no travel. */
     .hud-corner {
@@ -897,5 +704,25 @@
        null out its transition too in case it's ever forced on. */
     .cyber-reticle {
         transition: none !important;
+    }
+
+    /* Filmstrip thumbs: keep the dim/active states, drop the lift and easing. */
+    .filmstrip-thumb {
+        transition: none !important;
+    }
+
+    .filmstrip .filmstrip-thumb:hover {
+        transform: none;
+    }
+
+    /* Dropping areas route: keep the lit, grey and hover states, drop the lift and easing. */
+    .route-node,
+    .route-card,
+    .route-station .route-photo img {
+        transition: none !important;
+    }
+
+    .route-card:hover {
+        transform: none;
     }
 }

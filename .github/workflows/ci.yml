@@ -1,0 +1,95 @@
+name: CI
+
+# Runs on every pull request (any base branch, so stacked PRs are checked too)
+# and on pushes to master after a merge.
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+# A newer push to the same PR cancels the run that is still going.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  tests:
+    name: Pint, build and Pest
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    # Throwaway MySQL for the RefreshDatabase tests; the same engine as production.
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_DATABASE: testing
+          MYSQL_ROOT_PASSWORD: password
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1 -ppassword"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=10
+
+    # Real env vars win over .env, so the tests always hit the service above.
+    env:
+      DB_CONNECTION: mysql
+      DB_HOST: 127.0.0.1
+      DB_PORT: 3306
+      DB_DATABASE: testing
+      DB_USERNAME: root
+      DB_PASSWORD: password
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: bcmath, exif, gd, intl, mbstring, pdo_mysql, zip
+          coverage: none
+          tools: composer:v2
+
+      - name: Cache Composer packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.composer/cache/files
+          key: composer-${{ hashFiles('composer.lock') }}
+          restore-keys: composer-
+
+      # .gitignore excludes the whole /storage/ folder (it also holds the sold-item
+      # images), so a fresh checkout has none of Laravel's writable folders. Without
+      # storage/framework/views, `artisan package:discover` fails with
+      # "Please provide a valid cache path".
+      - name: Create Laravel storage folders
+        run: mkdir -p storage/app/public storage/framework/cache/data storage/framework/sessions storage/framework/testing storage/framework/views storage/logs
+
+      - name: Install PHP dependencies
+        run: composer install --no-interaction --no-progress --prefer-dist
+
+      - name: Prepare .env
+        run: |
+          cp .env.example .env
+          php artisan key:generate
+
+      - name: Check formatting (Pint)
+        run: vendor/bin/pint --test
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+
+      # The tests render @vite tags, which read public/build/manifest.json.
+      - name: Build front-end assets
+        run: |
+          npm ci
+          npm run build
+
+      - name: Run tests (Pest)
+        run: vendor/bin/pest

@@ -2,28 +2,35 @@
 
 namespace App\Livewire\Archive;
 
-use Illuminate\Support\Facades\File;
+use App\Models\DroppingArea;
 use Livewire\Component;
 
 class StaticDroppingAreas extends Component
 {
-    public array $dropping_areas = [];
-
     public function render()
     {
-        $dropping_areas_path = 'images/dropping-areas';
-        $path = public_path($dropping_areas_path);
-        $images = collect(File::allFiles($path))->filter(fn ($file) => in_array($file->getExtension(), ['webp'])
-        );
+        $dropping_areas = DroppingArea::routeOrder()->get();
 
-        foreach ($images as $image) {
-            $this->dropping_areas[] = [
-                'filename' => $image->getFilename(),
-                // eg. http://example.com/images/dropping-areas/sub-directory/my-screenshot.webp
-                'url' => asset($dropping_areas_path. '/' .str_replace('\\', '/', $image->getRelativePathname()))
-            ];
-        }
+        // V1 is the oldest station
+        $stations = $dropping_areas->values()->map(fn (DroppingArea $dropping_area, int $i) => [
+            'tag' => 'V' .($i + 1),
+            'address' => $dropping_area->address,
+            'unit' => $dropping_area->unit,
+            'note' => $dropping_area->note,
+            'opens_at' => $dropping_area->opens_at,
+            'closes_at' => $dropping_area->closes_at,
+            'date' => $dropping_area->started_on?->format('Y-m-d'),
+            'url' => $dropping_area->image_path ? asset('storage/' .$dropping_area->image_path) : null,
+            'is_current' => $dropping_area->is_current,
+            // Only a known change of address is a transfer; an empty address is not
+            'is_transfer' => $i > 0
+                && $dropping_area->address
+                && $dropping_areas[$i - 1]->address
+                && $dropping_areas[$i - 1]->address !== $dropping_area->address,
+        ]);
 
-        return view('livewire.archive.static-dropping-areas');
+        return view('livewire.archive.static-dropping-areas', [
+            'stations' => $stations->all(),
+        ]);
     }
 }
