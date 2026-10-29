@@ -106,7 +106,7 @@ class DroppingAreaSeeder extends Seeder
             }
 
             DroppingArea::create([
-                'address' => null,
+                'address' => $dropping_area['address'],
                 'unit' => $dropping_area['unit'],
                 'note' => $dropping_area['note'],
                 'opens_at' => $dropping_area['opens_at'],

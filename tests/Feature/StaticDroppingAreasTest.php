@@ -98,6 +98,16 @@ it('lists dropping areas in the admin panel', function () {
         ->assertCanSeeTableRecords([$dropping_area]);
 });
 
+it('lists the newest dropping areas first in the admin panel', function () {
+    $this->actingAs(User::factory()->create());
+    $oldest = makeDroppingArea(['unit' => 'Room 209', 'started_on' => '2023-12-03']);
+    $newest = makeDroppingArea(['unit' => 'Room 203', 'started_on' => '2026-03-25']);
+    $middle = makeDroppingArea(['unit' => 'Room 204', 'started_on' => '2025-08-29']);
+
+    Livewire::test(ListDroppingAreas::class)
+        ->assertCanSeeTableRecords([$newest, $middle, $oldest], inOrder: true);
+});
+
 it('creates a dropping area with an uploaded image from the admin panel', function () {
     Storage::fake('public');
     $this->actingAs(User::factory()->create());

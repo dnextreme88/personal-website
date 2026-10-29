@@ -64,6 +64,7 @@ class DroppingAreaResource extends Resource
                             ->columnSpanFull()
                             ->maxLength(255)
                             ->nullable(),
+                        /* TODO: TO FIX LOGIC
                         FileUpload::make('image_path')
                             ->columnSpanFull()
                             ->directory('dropping-areas')
@@ -71,6 +72,7 @@ class DroppingAreaResource extends Resource
                             ->image()
                             ->label('Image')
                             ->required(),
+                        */
                     ])
                     ->columns(['sm' => 1, 'lg' => 2])
                     ->columnSpan(2),
@@ -81,9 +83,11 @@ class DroppingAreaResource extends Resource
     {
         return $table
             ->columns([
+                /* TODO: TO FIX LOGIC
                 ImageColumn::make('image_path')
                     ->disk('public')
                     ->label('Image'),
+                */
                 TextColumn::make('address')
                     ->placeholder('—')
                     ->searchable()
@@ -109,7 +113,7 @@ class DroppingAreaResource extends Resource
                     ->searchable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
-            ->modifyQueryUsing(fn ($query) => $query->routeOrder())
+            ->defaultSort('started_on', 'desc')
             ->filters([
                 //
             ])

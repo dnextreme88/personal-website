@@ -2,15 +2,23 @@
 
 > **Outcome (executed 2026-10-29)**
 > The transit route page now reads a `dropping_areas` table, not the image filenames. A new Filament
-> resource (Admin → Dropping Areas) adds and edits rows, with the photo uploaded to the `public` disk
-> under `dropping-areas/`. `DroppingAreaSeeder` copies the 8 photos from `public/images/dropping-areas`
-> to that folder and makes the 8 rows, with `address` empty for the owner to fill in.
+> resource (Admin → Dropping Areas) adds and edits rows, sorted newest first. `DroppingAreaSeeder` copies
+> the 8 photos from `public/images/dropping-areas` to the `public` disk under `dropping-areas/` and makes
+> the 8 rows, with the owner's addresses for each building.
 > The opening and closing hours are free text, and each row has its own `is_current` flag
 > (Room 204 and Room 203 are both current).
 > `parseFilename()` and its tests are removed. The `DroppingAreas` enum (sold items) is unchanged.
 > Branch: `feature/20261029-dropping-areas-table`, stacked on PR #23.
-> Verified: Pest (full suite, 97 passed), Pint, `migrate:fresh --seed`, and the browser pane (8 stations,
-> V1–V8, V7 and V8 current, photos served from `/storage`, no console errors).
+> Verified: Pint, `migrate:fresh --seed`, and the browser pane (8 stations, V1–V8, V7 and V8 current,
+> photos served from `/storage`, no console errors).
+>
+> **Known issue (open):** the image upload in Filament is broken. The owner commented out the
+> `FileUpload` field in the form and the `ImageColumn` in the table (marked `TODO: TO FIX LOGIC`).
+> Until the upload is fixed:
+> - Photos come from the seeder only.
+> - A new row cannot be created from the admin panel, because `image_path` is a required column.
+> - The test "creates a dropping area with an uploaded image from the admin panel" fails with a
+>   `QueryException`. The other 8 tests in `StaticDroppingAreasTest` pass.
 
 ## Context
 
@@ -24,7 +32,7 @@ Decisions from the owner:
 - No `version`, `version_suffix`, or `ended_on` field. The page numbers the stations by position.
 - `is_current` is set for each row, because more than one dropping area can be active at a time
   (Room 204 and Room 203).
-- `address` holds the building. The seeder leaves it empty; the owner fills it in from the photos.
+- `address` holds the building. The owner filled in the seeder addresses from the photos.
 - A separate `note` field holds anything peculiar or interesting about a location.
 - `unit` stays as it is, for example `Room 211 Stall 6`.
 
@@ -49,9 +57,12 @@ Decisions from the owner:
    - `routeOrder()` scope: undated rows first (by `id`), then by `started_on`, then by `id`.
    - `opens_at` and `closes_at` are free text, because the hours change by day of the week.
 3. **Filament** `DroppingAreaResource` (list, create, edit):
-   - Form: text inputs for `opens_at` and `closes_at`, a "Current" toggle, and a `FileUpload` to `public/dropping-areas`.
-   - Table: image, address, unit, opens, closes, start date, a "Current" boolean icon, and the route order.
-4. **Seeder** `DroppingAreaSeeder`, called from `DatabaseSeeder`. Room 204 and Room 203 have `is_current` set.
+   - Form: text inputs for `opens_at` and `closes_at`, a "Current" toggle, and a `FileUpload` to `public/dropping-areas`
+     (commented out for now, see the known issue above).
+   - Table: image (commented out for now), address, unit, opens, closes, start date, a "Current" boolean icon,
+     sorted by `started_on` descending (newest first) by default.
+4. **Seeder** `DroppingAreaSeeder`, called from `DatabaseSeeder`. Each row has its building address.
+   Room 204 and Room 203 have `is_current` set.
 5. **Livewire** `StaticDroppingAreas` builds the stations from the table:
    - `tag` is `V1` … `Vn` by position.
    - `is_current` comes from the row's own flag.
@@ -59,5 +70,6 @@ Decisions from the owner:
 6. **View**: heading is "{address} · {unit}", or the unit only when the address is empty.
    The transfer marker shows the address. The "Hours" row is now an "Opens" row and a "Closes" row.
 7. **Tests** `StaticDroppingAreasTest` (with `RefreshDatabase`): page and empty state, hours text,
-   route order and tags, more than one current station, transfer rule, Filament list, and Filament create with a faked upload.
+   route order and tags, more than one current station, transfer rule, Filament list, newest-first admin order,
+   and Filament create with a faked upload (fails while the upload is commented out).
    After the tests, reseed the dev DB with `php artisan migrate:fresh --seed`.
