@@ -673,6 +673,22 @@ class SteamAchievementSeeder extends Seeder
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
+            [
+                'game_name' => 'The Room Two',
+                'tags' => 'good review,received as gift',
+                'date_completed' => '2026-11-02',
+                'notes' => null,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'Synergia',
+                'tags' => 'good review',
+                'date_completed' => '2026-11-02',
+                'notes' => null,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
         ]);
     }
 }

@@ -338,6 +338,7 @@ class SoldItemSeeder extends Seeder
             ['method' => PaymentMethods::REMITTANCE->value, 'remittance_location' => Remittances::LBC->value],
             ['method' => PaymentMethods::DROPPING_AREA_CASHOUT, 'remittance_location' => DroppingAreas::MABINI_SHOPPING_CENTER_ROOM_204->value],
             ['method' => PaymentMethods::CASH_ON_HAND->value, 'remittance_location' => 'Baliwag (Camp 8 branch)'],
+            ['method' => PaymentMethods::REMITTANCE->value, 'remittance_location' => Remittances::GCASH->value],
         ]);
 
         SellMethod::insert([
@@ -658,6 +659,7 @@ class SoldItemSeeder extends Seeder
             ['method' => SellMethods::SHIPMENT->value, 'location' => ShipmentLocations::LBC->value],
             ['method' => SellMethods::DROPPING->value, 'location' => DroppingAreas::MABINI_SHOPPING_CENTER_ROOM_204->value],
             ['method' => SellMethods::MEETUP->value, 'location' => 'Baliwag (Camp 8 branch)'],
+            ['method' => SellMethods::DROPPING->value, 'location' => DroppingAreas::MABINI_SHOPPING_CENTER_ROOM_204->value],
         ]);
 
         SoldItem::insert([
@@ -6395,6 +6397,7 @@ Details:
                 'condition' => 'used',
                 'size' => 'M',
                 'description' => 'Dimensions:
+
 **Body**:
 * ⚡Length: 72.4 centimeters
 * ⚡Width: 57 centimeters
@@ -6761,6 +6764,34 @@ Dimensions:
                 'tags' => 'helped by friend,marketplace haul',
                 'notes' => 'Abee helped post the item.',
                 'image_location' => 'sold-items/2026/real-standard1-1.jpg',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'pay_method_id' => 318,
+                'sell_method_id' => 318,
+                'transaction_id' => '2026_15',
+                'brand' => 'Wonder Nation',
+                'name' => null,
+                'type' => 'Hoodies',
+                'price' => 250,
+                'condition' => 'new',
+                'size' => 'XXL',
+                'description' => 'Dimensions:
+
+**Body**:
+* ⚡Length: 66.4 centimeters
+* ⚡Width: 50.8 centimeters
+
+**Sleeves**:
+* ⚡Length: 75.5 centimeters
+* ⚡Width: 25.8 centimeters
+
+🎯 RFS: Wardrobe decluttering',
+                'date_sold' => '2026-11-09',
+                'tags' => 'marketplace haul',
+                'notes' => 'Originally dropped in Room 204 Mabini Shopping Center and was transferred to Room 5A JMF Building in KM5 La Trinidad. Buyer picked up on 11/12. Received payment on 11/13.',
+                'image_location' => 'sold-items/2026/wonder-nation1-1.jpg',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
