@@ -6799,6 +6799,42 @@ Dimensions:
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
+            [
+                'pay_method_id' => 319,
+                'sell_method_id' => 319,
+                'transaction_id' => '2026_16',
+                'brand' => 'Rockstar Games',
+                'name' => null,
+                'type' => 'Keychain',
+                'price' => 50,
+                'condition' => 'new',
+                'size' => 'N/A',
+                'description' => null,
+                'date_sold' => '2026-11-17',
+                'tags' => 'female buyer,gaming related,temu haul',
+                'notes' => 'Buyer picked up on 11/20. Received payment on 11/?.', // TODO
+                'image_location' => 'sold-items/2026/rockstar-games2-1.jpg',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'pay_method_id' => 320,
+                'sell_method_id' => 320,
+                'transaction_id' => '2026_16',
+                'brand' => 'Pokemon',
+                'name' => 'Battle Menu',
+                'type' => 'Enamel Pin',
+                'price' => 50,
+                'condition' => 'new',
+                'size' => 'N/A',
+                'description' => null,
+                'date_sold' => '2026-11-17',
+                'tags' => 'female buyer,gaming related,temu haul',
+                'notes' => 'Buyer picked up on 11/20. Received payment on 11/?.', // TODO
+                'image_location' => 'sold-items/2026/pokemon2-1.jpg',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
         ]);
     }
 }
