@@ -339,6 +339,8 @@ class SoldItemSeeder extends Seeder
             ['method' => PaymentMethods::DROPPING_AREA_CASHOUT, 'remittance_location' => DroppingAreas::MABINI_SHOPPING_CENTER_ROOM_204->value],
             ['method' => PaymentMethods::CASH_ON_HAND->value, 'remittance_location' => 'Baliwag (Camp 8 branch)'],
             ['method' => PaymentMethods::REMITTANCE->value, 'remittance_location' => Remittances::GCASH->value],
+            ['method' => PaymentMethods::DROPPING_AREA_CASHOUT, 'remittance_location' => DroppingAreas::MABINI_SHOPPING_CENTER_ROOM_203->value],
+            ['method' => PaymentMethods::DROPPING_AREA_CASHOUT, 'remittance_location' => DroppingAreas::MABINI_SHOPPING_CENTER_ROOM_203->value],
         ]);
 
         SellMethod::insert([
@@ -660,6 +662,8 @@ class SoldItemSeeder extends Seeder
             ['method' => SellMethods::DROPPING->value, 'location' => DroppingAreas::MABINI_SHOPPING_CENTER_ROOM_204->value],
             ['method' => SellMethods::MEETUP->value, 'location' => 'Baliwag (Camp 8 branch)'],
             ['method' => SellMethods::DROPPING->value, 'location' => DroppingAreas::MABINI_SHOPPING_CENTER_ROOM_204->value],
+            ['method' => SellMethods::DROPPING->value, 'location' => DroppingAreas::MABINI_SHOPPING_CENTER_ROOM_203->value],
+            ['method' => SellMethods::DROPPING->value, 'location' => DroppingAreas::MABINI_SHOPPING_CENTER_ROOM_203->value],
         ]);
 
         SoldItem::insert([
@@ -4928,7 +4932,7 @@ Details:
                 'size' => 'N/A',
                 'description' => null,
                 'date_sold' => '2024-02-01',
-                'tags' => 'computer related,female buyer,freebies,sold with case',
+                'tags' => 'computer related,female buyer,freebies,lazada haul,sold with case',
                 'notes' => null,
                 'image_location' => 'sold-items/2024/jedel1-1.jpg',
                 'created_at' => Carbon::now(),
@@ -5024,7 +5028,7 @@ Details:
                 'description' => 'Details:
 * ⚡Thermal paste remained unused as I ordered this in Shopee last December 2023',
                 'date_sold' => '2024-03-16',
-                'tags' => 'computer related,freebies',
+                'tags' => 'computer related,freebies,lazada haul',
                 'notes' => null,
                 'image_location' => 'sold-items/2024/amd1-1.jpg',
                 'created_at' => Carbon::now(),
@@ -5257,7 +5261,7 @@ Details:
 
 🎯 RFS: Cable I bought was way too long',
                 'date_sold' => '2024-06-22',
-                'tags' => 'computer related',
+                'tags' => 'computer related,lazada haul',
                 'notes' => null,
                 'image_location' => 'sold-items/2024/resong1-1.jpg',
                 'created_at' => Carbon::now(),
@@ -5867,7 +5871,7 @@ Details:
 * ⚡Supports modern OS: Windows 7, Windows 8, Windows 10, Windows 11, Mac OS, Linux
 * ⚡USB 2.0 interface',
                 'date_sold' => '2025-04-21',
-                'tags' => 'computer related,sold with case',
+                'tags' => 'computer related,sold with case,temu haul',
                 'notes' => null,
                 'image_location' => 'sold-items/2025/benewi1-1.jpg',
                 'created_at' => Carbon::now(),
@@ -6056,7 +6060,7 @@ Details:
 
 🎯 RFS: Need funds so I can buy a bigger monitor',
                 'date_sold' => '2025-09-21',
-                'tags' => 'computer related,female buyer,sold same item,sold to friend',
+                'tags' => 'computer related,female buyer,marketplace haul,sold same item,sold to friend',
                 'notes' => 'Sold to Meiganne.',
                 'image_location' => 'sold-items/2025/viewplus1-1.jpg',
                 'created_at' => Carbon::now(),
@@ -6074,7 +6078,7 @@ Details:
                 'size' => 'N/A',
                 'description' => null,
                 'date_sold' => '2025-09-30',
-                'tags' => 'gaming related,sold to friend',
+                'tags' => 'gaming related,sold to friend,temu haul',
                 'notes' => 'Sold to Paul Datuin (Patrick\'s batchmate). Dropped in Buyer\'s Om Shan Tea branch in Mabini Shopping Center. Payment picked up on Buyer\'s Om Shan Tea branch',
                 'image_location' => 'sold-items/2025/rockstar-games1-1.jpg',
                 'created_at' => Carbon::now(),
@@ -6128,7 +6132,7 @@ Details:
                 'size' => 'N/A',
                 'description' => '🎯 RFS: Toy is small for my collection of Pixar characters',
                 'date_sold' => '2025-12-01',
-                'tags' => null,
+                'tags' => 'bought from friend',
                 'notes' => 'Payment sent through GCash on 12/4. Received payment on 12/7.',
                 'image_location' => 'sold-items/2025/toy-story1-1.jpg',
                 'created_at' => Carbon::now(),
@@ -6174,7 +6178,7 @@ Details:
 
 🎯 RFS: Need funds so I can buy a bigger monitor',
                 'date_sold' => '2025-12-12',
-                'tags' => 'computer related,sold same item,sold with case',
+                'tags' => 'computer related,marketplace haul,sold same item,sold with case',
                 'notes' => 'Sold the same item as the item sold on 9/21 but to a different buyer and has original manual.',
                 'image_location' => 'sold-items/2025/viewplus2-1.jpg',
                 'created_at' => Carbon::now(),
@@ -6185,7 +6189,7 @@ Details:
                 'sell_method_id' => 292,
                 'transaction_id' => '2026_01',
                 'brand' => 'Valve',
-                'name' => 'CS GO Fnatic',
+                'name' => 'Counter-Strike: Global Offensive Fnatic',
                 'type' => 'Backpack',
                 'price' => 200,
                 'condition' => 'used',
@@ -6428,7 +6432,7 @@ Details:
 
 🎯 RFS: Toy decluttering',
                 'date_sold' => '2026-07-21',
-                'tags' => 'freebies',
+                'tags' => null,
                 'notes' => 'Buyer picked up on 7/21. Received payment on 7/22.',
                 'image_location' => 'sold-items/2026/minions1-1.jpg',
                 'created_at' => Carbon::now(),
@@ -6449,7 +6453,7 @@ Details:
 Details:
 * ⚡Mouse works and illuminates perfectly!',
                 'date_sold' => '2026-07-24',
-                'tags' => 'computer related,sold with case',
+                'tags' => 'computer related,sold with case,temu haul',
                 'notes' => null,
                 'image_location' => 'sold-items/2026/t-wolf1-1.jpg',
                 'created_at' => Carbon::now(),
@@ -6502,7 +6506,7 @@ Details:
 
 🎯 RFS: Toy decluttering',
                 'date_sold' => '2026-07-31',
-                'tags' => null,
+                'tags' => 'bought from friend,marketplace haul',
                 'notes' => 'Payment sent through GCash on 7/30. Received payment on 7/31.',
                 'image_location' => 'sold-items/2026/toy-story3-1.jpg',
                 'created_at' => Carbon::now(),
@@ -6789,7 +6793,7 @@ Dimensions:
 
 🎯 RFS: Wardrobe decluttering',
                 'date_sold' => '2026-11-09',
-                'tags' => 'marketplace haul',
+                'tags' => 'camouflage pattern,marketplace haul',
                 'notes' => 'Originally dropped in Room 204 Mabini Shopping Center and was transferred to Room 5A JMF Building in KM5 La Trinidad. Buyer picked up on 11/12. Received payment on 11/13.',
                 'image_location' => 'sold-items/2026/wonder-nation1-1.jpg',
                 'created_at' => Carbon::now(),
