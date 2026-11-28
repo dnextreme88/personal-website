@@ -80,7 +80,7 @@ it('shows the about section with a contact button and the facts panel turned off
 it('fades the About heading in on scroll like the other section headings', function () {
     $content = $this->get(route('home'))->assertOk()->getContent();
 
-    $fade_in = 'glitch scroll-mt-(--anchor-offset) text-glow text-3xl tracking-tight text-gray-900 sm:text-4xl dark:text-white transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100" data-text="About"';
+    $fade_in = 'glitch scroll-mt-(--anchor-offset) text-glow text-3xl tracking-wider text-gray-900 sm:text-4xl dark:text-white transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100" data-text="About"';
 
     expect($content)->toContain($fade_in)
         // Same scroll fade-in as "Relevant Experiences" and "From the Blog...".
