@@ -158,6 +158,13 @@ it('places a blocky background strip after the About section and each named sect
         ->and($fills[1])->toBe($patterns[1]);
 
     // Each strip follows a section: About, then the three sections marked "... section -->".
-    expect($content)->toMatch('/<\/section>\s*<section[^>]*>\s*<div class="isolate">\s*<div class="relative isolate -z-10 h-\[240px\]">/');
+    expect($content)->toMatch('/<\/section>\s*<section[^>]*>\s*<div class="isolate">\s*<div class="pointer-events-none relative isolate -z-10 h-\[240px\]">/');
     expect(substr_count(file_get_contents(resource_path('views/livewire/homepage.blade.php')), '<x-blocky-background />'))->toBe(4);
+});
+
+it('lets clicks pass through the blocky background strips to the links around them', function () {
+    $content = $this->get(route('home'))->assertOk()->getContent();
+
+    // The 640px grid extends past each 240px strip over the sections around it (e.g. "Contact me").
+    expect(substr_count($content, '<div class="pointer-events-none relative isolate -z-10 h-[240px]">'))->toBe(4);
 });

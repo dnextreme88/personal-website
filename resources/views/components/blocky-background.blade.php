@@ -5,8 +5,9 @@
 @endphp
 
 {{-- Blocky background: a 240px decorative strip (faded grid with two filled squares) placed
-     between homepage sections. --}}
-<div {{ $attributes->merge(['class' => 'relative isolate -z-10 h-[240px]']) }}>
+     between homepage sections. The 640px grid extends past the strip over the sections around it,
+     so pointer-events-none lets clicks reach the links under it. --}}
+<div {{ $attributes->merge(['class' => 'pointer-events-none relative isolate -z-10 h-[240px]']) }}>
     <div class="absolute inset-x-0 top-1/2 -z-10 flex -translate-y-1/2 justify-center overflow-hidden mask-[radial-gradient(75%_60%_at_50%_60%,white,transparent)] mt-30 sm:mt-0">
         <svg aria-hidden="true" class="h-160 w-7xl flex-none stroke-gray-200 dark:stroke-white/10">
             <defs>
