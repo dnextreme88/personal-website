@@ -62,178 +62,163 @@
 /* Examples below */
 @custom-variant dark (&:where(.dark, .dark *));
 
-@layer utilities {
-    .h-25-vh {
-        height: 25vh;
-    }
+/* Single-class utilities. Defined with @utility, so Tailwind variants work on them
+   (hover:, md:, dark:) and a class that no template uses is left out of the build. */
+@utility h-25-vh {
+    height: 25vh;
+}
 
-    /* Shared focus/hover treatment for text-like form inputs (input-text,
-       input-datalist, input-select) so they behave uniformly. Kept in the
-       utilities layer so its :hover/:focus rules out-specify each input's own
-       base `border-*` colour. */
-    .cyber-input {
-        @apply py-2;
-        @apply px-3;
-        @apply rounded-none;
-        @apply bg-gray-200;
-        @apply dark:bg-gray-800;
-        @apply text-gray-800;
-        @apply dark:text-gray-200;
-        @apply hover:border-cyan-800;
-        @apply dark:hover:border-cyan-200;
-        @apply border;
-        @apply border-gray-800;
-        @apply dark:border-gray-200;
-        @apply focus:outline-2;
-        @apply focus:-outline-offset-2;
-        @apply focus:border-cyan-400;
-        @apply focus:outline-cyan-400;
-        @apply transition;
-        @apply duration-200;
-    }
+@utility h-50-vh {
+    height: 50vh;
+}
 
-    .h-50-vh {
-        height: 50vh;
-    }
+@utility h-75-vh {
+    height: 75vh;
+}
 
-    .h-75-vh {
-        height: 75vh;
-    }
+@utility w-25-vw {
+    width: 25vw;
+}
 
-    .w-25-vw {
-        width: 25vw;
-    }
+@utility w-50-vw {
+    width: 50vw;
+}
 
-    .w-50-vw {
-        width: 50vw;
-    }
+@utility w-75-vw {
+    width: 75vw;
+}
 
-    .w-75-vw {
-        width: 75vw;
-    }
+@utility max-h-25-vh {
+    max-height: 25vh;
+}
 
-    .max-h-25-vh {
-        max-height: 25vh;
-    }
+@utility max-h-50-vh {
+    max-height: 50vh;
+}
 
-    .max-h-50-vh {
-        max-height: 50vh;
-    }
+@utility max-h-75-vh {
+    max-height: 75vh;
+}
 
-    .max-h-75-vh {
-        max-height: 75vh;
-    }
+@utility max-w-25-vw {
+    max-width: 25vw;
+}
 
-    .max-w-25-vw {
-        max-width: 25vw;
-    }
+@utility max-w-50-vw {
+    max-width: 50vw;
+}
 
-    .max-w-50-vw {
-        max-width: 50vw;
-    }
+@utility max-w-75-vw {
+    max-width: 75vw;
+}
 
-    .max-w-75-vw {
-        max-width: 75vw;
-    }
+/* Shared focus/hover treatment for text-like form inputs (input-text,
+   input-datalist, input-select) so they behave uniformly. Kept in the
+   utilities layer so its :hover/:focus rules out-specify each input's own
+   base `border-*` colour. */
+@utility cyber-input {
+    @apply py-2;
+    @apply px-3;
+    @apply rounded-none;
+    @apply bg-gray-200;
+    @apply dark:bg-gray-800;
+    @apply text-gray-800;
+    @apply dark:text-gray-200;
+    @apply hover:border-cyan-800;
+    @apply dark:hover:border-cyan-200;
+    @apply border;
+    @apply border-gray-800;
+    @apply dark:border-gray-200;
+    @apply focus:outline-2;
+    @apply focus:-outline-offset-2;
+    @apply focus:border-cyan-400;
+    @apply focus:outline-cyan-400;
+    @apply transition;
+    @apply duration-200;
+}
 
-    .logo {
-        font-family: 'Neon Retro', sans-serif;
-        @apply text-3xl;
-        @apply tracking-widest;
-    }
+@utility logo {
+    font-family: 'Neon Retro', sans-serif;
+    @apply text-3xl;
+    @apply tracking-widest;
+}
 
-    /* Font trial — specs list: labels in Exo 2 (text), values in Geist Mono (subtext) */
-    .specs-list>div:nth-child(odd) {
-        font-family: var(--font-text);
-    }
+@utility border-tracer {
+    stroke-dasharray: 176;
+    stroke-dashoffset: 176;
+    transition: stroke-dashoffset 750ms ease;
 
-    .specs-list>div:nth-child(even) {
-        font-family: var(--font-subtext);
-    }
-
-    /* Terminal readout — neon prompt prefix on each spec value */
-    .specs-list>div:nth-child(even)::before {
-        content: '> ';
-        color: var(--color-neon-magenta);
-    }
-
-    .border-tracer {
-        stroke-dasharray: 176;
-        stroke-dashoffset: 176;
-        transition: stroke-dashoffset 750ms ease;
-    }
-
-    .group:hover .border-tracer {
+    .group:hover & {
         stroke-dashoffset: 0;
     }
+}
 
-    /* Static background; animate it with .animate-shimmering-gradient (effects.css). */
-    .bg-gradient-blue {
-        background-image: linear-gradient(120deg,
-                #1e2b4a,
-                #1e2b4a,
-                #223c63,
-                #223c63,
-                #a18ccc,
-                #a18ccc,
-                #5995aa,
-                #5995aa,
-                #613bdd,
-                #613bdd,
-                #223c63,
-                #223c63,
-                #1e2b4a,
-                #1e2b4a);
-    }
+/* Static background; animate it with .animate-shimmering-gradient (effects.css). */
+@utility bg-gradient-blue {
+    background-image: linear-gradient(120deg,
+            #1e2b4a,
+            #1e2b4a,
+            #223c63,
+            #223c63,
+            #a18ccc,
+            #a18ccc,
+            #5995aa,
+            #5995aa,
+            #613bdd,
+            #613bdd,
+            #223c63,
+            #223c63,
+            #1e2b4a,
+            #1e2b4a);
+}
 
-    /* ── Cyberpunk neon layer ─────────────────────────────────────────
-       Reusable primitives: glow, notch, neon border, scanlines and grid.
-       The animated ones (glitch, flicker, terminal cursor, grid drift) live
-       in effects.css. Adopted by the cyber-* Blade components and the
-       homepage hero. Motion is disabled under prefers-reduced-motion. */
+/* ── Cyberpunk neon layer ─────────────────────────────────────────
+   Reusable primitives: glow, notch, neon border, scanlines and grid.
+   The animated ones (glitch, flicker, terminal cursor, grid drift) live
+   in effects.css. Adopted by the cyber-* Blade components and the
+   homepage hero. Motion is disabled under prefers-reduced-motion. */
 
-    .text-glow {
-        text-shadow:
-            0 0 5px rgba(0, 240, 255, 0.7),
-            0 0 15px rgba(0, 240, 255, 0.5),
-            0 0 30px rgba(0, 240, 255, 0.3);
-    }
+@utility text-glow {
+    text-shadow:
+        0 0 5px rgba(0, 240, 255, 0.7),
+        0 0 15px rgba(0, 240, 255, 0.5),
+        0 0 30px rgba(0, 240, 255, 0.3);
+}
 
-    .text-glow-magenta {
-        text-shadow:
-            0 0 5px rgba(255, 0, 229, 0.7),
-            0 0 15px rgba(255, 0, 229, 0.5),
-            0 0 30px rgba(255, 0, 229, 0.3);
-    }
+@utility text-glow-magenta {
+    text-shadow:
+        0 0 5px rgba(255, 0, 229, 0.7),
+        0 0 15px rgba(255, 0, 229, 0.5),
+        0 0 30px rgba(255, 0, 229, 0.3);
+}
 
-    .neon-border {
-        border: 1px solid var(--color-neon-cyan);
-        box-shadow:
-            0 0 5px rgba(0, 240, 255, 0.5),
-            inset 0 0 5px rgba(0, 240, 255, 0.25);
-        transition: box-shadow 300ms ease, border-color 300ms ease;
-    }
+@utility neon-border {
+    border: 1px solid var(--color-neon-cyan);
+    box-shadow:
+        0 0 5px rgba(0, 240, 255, 0.5),
+        inset 0 0 5px rgba(0, 240, 255, 0.25);
+    transition: box-shadow 300ms ease, border-color 300ms ease;
 
-    .neon-border:hover {
+    &:hover {
         border-color: var(--color-neon-magenta);
         box-shadow:
             0 0 12px rgba(0, 240, 255, 0.8),
             0 0 24px rgba(255, 0, 229, 0.4),
             inset 0 0 10px rgba(0, 240, 255, 0.4);
     }
+}
 
-    .clip-notch {
-        clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
-    }
+@utility clip-notch {
+    clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+}
 
-    /* Outer glow wrapper — filter follows the notched child silhouette
-       (a box-shadow on the clipped element itself would be clipped away). */
-    .btn-call-to-action {
-        filter: drop-shadow(0 0 3px rgba(0, 240, 255, 0.5));
-        transition: filter 300ms ease, transform 120ms ease;
-    }
+/* Outer glow wrapper — filter follows the notched child silhouette
+   (a box-shadow on the clipped element itself would be clipped away). */
+@utility btn-call-to-action {
+    filter: drop-shadow(0 0 3px rgba(0, 240, 255, 0.5));
+    transition: filter 300ms ease, transform 120ms ease;
 
-    .btn-call-to-action:hover {
+    &:hover {
         filter:
             drop-shadow(0 0 8px rgba(0, 240, 255, 0.9)) drop-shadow(0 0 16px rgba(255, 0, 229, 0.5));
     }
@@ -241,55 +226,62 @@
     /* Desktop-only press: the CTA depresses when clicked. Gated on a fine
        hover-capable pointer so taps on touch devices show no press state. */
     @media (hover: hover) and (pointer: fine) {
-        .btn-call-to-action:active {
+        &:active {
             transform: translateY(2px) scale(0.97);
             filter: drop-shadow(0 0 4px rgba(0, 240, 255, 0.6));
         }
     }
+}
 
-    /* Submit button */
-    .btn-submit {
-        transition: transform 120ms ease;
-    }
+/* Submit button. The hover sweep (.btn-submit-sweep) lives in effects.css. */
+@utility btn-submit {
+    transition: transform 120ms ease;
 
     @media (hover: hover) and (pointer: fine) {
-        .btn-submit:active {
+        &:active {
             transform: translateY(2px) scale(0.97);
         }
     }
+}
 
-    /* The submit hover sweep (.btn-submit-sweep) lives in effects.css. */
-
-    /* Clear button */
-    .btn-clear {
-        transition: transform 120ms ease;
-    }
+/* Clear button */
+@utility btn-clear {
+    transition: transform 120ms ease;
 
     @media (hover: hover) and (pointer: fine) {
-        .btn-clear:active {
+        &:active {
             transform: translateY(2px) scale(0.97);
         }
     }
+}
 
-    /* Bracket link ([ About me ]) and in-page anchor links — colour shift on hover,
-       a small press-in on click. */
-    .btn-bracket,
-    .anchor-link {
-        transition: color 200ms ease, transform 120ms ease;
-    }
+/* Bracket link ([ About me ]) and in-page anchor links — colour shift on hover,
+   a small press-in on click. @utility takes one class name, so each gets a block. */
+@utility btn-bracket {
+    transition: color 200ms ease, transform 120ms ease;
 
-    .btn-bracket:active,
-    .anchor-link:active {
+    &:active {
         transform: translateY(1px);
     }
+}
 
-    /* Nav / inline link — animated neon underline that sweeps in on hover. */
-    .cyber-link {
-        position: relative;
-        transition: color 200ms ease, text-shadow 200ms ease;
+@utility anchor-link {
+    transition: color 200ms ease, transform 120ms ease;
+
+    &:active {
+        transform: translateY(1px);
     }
+}
 
-    .cyber-link::after {
+/* Header nav link — animated neon underline that sweeps in on hover.
+   Light mode: a deeper cyan so the hover doesn't blow out on light
+   backgrounds. Dark mode keeps the full neon glow. */
+@utility header-nav-link {
+    position: relative;
+    transition: color 200ms ease, text-shadow 200ms ease;
+    @apply tracking-widest;
+
+    &::after {
         content: '';
         position: absolute;
         left: 0;
@@ -303,38 +295,113 @@
         transition: transform 250ms ease;
     }
 
-    .cyber-link:hover::after,
-    .cyber-link:focus-visible::after {
+    &:hover::after,
+    &:focus-visible::after {
         transform: scaleX(1);
     }
 
-    /* Light mode: a deeper cyan so the hover doesn't blow out on light
-       backgrounds. Dark mode keeps the full neon glow. */
-    .cyber-link:hover {
+    &:hover {
         color: #0e7490;
         text-shadow: 0 0 6px rgba(14, 116, 144, 0.35);
     }
 
-    .dark .cyber-link::after {
-        background: var(--color-neon-cyan);
-        box-shadow: 0 0 6px var(--color-neon-cyan), 0 0 12px var(--color-neon-cyan);
-    }
+    @variant dark {
+        &::after {
+            background: var(--color-neon-cyan);
+            box-shadow: 0 0 6px var(--color-neon-cyan), 0 0 12px var(--color-neon-cyan);
+        }
 
-    .dark .cyber-link:hover {
-        color: var(--color-neon-cyan);
-        text-shadow: 0 0 8px rgba(0, 240, 255, 0.6);
+        &:hover {
+            color: var(--color-neon-cyan);
+            text-shadow: 0 0 8px rgba(0, 240, 255, 0.6);
+        }
     }
+}
 
-    /* HUD frame — targeting-reticle corner brackets + neon glow on hover.
-       Add `.hud-frame` to a positioned container and drop <x-hud-corners /> in. */
-    .hud-frame {
-        transition: box-shadow 300ms ease;
-    }
+/* HUD frame — targeting-reticle corner brackets + neon glow on hover.
+   Add `.hud-frame` to a positioned container and drop <x-hud-corners /> in. */
+@utility hud-frame {
+    transition: box-shadow 300ms ease;
 
-    .hud-frame:hover {
+    &:hover {
         box-shadow:
             0 0 12px rgba(0, 240, 255, 0.4),
             0 0 24px rgba(157, 78, 221, 0.25);
+    }
+}
+
+/* CRT scanlines: a hard 1px hairline every 3px. Dark lines read on the
+   light theme; the dark theme switches to faint cyan lines so they stay
+   visible on a near-black background (one mode-agnostic colour washes out).
+   Tune the line alpha up/down for a stronger/subtler effect. */
+@utility scanline-overlay {
+    pointer-events: none;
+    background: repeating-linear-gradient(to bottom,
+            transparent 0px,
+            transparent 2px,
+            rgba(0, 0, 0, 0.10) 2px,
+            rgba(0, 0, 0, 0.10) 3px);
+
+    @variant dark {
+        background: repeating-linear-gradient(to bottom,
+                transparent 0px,
+                transparent 2px,
+                rgba(0, 240, 255, 0.09) 2px,
+                rgba(0, 240, 255, 0.09) 3px);
+    }
+}
+
+/* Static grid; animate it with .animate-grid-drift (effects.css). */
+@utility cyber-grid {
+    background-image:
+        linear-gradient(rgba(0, 240, 255, 0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 240, 255, 0.12) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+/* Neon badge glow — used by <x-badge variant="cyan|magenta">. Static
+   shadows only (no animation), so they're already reduced-motion safe. */
+@utility badge-neon-cyan {
+    box-shadow: 0 0 4px rgba(0, 240, 255, 0.35), inset 0 0 4px rgba(0, 240, 255, 0.15);
+    text-shadow: 0 0 6px rgba(0, 240, 255, 0.5);
+}
+
+@utility badge-neon-magenta {
+    box-shadow: 0 0 4px rgba(255, 0, 229, 0.35), inset 0 0 4px rgba(255, 0, 229, 0.15);
+    text-shadow: 0 0 6px rgba(255, 0, 229, 0.5);
+}
+
+/* Dropping areas transit route rail. dropping-areas-route.js sets the fill height. */
+@utility route-rail-fill {
+    background: linear-gradient(#0891b2, #c026d3);
+    box-shadow: 0 0 8px rgba(8, 145, 178, 0.45);
+
+    @variant dark {
+        background: linear-gradient(var(--color-neon-cyan), var(--color-neon-magenta));
+        box-shadow: 0 0 12px rgba(0, 240, 255, 0.5);
+    }
+}
+
+/* Multi-class rules: child selectors, BEM parts, parent state classes (.group,
+   .hud-frame, .is-current set by JS) and rules shared by two classes. @utility
+   takes one plain class name only, so these stay as plain CSS. They stay in the
+   utilities layer, after Tailwind's own utilities, because some elements carry a
+   Tailwind class that these rules must override (e.g. -mb-12 on .portrait-ring--hero,
+   border-gray-300 on .route-card, bg-gray-100 on .route-node). */
+@layer utilities {
+    /* Font trial — specs list: labels in Exo 2 (text), values in Geist Mono (subtext) */
+    .specs-list>div:nth-child(odd) {
+        font-family: var(--font-text);
+    }
+
+    .specs-list>div:nth-child(even) {
+        font-family: var(--font-subtext);
+    }
+
+    /* Terminal readout — neon prompt prefix on each spec value */
+    .specs-list>div:nth-child(even)::before {
+        content: '> ';
+        color: var(--color-neon-magenta);
     }
 
     .hud-corner {
@@ -476,51 +543,10 @@
             inset 0 0 50px rgba(0, 0, 0, 0.55);
     }
 
-    /* CRT scanlines: a hard 1px hairline every 3px. Dark lines read on the
-       light theme; the dark theme switches to faint cyan lines so they stay
-       visible on a near-black background (one mode-agnostic colour washes out).
-       Tune the line alpha up/down for a stronger/subtler effect. */
-    .scanline-overlay {
-        pointer-events: none;
-        background: repeating-linear-gradient(to bottom,
-                transparent 0px,
-                transparent 2px,
-                rgba(0, 0, 0, 0.10) 2px,
-                rgba(0, 0, 0, 0.10) 3px);
-    }
-
-    .dark .scanline-overlay {
-        background: repeating-linear-gradient(to bottom,
-                transparent 0px,
-                transparent 2px,
-                rgba(0, 240, 255, 0.09) 2px,
-                rgba(0, 240, 255, 0.09) 3px);
-    }
-
-    /* Static grid; animate it with .animate-grid-drift (effects.css). */
-    .cyber-grid {
-        background-image:
-            linear-gradient(rgba(0, 240, 255, 0.12) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0, 240, 255, 0.12) 1px, transparent 1px);
-        background-size: 40px 40px;
-    }
-
     /* Opt-in zebra striping for <x-clipped-table striped>. The colour comes
        from the --clipped-table-stripe var the component sets inline. */
     .clipped-table--striped tbody tr:nth-child(even) {
         background-color: var(--clipped-table-stripe, rgba(0, 240, 255, 0.06));
-    }
-
-    /* Neon badge glow — used by <x-badge variant="cyan|magenta">. Static
-       shadows only (no animation), so they're already reduced-motion safe. */
-    .badge-neon-cyan {
-        box-shadow: 0 0 4px rgba(0, 240, 255, 0.35), inset 0 0 4px rgba(0, 240, 255, 0.15);
-        text-shadow: 0 0 6px rgba(0, 240, 255, 0.5);
-    }
-
-    .badge-neon-magenta {
-        box-shadow: 0 0 4px rgba(255, 0, 229, 0.35), inset 0 0 4px rgba(255, 0, 229, 0.15);
-        text-shadow: 0 0 6px rgba(255, 0, 229, 0.5);
     }
 
     /* Portrait ring (x-portrait-ring) — a black-and-white cutout portrait with a tilted
@@ -702,19 +728,6 @@
     .dark .filmstrip-thumb[aria-current="true"] {
         border-color: var(--color-neon-cyan);
         box-shadow: 0 0 0 1px var(--color-neon-cyan), 0 0 16px rgba(0, 240, 255, 0.55);
-    }
-
-    /* Dropping areas transit route. dropping-areas-route.js sets the fill height and
-       toggles .is-reached; the newest station has .is-current. The beacon pulses on the
-       current node are keyframes in effects.css. */
-    .route-rail-fill {
-        background: linear-gradient(#0891b2, #c026d3);
-        box-shadow: 0 0 8px rgba(8, 145, 178, 0.45);
-    }
-
-    .dark .route-rail-fill {
-        background: linear-gradient(var(--color-neon-cyan), var(--color-neon-magenta));
-        box-shadow: 0 0 12px rgba(0, 240, 255, 0.5);
     }
 
     .route-node {

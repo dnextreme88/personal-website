@@ -70,7 +70,7 @@
                                 <div class="mt-3">
                                     <textarea
                                         wire:model="message"
-                                        class="block w-full rounded-md px-3.5 py-2 text-gray-800 dark:text-gray-200 bg-gray-200 dark:bg-gray-800 outline-1 placeholder:text-gray-400 resize-none cyber-input"
+                                        class="block w-full py-2 text-gray-800 dark:text-gray-200 bg-gray-200 dark:bg-gray-800 outline-1 placeholder:text-gray-400 resize-none cyber-input"
                                         placeholder="Please enter your message here"
                                         maxlength="255"
                                         rows="5"

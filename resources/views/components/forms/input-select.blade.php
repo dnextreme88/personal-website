@@ -15,7 +15,7 @@
         <div class="relative">
             <select
                 @if ($wire_model) wire:model="{{ $wire_model }}" @endif
-                class="cyber-input w-full pr-8 leading-tight shadow appearance-none"
+                class="cyber-input w-full leading-tight shadow appearance-none"
             >
                 @if ($elements)
                     <option value="">SHOW ALL</option>
@@ -61,7 +61,7 @@
                 {{-- `!` (important) so the open-state cyan wins over the base border the .cyber-input selector now provides --}}
                 {{-- :class="openChoices ? 'border-cyan-400!' : ''" --}}
                 type="button"
-                class="w-full h-10.5 pr-8 leading-tight shadow appearance-none cursor-pointer text-left cyber-input"
+                class="w-full h-10.5 leading-tight shadow appearance-none cursor-pointer text-left cyber-input"
             >
                 <span x-text="selected.label" class="block truncate text-gray-800 dark:text-gray-200"></span>
             </button>
