@@ -43,6 +43,9 @@ how it was verified.
   black-and-white portrait and a rotating 3D photo ring, a scrollspy section nav that appears after the hero,
   About facts panel, Geist Mono for subtext and buttons, and removal of the cyber reticle cursor
   (executed **2026-11-28**).
+- [20261129-package-updates.md](20261129-package-updates.md) — npm and Composer package updates
+  (tailwindcss-intersect 3, Filament 5.12, Laravel 13.44, Livewire 4.4) and the move of custom CSS
+  classes from `@layer utilities` to Tailwind v4 `@utility` / `@layer components` (executed **2026-11-29**).
 
 ## Conventions
 

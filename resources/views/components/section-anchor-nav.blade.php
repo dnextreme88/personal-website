@@ -95,14 +95,14 @@
         ? 'fixed inset-x-0 top-(--site-header-h,0px) invisible opacity-0 -translate-y-2 transition-[opacity,translate,visibility] duration-300 ease-out motion-reduce:transition-none'
         : 'sticky top-(--site-header-h,0px)').' z-30 bg-gray-200 dark:bg-gray-800']) }}
 >
-    <ul class="mx-auto flex max-w-7xl gap-6 overflow-x-auto whitespace-nowrap px-6 py-3 lg:px-8">
+    <ul class="mx-auto flex max-w-7xl gap-6 overflow-x-auto whitespace-nowrap px-6 py-4 lg:px-8">
         @foreach ($sections as $id => $label)
             <li>
                 <a
                     href="#{{ $id }}"
-                    x-bind:class="active === '{{ $id }}' ? 'text-cyan-800 dark:text-neon-cyan' : 'text-gray-600 dark:text-gray-400'"
+                    x-bind:class="active === '{{ $id }}' ? 'text-cyan-600 dark:text-neon-cyan' : 'text-gray-600 dark:text-gray-400'"
                     x-bind:aria-current="active === '{{ $id }}' ? 'true' : null"
-                    class="anchor-link font-subtext text-xs font-medium uppercase tracking-wider text-gray-600 hover:text-cyan-800 dark:text-gray-400 dark:hover:text-neon-cyan focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-700 dark:focus-visible:outline-neon-cyan"
+                    class="anchor-link font-subtext text-sm font-medium uppercase tracking-[0.15em] hover:text-cyan-800 dark:text-gray-400 dark:hover:text-neon-cyan focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-700 dark:focus-visible:outline-neon-cyan"
                 >{{ $label }}</a>
             </li>
         @endforeach

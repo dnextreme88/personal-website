@@ -77,14 +77,18 @@ it('shows the about section with a contact button and the facts panel turned off
         ->assertDontSee('Open to work');
 });
 
-it('fades the About heading in on scroll like the other section headings', function () {
+it('shows each section heading as a pill that fades in on scroll', function () {
     $content = $this->get(route('home'))->assertOk()->getContent();
 
-    $fade_in = 'glitch scroll-mt-(--anchor-offset) text-glow text-3xl tracking-tight text-gray-900 sm:text-4xl dark:text-white transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100" data-text="About"';
+    $fade_in = 'header-section-pill scroll-mt-(--anchor-offset) transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100';
 
-    expect($content)->toContain($fade_in)
-        // Same scroll fade-in as "Relevant Experiences" and "From the Blog...".
-        ->and(substr_count($content, 'intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100" data-text='))->toBe(4);
+    expect(substr_count($content, $fade_in))->toBe(4)
+        // The old glitch headings are kept as Blade comments, so they are not rendered.
+        ->and($content)->not->toContain('data-text="About"');
+
+    foreach (['About', 'Relevant Experiences', 'From the Blog...', 'My Computer Specs'] as $label) {
+        expect($content)->toMatch('/<h2 [^>]*header-section-pill[^>]*>\s*<span aria-hidden="true">\/\/<\/span> '.preg_quote($label, '/').'\s*<\/h2>/');
+    }
 });
 
 it('keeps the section nav hidden over the hero and reveals it past the hero', function () {
@@ -110,7 +114,7 @@ it('links every anchor in the section nav to a section on the page', function ()
         // Each anchor targets the section's heading, which also lands below the bar.
         expect($content)
             ->toContain('href="#'.$id.'"')
-            ->toMatch('/<h2 id="'.$id.'" class="[^"]*scroll-mt-\(--anchor-offset\)/');
+            ->toMatch('/<h2 class="[^"]*scroll-mt-\(--anchor-offset\)[^"]*" id="'.$id.'"/');
 
         expect(substr_count($content, 'id="'.$id.'"'))->toBe(1);
     }
@@ -151,14 +155,21 @@ it('places a blocky background strip after the About section and each named sect
     preg_match_all('/<pattern id="(blocky-background-[0-9a-f-]{36})"/', $content, $patterns);
     preg_match_all('/fill="url\(#(blocky-background-[0-9a-f-]{36})\)"/', $content, $fills);
 
-    // After About, Relevant Experiences, From the Blog and Current Specs.
+    // After About, Relevant Experiences, From the Blog and My Computer Specs.
     expect($patterns[1])->toHaveCount(4)
         // Each strip has its own pattern id, and each fill points at its own strip's pattern.
         ->and(array_unique($patterns[1]))->toHaveCount(4)
         ->and($fills[1])->toBe($patterns[1]);
 
-    // Each strip follows a section: About, then the three sections marked "... section -->".
-    expect($content)->toMatch('/<\/section>\s*<section[^>]*>\s*<div class="isolate">\s*<div class="pointer-events-none relative isolate -z-10 h-\[240px\]">/');
+    // Each strip follows its section: About, Relevant Experiences, From the Blog, then the specs.
+    $strip = '<div class="pointer-events-none relative isolate -z-10 h-[240px]">';
+
+    $this->get(route('home'))->assertSeeInOrder([
+        'id="about"', $strip,
+        'id="experience"', $strip,
+        'id="blog"', $strip,
+        'id="specs"', $strip,
+    ], false);
     expect(substr_count(file_get_contents(resource_path('views/livewire/homepage.blade.php')), '<x-blocky-background />'))->toBe(4);
 });
 

@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "border-accent-on-rounded",
+        "value": "*",
+        "files": [
+          "public/js/filament/forms/components/color-picker.js"
+        ],
+        "createdAt": "2026-11-28T18:17:26.766Z",
+        "reason": "claude: vendor asset published by filament:upgrade from filament/filament, not project design"
+      },
+      {
+        "rule": "overused-font",
+        "value": "inter",
+        "files": [
+          "public/fonts/filament/filament/inter/index.css"
+        ],
+        "createdAt": "2026-11-28T18:17:26.900Z",
+        "reason": "claude: vendor font CSS published by Filament for its admin panel, not project design"
+      }
+    ]
+  }
+}

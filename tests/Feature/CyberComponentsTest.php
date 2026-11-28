@@ -436,3 +436,38 @@ it('passes alpine and extra attributes through to the badge root', function () {
         ->toContain('x-bind:class="cls"')
         ->toContain('mt-2');
 });
+
+it('styles the bracket link through the btn-bracket utility alone', function () {
+    $html = Blade::render('<x-button-bracket href="/contact" label="Contact me" />');
+
+    // Font, tracking, colours and focus ring all come from @utility btn-bracket in app.css.
+    expect($html)
+        ->toContain('class="btn-bracket"')
+        ->toContain('<span aria-hidden="true">[&nbsp;</span>Contact me<span aria-hidden="true">&nbsp;]</span>');
+});
+
+it('styles the header nav links with header-nav-link, which sets their tracking', function () {
+    $content = $this->get(route('home'))->assertOk()->getContent();
+
+    preg_match_all('/<a wire:navigate class="([^"]*)" href="[^"]*">(About Me|Archives|Blog)<\/a>/', $content, $links);
+
+    expect($links[1])->toHaveCount(3)
+        ->and($content)->not->toContain('cyber-link');
+
+    foreach ($links[1] as $classes) {
+        // The tracking comes from the header-nav-link utility, not a class on the link.
+        expect($classes)->toStartWith('header-nav-link ')->not->toContain('tracking-');
+    }
+});
+
+it('renders the homepage section pill as a heading with a hidden slash prefix', function () {
+    $html = Blade::render('<x-header-section-pill id="blog" class="mb-6">From the Blog...</x-header-section-pill>');
+
+    expect($html)
+        ->toContain('<h2 class="header-section-pill mb-6"')
+        // Anchor offset and scroll animation are the caller's choice, not built in.
+        ->not->toContain('scroll-mt')
+        ->not->toContain('intersect')
+        ->toContain('id="blog"')
+        ->toContain('<span aria-hidden="true">//</span> From the Blog...');
+});
