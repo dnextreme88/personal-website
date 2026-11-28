@@ -7,8 +7,8 @@
 >   Audiowide, text stays Exo 2.
 > - **Identity hero (`.hero-identity`, `#top`):** one screen tall below the header at every width
 >   (`100svh − 2rem − --site-header-h`; `#site-header` publishes its own height). One `h1` ("Web developer.",
->   typewriter) and the owner's intro sentence, with `x-button-bracket` links. "WELCOME!" and the six-photo
->   stack are gone; the old section `h1`s are `h2`.
+>   typewriter) and the owner's intro sentence (also typed out, once). "WELCOME!" and the six-photo stack are
+>   gone; the old section `h1`s are `h2`.
 > - **Portrait and ring (`x-portrait-ring`):** the 1152×1152 cutout `homepage-hero.webp`, black-and-white,
 >   no frame, fading out at the bottom, with `srcset` (`homepage-hero-480.webp`, `-768.webp`, original) and a
 >   `sizes` rule. A tilted ring of 18 grayscale 3:2 cards orbits it in 3D (`.animate-ring-orbit` in
@@ -21,15 +21,20 @@
 >   and the free width beside the fixed-width text column (`--hero-portrait-fit`; 28rem / 30rem text column
 >   from 1024px / 1280px). Tall windows (no wider than 9:8) move the text to the top and give the portrait the
 >   height below it (hero height − 25rem, or − 27rem from 1280px).
-> - **About:** a paragraph and a facts panel (Based in, Stack, Now, Status). Its heading and sentence fade in
->   on scroll like the other section headings. Facts values are samples for the owner to confirm.
+> - **About:** two paragraphs about the owner. Its heading and paragraphs fade in
+>   on scroll like the other section headings. `[ Contact me ]` (`x-button-bracket`) sits under the text, and
+>   the experiences section ends with `[ View the full resume ]`. The facts panel is commented out in Blade for
+>   now (its values were samples).
 > - **Section nav (`x-section-anchor-nav`, scrollspy):** with `reveal_after="top"` it is fixed below the header
 >   and hidden over the hero; it fades in as the hero's bottom edge passes the bar (`reveal_lead` px shows it
 >   earlier). Anchor ids sit on the section headings (`scroll-mt-(--anchor-offset)` lands them 8px under the
 >   bar). The active link is the last heading within `active_offset` (80px) of the bar; the last link wins at
 >   the page bottom. It is checked on every scroll, resize and page-height change (no rAF throttle: it stalls
 >   in background tabs).
-> - **Verified:** `tests/Feature/HomepageTest.php` (11 tests) and the full suite (111 passed); Pint clean.
+> - **Blocky background strip (`x-blocky-background`):** the 240px decorative strip is a component, placed after
+>   the About section and after each section marked `... section -->` (experiences, blog, specs). Each copy gets
+>   its own SVG pattern id, so the four copies never share or clash.
+> - **Verified:** `tests/Feature/HomepageTest.php` (12 tests) and the full suite (112 passed); Pint clean.
 >   Browser checks at 375, 1024, 1280, 1440 and 1686px wide, tall and short windows, light and dark: one `h1`,
 >   no `.cyber-reticle`, Geist Mono loaded, ring inside the viewport, nav reveal and active link at the
 >   measured switch points, no horizontal overflow.

@@ -651,7 +651,6 @@
 
     .dark .portrait-ring__card {
         background: #111827;
-        outline-color: rgba(0, 240, 255, 0.3);
     }
 
     .portrait-ring__card img {

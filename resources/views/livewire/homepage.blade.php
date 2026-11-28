@@ -12,15 +12,10 @@
             {{-- Fixed width from 1024px: app.css sizes the portrait from where this column ends. --}}
             <div class="hero-identity__text relative z-10 lg:w-md xl:w-120">
                 <h1 class="font-heading tracking-tight text-5xl sm:text-6xl xl:text-7xl">
-                    <span class="blinking-cursor block min-h-[1.2em] text-glow text-gray-900 dark:text-white" data-typewriter="Web developer." data-typewriter-once>Web developer.</span>
+                    <span class="blinking-cursor block min-h-[1.2em] text-glow text-gray-900 dark:text-white" data-typewriter="Web developer." data-typewriter>Web developer.</span>
                 </h1>
 
-                <p class="mt-8 max-w-md text-lg font-medium text-pretty text-gray-800 sm:text-xl/8 dark:text-gray-100">Convert into paying customers. 85% retention rate. Clean, sleek, UI design. Backend management.</p>
-
-                <div class="mt-10 flex flex-wrap gap-x-8 gap-y-4">
-                    <x-button-bracket :href="route('about_me')" label="About me" />
-                    <x-button-bracket :href="route('contact-me')" label="Contact me" />
-                </div>
+                <p class="mt-8 max-w-md text-lg font-medium text-pretty text-gray-800 sm:text-xl/8 dark:text-gray-100" data-typewriter="Convert into paying customers. 85% retention rate. Versatility with web technologies. Maintainable and scalable. Backend management." data-typewriter-once>Convert into paying customers. 85% retention rate. Versatility with web technologies. Maintainable and scalable. Backend management.</p>
             </div>
 
             <x-portrait-ring
@@ -36,17 +31,21 @@
     </section>
 
     {{-- Hidden over the hero; fades in as the hero slides up under it (add reveal_lead="80" etc. to show it earlier). --}}
-    <x-section-anchor-nav reveal_lead="10" reveal_after="top" :sections="['about' => 'About', 'experience' => 'Relevant Experiences', 'blog' => 'Blog', 'specs' => 'WFH Specs']" />
+    <x-section-anchor-nav reveal_lead="30" reveal_after="top" :sections="['about' => 'About', 'experience' => 'Relevant Experiences', 'blog' => 'Blog', 'specs' => 'WFH Specs']" />
 
     {{-- About, with a facts panel --}}
     <section class="bg-gray-200 dark:bg-gray-800">
         <div class="mx-auto grid max-w-7xl gap-10 px-6 py-24 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] lg:gap-16 lg:px-8">
             <div>
                 <h2 id="about" class="font-heading glitch scroll-mt-(--anchor-offset) text-glow text-3xl tracking-tight text-gray-900 sm:text-4xl dark:text-white transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100" data-text="About">About</h2>
-                <p class="mt-6 max-w-2xl text-lg/8 text-gray-800 dark:text-gray-100 transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-500">My name is Jeanne Kevin T. Decena and welcome to my personal website! I am an IT graduate with over 6 years of web development, building and maintaining web systems. Here you can find all the goodies I've been doing in my life - from my blog and to my portfolio. Feel free to look around! If you need some web development professional, look no further and contact me right away!</p>
-                <p class="mt-6 max-w-2xl text-lg/8 text-gray-800 dark:text-gray-100 transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-500">Here you can find all the goodies I've been doing in my life - from my blog and to my portfolio. Feel free to look around! If you need some web development professional, look no further and contact me right away! My work involves intricate planning to achieve measurable results that turn your customers into paying ones, enriched with robust features while maintaining user friendliness! Scalable systems are also my forte, something that the team can maintain without too much overhead.</p>
+                <p class="mt-6 max-w-2xl text-lg/8 text-gray-800 dark:text-gray-100 transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-500">My name is Jeanne Kevin T. Decena and you may call me Kevin for short. Welcome to my personal website! I'm an IT graduate with more than six years of experience developing and maintaining web systems. I'm passionate about creating solutions that scale with your business and easy maintenance. Every project starts with intricate planning aimed at measurable results: turning visitors into paying customers through robust features and a user-friendly experience. The systems I build are designed so your team can manage them with minimal overhead.</p>
+                <p class="mt-6 max-w-2xl text-lg/8 text-gray-800 dark:text-gray-100 transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-500">Here you can find all the goodies I've been doing in my life - from my blog and to my portfolio. Feel free to look around! If you need some web development professional, look no further and contact me right away!</p>
+                <div class="mt-10 flex flex-wrap gap-x-8 gap-y-4 transition duration-2000 translate-y-32 opacity-0 intersect-once intersect-half intersect:translate-y-0 intersect:opacity-100 delay-500">
+                    <x-button-bracket :href="route('contact-me')" label="Contact me" />
+                </div>
             </div>
 
+            {{--
             <dl class="self-end">
                 @foreach ([
                     'Based in' => 'Philippines',
@@ -64,29 +63,13 @@
                     <dd class="text-right font-semibold text-cyan-800 dark:text-neon-cyan">Open to work</dd>
                 </div>
             </dl>
+            --}}
         </div>
     </section>
 
     <section class="bg-gray-200 dark:bg-gray-800">
         <div class="isolate">
-            <!-- Blocky background -->
-            <div class="relative isolate -z-10 h-[240px]">
-                <div class="absolute inset-x-0 top-1/2 -z-10 flex -translate-y-1/2 justify-center overflow-hidden mask-[radial-gradient(75%_60%_at_50%_60%,white,transparent)] mt-30 sm:mt-0">
-                    <svg aria-hidden="true" class="h-160 w-7xl flex-none stroke-gray-200 dark:stroke-white/10">
-                        <defs>
-                            <pattern id="e9033f3e-f665-41a6-84ef-756f6778e6fe" width="200" height="200" x="50%" y="25%" patternUnits="userSpaceOnUse" patternTransform="translate(-100 0)">
-                                <path d="M.5 200V.5H200" fill="none" />
-                            </pattern>
-                        </defs>
-
-                        <svg x="50%" y="25%" class="overflow-visible fill-gray-300 dark:fill-gray-700">
-                            <path d="M-300 0h201v201h-201Z M300 200h201v201h-201Z" stroke-width="0" />
-                        </svg>
-
-                        <rect width="100%" height="100%" fill="url(#e9033f3e-f665-41a6-84ef-756f6778e6fe)" stroke-width="0" />
-                    </svg>
-                </div>
-            </div>
+            <x-blocky-background />
 
             <!-- Short summary for About Me section -->
             <div class="mx-auto max-w-7xl pb-16 pt-32 px-6 sm:mt-40 lg:px-8">
@@ -143,18 +126,12 @@
                     </x-timeline>
                 </div>
 
-                <div class="mx-auto max-w-2xl mb-2 lg:mx-0 lg:max-w-none">
-                    <a
-                        wire:navigate
-                        href="{{ route('about_me') }}"
-                        class="inline-block mt-2 text-lg/8 text-cyan-800 dark:text-cyan-200 hover:underline transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-3 intersect:opacity-100"
-                        title="View the full resume"
-                        aria-label="About Me link"
-                    >
-                        View the full resume &rarr;
-                    </a>
+                <div class="mt-10 ml-5 flex flex-wrap gap-x-8 gap-y-4 transition duration-2000 translate-y-32 opacity-0 intersect-once intersect-half intersect:translate-y-0 intersect:opacity-100 delay-500">
+                    <x-button-bracket :href="route('about_me')" label="View the full resume" />
                 </div>
             </div>
+
+            <x-blocky-background />
 
             <!-- Latest posts from blog section -->
             <div class="mx-auto max-w-7xl pb-16 pt-32 px-6 sm:mt-40 lg:px-8">
@@ -165,6 +142,8 @@
 
                 <livewire:blog.latest-posts />
             </div>
+
+            <x-blocky-background />
 
             <!-- Current computer specs section -->
             <div class="relative isolate -z-10">
@@ -240,6 +219,8 @@
                     </div>
                 </div>
             </div>
+
+            <x-blocky-background />
         </div>
     </section>
 

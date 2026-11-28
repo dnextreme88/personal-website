@@ -69,11 +69,12 @@ it('orbits a decorative ring of photo thumbnails around the portrait', function 
     }
 });
 
-it('shows the about facts panel', function () {
+it('shows the about section with a contact button and the facts panel turned off', function () {
     $this->get(route('home'))
         ->assertOk()
-        ->assertSee('id="about"', false)
-        ->assertSeeInOrder(['Based in', 'Stack', 'Now', 'Status', 'Open to work']);
+        ->assertSeeInOrder(['id="about"', 'Contact me', 'View the full resume'], false)
+        // The facts panel is commented out in Blade, so it is not rendered.
+        ->assertDontSee('Open to work');
 });
 
 it('fades the About heading in on scroll like the other section headings', function () {
@@ -142,4 +143,21 @@ it('no longer ships the cyber reticle cursor', function () {
     expect(file_exists(resource_path('js/cyber-cursor.js')))->toBeFalse()
         ->and(file_get_contents(resource_path('js/app.js')))->not->toContain('cyber-cursor')
         ->and(file_get_contents(resource_path('css/app.css')))->not->toContain('cyber-reticle');
+});
+
+it('places a blocky background strip after the About section and each named section', function () {
+    $content = $this->get(route('home'))->assertOk()->getContent();
+
+    preg_match_all('/<pattern id="(blocky-background-[0-9a-f-]{36})"/', $content, $patterns);
+    preg_match_all('/fill="url\(#(blocky-background-[0-9a-f-]{36})\)"/', $content, $fills);
+
+    // After About, Relevant Experiences, From the Blog and Current Specs.
+    expect($patterns[1])->toHaveCount(4)
+        // Each strip has its own pattern id, and each fill points at its own strip's pattern.
+        ->and(array_unique($patterns[1]))->toHaveCount(4)
+        ->and($fills[1])->toBe($patterns[1]);
+
+    // Each strip follows a section: About, then the three sections marked "... section -->".
+    expect($content)->toMatch('/<\/section>\s*<section[^>]*>\s*<div class="isolate">\s*<div class="relative isolate -z-10 h-\[240px\]">/');
+    expect(substr_count(file_get_contents(resource_path('views/livewire/homepage.blade.php')), '<x-blocky-background />'))->toBe(4);
 });
