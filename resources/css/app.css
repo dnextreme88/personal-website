@@ -258,6 +258,9 @@
 /* Bracket link ([ About me ]) and in-page anchor links — colour shift on hover,
    a small press-in on click. @utility takes one class name, so each gets a block. */
 @utility btn-bracket {
+    @apply font-subtext inline-block text-sm font-medium uppercase tracking-[0.25em];
+    @apply text-cyan-800 hover:text-neon-magenta-dim dark:text-neon-cyan dark:hover:text-neon-magenta;
+    @apply focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-700 dark:focus-visible:outline-neon-cyan;
     transition: color 200ms ease, transform 120ms ease;
 
     &:active {
@@ -277,9 +280,9 @@
    Light mode: a deeper cyan so the hover doesn't blow out on light
    backgrounds. Dark mode keeps the full neon glow. */
 @utility header-nav-link {
-    position: relative;
     transition: color 200ms ease, text-shadow 200ms ease;
-    @apply tracking-widest;
+    @apply relative;
+    @apply tracking-[3px];
 
     &::after {
         content: '';
@@ -380,6 +383,18 @@
         background: linear-gradient(var(--color-neon-cyan), var(--color-neon-magenta));
         box-shadow: 0 0 12px rgba(0, 240, 255, 0.5);
     }
+}
+
+@utility header-section-pill {
+    @apply w-fit rounded-full border border-cyan-700/50 bg-gray-100 px-7 py-2.5;
+    @apply font-heading uppercase tracking-[0.3em] text-cyan-800;
+    @apply shadow-[0_0_12px_rgba(8,145,178,0.2),inset_0_0_10px_rgba(8,145,178,0.1)];
+    @apply dark:border-neon-cyan/60 dark:bg-[#070b1f] dark:text-cyan-200;
+    @apply dark:shadow-[0_0_14px_rgba(0,240,255,0.3),inset_0_0_12px_rgba(0,240,255,0.12)];
+}
+
+@utility section-headings {
+    @apply my-8;
 }
 
 /* Multi-class rules: child selectors, BEM parts, parent state classes (.group,

@@ -19,7 +19,7 @@
     @endif
     {{ $attributes->merge(['class' => 'btn-call-to-action group relative inline-block leading-none']) }}
 >
-    <span class="relative flex items-center justify-center overflow-hidden clip-notch px-5 py-2.5 font-subtext text-sm font-semibold uppercase tracking-widest text-white">
+    <span class="relative flex items-center justify-center overflow-hidden clip-notch px-5 py-2.5 font-subtext text-sm font-semibold uppercase tracking-[0.3em] text-white">
         {{-- Border — a cyan→magenta gradient filling the whole notch shape. The
              fill layer below is inset by the border width and re-clipped to the
              same notch, so only a thin band of this gradient shows as a border

@@ -15,7 +15,7 @@
                     <span class="blinking-cursor block min-h-[1.2em] text-glow text-gray-900 dark:text-white" data-typewriter="Web developer." data-typewriter>Web developer.</span>
                 </h1>
 
-                <p class="mt-8 max-w-md text-lg font-medium text-pretty text-gray-800 sm:text-xl/8 dark:text-gray-100" data-typewriter="Convert into paying customers. 85% retention rate. Versatility with web technologies. Maintainable and scalable. Backend management." data-typewriter-once>Convert into paying customers. 85% retention rate. Versatility with web technologies. Maintainable and scalable. Backend management.</p>
+                <p class="mt-8 max-w-md text-lg font-medium text-pretty text-gray-800 sm:text-xl/8 dark:text-gray-100" data-typewriter="Convert into paying customers. 85% retention rate. Versatility with web technologies. Maintainable and scalable. Backend management." data-typewriter-speed="50" data-typewriter-once>Convert into paying customers. 85% retention rate. Versatility with web technologies. Maintainable and scalable. Backend management.</p>
             </div>
 
             <x-portrait-ring
@@ -37,7 +37,7 @@
     <section class="bg-gray-200 dark:bg-gray-800">
         <div class="mx-auto grid max-w-7xl gap-10 px-6 py-24 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] lg:gap-16 lg:px-8">
             <div>
-                <h2 id="about" class="font-heading glitch scroll-mt-(--anchor-offset) text-glow text-3xl tracking-wider text-gray-900 sm:text-4xl dark:text-white transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100" data-text="About">About</h2>
+                <x-header-section-pill id="about" class="scroll-mt-(--anchor-offset) transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100">About</x-header-section-pill>
                 <p class="mt-6 max-w-2xl text-lg/8 text-gray-800 dark:text-gray-100 transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-500">My name is Jeanne Kevin T. Decena and you may call me Kevin for short. Welcome to my personal website! I'm an IT graduate with more than six years of experience developing and maintaining web systems. I'm passionate about creating solutions that scale with your business and easy maintenance. Every project starts with intricate planning aimed at measurable results: turning visitors into paying customers through robust features and a user-friendly experience. The systems I build are designed so your team can manage them with minimal overhead.</p>
                 <p class="mt-6 max-w-2xl text-lg/8 text-gray-800 dark:text-gray-100 transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-500">Here you can find all the goodies I've been doing in my life - from my blog and to my portfolio. Feel free to look around! If you need some web development professional, look no further and contact me right away!</p>
                 <div class="mt-10 flex flex-wrap gap-x-8 gap-y-4 transition duration-2000 translate-y-32 opacity-0 intersect-once intersect-half intersect:translate-y-0 intersect:opacity-100 delay-500">
@@ -74,7 +74,7 @@
             <!-- Short summary for About Me section -->
             <div class="mx-auto max-w-7xl pb-16 pt-32 px-6 sm:mt-40 lg:px-8">
                 <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-                    <h2 id="experience" class="font-heading glitch scroll-mt-(--anchor-offset) text-glow text-4xl tracking-wider text-balance text-gray-900 sm:text-5xl dark:text-white transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100" data-text="Relevant Experiences">Relevant Experiences</h2>
+                    <x-header-section-pill id="experience" class="scroll-mt-(--anchor-offset) transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100">Relevant Experiences</x-header-section-pill>
                 </div>
 
                 <div class="flex flex-col mx-auto max-w-2xl mt-10 mb-5 md:grid lg:mx-0 lg:max-w-none grid-cols-[5%_1fr]">
@@ -136,8 +136,8 @@
             <!-- Latest posts from blog section -->
             <div class="mx-auto max-w-7xl pb-16 pt-32 px-6 sm:mt-40 lg:px-8">
                 <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-                    <h2 id="blog" class="font-heading glitch scroll-mt-(--anchor-offset) text-glow text-4xl tracking-wider text-pretty text-gray-900 sm:text-5xl dark:text-white transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100" data-text="From the Blog...">From the Blog...</h2>
-                    <p class="font-text mt-8 mb-6 text-lg font-medium text-pretty text-gray-500 sm:max-w-lg sm:text-xl/8 lg:max-w-none dark:text-gray-400 transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-500">Latest updates from me!</p>
+                    <x-header-section-pill id="blog" class="scroll-mt-(--anchor-offset) transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100">From the Blog...</x-header-section-pill>
+                    <p class="mt-6 max-w-2xl text-lg/8 text-gray-800 dark:text-gray-100 transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-500">Latest updates from me!</p>
                 </div>
 
                 <livewire:blog.latest-posts />
@@ -168,10 +168,10 @@
                 <div class="mx-auto max-w-7xl px-6 pt-36 pb-32 sm:pt-60 lg:px-8 lg:pt-32">
                     <div class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-start">
                         <div class="relative w-full lg:max-w-lg lg:shrink-0 xl:max-w-xl">
-                            <h2 id="specs" class="font-heading glitch scroll-mt-(--anchor-offset) text-glow text-4xl tracking-wider text-pretty text-gray-900 sm:text-5xl dark:text-white transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100" data-text="Current Specs!">Current Specs!</h2>
-                            <p class="font-text mt-8 mb-6 text-lg font-medium text-pretty text-gray-500 sm:max-w-lg sm:text-xl/8 lg:max-w-none dark:text-gray-400 transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-500">Last update: July 26, 2026</p>
+                            <x-header-section-pill id="specs" class="scroll-mt-(--anchor-offset) transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100">My Computer Specs</x-header-section-pill>
+                            <p class="mt-6 max-w-2xl text-lg/8 text-gray-800 dark:text-gray-100 transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-500">Last update: July 26, 2026</p>
 
-                            <div class="specs-list flex flex-wrap gap-2 flex-col space-y-1">
+                            <div class="specs-list flex flex-wrap gap-2 flex-col space-y-1 mt-8">
                                 <div class="dark:text-gray-400 even:font-bold even:ml-2">Internet Service Provider (ISP)</div>
                                 <div class="dark:text-gray-200 even:font-bold even:ml-2 transition duration-2000 intersect-once intersect-half cyber-text">PLDT 200Mbp/s</div>
                                 <div class="dark:text-gray-400 even:font-bold even:ml-2">Memory</div>
@@ -210,7 +210,7 @@
                         </div>
 
                         <div class="mt-14 hidden lg:flex justify-end gap-8 sm:flex-row sm:-mt-10 sm:justify-start sm:pl-2 md:pl-16 lg:mt-0 lg:pl-0">
-                            <div class="space-y-8 pt-32 sm:pt-48 lg:pt-32">
+                            <div class="space-y-8 pt-32 sm:pt-48 lg:pt-64">
                                 <div class="relative rounded-xl card-rectangle">
                                     <img src="{{ asset('/images/homepage-10.webp') }}" class="aspect-square w-full rounded-xl bg-gray-900/5 shadow-lg dark:bg-gray-700/5 -translate-x-32 opacity-0 intersect-once intersect:translate-x-0 intersect:opacity-100" style="transition: scale 0.25s, translate 2s, opacity 3s 500ms;" />
                                 </div>
