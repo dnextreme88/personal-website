@@ -155,14 +155,21 @@ it('places a blocky background strip after the About section and each named sect
     preg_match_all('/<pattern id="(blocky-background-[0-9a-f-]{36})"/', $content, $patterns);
     preg_match_all('/fill="url\(#(blocky-background-[0-9a-f-]{36})\)"/', $content, $fills);
 
-    // After About, Relevant Experiences, From the Blog and Current Specs.
+    // After About, Relevant Experiences, From the Blog and My Computer Specs.
     expect($patterns[1])->toHaveCount(4)
         // Each strip has its own pattern id, and each fill points at its own strip's pattern.
         ->and(array_unique($patterns[1]))->toHaveCount(4)
         ->and($fills[1])->toBe($patterns[1]);
 
-    // Each strip follows a section: About, then the three sections marked "... section -->".
-    expect($content)->toMatch('/<\/section>\s*<section[^>]*>\s*<div class="isolate">\s*<div class="pointer-events-none relative isolate -z-10 h-\[240px\]">/');
+    // Each strip follows its section: About, Relevant Experiences, From the Blog, then the specs.
+    $strip = '<div class="pointer-events-none relative isolate -z-10 h-[240px]">';
+
+    $this->get(route('home'))->assertSeeInOrder([
+        'id="about"', $strip,
+        'id="experience"', $strip,
+        'id="blog"', $strip,
+        'id="specs"', $strip,
+    ], false);
     expect(substr_count(file_get_contents(resource_path('views/livewire/homepage.blade.php')), '<x-blocky-background />'))->toBe(4);
 });
 
