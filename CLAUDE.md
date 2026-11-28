@@ -4,12 +4,12 @@ Guidance for Claude Code when working in this repo. Human-facing docs live in [R
 
 ## Stack
 
-Personal website on the **TALL stack** (Tailwind, Alpine, Laravel, Livewire) with a Filament admin panel. Major versions matter — Filament 4, Livewire 3, and Tailwind 4 differ significantly from their previous majors, so prefer current-version APIs.
+Personal website on the **TALL stack** (Tailwind, Alpine, Laravel, Livewire) with a Filament admin panel. Major versions matter — Filament 5, Livewire 4, and Tailwind 4 differ significantly from their previous majors, so prefer current-version APIs.
 
-- PHP `^8.3`, Laravel `^12.10`
-- Livewire `^3.6`, Filament `4.2.4`
-- Tailwind `^4.1`, Vite `^7`
-- Pest `^3.8` (tests), Pint `^1.26` (formatting)
+- PHP `^8.3`, Laravel `^13.44`
+- Livewire `^4.4`, Filament `5.12.0`
+- Tailwind `^4.3`, Vite `^8.4`
+- Pest `^4.7` (tests), Pint `^1.32` (formatting)
 
 ## Commands
 
