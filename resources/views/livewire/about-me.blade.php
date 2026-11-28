@@ -15,7 +15,7 @@
             </section>
 
             <section>
-                <h2 class="text-glow text-2xl tracking-tight text-pretty text-gray-800 sm:text-5xl lg:text-3xl dark:text-gray-200 mb-5 font-heading">Soft Skills</h2>
+                <h2 class="headings-glowing-text">Soft Skills</h2>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <span class="rounded-xl p-3 text-center text-gray-800 dark:text-gray-200 bg-gray-300 dark:bg-gray-600/25 card-rectangle">Efficient critical thinker</span>
@@ -29,7 +29,7 @@
             </section>
 
             <section>
-                <h2 class="text-glow text-2xl tracking-tight text-pretty text-gray-800 sm:text-5xl lg:text-3xl dark:text-gray-200 mb-5 font-heading">Education</h2>
+                <h2 class="headings-glowing-text">Education</h2>
 
                 <div class="bg-gray-200 dark:bg-gray-800 p-6 rounded-lg shadow space-y-2 card-rectangle">
                     <p class="font-semibold text-gray-700 dark:text-gray-200">BS Information Technology</p>
@@ -48,7 +48,7 @@
             </section>
 
             <section>
-                <h2 class="text-glow text-2xl tracking-tight text-pretty text-gray-800 sm:text-5xl lg:text-3xl dark:text-gray-200 mb-5 font-heading">Extra Curricular / Trainings</h2>
+                <h2 class="headings-glowing-text">Extra Curricular / Trainings</h2>
 
                 <div class="bg-gray-200 dark:bg-gray-800 p-6 rounded-lg shadow space-y-3 card-rectangle">
                     <div>
@@ -118,7 +118,7 @@
         <!-- RIGHT SIDE (Work Experience, References) -->
         <div class="space-y-10 lg:col-span-2">
             <section>
-                <h2 class="text-glow text-2xl tracking-tight text-pretty text-gray-800 sm:text-5xl lg:text-3xl dark:text-gray-200 mb-5 font-heading">Work Experience</h2>
+                <h2 class="headings-glowing-text">Work Experience</h2>
 
                 <div class="space-y-6">
                     <x-work-experience
@@ -263,7 +263,7 @@
             </section>
 
             <section>
-                <h2 class="text-glow text-2xl tracking-tight text-pretty text-gray-800 sm:text-5xl lg:text-3xl dark:text-gray-200 mb-5 font-heading">Character References</h2>
+                <h2 class="headings-glowing-text">Character References</h2>
 
                 <div class="bg-gray-200 dark:bg-gray-800 p-6 rounded-lg shadow card-rectangle">
                     <p class="text-gray-700 dark:text-gray-300 leading-relaxed">Character references will be provided upon request.</p>

@@ -86,7 +86,7 @@ it('shows each section heading as a pill that fades in on scroll', function () {
         // The old glitch headings are kept as Blade comments, so they are not rendered.
         ->and($content)->not->toContain('data-text="About"');
 
-    foreach (['About', 'Relevant Experiences', 'From the Blog...', 'Current Specs!'] as $label) {
+    foreach (['About', 'Relevant Experiences', 'From the Blog...', 'My Computer Specs'] as $label) {
         expect($content)->toMatch('/<h2 [^>]*header-section-pill[^>]*>\s*<span aria-hidden="true">\/\/<\/span> '.preg_quote($label, '/').'\s*<\/h2>/');
     }
 });

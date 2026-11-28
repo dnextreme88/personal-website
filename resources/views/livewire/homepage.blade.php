@@ -35,99 +35,79 @@
 
     {{-- About, with a facts panel --}}
     <section class="bg-gray-200 dark:bg-gray-800">
-        <div class="mx-auto grid max-w-7xl gap-10 px-6 py-24 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] lg:gap-16 lg:px-8">
-            <div>
-                <x-header-section-pill id="about" class="scroll-mt-(--anchor-offset) transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100">About</x-header-section-pill>
-                <p class="mt-6 max-w-2xl text-lg/8 text-gray-800 dark:text-gray-100 transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-500">My name is Jeanne Kevin T. Decena and you may call me Kevin for short. Welcome to my personal website! I'm an IT graduate with more than six years of experience developing and maintaining web systems. I'm passionate about creating solutions that scale with your business and easy maintenance. Every project starts with intricate planning aimed at measurable results: turning visitors into paying customers through robust features and a user-friendly experience. The systems I build are designed so your team can manage them with minimal overhead.</p>
-                <p class="mt-6 max-w-2xl text-lg/8 text-gray-800 dark:text-gray-100 transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-500">Here you can find all the goodies I've been doing in my life - from my blog and to my portfolio. Feel free to look around! If you need some web development professional, look no further and contact me right away!</p>
-                <div class="mt-10 flex flex-wrap gap-x-8 gap-y-4 transition duration-2000 translate-y-32 opacity-0 intersect-once intersect-half intersect:translate-y-0 intersect:opacity-100 delay-500">
-                    <x-button-bracket :href="route('contact-me')" label="Contact me" />
-                </div>
-            </div>
-
-            {{--
-            <dl class="self-end">
-                @foreach ([
-                    'Based in' => 'Philippines',
-                    'Stack' => 'Laravel · Livewire · Filament',
-                    'Now' => 'MachShip Philippines',
-                ] as $term => $value)
-                    <div class="flex items-baseline justify-between gap-6 px-4 py-3 odd:bg-gray-300/60 dark:odd:bg-gray-900/40">
-                        <dt class="font-subtext text-xs uppercase tracking-wider text-gray-600 dark:text-gray-400">{{ $term }}</dt>
-                        <dd class="text-right text-gray-900 dark:text-gray-100">{{ $value }}</dd>
-                    </div>
-                @endforeach
-
-                <div class="flex items-baseline justify-between gap-6 px-4 py-3 odd:bg-gray-300/60 dark:odd:bg-gray-900/40">
-                    <dt class="font-subtext text-xs uppercase tracking-wider text-gray-600 dark:text-gray-400">Status</dt>
-                    <dd class="text-right font-semibold text-cyan-800 dark:text-neon-cyan">Open to work</dd>
-                </div>
-            </dl>
-            --}}
-        </div>
-    </section>
-
-    <section class="bg-gray-200 dark:bg-gray-800">
         <div class="isolate">
-            <x-blocky-background />
-
             <!-- Short summary for About Me section -->
             <div class="mx-auto max-w-7xl pb-16 pt-32 px-6 sm:mt-40 lg:px-8">
                 <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
+                    <x-header-section-pill id="about" class="scroll-mt-(--anchor-offset) transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100">About</x-header-section-pill>
+                    <p class="mt-6 max-w-2xl text-lg/8 text-gray-800 dark:text-gray-100 transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-500">My name is Jeanne Kevin T. Decena and you may call me Kevin for short. Welcome to my personal website! I'm an IT graduate with more than six years of experience developing and maintaining web systems. I'm passionate about creating solutions that scale with your business and easy maintenance. Every project starts with intricate planning aimed at measurable results: turning visitors into paying customers through robust features and a user-friendly experience. The systems I build are designed so your team can manage them with minimal overhead.</p>
+
+                    <p class="mt-6 max-w-2xl text-lg/8 text-gray-800 dark:text-gray-100 transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100 delay-500">Here you can find all the goodies I've been doing in my life - from my blog and to my portfolio. Feel free to look around! If you need some web development professional, look no further and contact me right away!</p>
+
+                    <div class="mt-10 flex flex-wrap gap-x-8 gap-y-4 transition duration-2000 translate-y-32 opacity-0 intersect-once intersect-half intersect:translate-y-0 intersect:opacity-100 delay-500">
+                        <x-button-bracket :href="route('contact-me')" label="Contact me" />
+                    </div>
+                </div>
+            </div>
+
+            <x-blocky-background />
+
+            <div class="mx-auto max-w-7xl pb-16 pt-32 px-6 sm:mt-40 lg:px-8">
+                <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
                     <x-header-section-pill id="experience" class="scroll-mt-(--anchor-offset) transition duration-2000 -translate-x-32 opacity-0 intersect-once intersect-half intersect:translate-x-0 intersect:opacity-100">Relevant Experiences</x-header-section-pill>
-                </div>
 
-                <div class="flex flex-col mx-auto max-w-2xl mt-10 mb-5 md:grid lg:mx-0 lg:max-w-none grid-cols-[5%_1fr]">
-                    <x-timeline :is_current="true">
-                        <x-slot name="content">
-                            <div>
-                                <h2 class="font-semibold mb-2 text-2xl text-gray-800 dark:text-gray-100 lg:text-xl">MachShip Philippines</h2>
-                                <h3 class="font-subtext font-bold mb-2 text-base text-gray-800 dark:text-gray-100">Workflow Scripter</h3>
-                                <p class="font-subtext font-bold mb-2 text-gray-800 dark:text-gray-100">February 2025 - present</p>
+                    <div class="flex flex-col mx-auto max-w-2xl mt-10 mb-5 md:grid lg:mx-0 lg:max-w-none grid-cols-[5%_1fr]">
+                        <x-timeline :is_current="true">
+                            <x-slot name="content">
+                                <div>
+                                    <h2 class="font-semibold mb-2 text-2xl text-gray-800 dark:text-gray-100 lg:text-xl">MachShip Philippines</h2>
+                                    <h3 class="font-subtext font-bold mb-2 text-base text-gray-800 dark:text-gray-100">Workflow Scripter</h3>
+                                    <p class="font-subtext font-bold mb-2 text-gray-800 dark:text-gray-100">February 2025 - present</p>
 
-                                <ul class="list-disc list-inside font-bold text-gray-800 dark:text-gray-100">
-                                    <li>Create and maintain workflows of carrier integrations using the Limber platform</li>
-                                    <li>Create solutions for integrating existing carriers on the MachShip platform into Limber</li>
-                                    <li>Test carrier integrations on the MachShip platform</li>
-                                </ul>
-                            </div>
-                        </x-slot>
-                    </x-timeline>
+                                    <ul class="list-disc list-inside font-bold text-gray-800 dark:text-gray-100">
+                                        <li>Create and maintain workflows of carrier integrations using the Limber platform</li>
+                                        <li>Create solutions for integrating existing carriers on the MachShip platform into Limber</li>
+                                        <li>Test carrier integrations on the MachShip platform</li>
+                                    </ul>
+                                </div>
+                            </x-slot>
+                        </x-timeline>
 
-                    <x-timeline :is_current="false">
-                        <x-slot name="content">
-                            <div>
-                                <h2 class="font-semibold text-2xl mb-2 text-gray-800 dark:text-gray-100 lg:text-xl">Zeldan Nordic Languages Review Center</h2>
-                                <h3 class="font-subtext text-base mb-2 text-gray-800 dark:text-gray-100">Laravel Developer (Part-time)</h3>
-                                <p class="font-subtext mb-2 text-gray-800 dark:text-gray-100">June 2024 - December 2024</p>
+                        <x-timeline :is_current="false">
+                            <x-slot name="content">
+                                <div>
+                                    <h2 class="font-semibold text-2xl mb-2 text-gray-800 dark:text-gray-100 lg:text-xl">Zeldan Nordic Languages Review Center</h2>
+                                    <h3 class="font-subtext text-base mb-2 text-gray-800 dark:text-gray-100">Laravel Developer (Part-time)</h3>
+                                    <p class="font-subtext mb-2 text-gray-800 dark:text-gray-100">June 2024 - December 2024</p>
 
-                                <ul class="list-disc list-inside text-gray-800 dark:text-gray-100">
-                                    <li>Develop a simple learning website for trainees and instructors for their language training courses using the TALL stack (Tailwind, AlpineJS, Laravel, and Livewire)</li>
-                                    <li>Technologies used: AlpineJS, JavaScript, Laravel 11, Livewire, PHP 8.3, and Tailwind</li>
-                                </ul>
-                            </div>
-                        </x-slot>
-                    </x-timeline>
+                                    <ul class="list-disc list-inside text-gray-800 dark:text-gray-100">
+                                        <li>Develop a simple learning website for trainees and instructors for their language training courses using the TALL stack (Tailwind, AlpineJS, Laravel, and Livewire)</li>
+                                        <li>Technologies used: AlpineJS, JavaScript, Laravel 11, Livewire, PHP 8.3, and Tailwind</li>
+                                    </ul>
+                                </div>
+                            </x-slot>
+                        </x-timeline>
 
-                    <x-timeline :is_current="false">
-                        <x-slot name="content">
-                            <div>
-                                <h2 class="font-semibold text-2xl mb-2 text-gray-800 dark:text-gray-100 lg:text-xl">Think Bullish</h2>
-                                <h3 class="font-subtext text-base mb-2 text-gray-800 dark:text-gray-100">Virtual Assistant</h3>
-                                <p class="font-subtext mb-2 text-gray-800 dark:text-gray-100">January 2024 - August 2024</p>
+                        <x-timeline :is_current="false">
+                            <x-slot name="content">
+                                <div>
+                                    <h2 class="font-semibold text-2xl mb-2 text-gray-800 dark:text-gray-100 lg:text-xl">Think Bullish</h2>
+                                    <h3 class="font-subtext text-base mb-2 text-gray-800 dark:text-gray-100">Virtual Assistant</h3>
+                                    <p class="font-subtext mb-2 text-gray-800 dark:text-gray-100">January 2024 - August 2024</p>
 
-                                <ul class="list-disc list-inside text-gray-800 dark:text-gray-100">
-                                    <li>Assist in workflow automations, ensure updated data, and review prospect leads using GoHighLevel CRM</li>
-                                    <li>Quality assurance calls based on company criteria by reviewing calls of appointment setters using VICIdial</li>
-                                    <li>Review leads for the waitlist process and check if they conflict with any existing active clients</li>
-                                </ul>
-                            </div>
-                        </x-slot>
-                    </x-timeline>
-                </div>
+                                    <ul class="list-disc list-inside text-gray-800 dark:text-gray-100">
+                                        <li>Assist in workflow automations, ensure updated data, and review prospect leads using GoHighLevel CRM</li>
+                                        <li>Quality assurance calls based on company criteria by reviewing calls of appointment setters using VICIdial</li>
+                                        <li>Review leads for the waitlist process and check if they conflict with any existing active clients</li>
+                                    </ul>
+                                </div>
+                            </x-slot>
+                        </x-timeline>
+                    </div>
 
-                <div class="mt-10 ml-5 flex flex-wrap gap-x-8 gap-y-4 transition duration-2000 translate-y-32 opacity-0 intersect-once intersect-half intersect:translate-y-0 intersect:opacity-100 delay-500">
-                    <x-button-bracket :href="route('about_me')" label="View the full resume" />
+                    <div class="mt-10 flex flex-wrap gap-x-8 gap-y-4 transition duration-2000 translate-y-32 opacity-0 intersect-once intersect-half intersect:translate-y-0 intersect:opacity-100 delay-500">
+                        <x-button-bracket :href="route('about_me')" label="View the full resume" />
+                    </div>
                 </div>
             </div>
 

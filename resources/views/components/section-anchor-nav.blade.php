@@ -95,7 +95,7 @@
         ? 'fixed inset-x-0 top-(--site-header-h,0px) invisible opacity-0 -translate-y-2 transition-[opacity,translate,visibility] duration-300 ease-out motion-reduce:transition-none'
         : 'sticky top-(--site-header-h,0px)').' z-30 bg-gray-200 dark:bg-gray-800']) }}
 >
-    <ul class="mx-auto flex max-w-7xl gap-6 overflow-x-auto whitespace-nowrap px-6 py-3 lg:px-8">
+    <ul class="mx-auto flex max-w-7xl gap-6 overflow-x-auto whitespace-nowrap px-6 py-4 lg:px-8">
         @foreach ($sections as $id => $label)
             <li>
                 <a

@@ -393,8 +393,9 @@
     @apply dark:shadow-[0_0_14px_rgba(0,240,255,0.3),inset_0_0_12px_rgba(0,240,255,0.12)];
 }
 
-@utility section-headings {
-    @apply my-8;
+@utility headings-glowing-text {
+    @apply my-8 font-heading text-4xl sm:text-5xl tracking-tight text-pretty text-glow;
+    @apply text-gray-800 dark:text-gray-200;
 }
 
 /* Multi-class rules: child selectors, BEM parts, parent state classes (.group,

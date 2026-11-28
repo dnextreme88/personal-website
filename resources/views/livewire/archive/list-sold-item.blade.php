@@ -17,7 +17,7 @@
                 x-on:click="open = !open"
                 class="flex items-center justify-between py-4 cursor-pointer"
             >
-                <h2 class="text-glow text-4xl tracking-tight text-pretty text-gray-800 sm:text-5xl dark:text-gray-200 font-heading">Sold Items Summary</h2>
+                <h2 class="headings-glowing-text">Sold Items Summary</h2>
 
                 <button
                     type="button"
@@ -96,7 +96,7 @@
 
     <div>
         <div>
-            <h2 class="text-glow text-4xl tracking-tight text-pretty text-gray-800 sm:text-5xl dark:text-gray-200 mb-5 font-heading">Search Items</h2>
+            <h2 class="headings-glowing-text">Search Items</h2>
 
             <form
                 {{-- Initialize the filters array for each sub-component --}}
@@ -233,7 +233,7 @@
             class="my-6"
         >
             <div class="flex flex-col gap-2 mb-2 md:flex-row md:items-center md:justify-between">
-                <h2 class="text-glow text-4xl tracking-tight text-pretty text-gray-800 sm:text-5xl dark:text-gray-200 font-heading">Sold Items</h2>
+                <h2 class="headings-glowing-text">Sold Items</h2>
                 {{-- <h2 class="text-2xl font-bold tracking-tight text-gray-800 dark:text-gray-200">Sold Items</h2> --}}
 
                 <div class="flex flex-wrap items-center gap-x-4">
