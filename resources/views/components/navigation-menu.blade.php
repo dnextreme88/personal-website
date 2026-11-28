@@ -23,11 +23,11 @@
                     </x-slot>
                 </x-dark-mode-toggle>
 
-                <a wire:navigate class="cyber-link font-subtext text-sm font-semibold uppercase tracking-wider text-gray-900 dark:text-gray-100" href="{{ route('about_me') }}">About Me</a>
+                <a wire:navigate class="header-nav-link font-subtext text-sm font-semibold uppercase text-gray-900 dark:text-gray-100" href="{{ route('about_me') }}">About Me</a>
 
-                <a wire:navigate class="cyber-link font-subtext text-sm font-semibold uppercase tracking-wider text-gray-900 dark:text-gray-100" href="{{ route('archive.index') }}">Archives</a>
+                <a wire:navigate class="header-nav-link font-subtext text-sm font-semibold uppercase text-gray-900 dark:text-gray-100" href="{{ route('archive.index') }}">Archives</a>
 
-                <a wire:navigate class="cyber-link font-subtext text-sm font-semibold uppercase tracking-wider text-gray-900 dark:text-gray-100" href="{{ route('blog.index') }}">Blog</a>
+                <a wire:navigate class="header-nav-link font-subtext text-sm font-semibold uppercase text-gray-900 dark:text-gray-100" href="{{ route('blog.index') }}">Blog</a>
 
                 <x-button-call-to-action
                     :href="route('contact-me')"

@@ -436,3 +436,26 @@ it('passes alpine and extra attributes through to the badge root', function () {
         ->toContain('x-bind:class="cls"')
         ->toContain('mt-2');
 });
+
+it('spaces the bracket link label with the widest tracking', function () {
+    $html = Blade::render('<x-button-bracket href="/contact" label="Contact me" />');
+
+    expect($html)
+        ->toContain('btn-bracket')
+        ->toContain('tracking-widest')
+        ->not->toContain('tracking-wider');
+});
+
+it('styles the header nav links with header-nav-link, which sets their tracking', function () {
+    $content = $this->get(route('home'))->assertOk()->getContent();
+
+    preg_match_all('/<a wire:navigate class="([^"]*)" href="[^"]*">(About Me|Archives|Blog)<\/a>/', $content, $links);
+
+    expect($links[1])->toHaveCount(3)
+        ->and($content)->not->toContain('cyber-link');
+
+    foreach ($links[1] as $classes) {
+        // The tracking comes from the header-nav-link utility, not a class on the link.
+        expect($classes)->toStartWith('header-nav-link ')->not->toContain('tracking-');
+    }
+});
