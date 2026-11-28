@@ -1,6 +1,6 @@
 import './bootstrap';
 import '../../vendor/masmerise/livewire-toaster/resources/js';
-import { Observer } from 'tailwindcss-intersect';
+import { Observer } from 'tailwindcss-intersect/observer';
 import './cyber-text';
 import './typewriter';
 
