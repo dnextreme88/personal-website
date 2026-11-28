@@ -164,6 +164,22 @@
         }
     }
 
+    /* Pairs with the static .portrait-ring rules in app.css: one slow turn of the
+       photo ring around the hero portrait. */
+    .animate-ring-orbit {
+        animation: ring-orbit 40s linear infinite;
+    }
+
+    @keyframes ring-orbit {
+        from {
+            transform: rotateY(0deg);
+        }
+
+        to {
+            transform: rotateY(-360deg);
+        }
+    }
+
     .animate-flicker {
         animation: flicker 5s linear infinite;
     }
@@ -486,7 +502,7 @@
 
 /* Accessibility: honour reduced-motion by stilling every animated effect
    and dropping the decorative glitch/cursor layers. Static glow remains.
-   Transition-only rules (HUD corners, reticle) are handled in app.css. */
+   Transition-only rules (HUD corners) are handled in app.css. */
 @media (prefers-reduced-motion: reduce) {
 
     .animate-flicker,

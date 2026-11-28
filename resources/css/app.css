@@ -11,8 +11,8 @@
 @theme {
     --font-heading: 'Audiowide', ui-sans-serif, system-ui, sans-serif;
     --font-text: 'Exo 2', ui-sans-serif, system-ui, sans-serif;
-    --font-subtext: 'Chakra Petch', ui-sans-serif, system-ui, sans-serif;
-    --font-loader: 'JetBrains Mono', ui-monospace, 'Cascadia Code', monospace;
+    --font-subtext: 'Geist Mono', ui-monospace, monospace;
+    --font-loader: 'Geist Mono', ui-monospace, 'Cascadia Code', monospace;
     /* currently unused */
     --font-bridge: 'Space Mono', ui-monospace, monospace;
 
@@ -33,6 +33,13 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
+
+    /* Where an in-page anchor jump stops: below the sticky site header (its height is
+       published as --site-header-h by app-layout) and the section anchor nav (3rem)
+       with a small gap. Used by homepage sections via scroll-mt-(--anchor-offset). */
+    :root {
+        --anchor-offset: calc(var(--site-header-h, 0px) + 3.5rem);
+    }
 
     *,
     ::after,
@@ -135,7 +142,7 @@
         @apply tracking-widest;
     }
 
-    /* Font trial — specs list: labels in Chakra Petch (UI), values in JetBrains Mono (code) */
+    /* Font trial — specs list: labels in Exo 2 (text), values in Geist Mono (subtext) */
     .specs-list>div:nth-child(odd) {
         font-family: var(--font-text);
     }
@@ -262,6 +269,18 @@
         .btn-clear:active {
             transform: translateY(2px) scale(0.97);
         }
+    }
+
+    /* Bracket link ([ About me ]) and in-page anchor links — colour shift on hover,
+       a small press-in on click. */
+    .btn-bracket,
+    .anchor-link {
+        transition: color 200ms ease, transform 120ms ease;
+    }
+
+    .btn-bracket:active,
+    .anchor-link:active {
+        transform: translateY(1px);
     }
 
     /* Nav / inline link — animated neon underline that sweeps in on hover. */
@@ -504,54 +523,142 @@
         text-shadow: 0 0 6px rgba(255, 0, 229, 0.5);
     }
 
-    /* Cyber reticle — decorative crosshair that trails the mouse (cyber-cursor.js).
-       Positioned by JS via transform; centred on the pointer with a negative
-       margin. pointer-events:none so it never intercepts clicks. */
-    .cyber-reticle {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 22px;
-        height: 22px;
-        margin: -11px 0 0 -11px;
-        border: 1.5px solid var(--color-neon-cyan);
-        border-radius: 9999px;
-        box-shadow: 0 0 6px var(--color-neon-cyan), inset 0 0 4px rgba(0, 240, 255, 0.4);
-        pointer-events: none;
-        opacity: 0;
-        z-index: 9999;
-        transition: width 0.18s ease, height 0.18s ease, margin 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, opacity 0.2s ease;
+    /* Portrait ring (x-portrait-ring) — a black-and-white cutout portrait with a tilted
+       ring of photo cards orbiting it. Sizes use cqw (the ring's own width), so the
+       whole scene scales as one piece. The turn itself is .animate-ring-orbit in
+       effects.css. The portrait and the cards share one 3D context so that cards
+       behind the portrait are hidden by it. */
+    .portrait-ring {
+        container-type: inline-size;
+        width: min(100%, 640px);
+        margin-inline: auto;
     }
 
-    /* Centre dot. */
-    .cyber-reticle::before {
-        content: '';
+    /* Identity hero (homepage #top). At every width it fills the first screen under the
+       header (the 2rem spacer above the header plus --site-header-h): the owner wants a
+       full-height (100vh) hero everywhere. Below 1024px the portrait sits in the flow
+       under the text. */
+    .hero-identity {
+        min-height: calc(100svh - 2rem - var(--site-header-h, 84px));
+    }
+
+    /* From 1024px, like the sample site, the portrait leaves the flow and stands on the
+       hero's bottom edge at the right, inset by the page's 2rem side margin. Its size is the smallest of:
+       90% of the hero height, the cutout's native 1152px, and the free width to the right
+       of the text column (--hero-portrait-fit).
+
+       --hero-portrait-fit = the width − where the text ends − a ~40px gap − the 2rem
+       right margin:
+       - 1024–1279px: text column is 28rem from a 2rem margin, so it ends at 480px.
+       - 1280px+: the 80rem container is centred and the text column is 30rem, so the text
+         ends at 50vw − 128px.
+       The constants also absorb a ~15px scrollbar (vw includes it). The ring stays inside
+       the portrait box (see .portrait-ring__card), so nothing passes the right margin. */
+    @media (min-width: 64rem) {
+        .hero-identity {
+            --hero-portrait-fit: min(1152px, calc(100vw - 570px));
+        }
+
+        .portrait-ring--hero {
+            position: absolute;
+            right: 2rem;
+            bottom: 0;
+            width: auto;
+            height: min(90%, var(--hero-portrait-fit));
+            aspect-ratio: 1;
+            margin: 0;
+        }
+    }
+
+    @media (min-width: 80rem) {
+        .hero-identity {
+            --hero-portrait-fit: min(1152px, calc(50vw + 48px));
+        }
+    }
+
+    /* Tall windows (1024px+ and no wider than 9:8, e.g. 1024×1160): the space beside the
+       text is narrow but the space below it is large. The text moves to the top of the
+       hero and the portrait takes the height left under it (hero height − 25rem for the
+       text block), free to extend left under the text column since it sits lower.
+       Still capped by the width inside the two 2rem margins (~15px scrollbar absorbed). */
+    @media (min-width: 64rem) and (max-aspect-ratio: 9/8) {
+        .hero-identity {
+            --hero-portrait-fit: min(1152px, calc(100vw - 4rem - 15px), calc(100svh - 2rem - var(--site-header-h, 84px) - 25rem));
+        }
+
+        .hero-identity__text {
+            align-self: start;
+        }
+    }
+
+    /* From 1280px the headline is larger (xl:text-7xl), so the text block needs 27rem. */
+    @media (min-width: 80rem) and (max-aspect-ratio: 9/8) {
+        .hero-identity {
+            --hero-portrait-fit: min(1152px, calc(100vw - 4rem - 15px), calc(100svh - 2rem - var(--site-header-h, 84px) - 27rem));
+        }
+    }
+
+    .portrait-ring__stage {
+        position: relative;
+        aspect-ratio: 1;
+        perspective: 260cqw;
+        transform-style: preserve-3d;
+    }
+
+    .portrait-ring__figure {
         position: absolute;
-        top: 50%;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: bottom;
+        filter: grayscale(1) contrast(1.05);
+        mask-image: linear-gradient(to bottom, #000 80%, transparent);
+        transform: translateZ(0);
+    }
+
+    /* The ring's centre sits on the neck line of homepage-hero.webp (about 44% down
+       the cutout), so the back of the ring passes behind the chin and the front
+       crosses the chest — matched to the cutout's measured silhouette. */
+    .portrait-ring__tilt {
+        position: absolute;
+        top: 44%;
         left: 50%;
-        width: 2px;
-        height: 2px;
-        margin: -1px 0 0 -1px;
-        border-radius: 9999px;
-        background: var(--color-neon-cyan);
-        box-shadow: 0 0 4px var(--color-neon-cyan);
+        transform-style: preserve-3d;
+        transform: rotateX(-22deg) rotateZ(-8deg);
     }
 
-    .cyber-reticle.is-visible {
-        opacity: 1;
+    .portrait-ring__orbit {
+        transform-style: preserve-3d;
     }
 
-    .cyber-reticle.is-hover {
-        width: 40px;
-        height: 40px;
-        margin: -20px 0 0 -20px;
-        border-color: var(--color-neon-magenta);
-        box-shadow: 0 0 10px var(--color-neon-magenta), inset 0 0 6px rgba(255, 0, 229, 0.4);
+    /* One continuous band: with 18 cards on a 47cqw radius, a card 2·r·tan(10°)
+       ≈ 16.6cqw wide meets its neighbours edge to edge. The radius is a little under
+       half the box so that, with perspective enlarging the front cards, the whole ring
+       stays inside the portrait box (measured: it reached ~2% past each side at 50cqw). */
+    .portrait-ring__card {
+        position: absolute;
+        top: -5.57cqw;
+        left: -8.35cqw;
+        width: 16.7cqw;
+        aspect-ratio: 3 / 2;
+        margin: 0;
+        overflow: hidden;
+        background: #e5e7eb;
+        outline: 1px solid rgba(17, 24, 39, 0.25);
+        transform: rotateY(calc(var(--ring-i) * 360deg / var(--ring-cards))) translateZ(47cqw);
     }
 
-    .cyber-reticle.is-hover::before {
-        background: var(--color-neon-magenta);
-        box-shadow: 0 0 4px var(--color-neon-magenta);
+    .dark .portrait-ring__card {
+        background: #111827;
+    }
+
+    .portrait-ring__card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 25%;
+        filter: grayscale(1) contrast(1.05);
     }
 
     /* Game screenshots filmstrip thumbnails. Hovering the strip dims every thumb
@@ -697,12 +804,6 @@
 
     /* HUD corners: snap in on hover with no travel. */
     .hud-corner {
-        transition: none !important;
-    }
-
-    /* Reticle is not created under reduced motion (cyber-cursor.js bails), but
-       null out its transition too in case it's ever forced on. */
-    .cyber-reticle {
         transition: none !important;
     }
 

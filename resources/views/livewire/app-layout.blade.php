@@ -16,10 +16,10 @@
         <link rel="preconnect" href="https://fonts.bunny.net" />
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-        {{-- Font trial: Audiowide (headings), Chakra Petch (UI labels), JetBrains Mono (code), Space Mono (bridge) --}}
+        {{-- Fonts: Audiowide (headings), Exo 2 (text), Geist Mono (subtext and buttons), Space Mono (bridge) --}}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Chakra+Petch:wght@400;500;600;700&family=Exo+2:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Exo+2:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 
         {{-- Styles --}}
         @filamentStyles
@@ -36,7 +36,18 @@
             @if (isset($nav_menu))
                 <div class="h-8 bg-gray-100 dark:bg-gray-600">&nbsp;</div>
 
-                <nav class="bg-gray-100 dark:bg-gray-600 top-0 sticky z-99">{{ $nav_menu }}</nav>
+                {{-- Publishes its own height as --site-header-h, for parts that must fit below it
+                     (the full-screen homepage hero, the sticky section anchor nav). --}}
+                <nav
+                    id="site-header"
+                    x-data
+                    x-init="
+                        const publishHeight = () => document.documentElement.style.setProperty('--site-header-h', $el.offsetHeight + 'px');
+                        publishHeight();
+                        new ResizeObserver(publishHeight).observe($el);
+                    "
+                    class="bg-gray-100 dark:bg-gray-600 top-0 sticky z-99"
+                >{{ $nav_menu }}</nav>
             @endif
 
             {{-- Page Heading --}}

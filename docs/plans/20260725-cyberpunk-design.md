@@ -267,7 +267,9 @@
 >   `x-show="!isLoaded"`, and the image fades in (`x-show="isLoaded"` + `opacity` enter transition) once its
 >   IntersectionObserver fires after the lazy load. The modal-preview click handler and corner ↗ button are
 >   preserved. Both pages `@push('scripts')` the shared `skeleton-loading.js`.
-> - **Cyber reticle cursor** ([cyber-cursor.js](../../resources/js/cyber-cursor.js), imported by
+> - ~~Cyber reticle cursor~~ — **removed on 2026-11-28** (see [20261128-homepage-identity.md](20261128-homepage-identity.md));
+>   it stayed on the page after the browser Back button (bfcache restore). Original notes:
+>   (`cyber-cursor.js`, imported by
 >   [app.js](../../resources/js/app.js)) — a neon crosshair (`.cyber-reticle` in app.css: cyan ring + centre
 >   dot + glow) that **trails** the real pointer via a lerped `transform`, expanding and recolouring to
 >   magenta over interactive elements (`.is-hover`). The native arrow is **kept** (never `cursor:none`), so
