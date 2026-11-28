@@ -39,6 +39,10 @@ how it was verified.
 - [20261029-dropping-areas-table.md](20261029-dropping-areas-table.md) — `dropping_areas` table and Filament
   resource with image upload; the transit route page reads the table instead of the filenames, with free-text hours
   and a per-row "Current" flag (executed **2026-10-29**).
+- [20261128-homepage-identity.md](20261128-homepage-identity.md) — Full-screen homepage identity hero with a
+  black-and-white portrait and a rotating 3D photo ring, a scrollspy section nav that appears after the hero,
+  About facts panel, Geist Mono for subtext and buttons, and removal of the cyber reticle cursor
+  (executed **2026-11-28**).
 
 ## Conventions
 

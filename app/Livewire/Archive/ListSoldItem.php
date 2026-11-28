@@ -350,7 +350,7 @@ class ListSoldItem extends Component
             $query->orderBy($this->sort_field, $this->sort_direction);
         }
 
-        $sold_items = $query->paginate(18);
+        $sold_items = $query->paginate(618);
 
         return view('livewire.archive.list-sold-item', ['sold_items' => $sold_items]);
     }
