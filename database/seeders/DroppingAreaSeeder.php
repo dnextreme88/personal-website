@@ -95,6 +95,16 @@ class DroppingAreaSeeder extends Seeder
                 'started_on' => '2026-03-25',
                 'is_current' => true,
             ],
+            [
+                'address' => 'JMF Building KM 5, Benguet La Trinidad 2601',
+                'image' => 'DA V8 - JMF Building Room 5A KM5 La Trinidad (nov 9 2026).webp',
+                'unit' => 'Room 5A',
+                'note' => 'Dropping area in La Trinidad',
+                'opens_at' => 'Mondays - Saturdays 9:00 AM; Sundays 10:00 AM',
+                'closes_at' => 'Mondays - Saturdays 7:00 PM; Sundays 4:00 PM',
+                'started_on' => '2026-11-09',
+                'is_current' => true,
+            ],
         ];
 
         foreach ($dropping_areas as $index => $dropping_area) {

@@ -131,7 +131,7 @@ class SteamAchievementSeeder extends Seeder
             ],
             [
                 'game_name' => 'RONIN',
-                'tags' => 'bad review',
+                'tags' => 'bad review,less than 10 achievements',
                 'date_completed' => '2023-05-14',
                 'notes' => null,
                 'created_at' => Carbon::now(),
@@ -219,7 +219,7 @@ class SteamAchievementSeeder extends Seeder
             ],
             [
                 'game_name' => 'Counter-Strike 2',
-                'tags' => 'good review (before completion),free to play',
+                'tags' => 'good review (before completion),free to play,less than 10 achievements',
                 'date_completed' => '2023-10-01',
                 'notes' => null,
                 'created_at' => Carbon::now(),
@@ -307,7 +307,7 @@ class SteamAchievementSeeder extends Seeder
             ],
             [
                 'game_name' => 'EDENGATE: The Edge of Life',
-                'tags' => null,
+                'tags' => 'less than 10 achievements',
                 'date_completed' => '2024-03-28',
                 'notes' => null,
                 'created_at' => Carbon::now(),
@@ -315,7 +315,7 @@ class SteamAchievementSeeder extends Seeder
             ],
             [
                 'game_name' => 'What Remains of Edith Finch',
-                'tags' => null,
+                'tags' => 'less than 10 achievements',
                 'date_completed' => '2024-03-30',
                 'notes' => null,
                 'created_at' => Carbon::now(),
@@ -499,7 +499,7 @@ class SteamAchievementSeeder extends Seeder
             ],
             [
                 'game_name' => 'I Am Part-time Worker!!',
-                'tags' => null,
+                'tags' => 'less than 10 achievements',
                 'date_completed' => '2025-08-21',
                 'notes' => null,
                 'created_at' => Carbon::now(),
@@ -515,7 +515,7 @@ class SteamAchievementSeeder extends Seeder
             ],
             [
                 'game_name' => 'Scene Investigators',
-                'tags' => null,
+                'tags' => 'less than 10 achievements',
                 'date_completed' => '2025-09-16',
                 'notes' => null,
                 'created_at' => Carbon::now(),
@@ -555,7 +555,7 @@ class SteamAchievementSeeder extends Seeder
             ],
             [
                 'game_name' => 'A TAVERN FOR TEA',
-                'tags' => null,
+                'tags' => 'less than 10 achievements',
                 'date_completed' => '2025-12-21',
                 'notes' => null,
                 'created_at' => Carbon::now(),
@@ -669,6 +669,30 @@ class SteamAchievementSeeder extends Seeder
                 'game_name' => 'Steelrising',
                 'tags' => 'good review',
                 'date_completed' => '2026-09-05',
+                'notes' => null,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'The Room Two',
+                'tags' => 'good review,less than 10 achievements,received as gift',
+                'date_completed' => '2026-11-02',
+                'notes' => null,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'Synergia',
+                'tags' => 'good review,less than 10 achievements',
+                'date_completed' => '2026-11-02',
+                'notes' => null,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'game_name' => 'Renfield: Bring Your Own Blood',
+                'tags' => 'bad review',
+                'date_completed' => '2026-11-19',
                 'notes' => null,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
